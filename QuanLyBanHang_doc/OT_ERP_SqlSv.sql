@@ -36,7 +36,7 @@ CREATE TABLE tblSO_Customer(
 	LastUdpatedBy int,
 	Inactive bit,
 	
-	constraint pk_kh primary key(Customer_SEQ)
+	constraint pk_Customer_CustSEO primary key(Customer_SEQ)
 )
 ---------------------------------------------
 -- Bang do dim PaymentType va PaymentTerms
@@ -46,14 +46,14 @@ CREATE TABLE tblGN_PaymentTerms(
 	PaymentTermText	nvarchar(50) not null,	
 	PaymentTerm_ID	char(20) not null,
 	
-	constraint pk_paymterm primary key(PaymentTerm_SEQ)
+	constraint pk_paymentterm_PMTSEQ primary key(PaymentTerm_SEQ)
 )
 CREATE TABLE tblGN_PaymentType(
 	PaymentType_SEQ int identity (1, 1) not null,
 	PaymentTypeText	nvarchar(50) not null,	
 	PaymentType_ID	char(20) not null,
 	
-	constraint pk_paymtype primary key(PaymentType_SEQ)
+	constraint pk_paymtype_PMTSEQ primary key(PaymentType_SEQ)
 )
 
 ---------------------------------------------
@@ -72,7 +72,7 @@ CREATE TABLE tblGN_AddressBook(
 	TaxIDNumber char (10),
 	OrganizationName	nvarchar(100),
 	JobPosition nvarchar(50),	
-	constraint pk_addbook primary key(AddressBook_SEQ)
+	constraint pk_addbook_AddBookSEQ primary key(AddressBook_SEQ)
 )
 ---------------------------------------------
 -- bang SaleOrder va tap tin chi tiet tblSO_OrderDetail
@@ -113,7 +113,7 @@ CREATE TABLE tblSO_SalesOrder(
 	Inactive bit,
 	Sequence int,
 	
-	constraint pk_salesorder primary key(SO_SEQ)
+	constraint pk_salesorder_SOSEQ primary key(SO_SEQ)
 		
 )
 ---------------------------------------------
@@ -123,7 +123,7 @@ CREATE TABLE tblGN_ShipVia(
 	ShipVia_ID	nchar(25) not null,
 	Description nvarchar(50),
 	
-	constraint pk_shipvia primary key (ShipVia_SEQ)
+	constraint pk_shipvia_ShipViaSEQ primary key (ShipVia_SEQ)
 )
  CREATE TABLE tblSO_OrderStatus(
 	SOStatus_SEQ int identity (1, 1) not null,
@@ -131,7 +131,7 @@ CREATE TABLE tblGN_ShipVia(
 	SOStatusText nvarchar(50),
 	Description nvarchar(255),
 	
-	constraint pk_orderstatus primary key (SOStatus_SEQ)
+	constraint pk_orderstatus_SOSSEQ primary key (SOStatus_SEQ)
 )
 ---------------------------------------------
 -- Tao bang do tim tblSO_OrderDetail
@@ -152,7 +152,7 @@ CREATE TABLE tblSO_OrderDetail(
 	TaxRate double,
 	Tax AS QtyOrderedNow * UnitPrice * TaxRate,
 	
-	constraint pk_orderdetail primary key (SODetail_SEQ)
+	constraint pk_orderdetail_ODTSEQ primary key (SODetail_SEQ)
 )
 CREATE TABLE tblSO_OrderDetailStatus(
 	SODetailStatus_SEQ int identity (1, 1) not null,
@@ -160,7 +160,7 @@ CREATE TABLE tblSO_OrderDetailStatus(
 	SODetailStatusText nvarchar(50),
 	Description nvarchar(255),
 	
-	constraint pk_orderDetailstatus primary key (SODetailStatus_SEQ)
+	constraint pk_orderDetailstatus_ODTSSEQ primary key (SODetailStatus_SEQ)
 )
 
 -- Khoa ngoai cho bang HOADON
