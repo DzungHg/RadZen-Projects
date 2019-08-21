@@ -22,7 +22,7 @@ CREATE TABLE tblSO_Customer(
 	LYR_GrossSales money,
 	LYR_COGS money,
 	LastAmountSales money,
-	SalesPersonAdressBook_FK,
+	SalesPersonAdressBook_FK int,
 	Commission double,
 	Salesperson_MTD_Goal money,
 	SalesPerson_YTD_Goal money,
