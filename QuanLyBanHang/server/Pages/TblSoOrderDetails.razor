@@ -1,0 +1,65 @@
+﻿@page "/tbl-so-order-details"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.TblSoOrderDetailsComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="Tbl So Order Details">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton @ref="button0" @ref:suppressField Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenGrid @ref="grid0" @ref:suppressField AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getTblSoOrderDetailsResult)" TItem="TblSoOrderDetail" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="SODetail_SEQ" Title="SO Detail SEQ" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="SODetailStatus_FK" SortProperty="TblSoOrderDetailStatus.SODetailStatusText" FilterProperty="TblSoOrderDetailStatus.SODetailStatusText" Title="Tbl So Order Detail Status" Type="string">
+              <Template Context="data">
+              @data.TblSoOrderDetailStatus?.SODetailStatusText
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="SO_FK" SortProperty="TblSoSalesOrder.SO_ID" FilterProperty="TblSoSalesOrder.SO_ID" Title="Tbl So Sales Order" Type="string">
+              <Template Context="data">
+              @data.TblSoSalesOrder?.SO_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="Inventory_FK" Title="Inventory FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Format="decimal" Property="UnitPrice" Title="Unit Price" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="QtyOnHand" Title="Qty On Hand" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="QtyOrdered" Title="Qty Ordered" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="QtyOrderedNow" Title="Qty Ordered Now" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="QtyBackOrdered" Title="Qty Back Ordered" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Property="QtyPicked" Title="Qty Picked" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Format="decimal" Property="SubTotal" Title="Sub Total" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Format="decimal" Property="DiscountPercent" Title="Discount Percent" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Format="decimal" Property="Discount" Title="Discount" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Format="decimal" Property="TaxRate" Title="Tax Rate" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Format="decimal" Property="Tax" Title="Tax" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoOrderDetail" Context="tblSoOrderDetail" Filterable="false" Sortable="false" Bubble="false" Width="70px">
+              <Template Context="tblSoOrderDetail">
+                <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblSoOrderDetail))">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

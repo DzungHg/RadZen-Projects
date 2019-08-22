@@ -1,0 +1,67 @@
+﻿@page "/edit-tbl-gn-city/{City_SEQ}"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.EditTblGnCityComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <div style="" class="row">
+      <div class="col-md-9">
+        <RadzenLabel @ref="closeLabel" @ref:suppressField style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
+        </RadzenLabel>
+      </div>
+      <div class="col-md-3">
+        <RadzenButton @ref="closeButton" @ref:suppressField ButtonStyle="secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
+        </RadzenButton>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgncity)" Visible="@(tblgncity != null && canEdit)" TItem="TblGnCity" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" @ref:suppressField Text="City Id" Component="City_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="cityId" @ref:suppressField MaxLength="10" style="width: 100%" Name="City_ID">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" @ref:suppressField Text="City Name" Component="CityName" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="cityName" @ref:suppressField MaxLength="50" style="width: 100%" Name="CityName">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" @ref:suppressField Text="City Abbreviation" Component="CityAbbreviation" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="cityAbbreviation" @ref:suppressField MaxLength="10" style="width: 100%" Name="CityAbbreviation">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button2" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                </RadzenButton>
+                <RadzenButton @ref="button3" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button3Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

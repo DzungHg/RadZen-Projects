@@ -1,0 +1,231 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Tbl Gn Address Books"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-tbl-gn-address-book",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getTblGnAddressBooksResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowSelect": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "AddressBook_SEQ",
+                            "value": "${event.AddressBook_SEQ}"
+                          }
+                        ],
+                        "path": "edit-tbl-gn-address-book",
+                        "type": "popup",
+                        "argType": "TblGnAddressBook",
+                        "then": [
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "AddressBook_SEQ",
+                      "title": "Address Book SEQ",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "AddressBook_ID",
+                      "title": "Address Book ID",
+                      "type": "string"
+                    },
+                    {
+                      "property": "AddressBookType_FK",
+                      "sortProperty": "TblGnAddressBookType.AddressBookType_ID",
+                      "filterProperty": "TblGnAddressBookType.AddressBookType_ID",
+                      "template": "${data.TblGnAddressBookType?.AddressBookType_ID}",
+                      "title": "Tbl Gn Address Book Type",
+                      "type": "string"
+                    },
+                    {
+                      "property": "LastName",
+                      "title": "Last Name",
+                      "type": "string"
+                    },
+                    {
+                      "property": "FirstName",
+                      "title": "First Name",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Gender",
+                      "title": "Gender",
+                      "type": "string"
+                    },
+                    {
+                      "format": "date-time",
+                      "property": "DOB",
+                      "formatString": "{0:dd/mm/yy}",
+                      "title": "DOB",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Origin",
+                      "title": "Origin",
+                      "type": "string"
+                    },
+                    {
+                      "property": "IDNumber",
+                      "title": "ID Number",
+                      "type": "string"
+                    },
+                    {
+                      "property": "TaxIDNumber",
+                      "title": "Tax ID Number",
+                      "type": "string"
+                    },
+                    {
+                      "property": "OrganizationName",
+                      "title": "Organization Name",
+                      "type": "string"
+                    },
+                    {
+                      "property": "JobPosition",
+                      "title": "Job Position",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Address",
+                      "title": "Address",
+                      "type": "string"
+                    },
+                    {
+                      "property": "City_PK",
+                      "sortProperty": "TblGnCity.City_ID",
+                      "filterProperty": "TblGnCity.City_ID",
+                      "template": "${data.TblGnCity?.City_ID}",
+                      "title": "Tbl Gn City",
+                      "type": "string"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "bubble": false,
+                      "width": "70px",
+                      "template": [
+                        {
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete TblGnAddressBook",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "OT_ERP.deleteTblGnAddressBook",
+                                "parameters": [
+                                  {
+                                    "name": "AddressBook_SEQ",
+                                    "value": "${data.AddressBook_SEQ}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke",
+                                "argType": "TblGnAddressBook"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "grid",
+                  "itemType": "TblGnAddressBook"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "OT_ERP.getTblGnAddressBooks",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblGnAddressBooksResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<TblGnAddressBook>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Tbl Gn Address Books",
+  "layout": "Main"
+}

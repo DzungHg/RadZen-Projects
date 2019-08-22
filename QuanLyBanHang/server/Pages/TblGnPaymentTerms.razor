@@ -1,0 +1,35 @@
+﻿@page "/tbl-gn-payment-terms"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.TblGnPaymentTermsComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="Tbl Gn Payment Terms">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton @ref="button0" @ref:suppressField Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenGrid @ref="grid0" @ref:suppressField AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getTblGnPaymentTermsResult)" TItem="TblGnPaymentTerm" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="TblGnPaymentTerm" Context="tblGnPaymentTerm" Property="PaymentTerm_SEQ" Title="Payment Term SEQ" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnPaymentTerm" Context="tblGnPaymentTerm" Property="PaymentTermText" Title="Payment Term Text" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnPaymentTerm" Context="tblGnPaymentTerm" Property="PaymentTerm_ID" Title="Payment Term ID" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnPaymentTerm" Context="tblGnPaymentTerm" Filterable="false" Sortable="false" Bubble="false" Width="70px">
+              <Template Context="tblGnPaymentTerm">
+                <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblGnPaymentTerm))">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

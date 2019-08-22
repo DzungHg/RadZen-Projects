@@ -1,0 +1,57 @@
+﻿@page "/edit-tbl-gn-address-book-type/{AddressBookType_SEQ}"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.EditTblGnAddressBookTypeComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <div style="" class="row">
+      <div class="col-md-9">
+        <RadzenLabel @ref="closeLabel" @ref:suppressField style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
+        </RadzenLabel>
+      </div>
+      <div class="col-md-3">
+        <RadzenButton @ref="closeButton" @ref:suppressField ButtonStyle="secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
+        </RadzenButton>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbooktype)" Visible="@(tblgnaddressbooktype != null && canEdit)" TItem="TblGnAddressBookType" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" @ref:suppressField Text="Address Book Type Id" Component="AddressBookType_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="addressBookTypeId" @ref:suppressField MaxLength="10" style="width: 100%" Name="AddressBookType_ID">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" @ref:suppressField Text="Address Book Type Text" Component="AddressBookTypeText" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="addressBookTypeText" @ref:suppressField MaxLength="150" style="width: 100%" Name="AddressBookTypeText">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button2" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                </RadzenButton>
+                <RadzenButton @ref="button3" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button3Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

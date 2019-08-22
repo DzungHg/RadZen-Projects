@@ -1,0 +1,51 @@
+﻿@page "/add-tbl-gn-payment-type"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.AddTblGnPaymentTypeComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnpaymenttype)" Visible="@(tblgnpaymenttype != null)" TItem="TblGnPaymentType" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" @ref:suppressField Text="Payment Type Text" Component="PaymentTypeText" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="paymentTypeText" @ref:suppressField MaxLength="50" style="display: block; width: 100%" Name="PaymentTypeText">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="paymentTypeTextRequiredValidator" @ref:suppressField Component="PaymentTypeText" Text="PaymentTypeText is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" @ref:suppressField Text="Payment Type Id" Component="PaymentType_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="paymentTypeId" @ref:suppressField MaxLength="20" style="display: block; width: 100%" Name="PaymentType_ID">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="paymentTypeIdRequiredValidator" @ref:suppressField Component="PaymentType_ID" Text="PaymentType_ID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

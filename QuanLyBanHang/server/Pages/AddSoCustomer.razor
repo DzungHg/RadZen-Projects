@@ -1,0 +1,49 @@
+﻿@page "/add-so-customer"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.AddSoCustomerComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="Nhập liệu Khách Hàng">
+    </RadzenHeading>
+    <RadzenTemplateForm @ref="templateForm0" @ref:suppressField Data="@(SoCustomer)" style="height: 272px">
+      <ChildContent>
+        <div class="row">
+          <div class="col-md-12 col-lg-1">
+            <RadzenLabel @ref="label0" @ref:suppressField Text="PK">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-1">
+            <RadzenNumeric @ref="numeric0" @ref:suppressField ReadOnly="true" style="width: 73px" Value="@(SoCustomer.Customer_SEQ)" Name="Numeric0" TItem="dynamic">
+            </RadzenNumeric>
+          </div>
+          <div class="col-md-2">
+            <RadzenLabel @ref="label1" @ref:suppressField Text="Mã khách hàng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox0" @ref:suppressField style="width: 107px" Name="Textbox0">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-3">
+            <RadzenLabel @ref="label2" @ref:suppressField Text="Danh bạ khách hàng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDropDown @ref="dropdown0" @ref:suppressField Name="Dropdown0">
+            </RadzenDropDown>
+          </div>
+        </div>
+        <div class="row">
+          <div class="offset-sm-3 col-md-9">
+            <RadzenButton @ref="button0" @ref:suppressField ButtonType="submit" Icon="save" Text="Save">
+            </RadzenButton>
+          </div>
+        </div>
+      </ChildContent>
+    </RadzenTemplateForm>
+  </ChildContent>
+</RadzenContent>

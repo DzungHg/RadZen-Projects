@@ -1,0 +1,64 @@
+﻿@page "/"
+@page "/tbl-gn-address-books"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.TblGnAddressBooksComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="Tbl Gn Address Books">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton @ref="button0" @ref:suppressField Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenGrid @ref="grid0" @ref:suppressField AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getTblGnAddressBooksResult)" TItem="TblGnAddressBook" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="AddressBook_SEQ" Title="Address Book SEQ" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="AddressBook_ID" Title="Address Book ID" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="AddressBookType_FK" SortProperty="TblGnAddressBookType.AddressBookType_ID" FilterProperty="TblGnAddressBookType.AddressBookType_ID" Title="Tbl Gn Address Book Type" Type="string">
+              <Template Context="data">
+              @data.TblGnAddressBookType?.AddressBookType_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="LastName" Title="Last Name" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="FirstName" Title="First Name" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Gender" Title="Gender" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Format="date-time" Property="DOB" FormatString="{0:dd/mm/yy}" Title="DOB" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Origin" Title="Origin" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="IDNumber" Title="ID Number" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="TaxIDNumber" Title="Tax ID Number" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="OrganizationName" Title="Organization Name" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="JobPosition" Title="Job Position" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Address" Title="Address" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="City_PK" SortProperty="TblGnCity.City_ID" FilterProperty="TblGnCity.City_ID" Title="Tbl Gn City" Type="string">
+              <Template Context="data">
+              @data.TblGnCity?.City_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Filterable="false" Sortable="false" Bubble="false" Width="70px">
+              <Template Context="tblGnAddressBook">
+                <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblGnAddressBook))">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

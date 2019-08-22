@@ -1,0 +1,175 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "AddressBookType_ID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "ID",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 10,
+                              "name": "AddressBookType_ID",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "AddressBookTypeText",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Text",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 150,
+                              "name": "AddressBookTypeText",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${tblgnaddressbooktype}",
+                  "events": {
+                    "submit": [
+                      {
+                        "argType": "TblGnAddressBookType",
+                        "error": [
+                          {
+                            "detail": "Unable to create new TblGnAddressBookType!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "OT_ERP.createTblGnAddressBookType",
+                        "parameters": [
+                          {
+                            "name": "TblGnAddressBookType",
+                            "value": "${tblgnaddressbooktype}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "result": "${tblgnaddressbooktype}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "TblGnAddressBookType",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblgnaddressbooktype != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "tblgnaddressbooktype",
+        "type": "set",
+        "value": "new TblGnAddressBookType()",
+        "valueType": "TblGnAddressBookType"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Thêm Addressbook Type"
+}

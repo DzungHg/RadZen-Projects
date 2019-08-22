@@ -1,0 +1,2308 @@
+{
+  "info": {
+    "title": "OT_ERP",
+    "x-type": "odata",
+    "x-connector": "mssql",
+    "x-connector-version": 12
+  },
+  "definitions": {
+    "TblGnAddressBook": {
+      "x-table": "dbo.tblGN_AddressBook",
+      "resource": "TblGnAddressBooks",
+      "required": [
+        "AddressBook_ID"
+      ],
+      "properties": {
+        "AddressBook_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnAddressBook",
+              "name": "TblSoSalesOrders",
+              "type": "TblSoSalesOrder"
+            },
+            {
+              "inversePropertyName": "TblGnAddressBook1",
+              "name": "TblSoSalesOrders1",
+              "type": "TblSoSalesOrder"
+            },
+            {
+              "inversePropertyName": "TblGnAddressBook2",
+              "name": "TblSoSalesOrders2",
+              "type": "TblSoSalesOrder"
+            },
+            {
+              "inversePropertyName": "TblGnAddressBook",
+              "name": "TblSoCustomers",
+              "type": "TblSoCustomer"
+            }
+          ]
+        },
+        "AddressBook_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "TblGnAddressBookType": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnAddressBookType"
+        },
+        "AddressBookType_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_AddressBookType",
+            "parentEntityType": "TblGnAddressBookType",
+            "type": "TblGnAddressBookType",
+            "principalKey": "AddressBookType_SEQ",
+            "name": "TblGnAddressBookType",
+            "textProperty": "AddressBookType_ID",
+            "navigationProperty": "TblGnAddressBooks"
+          }
+        },
+        "LastName": {
+          "type": "string",
+          "length": 50
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 50
+        },
+        "Gender": {
+          "type": "string",
+          "length": 50
+        },
+        "DOB": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "Origin": {
+          "type": "string",
+          "length": 50
+        },
+        "IDNumber": {
+          "type": "string",
+          "length": 20
+        },
+        "TaxIDNumber": {
+          "type": "string",
+          "length": 10
+        },
+        "OrganizationName": {
+          "type": "string",
+          "length": 100
+        },
+        "JobPosition": {
+          "type": "string",
+          "length": 50
+        },
+        "Address": {
+          "type": "string",
+          "length": 100
+        },
+        "TblGnCity": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnCity"
+        },
+        "City_PK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_City",
+            "parentEntityType": "TblGnCity",
+            "type": "TblGnCity",
+            "principalKey": "City_SEQ",
+            "name": "TblGnCity",
+            "textProperty": "City_ID",
+            "navigationProperty": "TblGnAddressBooks"
+          }
+        },
+        "TblSoSalesOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoSalesOrder"
+          }
+        },
+        "TblSoCustomers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoCustomer"
+          }
+        }
+      }
+    },
+    "TblGnAddressBookType": {
+      "x-table": "dbo.tblGN_AddressBookType",
+      "resource": "TblGnAddressBookTypes",
+      "required": [],
+      "properties": {
+        "AddressBookType_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnAddressBookType",
+              "name": "TblGnAddressBooks",
+              "type": "TblGnAddressBook"
+            }
+          ]
+        },
+        "AddressBookType_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "AddressBookTypeText": {
+          "type": "string",
+          "length": 150
+        },
+        "TblGnAddressBooks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblGnAddressBook"
+          }
+        }
+      }
+    },
+    "TblGnCity": {
+      "x-table": "dbo.tblGN_City",
+      "resource": "TblGnCities",
+      "required": [],
+      "properties": {
+        "City_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnCity",
+              "name": "TblGnAddressBooks",
+              "type": "TblGnAddressBook"
+            }
+          ]
+        },
+        "City_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "CityName": {
+          "type": "string",
+          "length": 50
+        },
+        "CityAbbreviation": {
+          "type": "string",
+          "length": 10
+        },
+        "TblGnAddressBooks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblGnAddressBook"
+          }
+        }
+      }
+    },
+    "TblGnPaymentTerm": {
+      "x-table": "dbo.tblGN_PaymentTerms",
+      "resource": "TblGnPaymentTerms",
+      "required": [
+        "PaymentTermText",
+        "PaymentTerm_ID"
+      ],
+      "properties": {
+        "PaymentTerm_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnPaymentTerm",
+              "name": "TblSoCustomers",
+              "type": "TblSoCustomer"
+            }
+          ]
+        },
+        "PaymentTermText": {
+          "type": "string",
+          "length": 50
+        },
+        "PaymentTerm_ID": {
+          "type": "string",
+          "length": 20
+        },
+        "TblSoCustomers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoCustomer"
+          }
+        }
+      }
+    },
+    "TblGnPaymentType": {
+      "x-table": "dbo.tblGN_PaymentType",
+      "resource": "TblGnPaymentTypes",
+      "required": [
+        "PaymentTypeText",
+        "PaymentType_ID"
+      ],
+      "properties": {
+        "PaymentType_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnPaymentType",
+              "name": "TblSoCustomers",
+              "type": "TblSoCustomer"
+            }
+          ]
+        },
+        "PaymentTypeText": {
+          "type": "string",
+          "length": 50
+        },
+        "PaymentType_ID": {
+          "type": "string",
+          "length": 20
+        },
+        "TblSoCustomers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoCustomer"
+          }
+        }
+      }
+    },
+    "TblGnShipVium": {
+      "x-table": "dbo.tblGN_ShipVia",
+      "resource": "TblGnShipVia",
+      "required": [
+        "ShipVia_ID"
+      ],
+      "properties": {
+        "ShipVia_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnShipVium",
+              "name": "TblSoSalesOrders",
+              "type": "TblSoSalesOrder"
+            }
+          ]
+        },
+        "ShipVia_ID": {
+          "type": "string",
+          "length": 25
+        },
+        "Description": {
+          "type": "string",
+          "length": 50
+        },
+        "TblSoSalesOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoSalesOrder"
+          }
+        }
+      }
+    },
+    "TblSoCustomer": {
+      "x-table": "dbo.tblSO_Customer",
+      "resource": "TblSoCustomers",
+      "required": [
+        "Customer_ID"
+      ],
+      "properties": {
+        "Customer_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblSoCustomer",
+              "name": "TblSoSalesOrders",
+              "type": "TblSoSalesOrder"
+            }
+          ]
+        },
+        "Customer_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "LastName": {
+          "type": "string",
+          "length": 50
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 50
+        },
+        "TblGnAddressBook": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnAddressBook"
+        },
+        "CustomerAdressBook_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_AddressBook",
+            "parentEntityType": "TblGnAddressBook",
+            "type": "TblGnAddressBook",
+            "principalKey": "AddressBook_SEQ",
+            "name": "TblGnAddressBook",
+            "textProperty": "AddressBook_ID",
+            "navigationProperty": "TblSoCustomers"
+          }
+        },
+        "CreditLimit": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "LastRevisedCreditLimitDate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "TblGnPaymentTerm": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnPaymentTerm"
+        },
+        "PaymentTerm_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_PaymentTerms",
+            "parentEntityType": "TblGnPaymentTerm",
+            "type": "TblGnPaymentTerm",
+            "principalKey": "PaymentTerm_SEQ",
+            "name": "TblGnPaymentTerm",
+            "textProperty": "PaymentTermText",
+            "navigationProperty": "TblSoCustomers"
+          }
+        },
+        "TblGnPaymentType": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnPaymentType"
+        },
+        "PaymentType_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_PaymentType",
+            "parentEntityType": "TblGnPaymentType",
+            "type": "TblGnPaymentType",
+            "principalKey": "PaymentType_SEQ",
+            "name": "TblGnPaymentType",
+            "textProperty": "PaymentTypeText",
+            "navigationProperty": "TblSoCustomers"
+          }
+        },
+        "DiscountPercent": {
+          "type": "integer"
+        },
+        "Current_MTD_Sales": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Current_MTD_Returns": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "YTD_GrossSales": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "YTD_Returns": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "YTD_COGS": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "LYR_GrossSales": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "LYR_COGS": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "LastAmountSales": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "SalesPersonAdressBook_FK": {
+          "type": "integer"
+        },
+        "CommissionPercent": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "SalesPerson_MTD_Goal": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "SalesPerson_YTD_Goal": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "ChargeInterest": {
+          "type": "boolean"
+        },
+        "Statement": {
+          "type": "boolean"
+        },
+        "Aging30DayAmout": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Aging60DayAmout": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Aging90DayAmout": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Notes": {
+          "type": "string"
+        },
+        "LastUpdatedDate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "LastUdpatedBy": {
+          "type": "integer"
+        },
+        "Inactive": {
+          "type": "boolean"
+        },
+        "TblSoSalesOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoSalesOrder"
+          }
+        }
+      }
+    },
+    "TblSoOrderDetail": {
+      "x-table": "dbo.tblSO_OrderDetail",
+      "resource": "TblSoOrderDetails",
+      "required": [],
+      "properties": {
+        "SODetail_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "TblSoOrderDetailStatus": {
+          "type": "object",
+          "$ref": "#/definitions/TblSoOrderDetailStatus"
+        },
+        "SODetailStatus_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblSO_OrderDetailStatus",
+            "parentEntityType": "TblSoOrderDetailStatus",
+            "type": "TblSoOrderDetailStatus",
+            "principalKey": "SODetailStatus_SEQ",
+            "name": "TblSoOrderDetailStatus",
+            "textProperty": "SODetailStatusText",
+            "navigationProperty": "TblSoOrderDetails"
+          }
+        },
+        "TblSoSalesOrder": {
+          "type": "object",
+          "$ref": "#/definitions/TblSoSalesOrder"
+        },
+        "SO_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblSO_SalesOrder",
+            "parentEntityType": "TblSoSalesOrder",
+            "type": "TblSoSalesOrder",
+            "principalKey": "SO_SEQ",
+            "name": "TblSoSalesOrder",
+            "textProperty": "SO_ID",
+            "navigationProperty": "TblSoOrderDetails"
+          }
+        },
+        "Inventory_FK": {
+          "type": "integer"
+        },
+        "UnitPrice": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "QtyOnHand": {
+          "type": "integer"
+        },
+        "QtyOrdered": {
+          "type": "integer"
+        },
+        "QtyOrderedNow": {
+          "type": "integer"
+        },
+        "QtyBackOrdered": {
+          "type": "integer"
+        },
+        "QtyPicked": {
+          "type": "integer"
+        },
+        "SubTotal": {
+          "x-computed": true,
+          "type": "number",
+          "format": "decimal"
+        },
+        "DiscountPercent": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Discount": {
+          "x-computed": true,
+          "type": "number",
+          "format": "decimal"
+        },
+        "TaxRate": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Tax": {
+          "x-computed": true,
+          "type": "number",
+          "format": "decimal"
+        }
+      }
+    },
+    "TblSoOrderDetailStatus": {
+      "x-table": "dbo.tblSO_OrderDetailStatus",
+      "resource": "TblSoOrderDetailStatuses",
+      "required": [],
+      "properties": {
+        "SODetailStatus_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblSoOrderDetailStatus",
+              "name": "TblSoOrderDetails",
+              "type": "TblSoOrderDetail"
+            }
+          ]
+        },
+        "SODetailStatus_ID": {
+          "type": "integer"
+        },
+        "SODetailStatusText": {
+          "type": "string",
+          "length": 50
+        },
+        "Description": {
+          "type": "string",
+          "length": 255
+        },
+        "TblSoOrderDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoOrderDetail"
+          }
+        }
+      }
+    },
+    "TblSoOrderStatus": {
+      "x-table": "dbo.tblSO_OrderStatus",
+      "resource": "TblSoOrderStatuses",
+      "required": [
+        "SOStatus_ID"
+      ],
+      "properties": {
+        "SOStatus_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblSoOrderStatus",
+              "name": "TblSoSalesOrders",
+              "type": "TblSoSalesOrder"
+            }
+          ]
+        },
+        "SOStatus_ID": {
+          "type": "string",
+          "length": 20
+        },
+        "SOStatusText": {
+          "type": "string",
+          "length": 50
+        },
+        "Description": {
+          "type": "string",
+          "length": 255
+        },
+        "TblSoSalesOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoSalesOrder"
+          }
+        }
+      }
+    },
+    "TblSoSalesOrder": {
+      "x-table": "dbo.tblSO_SalesOrder",
+      "resource": "TblSoSalesOrders",
+      "required": [
+        "SO_ID"
+      ],
+      "properties": {
+        "SO_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblSoSalesOrder",
+              "name": "TblSoOrderDetails",
+              "type": "TblSoOrderDetail"
+            }
+          ]
+        },
+        "SO_ID": {
+          "type": "string",
+          "length": 15
+        },
+        "SODate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "TblGnAddressBook": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnAddressBook"
+        },
+        "CreatedBy_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_AddressBook",
+            "parentEntityType": "TblGnAddressBook",
+            "type": "TblGnAddressBook",
+            "principalKey": "AddressBook_SEQ",
+            "name": "TblGnAddressBook",
+            "textProperty": "AddressBook_ID",
+            "navigationProperty": "TblSoSalesOrders"
+          }
+        },
+        "TblSoOrderStatus": {
+          "type": "object",
+          "$ref": "#/definitions/TblSoOrderStatus"
+        },
+        "SOStatus_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblSO_OrderStatus",
+            "parentEntityType": "TblSoOrderStatus",
+            "type": "TblSoOrderStatus",
+            "principalKey": "SOStatus_SEQ",
+            "name": "TblSoOrderStatus",
+            "textProperty": "SOStatus_ID",
+            "navigationProperty": "TblSoSalesOrders"
+          }
+        },
+        "TblSoCustomer": {
+          "type": "object",
+          "$ref": "#/definitions/TblSoCustomer"
+        },
+        "Customer_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblSO_Customer",
+            "parentEntityType": "TblSoCustomer",
+            "type": "TblSoCustomer",
+            "principalKey": "Customer_SEQ",
+            "name": "TblSoCustomer",
+            "textProperty": "Customer_ID",
+            "navigationProperty": "TblSoSalesOrders"
+          }
+        },
+        "CustomerPONumber": {
+          "type": "string",
+          "length": 15
+        },
+        "CustomerPODate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "TblGnAddressBook1": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnAddressBook"
+        },
+        "BillTo_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_AddressBook",
+            "parentEntityType": "TblGnAddressBook",
+            "type": "TblGnAddressBook",
+            "principalKey": "AddressBook_SEQ",
+            "name": "TblGnAddressBook1",
+            "textProperty": "AddressBook_ID",
+            "navigationProperty": "TblSoSalesOrders1"
+          }
+        },
+        "TblGnAddressBook2": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnAddressBook"
+        },
+        "ShipTo_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_AddressBook",
+            "parentEntityType": "TblGnAddressBook",
+            "type": "TblGnAddressBook",
+            "principalKey": "AddressBook_SEQ",
+            "name": "TblGnAddressBook2",
+            "textProperty": "AddressBook_ID",
+            "navigationProperty": "TblSoSalesOrders2"
+          }
+        },
+        "Attention": {
+          "type": "string",
+          "length": 100
+        },
+        "TblGnShipVium": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnShipVium"
+        },
+        "ShipVia_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_ShipVia",
+            "parentEntityType": "TblGnShipVium",
+            "type": "TblGnShipVium",
+            "principalKey": "ShipVia_SEQ",
+            "name": "TblGnShipVium",
+            "textProperty": "ShipVia_ID",
+            "navigationProperty": "TblSoSalesOrders"
+          }
+        },
+        "ActualShipDate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "ExpectedShipDate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "Shipper_FK": {
+          "type": "integer"
+        },
+        "PaymentTerm_FK": {
+          "type": "integer"
+        },
+        "PaymentType_FK": {
+          "type": "integer"
+        },
+        "SalesPersion_FK": {
+          "type": "integer"
+        },
+        "Commission": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Pick_No": {
+          "type": "integer"
+        },
+        "Ship_No": {
+          "type": "integer"
+        },
+        "TaxYN": {
+          "type": "boolean"
+        },
+        "TaxtRate": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Subtotal": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Taxt_Amount": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Discount_Amt": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Freight": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Total_Order": {
+          "x-computed": true,
+          "type": "number",
+          "format": "decimal"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ChangeLong": {
+          "type": "string"
+        },
+        "Notes": {
+          "type": "string"
+        },
+        "LastUpdatedDate": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime"
+        },
+        "LastUpdatedBy_FK": {
+          "type": "integer"
+        },
+        "Inactive": {
+          "type": "boolean"
+        },
+        "Sequence": {
+          "type": "integer"
+        },
+        "TblSoOrderDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoOrderDetail"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/TblGnAddressBooks": {
+      "get": {
+        "operationId": "getTblGnAddressBooks",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnAddressBook"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnAddressBook",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnAddressBook",
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBook"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBook"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnAddressBookTypes": {
+      "get": {
+        "operationId": "getTblGnAddressBookTypes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnAddressBookType"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnAddressBookType",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnAddressBookType",
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBookType"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBookType"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnCities": {
+      "get": {
+        "operationId": "getTblGnCities",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnCity"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnCity",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnCity",
+            "schema": {
+              "$ref": "#/definitions/TblGnCity"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnCity"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnPaymentTerms": {
+      "get": {
+        "operationId": "getTblGnPaymentTerms",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnPaymentTerm"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnPaymentTerm",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnPaymentTerm",
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentTerm"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentTerm"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnPaymentTypes": {
+      "get": {
+        "operationId": "getTblGnPaymentTypes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnPaymentType"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnPaymentType",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnPaymentType",
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentType"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentType"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnShipVia": {
+      "get": {
+        "operationId": "getTblGnShipVia",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnShipVium"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnShipVium",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnShipVium",
+            "schema": {
+              "$ref": "#/definitions/TblGnShipVium"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnShipVium"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoCustomers": {
+      "get": {
+        "operationId": "getTblSoCustomers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblSoCustomer"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblSoCustomer",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoCustomer",
+            "schema": {
+              "$ref": "#/definitions/TblSoCustomer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblSoCustomer"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoOrderDetails": {
+      "get": {
+        "operationId": "getTblSoOrderDetails",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblSoOrderDetail"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblSoOrderDetail",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoOrderDetail",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetail"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetail"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoOrderDetailStatuses": {
+      "get": {
+        "operationId": "getTblSoOrderDetailStatuses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblSoOrderDetailStatus"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblSoOrderDetailStatus",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoOrderDetailStatus",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetailStatus"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetailStatus"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoOrderStatuses": {
+      "get": {
+        "operationId": "getTblSoOrderStatuses",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblSoOrderStatus"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblSoOrderStatus",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoOrderStatus",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderStatus"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderStatus"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoSalesOrders": {
+      "get": {
+        "operationId": "getTblSoSalesOrders",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblSoSalesOrder"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblSoSalesOrder",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoSalesOrder",
+            "schema": {
+              "$ref": "#/definitions/TblSoSalesOrder"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblSoSalesOrder"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnAddressBooks({AddressBook_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnAddressBook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AddressBook_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnAddressBookByAddressBook_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AddressBook_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBook"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnAddressBook",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AddressBook_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnAddressBook",
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBook"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnAddressBookTypes({AddressBookType_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnAddressBookType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AddressBookType_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnAddressBookTypeByAddressBookType_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AddressBookType_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBookType"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnAddressBookType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "AddressBookType_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnAddressBookType",
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBookType"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnCities({City_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnCity",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnCityByCity_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnCity"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnCity",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnCity",
+            "schema": {
+              "$ref": "#/definitions/TblGnCity"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnPaymentTerms({PaymentTerm_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnPaymentTerm",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "PaymentTerm_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnPaymentTermByPaymentTerm_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "PaymentTerm_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentTerm"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnPaymentTerm",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "PaymentTerm_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnPaymentTerm",
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentTerm"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnPaymentTypes({PaymentType_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnPaymentType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "PaymentType_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnPaymentTypeByPaymentType_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "PaymentType_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentType"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnPaymentType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "PaymentType_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnPaymentType",
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentType"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnShipVia({ShipVia_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnShipVium",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ShipVia_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnShipViumByShipVia_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ShipVia_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnShipVium"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnShipVium",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ShipVia_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnShipVium",
+            "schema": {
+              "$ref": "#/definitions/TblGnShipVium"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoCustomers({Customer_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblSoCustomer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Customer_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblSoCustomerByCustomer_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Customer_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblSoCustomer"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblSoCustomer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Customer_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblSoCustomer",
+            "schema": {
+              "$ref": "#/definitions/TblSoCustomer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoOrderDetails({SODetail_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblSoOrderDetail",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SODetail_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblSoOrderDetailBySODetail_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SODetail_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetail"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblSoOrderDetail",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SODetail_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblSoOrderDetail",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetail"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoOrderDetailStatuses({SODetailStatus_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblSoOrderDetailStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SODetailStatus_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblSoOrderDetailStatusBySODetailStatus_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SODetailStatus_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetailStatus"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblSoOrderDetailStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SODetailStatus_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblSoOrderDetailStatus",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetailStatus"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoOrderStatuses({SOStatus_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblSoOrderStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SOStatus_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblSoOrderStatusBySOStatus_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SOStatus_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderStatus"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblSoOrderStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SOStatus_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblSoOrderStatus",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderStatus"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblSoSalesOrders({SO_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblSoSalesOrder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SO_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblSoSalesOrderBySO_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SO_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblSoSalesOrder"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblSoSalesOrder",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "SO_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblSoSalesOrder",
+            "schema": {
+              "$ref": "#/definitions/TblSoSalesOrder"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/OtErp",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}

@@ -1,0 +1,117 @@
+﻿@page "/tbl-so-sales-orders"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.TblSoSalesOrdersComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="Tbl So Sales Orders">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton @ref="button0" @ref:suppressField Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenGrid @ref="grid0" @ref:suppressField AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getTblSoSalesOrdersResult)" TItem="TblSoSalesOrder" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="SO_SEQ" Title="SO SEQ" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="SO_ID" Title="SO ID" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="SODate" FormatString="{0:dd/mm/yy}" Title="SO Date" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="CreatedBy_FK" SortProperty="TblGnAddressBook.AddressBook_ID" FilterProperty="TblGnAddressBook.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
+              <Template Context="data">
+              @data.TblGnAddressBook?.AddressBook_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="SOStatus_FK" SortProperty="TblSoOrderStatus.SOStatus_ID" FilterProperty="TblSoOrderStatus.SOStatus_ID" Title="Tbl So Order Status" Type="string">
+              <Template Context="data">
+              @data.TblSoOrderStatus?.SOStatus_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Customer_FK" SortProperty="TblSoCustomer.Customer_ID" FilterProperty="TblSoCustomer.Customer_ID" Title="Tbl So Customer" Type="string">
+              <Template Context="data">
+              @data.TblSoCustomer?.Customer_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="CustomerPONumber" Title="Customer PO Number" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="CustomerPODate" FormatString="{0:dd/mm/yy}" Title="Customer PO Date" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="BillTo_FK" SortProperty="TblGnAddressBook1.AddressBook_ID" FilterProperty="TblGnAddressBook1.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
+              <Template Context="data">
+              @data.TblGnAddressBook1?.AddressBook_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="ShipTo_FK" SortProperty="TblGnAddressBook2.AddressBook_ID" FilterProperty="TblGnAddressBook2.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
+              <Template Context="data">
+              @data.TblGnAddressBook2?.AddressBook_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Attention" Title="Attention" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="ShipVia_FK" SortProperty="TblGnShipVium.ShipVia_ID" FilterProperty="TblGnShipVium.ShipVia_ID" Title="Tbl Gn Ship Vium" Type="string">
+              <Template Context="data">
+              @data.TblGnShipVium?.ShipVia_ID
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="ActualShipDate" FormatString="{0:dd/mm/yy}" Title="Actual Ship Date" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="ExpectedShipDate" FormatString="{0:dd/mm/yy}" Title="Expected Ship Date" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Shipper_FK" Title="Shipper FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="PaymentTerm_FK" Title="Payment Term FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="PaymentType_FK" Title="Payment Type FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="SalesPersion_FK" Title="Sales Persion FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="Commission" Title="Commission" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Pick_No" Title="Pick No" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Ship_No" Title="Ship No" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="TaxYN" Title="Tax YN" Type="boolean">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="TaxtRate" Title="Taxt Rate" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="Subtotal" Title="Subtotal" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="Taxt_Amount" Title="Taxt Amount" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="Discount_Amt" Title="Discount Amt" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="Freight" Title="Freight" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="decimal" Property="Total_Order" Title="Total Order" Type="number">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Description" Title="Description" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="ChangeLong" Title="Change Long" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Notes" Title="Notes" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="LastUpdatedDate" FormatString="{0:dd/mm/yy}" Title="Last Updated Date" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="LastUpdatedBy_FK" Title="Last Updated By FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Inactive" Title="Inactive" Type="boolean">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Sequence" Title="Sequence" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Filterable="false" Sortable="false" Bubble="false" Width="70px">
+              <Template Context="tblSoSalesOrder">
+                <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblSoSalesOrder))">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
