@@ -1,8 +1,6 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
           "components": [
@@ -53,124 +51,122 @@
           "type": "row"
         },
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Address Book Type Id",
                               "component": "AddressBookType_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "ID",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
-                              "type": "textbox",
                               "name": "AddressBookType_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Address Book Type Text",
                               "component": "AddressBookTypeText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Text",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
-                              "type": "textbox",
                               "name": "AddressBookTypeText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "buttonStyle": "primary"
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblgnaddressbooktype}",
                   "events": {
                     "submit": [
                       {
+                        "argType": "TblGnAddressBookType",
                         "error": [
                           {
                             "name": "canEdit",
@@ -198,24 +194,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblgnaddressbooktype}"
+                            "result": "${tblgnaddressbooktype}",
+                            "type": "close-popup"
                           }
                         ],
-                        "type": "invoke",
-                        "argType": "TblGnAddressBookType"
+                        "type": "invoke"
                       }
                     ]
                   },
-                  "data": "${tblgnaddressbooktype}",
-                  "visible": "${tblgnaddressbooktype != null && canEdit}",
-                  "itemType": "TblGnAddressBookType"
+                  "itemType": "TblGnAddressBookType",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblgnaddressbooktype != null && canEdit}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
@@ -227,6 +227,14 @@
         "valueType": "bool"
       },
       {
+        "error": [
+          {
+            "name": "canEdit",
+            "type": "set",
+            "value": "!(result.status == 400)",
+            "valueType": "bool"
+          }
+        ],
         "name": "OT_ERP.getTblGnAddressBookTypeByAddressBookType_SEQ",
         "parameters": [
           {
@@ -242,18 +250,10 @@
             "valueType": "TblGnAddressBookType"
           }
         ],
-        "error": [
-          {
-            "name": "canEdit",
-            "type": "set",
-            "value": "!(result.status == 400)",
-            "valueType": "bool"
-          }
-        ],
         "type": "invoke"
       }
     ]
   },
-  "name": "Edit Tbl Gn Address Book Type",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Sửa AddressBook Type"
 }

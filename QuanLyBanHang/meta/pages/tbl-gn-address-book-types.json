@@ -60,7 +60,7 @@
                             "value": "${event.AddressBookType_SEQ}"
                           }
                         ],
-                        "path": "edit-tbl-gn-address-book-type",
+                        "path": "sửa-address-book-type",
                         "type": "popup",
                         "argType": "TblGnAddressBookType",
                         "then": [

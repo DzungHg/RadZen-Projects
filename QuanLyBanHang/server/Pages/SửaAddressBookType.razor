@@ -1,6 +1,6 @@
-﻿@page "/edit-tbl-gn-address-book-type/{AddressBookType_SEQ}"
+﻿@page "/sửa-address-book-type"
 @layout MainLayout
-@inherits QuanLyBanHang.Pages.EditTblGnAddressBookTypeComponent
+@inherits QuanLyBanHang.Pages.SửaAddressBookTypeComponent
 
 @using Radzen
 @using Radzen.Blazor
@@ -19,11 +19,11 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbooktype)" Visible="@(tblgnaddressbooktype != null && canEdit)" TItem="TblGnAddressBookType" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbooktype)" TItem="TblGnAddressBookType" Visible="@(tblgnaddressbooktype != null && canEdit)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="Address Book Type Id" Component="AddressBookType_ID" style="width: 100%">
+                <RadzenLabel @ref="label2" @ref:suppressField Component="AddressBookType_ID" style="width: 100%" Text="ID">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -33,7 +33,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Text="Address Book Type Text" Component="AddressBookTypeText" style="width: 100%">
+                <RadzenLabel @ref="label3" @ref:suppressField Component="AddressBookTypeText" style="width: 100%" Text="Text">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -43,7 +43,7 @@
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button2" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="primary" ButtonType="submit" Icon="save" Text="Save">
                 </RadzenButton>
                 <RadzenButton @ref="button3" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>

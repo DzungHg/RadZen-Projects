@@ -47,7 +47,6 @@ F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDe
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\AddTblSoOrderStatus.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\AddTblSoSalesOrder.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\EditTblGnAddressBook.razor.g.cs
-F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\EditTblGnAddressBookType.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\EditTblGnCity.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\EditTblGnPaymentTerm.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\EditTblGnPaymentType.razor.g.cs
@@ -88,7 +87,6 @@ F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\P
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\AddTblSoOrderStatus.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\AddTblSoSalesOrder.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblGnAddressBook.razor.g.cs
-F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblGnAddressBookType.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblGnCity.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblGnPaymentTerm.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblGnPaymentType.razor.g.cs
@@ -128,3 +126,5 @@ F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDe
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\AddSoCustomer.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\ThemAddressbookType.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\ThemAddressbookType.razor.g.cs
+F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\SửaAddressBookType.razor.g.cs
+F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\SửaAddressBookType.razor.g.cs

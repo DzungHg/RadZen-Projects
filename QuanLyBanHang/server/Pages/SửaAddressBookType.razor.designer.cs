@@ -9,7 +9,7 @@ using QuanLyBanHang.Models.OtErp;
 
 namespace QuanLyBanHang.Pages
 {
-    public partial class EditTblGnAddressBookTypeComponent : ComponentBase
+    public partial class SửaAddressBookTypeComponent : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }
@@ -22,9 +22,6 @@ namespace QuanLyBanHang.Pages
         [Inject]
         protected OtErpService OtErp { get; set; }
 
-
-        [Parameter]
-        public string AddressBookType_SEQ { get; set; }
 
         protected RadzenContent content1;
 

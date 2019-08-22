@@ -71,7 +71,7 @@ namespace QuanLyBanHang.Pages
 
         protected async void Grid0RowSelect(TblGnAddressBookType args)
         {
-            var result = await DialogService.OpenAsync<EditTblGnAddressBookType>("Edit Tbl Gn Address Book Type", new Dictionary<string, object>() { {"AddressBookType_SEQ", $"{args.AddressBookType_SEQ}"} });
+            var result = await DialogService.OpenAsync<SửaAddressBookType>("Sửa AddressBook Type", new Dictionary<string, object>() { {"AddressBookType_SEQ", $"{args.AddressBookType_SEQ}"} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 
