@@ -28,7 +28,7 @@
                   "events": {
                     "click": [
                       {
-                        "path": "add-tbl-gn-address-book",
+                        "path": "thêm-liên-hệ",
                         "type": "popup",
                         "then": [
                           {

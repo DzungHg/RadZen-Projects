@@ -1,6 +1,6 @@
-﻿@page "/add-tbl-gn-address-book"
+﻿@page "/thêm-liên-hệ"
 @layout MainLayout
-@inherits QuanLyBanHang.Pages.AddTblGnAddressBookComponent
+@inherits QuanLyBanHang.Pages.ThemLienHệComponent
 
 @using Radzen
 @using Radzen.Blazor
@@ -9,33 +9,33 @@
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbook)" Visible="@(tblgnaddressbook != null)" TItem="TblGnAddressBook" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbook)" TItem="TblGnAddressBook" Visible="@(tblgnaddressbook != null)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" @ref:suppressField Text="Address Book Id" Component="AddressBook_ID" style="width: 100%">
+                <RadzenLabel @ref="label1" @ref:suppressField Component="AddressBook_ID" style="width: 100%" Text="ID">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenTextBox @ref="addressBookId" @ref:suppressField MaxLength="10" style="display: block; width: 100%" Name="AddressBook_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="addressBookIdRequiredValidator" @ref:suppressField Component="AddressBook_ID" Text="AddressBook_ID is required" style="position: absolute">
+                <RadzenRequiredValidator @ref="addressBookIdRequiredValidator" @ref:suppressField Component="AddressBook_ID" style="position: absolute" Text="AddressBook_ID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="Tbl Gn Address Book Type" Component="AddressBookType_FK" style="width: 100%">
+                <RadzenLabel @ref="label2" @ref:suppressField Component="AddressBookType_FK" style="width: 100%" Text="Loại AddressBook">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="addressBookTypeFk" @ref:suppressField Data="@(getTblGnAddressBookTypesResult)" TextProperty="AddressBookType_ID" ValueProperty="AddressBookType_SEQ" Placeholder="Choose TblGnAddressBookType" style="width: 100%" Name="AddressBookType_FK">
+                <RadzenDropDown @ref="addressBookTypeFk" @ref:suppressField Data="@(getTblGnAddressBookTypesResult)" Placeholder="Choose TblGnAddressBookType" style="width: 100%" TextProperty="AddressBookTypeText" ValueProperty="AddressBookType_SEQ" Name="AddressBookType_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Text="Last Name" Component="LastName" style="width: 100%">
+                <RadzenLabel @ref="label3" @ref:suppressField Component="LastName" style="width: 100%" Text="Họ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -45,7 +45,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label4" @ref:suppressField Text="First Name" Component="FirstName" style="width: 100%">
+                <RadzenLabel @ref="label4" @ref:suppressField Component="FirstName" style="width: 100%" Text="Tên">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -55,7 +55,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label5" @ref:suppressField Text="Gender" Component="Gender" style="width: 100%">
+                <RadzenLabel @ref="label5" @ref:suppressField Component="Gender" style="width: 100%" Text="Giới Tính">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -65,7 +65,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label6" @ref:suppressField Text="Dob" Component="DOB" style="width: 100%">
+                <RadzenLabel @ref="label6" @ref:suppressField Component="DOB" style="width: 100%" Text="Sinh Nhật">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -75,7 +75,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label7" @ref:suppressField Text="Origin" Component="Origin" style="width: 100%">
+                <RadzenLabel @ref="label7" @ref:suppressField Component="Origin" style="width: 100%" Text="Nguyên Quán">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -85,7 +85,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label8" @ref:suppressField Text="Id Number" Component="IDNumber" style="width: 100%">
+                <RadzenLabel @ref="label8" @ref:suppressField Component="IDNumber" style="width: 100%" Text="Số CMND/CC">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -95,7 +95,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label9" @ref:suppressField Text="Tax Id Number" Component="TaxIDNumber" style="width: 100%">
+                <RadzenLabel @ref="label9" @ref:suppressField Component="TaxIDNumber" style="width: 100%" Text="Mã Số TTNCN">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -105,7 +105,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label10" @ref:suppressField Text="Organization Name" Component="OrganizationName" style="width: 100%">
+                <RadzenLabel @ref="label10" @ref:suppressField Component="OrganizationName" style="width: 100%" Text="Tên Tổ Chức">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -115,7 +115,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label11" @ref:suppressField Text="Job Position" Component="JobPosition" style="width: 100%">
+                <RadzenLabel @ref="label11" @ref:suppressField Component="JobPosition" style="width: 100%" Text="Chức Vụ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -125,7 +125,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label12" @ref:suppressField Text="Address" Component="Address" style="width: 100%">
+                <RadzenLabel @ref="label12" @ref:suppressField Component="Address" style="width: 100%" Text="Địa Chỉ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -135,17 +135,17 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label13" @ref:suppressField Text="Tbl Gn City" Component="City_PK" style="width: 100%">
+                <RadzenLabel @ref="label13" @ref:suppressField Component="City_PK" style="width: 100%" Text="Thành Phố">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="cityPk" @ref:suppressField Data="@(getTblGnCitiesResult)" TextProperty="City_ID" ValueProperty="City_SEQ" Placeholder="Choose TblGnCity" style="width: 100%" Name="City_PK">
+                <RadzenDropDown @ref="cityPk" @ref:suppressField Data="@(getTblGnCitiesResult)" Placeholder="Choose TblGnCity" style="width: 100%" TextProperty="City_ID" ValueProperty="City_SEQ" Name="City_PK">
                 </RadzenDropDown>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                <RadzenButton @ref="button1" @ref:suppressField ButtonStyle="primary" ButtonType="submit" Icon="save" Text="Save">
                 </RadzenButton>
                 <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>

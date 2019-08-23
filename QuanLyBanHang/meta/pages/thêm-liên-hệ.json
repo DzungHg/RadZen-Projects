@@ -1,550 +1,546 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Address Book Id",
                               "component": "AddressBook_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "ID",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
-                              "type": "textbox",
                               "name": "AddressBook_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "AddressBook_IDRequiredValidator",
                               "component": "AddressBook_ID",
-                              "text": "AddressBook_ID is required",
+                              "name": "AddressBook_IDRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "AddressBook_ID is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Tbl Gn Address Book Type",
                               "component": "AddressBookType_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Loại AddressBook",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnAddressBookTypesResult}",
-                              "textProperty": "AddressBookType_ID",
-                              "valueProperty": "AddressBookType_SEQ",
-                              "placeholder": "Choose TblGnAddressBookType",
-                              "type": "dropdown",
                               "name": "AddressBookType_FK",
+                              "placeholder": "Choose TblGnAddressBookType",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "textProperty": "AddressBookTypeText",
+                              "type": "dropdown",
+                              "valueProperty": "AddressBookType_SEQ"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Name",
                               "component": "LastName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Họ",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "LastName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "First Name",
                               "component": "FirstName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tên",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "FirstName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Gender",
                               "component": "Gender",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Giới Tính",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "Gender",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Dob",
                               "component": "DOB",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Sinh Nhật",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "dd/mm/yy",
-                              "type": "datepicker",
                               "name": "DOB",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "type": "datepicker",
+                              "value": "DateTime.Now",
+                              "valueType": "DateTime?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Origin",
                               "component": "Origin",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Nguyên Quán",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "Origin",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Id Number",
                               "component": "IDNumber",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Số CMND/CC",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 20,
-                              "type": "textbox",
                               "name": "IDNumber",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Tax Id Number",
                               "component": "TaxIDNumber",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Mã Số TTNCN",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
-                              "type": "textbox",
                               "name": "TaxIDNumber",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Organization Name",
                               "component": "OrganizationName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tên Tổ Chức",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 100,
-                              "type": "textbox",
                               "name": "OrganizationName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Job Position",
                               "component": "JobPosition",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Chức Vụ",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "JobPosition",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Address",
                               "component": "Address",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Địa Chỉ",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 100,
-                              "type": "textbox",
                               "name": "Address",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Tbl Gn City",
                               "component": "City_PK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Thành Phố",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnCitiesResult}",
-                              "textProperty": "City_ID",
-                              "valueProperty": "City_SEQ",
-                              "placeholder": "Choose TblGnCity",
-                              "type": "dropdown",
                               "name": "City_PK",
+                              "placeholder": "Choose TblGnCity",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "textProperty": "City_ID",
+                              "type": "dropdown",
+                              "valueProperty": "City_SEQ"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "buttonStyle": "primary"
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblgnaddressbook}",
                   "events": {
                     "submit": [
                       {
+                        "argType": "TblGnAddressBook",
                         "error": [
                           {
                             "detail": "Unable to create new TblGnAddressBook!",
@@ -562,24 +558,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblgnaddressbook}"
+                            "result": "${tblgnaddressbook}",
+                            "type": "close-popup"
                           }
                         ],
-                        "type": "invoke",
-                        "argType": "TblGnAddressBook"
+                        "type": "invoke"
                       }
                     ]
                   },
-                  "data": "${tblgnaddressbook}",
-                  "visible": "${tblgnaddressbook != null}",
-                  "itemType": "TblGnAddressBook"
+                  "itemType": "TblGnAddressBook",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblgnaddressbook != null}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
@@ -618,6 +618,6 @@
       }
     ]
   },
-  "name": "Add Tbl Gn Address Book",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Thêm Liên Hệ"
 }

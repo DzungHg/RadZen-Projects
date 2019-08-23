@@ -23,6 +23,9 @@ namespace QuanLyBanHang.Pages
         protected OtErpService OtErp { get; set; }
 
 
+        [Parameter]
+        public string AddressBookType_SEQ { get; set; }
+
         protected RadzenContent content1;
 
         protected RadzenLabel closeLabel;
