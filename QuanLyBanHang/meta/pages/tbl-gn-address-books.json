@@ -28,7 +28,7 @@
                   "events": {
                     "click": [
                       {
-                        "path": "thêm-liên-hệ",
+                        "path": "add-address-book-item",
                         "type": "popup",
                         "then": [
                           {

@@ -9,7 +9,7 @@ using QuanLyBanHang.Models.OtErp;
 
 namespace QuanLyBanHang.Pages
 {
-    public partial class ThemAddressbookTypeComponent : ComponentBase
+    public partial class AddAddressbookTypeComponent : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }

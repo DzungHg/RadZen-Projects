@@ -1,0 +1,305 @@
+﻿@page "/thêm-khách-hàng"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.ThemKhachHangComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenTemplateForm @ref="templateForm0" @ref:suppressField Data="@(SoCustomer)" style="height: 797px; width: 887px">
+      <ChildContent>
+        <div class="row">
+          <div class="col-md-12 col-lg-1">
+            <RadzenLabel @ref="label0" @ref:suppressField Text="PK">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-1">
+            <RadzenNumeric @ref="numeric0" @ref:suppressField ReadOnly="true" style="width: 73px" Value="@(SoCustomer.Customer_SEQ)" Name="Numeric0" TItem="dynamic">
+            </RadzenNumeric>
+          </div>
+          <div class="col-md-2">
+            <RadzenLabel @ref="label1" @ref:suppressField Text="Mã khách hàng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox0" @ref:suppressField style="width: 107px" Name="Textbox0">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-3">
+            <RadzenLabel @ref="label2" @ref:suppressField Text="Danh bạ khách hàng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDropDown @ref="dropdown0" @ref:suppressField Name="Dropdown0">
+            </RadzenDropDown>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid rgb(33, 37, 41)" class="row">
+          <div class="col-md-2">
+            <RadzenLabel @ref="label3" @ref:suppressField Text="Họ và tên lót">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenTextBox @ref="textbox1" @ref:suppressField Name="Textbox1">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-1">
+            <RadzenLabel @ref="label4" @ref:suppressField Text="Tên">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox2" @ref:suppressField style="width: 122px" Name="Textbox2">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <RadzenLabel @ref="label5" @ref:suppressField Text="Mức tín dụng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox3" @ref:suppressField style="width: 141px" Name="Textbox3">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-4">
+            <RadzenLabel @ref="label6" @ref:suppressField style="width: 277px" Text="Ngày phê duyệt mức tín dụng gần nhất">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox4" @ref:suppressField Name="Textbox4">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <RadzenLabel @ref="label16" @ref:suppressField Text="Điều kiện thanh toán">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDropDown @ref="dropdown1" @ref:suppressField Name="Dropdown1">
+            </RadzenDropDown>
+          </div>
+          <div class="col-md-3">
+            <RadzenLabel @ref="label14" @ref:suppressField Text="Hình thức thanh toán">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDropDown @ref="dropdown2" @ref:suppressField Name="Dropdown2">
+            </RadzenDropDown>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <RadzenLabel @ref="label7" @ref:suppressField Text="% Chiết khấu">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox5" @ref:suppressField style="width: 138px" Name="Textbox5">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-2">
+            <div class="col-md-2">
+              <RadzenLabel @ref="label8" @ref:suppressField style="width: 122.671875px" Text="MDT Bán">
+              </RadzenLabel>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox6" @ref:suppressField Name="Textbox6">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div style="height: 43px" class="row">
+          <div class="col-md-4">
+            <RadzenLabel @ref="label9" @ref:suppressField Text="Tiền hàng bán trả lại hiện hành">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox7" @ref:suppressField style="width: 138px" Name="Textbox7">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <RadzenLabel @ref="label10" @ref:suppressField style="width: 144px" Text="Doanh thu xổi YTD">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox8" @ref:suppressField style="width: 133px" Name="Textbox8">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-4">
+            <RadzenLabel @ref="label11" @ref:suppressField Text="Tiền hàng bán trả lại YTD">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox9" @ref:suppressField Name="Textbox9">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <RadzenLabel @ref="label12" @ref:suppressField Text="Giá phí hàng bán YTD">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox10" @ref:suppressField style="width: 138px" Name="Textbox10">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div style="height: 43px" class="row">
+          <div class="col-md-3">
+            <RadzenLabel @ref="label13" @ref:suppressField Text="Doanh thu xổi năm trước LYR">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox11" @ref:suppressField style="width: 138px" Name="Textbox11">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-4">
+            <RadzenLabel @ref="label18" @ref:suppressField Text="Giá phí hàng bán LYR">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox14" @ref:suppressField Name="Textbox14">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid rgb(33, 37, 41)" class="row">
+          <div class="col-md-4">
+            <RadzenLabel @ref="label17" @ref:suppressField Text="Doanh thu lần chót">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox13" @ref:suppressField style="width: 138px" Name="Textbox13">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <RadzenLabel @ref="label19" @ref:suppressField Text="% hoa hồng nhân viên bán hàng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox12" @ref:suppressField style="width: 107px" Name="Textbox12">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-3">
+            <RadzenLabel @ref="label20" @ref:suppressField Text="Danh bạ NV bán hàng">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDropDown @ref="dropdown3" @ref:suppressField Name="Dropdown3">
+            </RadzenDropDown>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid rgb(33, 37, 41); height: 55px" class="row">
+          <div class="col-md-4">
+            <RadzenLabel @ref="label15" @ref:suppressField Text="MTD Kế hoạch người bán">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox15" @ref:suppressField style="width: 107px" Name="Textbox15">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-3">
+            <RadzenLabel @ref="label21" @ref:suppressField Text="MTD Kế hoạch người bán">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox16" @ref:suppressField style="width: 107px" Name="Textbox16">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div style="height: 51px" class="row">
+          <div class="col-md-1">
+            <RadzenCheckBox @ref="checkbox0" @ref:suppressField Name="Checkbox0">
+            </RadzenCheckBox>
+          </div>
+          <div class="col-md-2">
+            <RadzenLabel @ref="label22" @ref:suppressField Text="Tính lãi?">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-1">
+            <RadzenCheckBox @ref="checkbox1" @ref:suppressField Name="Checkbox1">
+            </RadzenCheckBox>
+          </div>
+          <div class="col-md-2">
+            <RadzenLabel @ref="label23" @ref:suppressField Text="Liệt kê công nợ?">
+            </RadzenLabel>
+          </div>
+        </div>
+        <div style="border: 1px solid rgb(33, 37, 41); height: 55px" class="row">
+          <div class="col-md-2">
+            <RadzenLabel @ref="label25" @ref:suppressField Text="Tuổi nợ 30">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox18" @ref:suppressField style="width: 107px" Name="Textbox18">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-2">
+            <RadzenLabel @ref="label24" @ref:suppressField Text="Tuổi nợ 60">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox17" @ref:suppressField style="width: 107px" Name="Textbox17">
+            </RadzenTextBox>
+          </div>
+          <div class="col-md-2">
+            <RadzenLabel @ref="label26" @ref:suppressField Text="Tuổi nợ 90">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-2">
+            <RadzenTextBox @ref="textbox19" @ref:suppressField style="width: 107px" Name="Textbox19">
+            </RadzenTextBox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <RadzenLabel @ref="label27" @ref:suppressField Text="Ngày nhật tu gần nhất">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDatePicker @ref="datepicker0" @ref:suppressField Name="Datepicker0">
+            </RadzenDatePicker>
+          </div>
+          <div class="col-md-3">
+            <RadzenLabel @ref="label28" @ref:suppressField Text="Người nhật tu gần nhất">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-3">
+            <RadzenDropDown @ref="dropdown4" @ref:suppressField Name="Dropdown4">
+            </RadzenDropDown>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid rgb(33, 37, 41); height: 74px" class="row">
+          <div class="col-md-2">
+            <RadzenLabel @ref="label29" @ref:suppressField Text="Ghi chú">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-4">
+            <RadzenTextArea @ref="textarea0" @ref:suppressField style="width: 263px" Name="Textarea0">
+            </RadzenTextArea>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+            <RadzenCheckBox @ref="checkbox2" @ref:suppressField Name="Checkbox2">
+            </RadzenCheckBox>
+            <RadzenLabel @ref="label30" @ref:suppressField Text="Không dùng nữa">
+            </RadzenLabel>
+          </div>
+        </div>
+        <div class="row">
+          <div class="offset-sm-3 col-md-9">
+            <RadzenButton @ref="button0" @ref:suppressField ButtonType="submit" Icon="save" Text="Save">
+            </RadzenButton>
+          </div>
+        </div>
+      </ChildContent>
+    </RadzenTemplateForm>
+  </ChildContent>
+</RadzenContent>

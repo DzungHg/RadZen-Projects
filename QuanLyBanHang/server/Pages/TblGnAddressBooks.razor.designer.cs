@@ -63,7 +63,7 @@ namespace QuanLyBanHang.Pages
 
         protected async void Button0Click(UIMouseEventArgs args)
         {
-            var result = await DialogService.OpenAsync<ThemLienHệ>("Thêm Liên Hệ", null);
+            var result = await DialogService.OpenAsync<AddAddressBookItem>("Add AddressBook Item", null);
               grid0.Reload();
 
               await InvokeAsync(() => { StateHasChanged(); });

@@ -25,10 +25,10 @@
   ],
   "pages": [
     "Tbl Gn Address Books",
-    "Thêm Liên Hệ",
+    "Add AddressBook Item",
     "Edit Tbl Gn Address Book",
     "Tbl Gn Address Book Types",
-    "Thêm Addressbook Type",
+    "Add Addressbook Type",
     "Sửa AddressBook Type",
     "Tbl Gn Cities",
     "Add Tbl Gn City",
@@ -57,7 +57,7 @@
     "Tbl So Sales Orders",
     "Add Tbl So Sales Order",
     "Edit Tbl So Sales Order",
-    "Add_SOCustomer"
+    "Thêm Khách Hàng"
   ],
   "serverLang": "cs",
   "serverProject": true,

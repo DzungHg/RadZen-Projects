@@ -63,7 +63,7 @@ namespace QuanLyBanHang.Pages
 
         protected async void Button0Click(UIMouseEventArgs args)
         {
-            var result = await DialogService.OpenAsync<AddTblSoCustomer>("Add Tbl So Customer", null);
+            var result = await DialogService.OpenAsync<ThemKhachHang>($"Thêm Khách Hàng", null, new DialogOptions(){ Width = $"{940}px" });
               grid0.Reload();
 
               await InvokeAsync(() => { StateHasChanged(); });

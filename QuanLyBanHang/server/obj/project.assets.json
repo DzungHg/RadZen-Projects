@@ -1789,23 +1789,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dzung\\.nuget\\packages\\": {},
+    "C:\\Users\\BK\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub02\\RadZen-Projects\\QuanLyBanHang\\server\\QuanLyBanHang.csproj",
+      "projectUniqueName": "F:\\GitHub02\\RadZen-Projects\\QuanLyBanHang\\server\\QuanLyBanHang.csproj",
       "projectName": "QuanLyBanHang",
-      "projectPath": "D:\\GitHub02\\RadZen-Projects\\QuanLyBanHang\\server\\QuanLyBanHang.csproj",
-      "packagesPath": "C:\\Users\\Dzung\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub02\\RadZen-Projects\\QuanLyBanHang\\server\\obj\\",
+      "projectPath": "F:\\GitHub02\\RadZen-Projects\\QuanLyBanHang\\server\\QuanLyBanHang.csproj",
+      "packagesPath": "C:\\Users\\BK\\.nuget\\packages\\",
+      "outputPath": "F:\\GitHub02\\RadZen-Projects\\QuanLyBanHang\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dzung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1813,8 +1813,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.dotvvm.com/nuget/v3/index.json": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.0": {

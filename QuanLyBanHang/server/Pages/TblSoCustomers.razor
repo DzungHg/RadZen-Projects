@@ -23,21 +23,21 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="FirstName" Title="First Name" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="CustomerAdressBook_FK" SortProperty="TblGnAddressBook.AddressBook_ID" FilterProperty="TblGnAddressBook.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
+            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" FilterProperty="TblGnAddressBook.AddressBook_ID" Property="CustomerAdressBook_FK" SortProperty="TblGnAddressBook.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
               <Template Context="data">
               @data.TblGnAddressBook?.AddressBook_ID
               </Template>
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Format="decimal" Property="CreditLimit" Title="Credit Limit" Type="number">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Format="date-time" Property="LastRevisedCreditLimitDate" FormatString="{0:dd/mm/yy}" Title="Last Revised Credit Limit Date" Type="string">
+            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Format="date-time" FormatString="{0:dd/mm/yy}" Property="LastRevisedCreditLimitDate" Title="Last Revised Credit Limit Date" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="PaymentTerm_FK" SortProperty="TblGnPaymentTerm.PaymentTermText" FilterProperty="TblGnPaymentTerm.PaymentTermText" Title="Tbl Gn Payment Term" Type="string">
+            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" FilterProperty="TblGnPaymentTerm.PaymentTermText" Property="PaymentTerm_FK" SortProperty="TblGnPaymentTerm.PaymentTermText" Title="Tbl Gn Payment Term" Type="string">
               <Template Context="data">
               @data.TblGnPaymentTerm?.PaymentTermText
               </Template>
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="PaymentType_FK" SortProperty="TblGnPaymentType.PaymentTypeText" FilterProperty="TblGnPaymentType.PaymentTypeText" Title="Tbl Gn Payment Type" Type="string">
+            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" FilterProperty="TblGnPaymentType.PaymentTypeText" Property="PaymentType_FK" SortProperty="TblGnPaymentType.PaymentTypeText" Title="Tbl Gn Payment Type" Type="string">
               <Template Context="data">
               @data.TblGnPaymentType?.PaymentTypeText
               </Template>
@@ -80,13 +80,13 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="Notes" Title="Notes" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Format="date-time" Property="LastUpdatedDate" FormatString="{0:dd/mm/yy}" Title="Last Updated Date" Type="string">
+            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Format="date-time" FormatString="{0:dd/mm/yy}" Property="LastUpdatedDate" Title="Last Updated Date" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="LastUdpatedBy" Title="Last Udpated By" Type="integer">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Property="Inactive" Title="Inactive" Type="boolean">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Filterable="false" Sortable="false" Bubble="false" Width="70px">
+            <RadzenGridColumn TItem="TblSoCustomer" Context="tblSoCustomer" Bubble="false" Filterable="false" Sortable="false" Width="70px">
               <Template Context="tblSoCustomer">
                 <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblSoCustomer))">
                 </RadzenButton>

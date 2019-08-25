@@ -28,7 +28,7 @@
                   "events": {
                     "click": [
                       {
-                        "path": "thêm-addressbook-type",
+                        "path": "add-addressbook-type",
                         "type": "popup",
                         "then": [
                           {

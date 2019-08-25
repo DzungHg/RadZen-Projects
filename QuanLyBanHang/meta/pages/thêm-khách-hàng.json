@@ -1,0 +1,997 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "class": "col-md-12 col-lg-1",
+                  "components": [
+                    {
+                      "name": "label0",
+                      "text": "PK",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-1",
+                  "components": [
+                    {
+                      "name": "numeric0",
+                      "readOnly": true,
+                      "style": {
+                        "width": "73px"
+                      },
+                      "type": "numeric",
+                      "value": "${SoCustomer.Customer_SEQ}"
+                    }
+                  ],
+                  "name": "col2",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label1",
+                      "text": "Mã khách hàng",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col3",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox0",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col4",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label2",
+                      "text": "Danh bạ khách hàng",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col5",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "dropdown0",
+                      "type": "dropdown"
+                    }
+                  ],
+                  "name": "col6",
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label3",
+                      "text": "Họ và tên lót",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col7",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "textbox1",
+                      "placeholder": "",
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col8",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-1",
+                  "components": [
+                    {
+                      "name": "label4",
+                      "text": "Tên",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col9",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox2",
+                      "placeholder": "",
+                      "style": {
+                        "width": "122px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col10",
+                  "type": "col"
+                }
+              ],
+              "name": "row2",
+              "style": {
+                "borderBottom": "1px solid rgb(33, 37, 41)"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label5",
+                      "text": "Mức tín dụng",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col11",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox3",
+                      "placeholder": "",
+                      "style": {
+                        "width": "141px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col12",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label6",
+                      "style": {
+                        "width": "277px"
+                      },
+                      "text": "Ngày phê duyệt mức tín dụng gần nhất",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col13",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox4",
+                      "placeholder": "",
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col14",
+                  "type": "col"
+                }
+              ],
+              "name": "row3",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label16",
+                      "text": "Điều kiện thanh toán",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col34",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "dropdown1",
+                      "type": "dropdown"
+                    }
+                  ],
+                  "name": "col35",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label14",
+                      "text": "Hình thức thanh toán",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col30",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "dropdown2",
+                      "type": "dropdown"
+                    }
+                  ],
+                  "name": "col31",
+                  "type": "col"
+                }
+              ],
+              "name": "row9",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label7",
+                      "text": "% Chiết khấu",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col15",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox5",
+                      "style": {
+                        "width": "138px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col16",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "class": "col-md-2",
+                      "components": [
+                        {
+                          "name": "label8",
+                          "style": {
+                            "width": "122.671875px"
+                          },
+                          "text": "MDT Bán",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col19",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "col17",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox6",
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col18",
+                  "type": "col"
+                }
+              ],
+              "name": "row4",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label9",
+                      "text": "Tiền hàng bán trả lại hiện hành",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col20",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox7",
+                      "style": {
+                        "width": "138px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col21",
+                  "type": "col"
+                }
+              ],
+              "name": "row5",
+              "style": {
+                "height": "43px"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label10",
+                      "style": {
+                        "width": "144px"
+                      },
+                      "text": "Doanh thu xổi YTD",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col22",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox8",
+                      "style": {
+                        "width": "133px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col23",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label11",
+                      "text": "Tiền hàng bán trả lại YTD",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col24",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox9",
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col25",
+                  "type": "col"
+                }
+              ],
+              "name": "row6",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label12",
+                      "text": "Giá phí hàng bán YTD",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col26",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox10",
+                      "style": {
+                        "width": "138px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col27",
+                  "type": "col"
+                }
+              ],
+              "name": "row7",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label13",
+                      "text": "Doanh thu xổi năm trước LYR",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col28",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox11",
+                      "style": {
+                        "width": "138px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col29",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label18",
+                      "text": "Giá phí hàng bán LYR",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col38",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox14",
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col39",
+                  "type": "col"
+                }
+              ],
+              "name": "row8",
+              "style": {
+                "height": "43px"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label17",
+                      "text": "Doanh thu lần chót",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col36",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox13",
+                      "style": {
+                        "width": "138px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col37",
+                  "type": "col"
+                }
+              ],
+              "name": "row10",
+              "style": {
+                "borderBottom": "1px solid rgb(33, 37, 41)"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label19",
+                      "text": "% hoa hồng nhân viên bán hàng",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col40",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox12",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col41",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label20",
+                      "text": "Danh bạ NV bán hàng",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col42",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "dropdown3",
+                      "type": "dropdown"
+                    }
+                  ],
+                  "name": "col43",
+                  "type": "col"
+                }
+              ],
+              "name": "row11",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "label15",
+                      "text": "MTD Kế hoạch người bán",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col32",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox15",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col33",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label21",
+                      "text": "MTD Kế hoạch người bán",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col44",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox16",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col45",
+                  "type": "col"
+                }
+              ],
+              "name": "row12",
+              "style": {
+                "borderBottom": "1px solid rgb(33, 37, 41)",
+                "height": "55px"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-1",
+                  "components": [
+                    {
+                      "name": "checkbox0",
+                      "type": "checkbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col46",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label22",
+                      "text": "Tính lãi?",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col47",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "name": "col50",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-1",
+                  "components": [
+                    {
+                      "name": "checkbox1",
+                      "type": "checkbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col48",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label23",
+                      "text": "Liệt kê công nợ?",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col49",
+                  "type": "col"
+                }
+              ],
+              "name": "row13",
+              "style": {
+                "height": "51px"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label25",
+                      "text": "Tuổi nợ 30",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col52",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox18",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col53",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label24",
+                      "text": "Tuổi nợ 60",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col51",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox17",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col54",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label26",
+                      "text": "Tuổi nợ 90",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col55",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "textbox19",
+                      "style": {
+                        "width": "107px"
+                      },
+                      "type": "textbox",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col56",
+                  "type": "col"
+                }
+              ],
+              "name": "row15",
+              "style": {
+                "border": "1px solid rgb(33, 37, 41)",
+                "height": "55px"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label27",
+                      "text": "Ngày nhật tu gần nhất",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col57",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "datepicker0",
+                      "type": "datepicker"
+                    }
+                  ],
+                  "name": "col58",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "label28",
+                      "text": "Người nhật tu gần nhất",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col59",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-3",
+                  "components": [
+                    {
+                      "name": "dropdown4",
+                      "type": "dropdown"
+                    }
+                  ],
+                  "name": "col60",
+                  "type": "col"
+                }
+              ],
+              "name": "row14",
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "label29",
+                      "text": "Ghi chú",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col61",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-4",
+                  "components": [
+                    {
+                      "name": "textarea0",
+                      "style": {
+                        "width": "263px"
+                      },
+                      "type": "textarea",
+                      "value": ""
+                    }
+                  ],
+                  "name": "col62",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "name": "col63",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-2",
+                  "components": [
+                    {
+                      "name": "checkbox2",
+                      "type": "checkbox",
+                      "value": ""
+                    },
+                    {
+                      "name": "label30",
+                      "text": "Không dùng nữa",
+                      "type": "label"
+                    }
+                  ],
+                  "name": "col64",
+                  "type": "col"
+                }
+              ],
+              "name": "row16",
+              "style": {
+                "borderBottom": "1px solid rgb(33, 37, 41)",
+                "height": "74px"
+              },
+              "type": "row"
+            },
+            {
+              "components": [
+                {
+                  "class": "offset-sm-3 col-md-9",
+                  "components": [
+                    {
+                      "buttonType": "submit",
+                      "icon": "save",
+                      "name": "button0",
+                      "text": "Save",
+                      "type": "button"
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                }
+              ],
+              "name": "row1",
+              "type": "row"
+            }
+          ],
+          "data": "${SoCustomer}",
+          "name": "templateForm0",
+          "style": {
+            "height": "797px",
+            "width": "887px"
+          },
+          "type": "template-form"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "OT_ERP.getTblSoCustomers",
+        "parameters": [],
+        "type": "invoke"
+      },
+      {
+        "name": "SoCustomer",
+        "type": "set",
+        "value": "new TblSoCustomer()",
+        "valueType": "TblSoCustomer"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Thêm Khách Hàng"
+}
