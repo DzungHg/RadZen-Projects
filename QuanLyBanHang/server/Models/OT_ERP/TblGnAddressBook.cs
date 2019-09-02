@@ -51,11 +51,14 @@ namespace QuanLyBanHang.Models.OtErp
       get;
       set;
     }
-    public string Gender
+    public int? Gender_FK
     {
       get;
       set;
     }
+
+    [ForeignKey("Gender_FK")]
+    public TblGnGender TblGnGender { get; set; }
     public DateTime? DOB
     {
       get;
@@ -91,13 +94,13 @@ namespace QuanLyBanHang.Models.OtErp
       get;
       set;
     }
-    public int? City_PK
+    public int? City_FK
     {
       get;
       set;
     }
 
-    [ForeignKey("City_PK")]
+    [ForeignKey("City_FK")]
     public TblGnCity TblGnCity { get; set; }
   }
 }

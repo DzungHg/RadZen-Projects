@@ -28,7 +28,7 @@
                   "events": {
                     "click": [
                       {
-                        "path": "add-address-book-item",
+                        "path": "add-tbl-gn-address-book",
                         "type": "popup",
                         "then": [
                           {
@@ -103,14 +103,17 @@
                       "type": "string"
                     },
                     {
-                      "property": "Gender",
-                      "title": "Gender",
+                      "property": "Gender_FK",
+                      "sortProperty": "TblGnGender.Gender_ID",
+                      "filterProperty": "TblGnGender.Gender_ID",
+                      "template": "${data.TblGnGender?.Gender_ID}",
+                      "title": "Tbl Gn Gender",
                       "type": "string"
                     },
                     {
                       "format": "date-time",
                       "property": "DOB",
-                      "formatString": "{0:dd/mm/yy}",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "DOB",
                       "type": "string"
                     },
@@ -145,7 +148,7 @@
                       "type": "string"
                     },
                     {
-                      "property": "City_PK",
+                      "property": "City_FK",
                       "sortProperty": "TblGnCity.City_ID",
                       "filterProperty": "TblGnCity.City_ID",
                       "template": "${data.TblGnCity?.City_ID}",

@@ -29,15 +29,15 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label1;
 
-        protected RadzenTextBox paymentTypeText;
-
-        protected RadzenRequiredValidator paymentTypeTextRequiredValidator;
-
-        protected RadzenLabel label2;
-
         protected RadzenTextBox paymentTypeId;
 
         protected RadzenRequiredValidator paymentTypeIdRequiredValidator;
+
+        protected RadzenLabel label2;
+
+        protected RadzenTextBox paymentTypeText;
+
+        protected RadzenRequiredValidator paymentTypeTextRequiredValidator;
 
         protected RadzenButton button1;
 
@@ -72,8 +72,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnPaymentType args)
         {
-            var otErpCreateTblGnPaymentTypeResult = await OtErp.CreateTblGnPaymentType(tblgnpaymenttype);
-            DialogService.Close(tblgnpaymenttype);
+            try
+            {
+                var otErpCreateTblGnPaymentTypeResult = await OtErp.CreateTblGnPaymentType(tblgnpaymenttype);
+                DialogService.Close(tblgnpaymenttype);
+            }
+            catch (Exception otErpCreateTblGnPaymentTypeException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnPaymentType!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

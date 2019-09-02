@@ -93,8 +93,15 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblSoOrderDetailStatusBySoDetailStatusSeqResult = await OtErp.GetTblSoOrderDetailStatusBySoDetailStatusSeq(int.Parse(SODetailStatus_SEQ));
-            tblsoorderdetailstatus = otErpGetTblSoOrderDetailStatusBySoDetailStatusSeqResult;
+            try
+            {
+                var otErpGetTblSoOrderDetailStatusBySoDetailStatusSeqResult = await OtErp.GetTblSoOrderDetailStatusBySoDetailStatusSeq(int.Parse(SODetailStatus_SEQ));
+                tblsoorderdetailstatus = otErpGetTblSoOrderDetailStatusBySoDetailStatusSeqResult;
+            }
+            catch (Exception otErpGetTblSoOrderDetailStatusBySoDetailStatusSeqException)
+            {
+
+            }
         }
 
         protected async void CloseButtonClick(UIMouseEventArgs args)
@@ -104,8 +111,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblSoOrderDetailStatus args)
         {
-            var otErpUpdateTblSoOrderDetailStatusResult = await OtErp.UpdateTblSoOrderDetailStatus(int.Parse(SODetailStatus_SEQ), tblsoorderdetailstatus);
-            DialogService.Close(tblsoorderdetailstatus);
+            try
+            {
+                var otErpUpdateTblSoOrderDetailStatusResult = await OtErp.UpdateTblSoOrderDetailStatus(int.Parse(SODetailStatus_SEQ), tblsoorderdetailstatus);
+                DialogService.Close(tblsoorderdetailstatus);
+            }
+            catch (Exception otErpUpdateTblSoOrderDetailStatusException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblSoOrderDetailStatus" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

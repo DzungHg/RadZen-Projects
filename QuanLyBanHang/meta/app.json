@@ -21,7 +21,8 @@
     "Tbl So Order Details",
     "Tbl So Order Detail Statuses",
     "Tbl So Order Statuses",
-    "Tbl So Sales Orders"
+    "Tbl So Sales Orders",
+    "Tbl Gn Genders"
   ],
   "pages": [
     "Tbl Gn Address Books",
@@ -29,7 +30,7 @@
     "Edit Tbl Gn Address Book",
     "Tbl Gn Address Book Types",
     "Add Addressbook Type",
-    "Sửa AddressBook Type",
+    "Edit AddressBook Type",
     "Tbl Gn Cities",
     "Add Tbl Gn City",
     "Edit Tbl Gn City",
@@ -57,7 +58,13 @@
     "Tbl So Sales Orders",
     "Add Tbl So Sales Order",
     "Edit Tbl So Sales Order",
-    "Thêm Khách Hàng"
+    "Add Customer",
+    "View Customer Brief",
+    "Add Tbl Gn Address Book",
+    "Add Tbl Gn Address Book Type",
+    "Tbl Gn Genders",
+    "Add Tbl Gn Gender",
+    "Edit Tbl Gn Gender"
   ],
   "serverLang": "cs",
   "serverProject": true,

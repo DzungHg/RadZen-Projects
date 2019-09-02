@@ -80,13 +80,13 @@
                       "type": "integer"
                     },
                     {
-                      "property": "PaymentTypeText",
-                      "title": "Payment Type Text",
+                      "property": "PaymentType_ID",
+                      "title": "Payment Type ID",
                       "type": "string"
                     },
                     {
-                      "property": "PaymentType_ID",
-                      "title": "Payment Type ID",
+                      "property": "PaymentTypeText",
+                      "title": "Payment Type Text",
                       "type": "string"
                     },
                     {

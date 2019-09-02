@@ -36,15 +36,15 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label2;
 
-        protected RadzenTextBox paymentTypeText;
-
-        protected RadzenRequiredValidator paymentTypeTextRequiredValidator;
-
-        protected RadzenLabel label3;
-
         protected RadzenTextBox paymentTypeId;
 
         protected RadzenRequiredValidator paymentTypeIdRequiredValidator;
+
+        protected RadzenLabel label3;
+
+        protected RadzenTextBox paymentTypeText;
+
+        protected RadzenRequiredValidator paymentTypeTextRequiredValidator;
 
         protected RadzenButton button2;
 
@@ -93,8 +93,15 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblGnPaymentTypeByPaymentTypeSeqResult = await OtErp.GetTblGnPaymentTypeByPaymentTypeSeq(int.Parse(PaymentType_SEQ));
-            tblgnpaymenttype = otErpGetTblGnPaymentTypeByPaymentTypeSeqResult;
+            try
+            {
+                var otErpGetTblGnPaymentTypeByPaymentTypeSeqResult = await OtErp.GetTblGnPaymentTypeByPaymentTypeSeq(int.Parse(PaymentType_SEQ));
+                tblgnpaymenttype = otErpGetTblGnPaymentTypeByPaymentTypeSeqResult;
+            }
+            catch (Exception otErpGetTblGnPaymentTypeByPaymentTypeSeqException)
+            {
+
+            }
         }
 
         protected async void CloseButtonClick(UIMouseEventArgs args)
@@ -104,8 +111,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnPaymentType args)
         {
-            var otErpUpdateTblGnPaymentTypeResult = await OtErp.UpdateTblGnPaymentType(int.Parse(PaymentType_SEQ), tblgnpaymenttype);
-            DialogService.Close(tblgnpaymenttype);
+            try
+            {
+                var otErpUpdateTblGnPaymentTypeResult = await OtErp.UpdateTblGnPaymentType(int.Parse(PaymentType_SEQ), tblgnpaymenttype);
+                DialogService.Close(tblgnpaymenttype);
+            }
+            catch (Exception otErpUpdateTblGnPaymentTypeException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblGnPaymentType" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

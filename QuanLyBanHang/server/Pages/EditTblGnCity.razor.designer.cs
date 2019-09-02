@@ -93,8 +93,15 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblGnCityByCitySeqResult = await OtErp.GetTblGnCityByCitySeq(int.Parse(City_SEQ));
-            tblgncity = otErpGetTblGnCityByCitySeqResult;
+            try
+            {
+                var otErpGetTblGnCityByCitySeqResult = await OtErp.GetTblGnCityByCitySeq(int.Parse(City_SEQ));
+                tblgncity = otErpGetTblGnCityByCitySeqResult;
+            }
+            catch (Exception otErpGetTblGnCityByCitySeqException)
+            {
+
+            }
         }
 
         protected async void CloseButtonClick(UIMouseEventArgs args)
@@ -104,8 +111,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnCity args)
         {
-            var otErpUpdateTblGnCityResult = await OtErp.UpdateTblGnCity(int.Parse(City_SEQ), tblgncity);
-            DialogService.Close(tblgncity);
+            try
+            {
+                var otErpUpdateTblGnCityResult = await OtErp.UpdateTblGnCity(int.Parse(City_SEQ), tblgncity);
+                DialogService.Close(tblgncity);
+            }
+            catch (Exception otErpUpdateTblGnCityException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblGnCity" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

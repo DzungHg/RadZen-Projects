@@ -77,10 +77,17 @@ namespace QuanLyBanHang.Pages
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblGnCity data)
         {
-            var otErpDeleteTblGnCityResult = await OtErp.DeleteTblGnCity(data.City_SEQ);
-            if (otErpDeleteTblGnCityResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblGnCityResult = await OtErp.DeleteTblGnCity(data.City_SEQ);
+                if (otErpDeleteTblGnCityResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblGnCityException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblGnCity" });
+            }
         }
     }
 }

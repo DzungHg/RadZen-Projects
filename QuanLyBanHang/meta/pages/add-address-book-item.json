@@ -189,13 +189,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "maxLength": 50,
-                              "name": "Gender",
-                              "style": {
-                                "width": "100%"
-                              },
-                              "type": "textbox",
-                              "valueType": "string"
+                              "allowFiltering": false,
+                              "data": "${GendersResult}",
+                              "name": "Gender_FK",
+                              "placeholder": "Chọn giới tính",
+                              "template": "",
+                              "textProperty": "Gender",
+                              "type": "dropdown",
+                              "valueProperty": "Gender_SEQ"
                             }
                           ],
                           "type": "col"
@@ -492,7 +493,7 @@
                               "style": {
                                 "width": "100%"
                               },
-                              "textProperty": "City_ID",
+                              "textProperty": "CityName",
                               "type": "dropdown",
                               "valueProperty": "City_SEQ"
                             }
@@ -593,6 +594,18 @@
             "type": "set",
             "value": "${result.value}",
             "valueType": "IEnumerable<TblGnAddressBookType>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "OT_ERP.getTblGnGenders",
+        "then": [
+          {
+            "name": "GendersResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<TblGnGender>"
           }
         ],
         "type": "invoke"

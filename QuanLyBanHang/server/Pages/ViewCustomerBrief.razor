@@ -1,0 +1,31 @@
+﻿@page "/view-customer-brief"
+@layout MainLayout
+@inherits QuanLyBanHang.Pages.ViewCustomerBriefComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using QuanLyBanHang.Models.OtErp
+<RadzenContent @ref="content1" @ref:suppressField Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="View Customer Brief">
+    </RadzenHeading>
+    <div class="col-md-12">
+      <RadzenButton @ref="button0" @ref:suppressField Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+      </RadzenButton>
+    </div>
+    <div class="col-md-12">
+      <RadzenGrid @ref="grid0" @ref:suppressField AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(CustomerResult)" TItem="ViwSoCustBrief">
+        <Columns>
+          <RadzenGridColumn TItem="ViwSoCustBrief" Context="viwSoCustBrief" Property="Customer_ID" Title="Customer ID" Type="string">
+          </RadzenGridColumn>
+          <RadzenGridColumn TItem="ViwSoCustBrief" Context="viwSoCustBrief" Property="LastName" Title="Last Name" Type="string">
+          </RadzenGridColumn>
+          <RadzenGridColumn TItem="ViwSoCustBrief" Context="viwSoCustBrief" Property="FirstName" Title="First Name" Type="string">
+          </RadzenGridColumn>
+          <RadzenGridColumn TItem="ViwSoCustBrief" Context="viwSoCustBrief" Property="Customer_SEQ" Title="Customer SEQ" Type="integer">
+          </RadzenGridColumn>
+        </Columns>
+      </RadzenGrid>
+    </div>
+  </ChildContent>
+</RadzenContent>

@@ -47,7 +47,7 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label5;
 
-        protected RadzenTextBox gender;
+        protected RadzenDropDown genderFk;
 
         protected RadzenLabel label6;
 
@@ -102,6 +102,23 @@ namespace QuanLyBanHang.Pages
             }
         }
 
+        IEnumerable<TblGnGender> _GendersResult;
+        protected IEnumerable<TblGnGender> GendersResult
+        {
+            get
+            {
+                return _GendersResult;
+            }
+            set
+            {
+                if(_GendersResult != value)
+                {
+                    _GendersResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
         IEnumerable<TblGnCity> _getTblGnCitiesResult;
         protected IEnumerable<TblGnCity> getTblGnCitiesResult
         {
@@ -146,6 +163,9 @@ namespace QuanLyBanHang.Pages
             var otErpGetTblGnAddressBookTypesResult = await OtErp.GetTblGnAddressBookTypes(null, null);
             getTblGnAddressBookTypesResult = otErpGetTblGnAddressBookTypesResult;
 
+            var otErpGetTblGnGendersResult = await OtErp.GetTblGnGenders(null, null);
+            GendersResult = otErpGetTblGnGendersResult;
+
             var otErpGetTblGnCitiesResult = await OtErp.GetTblGnCities(null, null);
             getTblGnCitiesResult = otErpGetTblGnCitiesResult;
 
@@ -154,8 +174,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnAddressBook args)
         {
-            var otErpCreateTblGnAddressBookResult = await OtErp.CreateTblGnAddressBook(tblgnaddressbook);
-            DialogService.Close(tblgnaddressbook);
+            try
+            {
+                var otErpCreateTblGnAddressBookResult = await OtErp.CreateTblGnAddressBook(tblgnaddressbook);
+                DialogService.Close(tblgnaddressbook);
+            }
+            catch (Exception otErpCreateTblGnAddressBookException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnAddressBook!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

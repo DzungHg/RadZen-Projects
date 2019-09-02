@@ -65,12 +65,12 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label6" @ref:suppressField Text="Gender" Component="Gender" style="width: 100%">
+                <RadzenLabel @ref="label6" @ref:suppressField Text="Tbl Gn Gender" Component="Gender_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="gender" @ref:suppressField MaxLength="50" style="width: 100%" Name="Gender">
-                </RadzenTextBox>
+                <RadzenDropDown @ref="genderFk" @ref:suppressField Data="@(getTblGnGendersResult)" TextProperty="Gender_ID" ValueProperty="Gender_SEQ" Placeholder="Choose TblGnGender" style="width: 100%" Name="Gender_FK">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -79,7 +79,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="dob" @ref:suppressField DateFormat="dd/mm/yy" style="width: 100%" Name="DOB">
+                <RadzenDatePicker @ref="dob" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="DOB">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -145,11 +145,11 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label14" @ref:suppressField Text="Tbl Gn City" Component="City_PK" style="width: 100%">
+                <RadzenLabel @ref="label14" @ref:suppressField Text="Tbl Gn City" Component="City_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="cityPk" @ref:suppressField Data="@(getTblGnCitiesResult)" TextProperty="City_ID" ValueProperty="City_SEQ" Placeholder="Choose TblGnCity" style="width: 100%" Name="City_PK">
+                <RadzenDropDown @ref="cityFk" @ref:suppressField Data="@(getTblGnCitiesResult)" TextProperty="City_ID" ValueProperty="City_SEQ" Placeholder="Choose TblGnCity" style="width: 100%" Name="City_FK">
                 </RadzenDropDown>
               </div>
             </div>

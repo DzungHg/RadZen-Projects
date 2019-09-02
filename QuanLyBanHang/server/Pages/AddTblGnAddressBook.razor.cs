@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace QuanLyBanHang.Pages
 {
-    public partial class SửaAddressBookTypeComponent
+    public partial class AddTblGnAddressBookComponent
     {
 
     }

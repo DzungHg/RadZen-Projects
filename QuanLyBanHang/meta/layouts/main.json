@@ -63,12 +63,24 @@
             {
               "items": [
                 {
+                  "icon": "",
+                  "path": "view-customer-brief",
+                  "selected": true,
+                  "text": "1. DS Khách Hàng"
+                }
+              ],
+              "selected": true,
+              "text": "Đơn Đặt Hàng"
+            },
+            {
+              "items": [
+                {
                   "path": "tbl-so-customers",
                   "selected": true,
                   "text": "DS Khách Hàng"
                 }
               ],
-              "selected": true,
+              "selected": false,
               "text": "Khách hàng"
             },
             {
@@ -86,6 +98,10 @@
                 {
                   "path": "tbl-gn-address-book-types",
                   "text": "Addresss Book Type"
+                },
+                {
+                  "path": "tbl-gn-cities",
+                  "text": "Tỉnh Thành"
                 }
               ],
               "text": "Thiết lập"

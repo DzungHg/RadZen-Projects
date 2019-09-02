@@ -72,8 +72,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnCity args)
         {
-            var otErpCreateTblGnCityResult = await OtErp.CreateTblGnCity(tblgncity);
-            DialogService.Close(tblgncity);
+            try
+            {
+                var otErpCreateTblGnCityResult = await OtErp.CreateTblGnCity(tblgncity);
+                DialogService.Close(tblgncity);
+            }
+            catch (Exception otErpCreateTblGnCityException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnCity!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

@@ -237,7 +237,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastRevisedCreditLimitDate",
                               "style": {
@@ -275,7 +275,7 @@
                           "components": [
                             {
                               "data": "${getTblGnPaymentTermsResult}",
-                              "textProperty": "PaymentTermText",
+                              "textProperty": "PaymentTerm_ID",
                               "valueProperty": "PaymentTerm_SEQ",
                               "placeholder": "Choose TblGnPaymentTerm",
                               "type": "dropdown",
@@ -314,7 +314,7 @@
                           "components": [
                             {
                               "data": "${getTblGnPaymentTypesResult}",
-                              "textProperty": "PaymentTypeText",
+                              "textProperty": "PaymentType_ID",
                               "valueProperty": "PaymentType_SEQ",
                               "placeholder": "Choose TblGnPaymentType",
                               "type": "dropdown",
@@ -1033,7 +1033,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastUpdatedDate",
                               "style": {

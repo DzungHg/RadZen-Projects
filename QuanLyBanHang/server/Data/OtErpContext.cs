@@ -32,9 +32,14 @@ namespace QuanLyBanHang.Data
               .HasForeignKey(i => i.AddressBookType_FK)
               .HasPrincipalKey(i => i.AddressBookType_SEQ);
         builder.Entity<QuanLyBanHang.Models.OtErp.TblGnAddressBook>()
+              .HasOne(i => i.TblGnGender)
+              .WithMany(i => i.TblGnAddressBooks)
+              .HasForeignKey(i => i.Gender_FK)
+              .HasPrincipalKey(i => i.Gender_SEQ);
+        builder.Entity<QuanLyBanHang.Models.OtErp.TblGnAddressBook>()
               .HasOne(i => i.TblGnCity)
               .WithMany(i => i.TblGnAddressBooks)
-              .HasForeignKey(i => i.City_PK)
+              .HasForeignKey(i => i.City_FK)
               .HasPrincipalKey(i => i.City_SEQ);
         builder.Entity<QuanLyBanHang.Models.OtErp.TblSoCustomer>()
               .HasOne(i => i.TblGnAddressBook)
@@ -147,6 +152,12 @@ namespace QuanLyBanHang.Data
       set;
     }
 
+    public DbSet<QuanLyBanHang.Models.OtErp.TblGnGender> TblGnGenders
+    {
+      get;
+      set;
+    }
+
     public DbSet<QuanLyBanHang.Models.OtErp.TblGnPaymentTerm> TblGnPaymentTerms
     {
       get;
@@ -190,6 +201,24 @@ namespace QuanLyBanHang.Data
     }
 
     public DbSet<QuanLyBanHang.Models.OtErp.TblSoSalesOrder> TblSoSalesOrders
+    {
+      get;
+      set;
+    }
+
+    public DbSet<QuanLyBanHang.Models.OtErp.ViwGnAddBookCust> ViwGnAddBookCusts
+    {
+      get;
+      set;
+    }
+
+    public DbSet<QuanLyBanHang.Models.OtErp.ViwGnAddBookEmp> ViwGnAddBookEmps
+    {
+      get;
+      set;
+    }
+
+    public DbSet<QuanLyBanHang.Models.OtErp.ViwSoCustBrief> ViwSoCustBriefs
     {
       get;
       set;

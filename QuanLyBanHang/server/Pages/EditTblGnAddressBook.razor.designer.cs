@@ -54,7 +54,7 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label6;
 
-        protected RadzenTextBox gender;
+        protected RadzenDropDown genderFk;
 
         protected RadzenLabel label7;
 
@@ -86,7 +86,7 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label14;
 
-        protected RadzenDropDown cityPk;
+        protected RadzenDropDown cityFk;
 
         protected RadzenButton button2;
 
@@ -143,6 +143,23 @@ namespace QuanLyBanHang.Pages
             }
         }
 
+        IEnumerable<TblGnGender> _getTblGnGendersResult;
+        protected IEnumerable<TblGnGender> getTblGnGendersResult
+        {
+            get
+            {
+                return _getTblGnGendersResult;
+            }
+            set
+            {
+                if(_getTblGnGendersResult != value)
+                {
+                    _getTblGnGendersResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
         IEnumerable<TblGnCity> _getTblGnCitiesResult;
         protected IEnumerable<TblGnCity> getTblGnCitiesResult
         {
@@ -169,11 +186,21 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblGnAddressBookByAddressBookSeqResult = await OtErp.GetTblGnAddressBookByAddressBookSeq(int.Parse(AddressBook_SEQ));
-            tblgnaddressbook = otErpGetTblGnAddressBookByAddressBookSeqResult;
+            try
+            {
+                var otErpGetTblGnAddressBookByAddressBookSeqResult = await OtErp.GetTblGnAddressBookByAddressBookSeq(int.Parse(AddressBook_SEQ));
+                tblgnaddressbook = otErpGetTblGnAddressBookByAddressBookSeqResult;
+            }
+            catch (Exception otErpGetTblGnAddressBookByAddressBookSeqException)
+            {
+
+            }
 
             var otErpGetTblGnAddressBookTypesResult = await OtErp.GetTblGnAddressBookTypes(null, null);
             getTblGnAddressBookTypesResult = otErpGetTblGnAddressBookTypesResult;
+
+            var otErpGetTblGnGendersResult = await OtErp.GetTblGnGenders(null, null);
+            getTblGnGendersResult = otErpGetTblGnGendersResult;
 
             var otErpGetTblGnCitiesResult = await OtErp.GetTblGnCities(null, null);
             getTblGnCitiesResult = otErpGetTblGnCitiesResult;
@@ -186,8 +213,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnAddressBook args)
         {
-            var otErpUpdateTblGnAddressBookResult = await OtErp.UpdateTblGnAddressBook(int.Parse(AddressBook_SEQ), tblgnaddressbook);
-            DialogService.Close(tblgnaddressbook);
+            try
+            {
+                var otErpUpdateTblGnAddressBookResult = await OtErp.UpdateTblGnAddressBook(int.Parse(AddressBook_SEQ), tblgnaddressbook);
+                DialogService.Close(tblgnaddressbook);
+            }
+            catch (Exception otErpUpdateTblGnAddressBookException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblGnAddressBook" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

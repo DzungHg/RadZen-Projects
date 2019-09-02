@@ -21,7 +21,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblGnAddressBookType" Context="tblGnAddressBookType" Property="AddressBookTypeText" Title="Address Book Type Text" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblGnAddressBookType" Context="tblGnAddressBookType" Filterable="false" Sortable="false" Bubble="false" Width="70px">
+            <RadzenGridColumn TItem="TblGnAddressBookType" Context="tblGnAddressBookType" Bubble="false" Filterable="false" Sortable="false" Width="70px">
               <Template Context="tblGnAddressBookType">
                 <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblGnAddressBookType))">
                 </RadzenButton>

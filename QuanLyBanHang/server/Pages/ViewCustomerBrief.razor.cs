@@ -7,7 +7,7 @@ using Radzen.Blazor;
 
 namespace QuanLyBanHang.Pages
 {
-    public partial class ThemKhachHangComponent
+    public partial class ViewCustomerBriefComponent
     {
 
     }

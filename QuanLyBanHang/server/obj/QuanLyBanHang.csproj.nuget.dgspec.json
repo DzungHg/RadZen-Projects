@@ -51,7 +51,7 @@
             },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[0.0.62, )"
+              "version": "[0.0.66, )"
             },
             "System.ComponentModel.Annotations": {
               "target": "Package",

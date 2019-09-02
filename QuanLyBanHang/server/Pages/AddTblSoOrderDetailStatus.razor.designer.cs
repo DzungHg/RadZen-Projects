@@ -72,8 +72,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblSoOrderDetailStatus args)
         {
-            var otErpCreateTblSoOrderDetailStatusResult = await OtErp.CreateTblSoOrderDetailStatus(tblsoorderdetailstatus);
-            DialogService.Close(tblsoorderdetailstatus);
+            try
+            {
+                var otErpCreateTblSoOrderDetailStatusResult = await OtErp.CreateTblSoOrderDetailStatus(tblsoorderdetailstatus);
+                DialogService.Close(tblsoorderdetailstatus);
+            }
+            catch (Exception otErpCreateTblSoOrderDetailStatusException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblSoOrderDetailStatus!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

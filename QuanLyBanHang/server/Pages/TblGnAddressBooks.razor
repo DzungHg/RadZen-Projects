@@ -29,9 +29,12 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="FirstName" Title="First Name" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Gender" Title="Gender" Type="string">
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Gender_FK" SortProperty="TblGnGender.Gender_ID" FilterProperty="TblGnGender.Gender_ID" Title="Tbl Gn Gender" Type="string">
+              <Template Context="data">
+              @data.TblGnGender?.Gender_ID
+              </Template>
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Format="date-time" Property="DOB" FormatString="{0:dd/mm/yy}" Title="DOB" Type="string">
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Format="date-time" Property="DOB" FormatString="{0:MM/dd/yyyy}" Title="DOB" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Origin" Title="Origin" Type="string">
             </RadzenGridColumn>
@@ -45,7 +48,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="Address" Title="Address" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="City_PK" SortProperty="TblGnCity.City_ID" FilterProperty="TblGnCity.City_ID" Title="Tbl Gn City" Type="string">
+            <RadzenGridColumn TItem="TblGnAddressBook" Context="tblGnAddressBook" Property="City_FK" SortProperty="TblGnCity.City_ID" FilterProperty="TblGnCity.City_ID" Title="Tbl Gn City" Type="string">
               <Template Context="data">
               @data.TblGnCity?.City_ID
               </Template>

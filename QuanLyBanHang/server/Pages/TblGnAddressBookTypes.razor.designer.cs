@@ -63,7 +63,7 @@ namespace QuanLyBanHang.Pages
 
         protected async void Button0Click(UIMouseEventArgs args)
         {
-            var result = await DialogService.OpenAsync<AddAddressbookType>("Add Addressbook Type", null);
+            var result = await DialogService.OpenAsync<AddTblGnAddressBookType>("Add Tbl Gn Address Book Type", null);
               grid0.Reload();
 
               await InvokeAsync(() => { StateHasChanged(); });
@@ -71,16 +71,23 @@ namespace QuanLyBanHang.Pages
 
         protected async void Grid0RowSelect(TblGnAddressBookType args)
         {
-            var result = await DialogService.OpenAsync<SửaAddressBookType>("Sửa AddressBook Type", new Dictionary<string, object>() { {"AddressBookType_SEQ", $"{args.AddressBookType_SEQ}"} });
+            var result = await DialogService.OpenAsync<EditAddressBookType>("Edit AddressBook Type", new Dictionary<string, object>() { {"AddressBookType_SEQ", $"{args.AddressBookType_SEQ}"} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblGnAddressBookType data)
         {
-            var otErpDeleteTblGnAddressBookTypeResult = await OtErp.DeleteTblGnAddressBookType(data.AddressBookType_SEQ);
-            if (otErpDeleteTblGnAddressBookTypeResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblGnAddressBookTypeResult = await OtErp.DeleteTblGnAddressBookType(data.AddressBookType_SEQ);
+                if (otErpDeleteTblGnAddressBookTypeResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblGnAddressBookTypeException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblGnAddressBookType" });
+            }
         }
     }
 }

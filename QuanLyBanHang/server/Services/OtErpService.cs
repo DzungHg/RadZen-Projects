@@ -25,6 +25,7 @@ namespace QuanLyBanHang
       public OtErpContext context { get; set; }
 
         
+
       partial void OnTblGnAddressBooksRead(ref IQueryable<Models.OtErp.TblGnAddressBook> items);
 
       public async Task<IQueryable<TblGnAddressBook>> GetTblGnAddressBooks(string filter = null, string orderby = null)
@@ -32,6 +33,8 @@ namespace QuanLyBanHang
         var items = context.TblGnAddressBooks.AsQueryable();
 
         items = items.Include(i => i.TblGnAddressBookType);
+
+        items = items.Include(i => i.TblGnGender);
 
         items = items.Include(i => i.TblGnCity);
 
@@ -50,10 +53,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblGnAddressBookCreated(Models.OtErp.TblGnAddressBook item);  
+
+
       public async Task<TblGnAddressBook> CreateTblGnAddressBook(TblGnAddressBook tblGnAddressBook)
       {
         try
         {
+            OnTblGnAddressBookCreated(tblGnAddressBook);
             context.TblGnAddressBooks.Add(tblGnAddressBook);
             context.SaveChanges();
         }
@@ -64,6 +71,7 @@ namespace QuanLyBanHang
         return tblGnAddressBook;
       }
     
+
 
       partial void OnTblGnAddressBookDeleted(Models.OtErp.TblGnAddressBook item);
 
@@ -91,11 +99,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblGnAddressBook> GetTblGnAddressBookByAddressBookSeq(int? addressBookSeq)
       {
         return await Task.FromResult(context.TblGnAddressBooks.Find(addressBookSeq));
       }
     
+
 
       partial void OnTblGnAddressBookUpdated(Models.OtErp.TblGnAddressBook item);
 
@@ -115,6 +125,7 @@ namespace QuanLyBanHang
         return tblGnAddressBook;
       }
             
+
       partial void OnTblGnAddressBookTypesRead(ref IQueryable<Models.OtErp.TblGnAddressBookType> items);
 
       public async Task<IQueryable<TblGnAddressBookType>> GetTblGnAddressBookTypes(string filter = null, string orderby = null)
@@ -136,10 +147,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblGnAddressBookTypeCreated(Models.OtErp.TblGnAddressBookType item);  
+
+
       public async Task<TblGnAddressBookType> CreateTblGnAddressBookType(TblGnAddressBookType tblGnAddressBookType)
       {
         try
         {
+            OnTblGnAddressBookTypeCreated(tblGnAddressBookType);
             context.TblGnAddressBookTypes.Add(tblGnAddressBookType);
             context.SaveChanges();
         }
@@ -150,6 +165,7 @@ namespace QuanLyBanHang
         return tblGnAddressBookType;
       }
     
+
 
       partial void OnTblGnAddressBookTypeDeleted(Models.OtErp.TblGnAddressBookType item);
 
@@ -174,11 +190,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblGnAddressBookType> GetTblGnAddressBookTypeByAddressBookTypeSeq(int? addressBookTypeSeq)
       {
         return await Task.FromResult(context.TblGnAddressBookTypes.Find(addressBookTypeSeq));
       }
     
+
 
       partial void OnTblGnAddressBookTypeUpdated(Models.OtErp.TblGnAddressBookType item);
 
@@ -198,6 +216,7 @@ namespace QuanLyBanHang
         return tblGnAddressBookType;
       }
             
+
       partial void OnTblGnCitiesRead(ref IQueryable<Models.OtErp.TblGnCity> items);
 
       public async Task<IQueryable<TblGnCity>> GetTblGnCities(string filter = null, string orderby = null)
@@ -219,10 +238,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblGnCityCreated(Models.OtErp.TblGnCity item);  
+
+
       public async Task<TblGnCity> CreateTblGnCity(TblGnCity tblGnCity)
       {
         try
         {
+            OnTblGnCityCreated(tblGnCity);
             context.TblGnCities.Add(tblGnCity);
             context.SaveChanges();
         }
@@ -233,6 +256,7 @@ namespace QuanLyBanHang
         return tblGnCity;
       }
     
+
 
       partial void OnTblGnCityDeleted(Models.OtErp.TblGnCity item);
 
@@ -257,11 +281,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblGnCity> GetTblGnCityByCitySeq(int? citySeq)
       {
         return await Task.FromResult(context.TblGnCities.Find(citySeq));
       }
     
+
 
       partial void OnTblGnCityUpdated(Models.OtErp.TblGnCity item);
 
@@ -281,6 +307,98 @@ namespace QuanLyBanHang
         return tblGnCity;
       }
             
+
+      partial void OnTblGnGendersRead(ref IQueryable<Models.OtErp.TblGnGender> items);
+
+      public async Task<IQueryable<TblGnGender>> GetTblGnGenders(string filter = null, string orderby = null)
+      {
+        var items = context.TblGnGenders.AsQueryable();
+
+        if(!string.IsNullOrEmpty(filter))
+        {
+          items = items.Where(filter);
+        }
+
+        if(!string.IsNullOrEmpty(orderby))
+        {
+          items = items.OrderBy(orderby);
+        }
+
+        OnTblGnGendersRead(ref items);
+
+        return await Task.FromResult(items);
+      }
+    
+      partial void OnTblGnGenderCreated(Models.OtErp.TblGnGender item);  
+
+
+      public async Task<TblGnGender> CreateTblGnGender(TblGnGender tblGnGender)
+      {
+        try
+        {
+            OnTblGnGenderCreated(tblGnGender);
+            context.TblGnGenders.Add(tblGnGender);
+            context.SaveChanges();
+        }
+        catch(Exception ex)
+        {
+            return null;
+        }
+        return tblGnGender;
+      }
+    
+
+
+      partial void OnTblGnGenderDeleted(Models.OtErp.TblGnGender item);
+
+      public async Task<TblGnGender> DeleteTblGnGender(int? genderSeq)
+      {
+        var item = context.TblGnGenders
+          .Where(i => i.Gender_SEQ == genderSeq)
+          .Include(i => i.TblGnAddressBooks)
+          .FirstOrDefault();
+
+        try
+        {
+            OnTblGnGenderDeleted(item);
+            context.TblGnGenders.Remove(item);
+            context.SaveChanges();
+        }
+        catch(Exception ex)
+        {
+            return null;
+        }
+
+        return item;
+      }
+    
+
+      public async Task<TblGnGender> GetTblGnGenderByGenderSeq(int? genderSeq)
+      {
+        return await Task.FromResult(context.TblGnGenders.Find(genderSeq));
+      }
+    
+
+
+      partial void OnTblGnGenderUpdated(Models.OtErp.TblGnGender item);
+
+      public async Task<TblGnGender> UpdateTblGnGender(int? genderSeq, TblGnGender tblGnGender)
+      {
+        try
+        {
+          OnTblGnGenderUpdated(tblGnGender);
+          context.TblGnGenders.Update(tblGnGender);
+          context.SaveChanges();
+        }
+        catch(Exception ex)
+        {
+            return null;
+        }
+
+        return tblGnGender;
+      }
+            
+
       partial void OnTblGnPaymentTermsRead(ref IQueryable<Models.OtErp.TblGnPaymentTerm> items);
 
       public async Task<IQueryable<TblGnPaymentTerm>> GetTblGnPaymentTerms(string filter = null, string orderby = null)
@@ -302,10 +420,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblGnPaymentTermCreated(Models.OtErp.TblGnPaymentTerm item);  
+
+
       public async Task<TblGnPaymentTerm> CreateTblGnPaymentTerm(TblGnPaymentTerm tblGnPaymentTerm)
       {
         try
         {
+            OnTblGnPaymentTermCreated(tblGnPaymentTerm);
             context.TblGnPaymentTerms.Add(tblGnPaymentTerm);
             context.SaveChanges();
         }
@@ -316,6 +438,7 @@ namespace QuanLyBanHang
         return tblGnPaymentTerm;
       }
     
+
 
       partial void OnTblGnPaymentTermDeleted(Models.OtErp.TblGnPaymentTerm item);
 
@@ -340,11 +463,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblGnPaymentTerm> GetTblGnPaymentTermByPaymentTermSeq(int? paymentTermSeq)
       {
         return await Task.FromResult(context.TblGnPaymentTerms.Find(paymentTermSeq));
       }
     
+
 
       partial void OnTblGnPaymentTermUpdated(Models.OtErp.TblGnPaymentTerm item);
 
@@ -364,6 +489,7 @@ namespace QuanLyBanHang
         return tblGnPaymentTerm;
       }
             
+
       partial void OnTblGnPaymentTypesRead(ref IQueryable<Models.OtErp.TblGnPaymentType> items);
 
       public async Task<IQueryable<TblGnPaymentType>> GetTblGnPaymentTypes(string filter = null, string orderby = null)
@@ -385,10 +511,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblGnPaymentTypeCreated(Models.OtErp.TblGnPaymentType item);  
+
+
       public async Task<TblGnPaymentType> CreateTblGnPaymentType(TblGnPaymentType tblGnPaymentType)
       {
         try
         {
+            OnTblGnPaymentTypeCreated(tblGnPaymentType);
             context.TblGnPaymentTypes.Add(tblGnPaymentType);
             context.SaveChanges();
         }
@@ -399,6 +529,7 @@ namespace QuanLyBanHang
         return tblGnPaymentType;
       }
     
+
 
       partial void OnTblGnPaymentTypeDeleted(Models.OtErp.TblGnPaymentType item);
 
@@ -423,11 +554,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblGnPaymentType> GetTblGnPaymentTypeByPaymentTypeSeq(int? paymentTypeSeq)
       {
         return await Task.FromResult(context.TblGnPaymentTypes.Find(paymentTypeSeq));
       }
     
+
 
       partial void OnTblGnPaymentTypeUpdated(Models.OtErp.TblGnPaymentType item);
 
@@ -447,6 +580,7 @@ namespace QuanLyBanHang
         return tblGnPaymentType;
       }
             
+
       partial void OnTblGnShipViaRead(ref IQueryable<Models.OtErp.TblGnShipVium> items);
 
       public async Task<IQueryable<TblGnShipVium>> GetTblGnShipVia(string filter = null, string orderby = null)
@@ -468,10 +602,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblGnShipViumCreated(Models.OtErp.TblGnShipVium item);  
+
+
       public async Task<TblGnShipVium> CreateTblGnShipVium(TblGnShipVium tblGnShipVium)
       {
         try
         {
+            OnTblGnShipViumCreated(tblGnShipVium);
             context.TblGnShipVia.Add(tblGnShipVium);
             context.SaveChanges();
         }
@@ -482,6 +620,7 @@ namespace QuanLyBanHang
         return tblGnShipVium;
       }
     
+
 
       partial void OnTblGnShipViumDeleted(Models.OtErp.TblGnShipVium item);
 
@@ -506,11 +645,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblGnShipVium> GetTblGnShipViumByShipViaSeq(int? shipViaSeq)
       {
         return await Task.FromResult(context.TblGnShipVia.Find(shipViaSeq));
       }
     
+
 
       partial void OnTblGnShipViumUpdated(Models.OtErp.TblGnShipVium item);
 
@@ -530,6 +671,7 @@ namespace QuanLyBanHang
         return tblGnShipVium;
       }
             
+
       partial void OnTblSoCustomersRead(ref IQueryable<Models.OtErp.TblSoCustomer> items);
 
       public async Task<IQueryable<TblSoCustomer>> GetTblSoCustomers(string filter = null, string orderby = null)
@@ -557,10 +699,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblSoCustomerCreated(Models.OtErp.TblSoCustomer item);  
+
+
       public async Task<TblSoCustomer> CreateTblSoCustomer(TblSoCustomer tblSoCustomer)
       {
         try
         {
+            OnTblSoCustomerCreated(tblSoCustomer);
             context.TblSoCustomers.Add(tblSoCustomer);
             context.SaveChanges();
         }
@@ -571,6 +717,7 @@ namespace QuanLyBanHang
         return tblSoCustomer;
       }
     
+
 
       partial void OnTblSoCustomerDeleted(Models.OtErp.TblSoCustomer item);
 
@@ -595,11 +742,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblSoCustomer> GetTblSoCustomerByCustomerSeq(int? customerSeq)
       {
         return await Task.FromResult(context.TblSoCustomers.Find(customerSeq));
       }
     
+
 
       partial void OnTblSoCustomerUpdated(Models.OtErp.TblSoCustomer item);
 
@@ -619,6 +768,7 @@ namespace QuanLyBanHang
         return tblSoCustomer;
       }
             
+
       partial void OnTblSoOrderDetailsRead(ref IQueryable<Models.OtErp.TblSoOrderDetail> items);
 
       public async Task<IQueryable<TblSoOrderDetail>> GetTblSoOrderDetails(string filter = null, string orderby = null)
@@ -644,10 +794,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblSoOrderDetailCreated(Models.OtErp.TblSoOrderDetail item);  
+
+
       public async Task<TblSoOrderDetail> CreateTblSoOrderDetail(TblSoOrderDetail tblSoOrderDetail)
       {
         try
         {
+            OnTblSoOrderDetailCreated(tblSoOrderDetail);
             context.TblSoOrderDetails.Add(tblSoOrderDetail);
             context.SaveChanges();
         }
@@ -658,6 +812,7 @@ namespace QuanLyBanHang
         return tblSoOrderDetail;
       }
     
+
 
       partial void OnTblSoOrderDetailDeleted(Models.OtErp.TblSoOrderDetail item);
 
@@ -681,11 +836,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblSoOrderDetail> GetTblSoOrderDetailBySoDetailSeq(int? soDetailSeq)
       {
         return await Task.FromResult(context.TblSoOrderDetails.Find(soDetailSeq));
       }
     
+
 
       partial void OnTblSoOrderDetailUpdated(Models.OtErp.TblSoOrderDetail item);
 
@@ -705,6 +862,7 @@ namespace QuanLyBanHang
         return tblSoOrderDetail;
       }
             
+
       partial void OnTblSoOrderDetailStatusesRead(ref IQueryable<Models.OtErp.TblSoOrderDetailStatus> items);
 
       public async Task<IQueryable<TblSoOrderDetailStatus>> GetTblSoOrderDetailStatuses(string filter = null, string orderby = null)
@@ -726,10 +884,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblSoOrderDetailStatusCreated(Models.OtErp.TblSoOrderDetailStatus item);  
+
+
       public async Task<TblSoOrderDetailStatus> CreateTblSoOrderDetailStatus(TblSoOrderDetailStatus tblSoOrderDetailStatus)
       {
         try
         {
+            OnTblSoOrderDetailStatusCreated(tblSoOrderDetailStatus);
             context.TblSoOrderDetailStatuses.Add(tblSoOrderDetailStatus);
             context.SaveChanges();
         }
@@ -740,6 +902,7 @@ namespace QuanLyBanHang
         return tblSoOrderDetailStatus;
       }
     
+
 
       partial void OnTblSoOrderDetailStatusDeleted(Models.OtErp.TblSoOrderDetailStatus item);
 
@@ -764,11 +927,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblSoOrderDetailStatus> GetTblSoOrderDetailStatusBySoDetailStatusSeq(int? soDetailStatusSeq)
       {
         return await Task.FromResult(context.TblSoOrderDetailStatuses.Find(soDetailStatusSeq));
       }
     
+
 
       partial void OnTblSoOrderDetailStatusUpdated(Models.OtErp.TblSoOrderDetailStatus item);
 
@@ -788,6 +953,7 @@ namespace QuanLyBanHang
         return tblSoOrderDetailStatus;
       }
             
+
       partial void OnTblSoOrderStatusesRead(ref IQueryable<Models.OtErp.TblSoOrderStatus> items);
 
       public async Task<IQueryable<TblSoOrderStatus>> GetTblSoOrderStatuses(string filter = null, string orderby = null)
@@ -809,10 +975,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblSoOrderStatusCreated(Models.OtErp.TblSoOrderStatus item);  
+
+
       public async Task<TblSoOrderStatus> CreateTblSoOrderStatus(TblSoOrderStatus tblSoOrderStatus)
       {
         try
         {
+            OnTblSoOrderStatusCreated(tblSoOrderStatus);
             context.TblSoOrderStatuses.Add(tblSoOrderStatus);
             context.SaveChanges();
         }
@@ -823,6 +993,7 @@ namespace QuanLyBanHang
         return tblSoOrderStatus;
       }
     
+
 
       partial void OnTblSoOrderStatusDeleted(Models.OtErp.TblSoOrderStatus item);
 
@@ -847,11 +1018,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblSoOrderStatus> GetTblSoOrderStatusBySoStatusSeq(int? soStatusSeq)
       {
         return await Task.FromResult(context.TblSoOrderStatuses.Find(soStatusSeq));
       }
     
+
 
       partial void OnTblSoOrderStatusUpdated(Models.OtErp.TblSoOrderStatus item);
 
@@ -871,6 +1044,7 @@ namespace QuanLyBanHang
         return tblSoOrderStatus;
       }
             
+
       partial void OnTblSoSalesOrdersRead(ref IQueryable<Models.OtErp.TblSoSalesOrder> items);
 
       public async Task<IQueryable<TblSoSalesOrder>> GetTblSoSalesOrders(string filter = null, string orderby = null)
@@ -904,10 +1078,14 @@ namespace QuanLyBanHang
         return await Task.FromResult(items);
       }
     
+      partial void OnTblSoSalesOrderCreated(Models.OtErp.TblSoSalesOrder item);  
+
+
       public async Task<TblSoSalesOrder> CreateTblSoSalesOrder(TblSoSalesOrder tblSoSalesOrder)
       {
         try
         {
+            OnTblSoSalesOrderCreated(tblSoSalesOrder);
             context.TblSoSalesOrders.Add(tblSoSalesOrder);
             context.SaveChanges();
         }
@@ -918,6 +1096,7 @@ namespace QuanLyBanHang
         return tblSoSalesOrder;
       }
     
+
 
       partial void OnTblSoSalesOrderDeleted(Models.OtErp.TblSoSalesOrder item);
 
@@ -942,11 +1121,13 @@ namespace QuanLyBanHang
         return item;
       }
     
+
       public async Task<TblSoSalesOrder> GetTblSoSalesOrderBySoSeq(int? soSeq)
       {
         return await Task.FromResult(context.TblSoSalesOrders.Find(soSeq));
       }
     
+
 
       partial void OnTblSoSalesOrderUpdated(Models.OtErp.TblSoSalesOrder item);
 
@@ -964,6 +1145,75 @@ namespace QuanLyBanHang
         }
 
         return tblSoSalesOrder;
+      }
+            
+
+      partial void OnViwGnAddBookCustsRead(ref IQueryable<Models.OtErp.ViwGnAddBookCust> items);
+
+      public async Task<IQueryable<ViwGnAddBookCust>> GetViwGnAddBookCusts(string filter = null, string orderby = null)
+      {
+        var items = context.ViwGnAddBookCusts.AsQueryable();
+        items = items.AsNoTracking();
+
+        if(!string.IsNullOrEmpty(filter))
+        {
+          items = items.Where(filter);
+        }
+
+        if(!string.IsNullOrEmpty(orderby))
+        {
+          items = items.OrderBy(orderby);
+        }
+
+        OnViwGnAddBookCustsRead(ref items);
+
+        return await Task.FromResult(items);
+      }
+            
+
+      partial void OnViwGnAddBookEmpsRead(ref IQueryable<Models.OtErp.ViwGnAddBookEmp> items);
+
+      public async Task<IQueryable<ViwGnAddBookEmp>> GetViwGnAddBookEmps(string filter = null, string orderby = null)
+      {
+        var items = context.ViwGnAddBookEmps.AsQueryable();
+        items = items.AsNoTracking();
+
+        if(!string.IsNullOrEmpty(filter))
+        {
+          items = items.Where(filter);
+        }
+
+        if(!string.IsNullOrEmpty(orderby))
+        {
+          items = items.OrderBy(orderby);
+        }
+
+        OnViwGnAddBookEmpsRead(ref items);
+
+        return await Task.FromResult(items);
+      }
+            
+
+      partial void OnViwSoCustBriefsRead(ref IQueryable<Models.OtErp.ViwSoCustBrief> items);
+
+      public async Task<IQueryable<ViwSoCustBrief>> GetViwSoCustBriefs(string filter = null, string orderby = null)
+      {
+        var items = context.ViwSoCustBriefs.AsQueryable();
+        items = items.AsNoTracking();
+
+        if(!string.IsNullOrEmpty(filter))
+        {
+          items = items.Where(filter);
+        }
+
+        if(!string.IsNullOrEmpty(orderby))
+        {
+          items = items.OrderBy(orderby);
+        }
+
+        OnViwSoCustBriefsRead(ref items);
+
+        return await Task.FromResult(items);
       }
         
   }

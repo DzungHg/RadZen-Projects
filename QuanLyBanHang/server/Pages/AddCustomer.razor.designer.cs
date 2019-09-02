@@ -9,7 +9,7 @@ using QuanLyBanHang.Models.OtErp;
 
 namespace QuanLyBanHang.Pages
 {
-    public partial class ThemKhachHangComponent : ComponentBase
+    public partial class AddCustomerComponent : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }
@@ -25,11 +25,7 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenContent content1;
 
-        protected dynamic templateForm0;
-
-        protected RadzenLabel label0;
-
-        protected dynamic numeric0;
+        protected dynamic form0;
 
         protected RadzenLabel label1;
 
@@ -153,18 +149,88 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenButton button0;
 
-        TblSoCustomer _SoCustomer;
-        protected TblSoCustomer SoCustomer
+        protected RadzenButton button1;
+
+        IEnumerable<ViwGnAddBookCust> _CustomersResult;
+        protected IEnumerable<ViwGnAddBookCust> CustomersResult
         {
             get
             {
-                return _SoCustomer;
+                return _CustomersResult;
             }
             set
             {
-                if(_SoCustomer != value)
+                if(_CustomersResult != value)
                 {
-                    _SoCustomer = value;
+                    _CustomersResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        IEnumerable<TblGnPaymentTerm> _PaymentTermsResult;
+        protected IEnumerable<TblGnPaymentTerm> PaymentTermsResult
+        {
+            get
+            {
+                return _PaymentTermsResult;
+            }
+            set
+            {
+                if(_PaymentTermsResult != value)
+                {
+                    _PaymentTermsResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        IEnumerable<TblGnPaymentType> _PaymentTypesResult;
+        protected IEnumerable<TblGnPaymentType> PaymentTypesResult
+        {
+            get
+            {
+                return _PaymentTypesResult;
+            }
+            set
+            {
+                if(_PaymentTypesResult != value)
+                {
+                    _PaymentTypesResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        IEnumerable<ViwGnAddBookEmp> _EmployeesResult;
+        protected IEnumerable<ViwGnAddBookEmp> EmployeesResult
+        {
+            get
+            {
+                return _EmployeesResult;
+            }
+            set
+            {
+                if(_EmployeesResult != value)
+                {
+                    _EmployeesResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        TblSoCustomer _tblsocustomer;
+        protected TblSoCustomer tblsocustomer
+        {
+            get
+            {
+                return _tblsocustomer;
+            }
+            set
+            {
+                if(_tblsocustomer != value)
+                {
+                    _tblsocustomer = value;
                     InvokeAsync(() => { StateHasChanged(); });
                 }
             }
@@ -177,9 +243,29 @@ namespace QuanLyBanHang.Pages
 
         protected async void Load()
         {
-            var otErpGetTblSoCustomersResult = await OtErp.GetTblSoCustomers(null, null);
+            var otErpGetViwGnAddBookCustsResult = await OtErp.GetViwGnAddBookCusts(null, null);
+            CustomersResult = otErpGetViwGnAddBookCustsResult;
 
-            SoCustomer = new TblSoCustomer();
+            var otErpGetTblGnPaymentTermsResult = await OtErp.GetTblGnPaymentTerms(null, null);
+            PaymentTermsResult = otErpGetTblGnPaymentTermsResult;
+
+            var otErpGetTblGnPaymentTypesResult = await OtErp.GetTblGnPaymentTypes(null, null);
+            PaymentTypesResult = otErpGetTblGnPaymentTypesResult;
+
+            var otErpGetViwGnAddBookEmpsResult = await OtErp.GetViwGnAddBookEmps(null, null);
+            EmployeesResult = otErpGetViwGnAddBookEmpsResult;
+
+            tblsocustomer = new TblSoCustomer();
+        }
+
+        protected async void Form0Submit(dynamic args)
+        {
+            var otErpCreateTblSoCustomerResult = await OtErp.CreateTblSoCustomer(tblsocustomer);
+        }
+
+        protected async void Button1Click(UIMouseEventArgs args)
+        {
+            DialogService.Close(null);
         }
     }
 }

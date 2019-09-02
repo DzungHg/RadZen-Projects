@@ -27,53 +27,6 @@
                           "components": [
                             {
                               "type": "label",
-                              "text": "Payment Term Text",
-                              "component": "PaymentTermText",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "string",
-                              "maxLength": 50,
-                              "type": "textbox",
-                              "name": "PaymentTermText",
-                              "style": {
-                                "display": "block",
-                                "width": "100%"
-                              }
-                            },
-                            {
-                              "type": "required-validator",
-                              "name": "PaymentTermTextRequiredValidator",
-                              "component": "PaymentTermText",
-                              "text": "PaymentTermText is required",
-                              "style": {
-                                "position": "absolute"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
                               "text": "Payment Term Id",
                               "component": "PaymentTerm_ID",
                               "style": {
@@ -101,6 +54,53 @@
                               "name": "PaymentTerm_IDRequiredValidator",
                               "component": "PaymentTerm_ID",
                               "text": "PaymentTerm_ID is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Payment Term Text",
+                              "component": "PaymentTermText",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "string",
+                              "maxLength": 80,
+                              "type": "textbox",
+                              "name": "PaymentTermText",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "PaymentTermTextRequiredValidator",
+                              "component": "PaymentTermText",
+                              "text": "PaymentTermText is required",
                               "style": {
                                 "position": "absolute"
                               }

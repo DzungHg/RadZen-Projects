@@ -29,15 +29,15 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label1;
 
-        protected RadzenTextBox paymentTermText;
-
-        protected RadzenRequiredValidator paymentTermTextRequiredValidator;
-
-        protected RadzenLabel label2;
-
         protected RadzenTextBox paymentTermId;
 
         protected RadzenRequiredValidator paymentTermIdRequiredValidator;
+
+        protected RadzenLabel label2;
+
+        protected RadzenTextBox paymentTermText;
+
+        protected RadzenRequiredValidator paymentTermTextRequiredValidator;
 
         protected RadzenButton button1;
 
@@ -72,8 +72,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnPaymentTerm args)
         {
-            var otErpCreateTblGnPaymentTermResult = await OtErp.CreateTblGnPaymentTerm(tblgnpaymentterm);
-            DialogService.Close(tblgnpaymentterm);
+            try
+            {
+                var otErpCreateTblGnPaymentTermResult = await OtErp.CreateTblGnPaymentTerm(tblgnpaymentterm);
+                DialogService.Close(tblgnpaymentterm);
+            }
+            catch (Exception otErpCreateTblGnPaymentTermException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnPaymentTerm!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

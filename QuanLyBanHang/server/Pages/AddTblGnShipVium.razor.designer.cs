@@ -70,8 +70,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnShipVium args)
         {
-            var otErpCreateTblGnShipViumResult = await OtErp.CreateTblGnShipVium(tblgnshipvium);
-            DialogService.Close(tblgnshipvium);
+            try
+            {
+                var otErpCreateTblGnShipViumResult = await OtErp.CreateTblGnShipVium(tblgnshipvium);
+                DialogService.Close(tblgnshipvium);
+            }
+            catch (Exception otErpCreateTblGnShipViumException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnShipVium!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)
