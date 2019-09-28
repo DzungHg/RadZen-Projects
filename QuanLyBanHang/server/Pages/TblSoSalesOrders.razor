@@ -19,7 +19,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="SO_ID" Title="SO ID" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="SODate" FormatString="{0:dd/mm/yy}" Title="SO Date" Type="string">
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="SODate" FormatString="{0:MM/dd/yyyy}" Title="SO Date" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="CreatedBy_FK" SortProperty="TblGnAddressBook.AddressBook_ID" FilterProperty="TblGnAddressBook.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
               <Template Context="data">
@@ -38,7 +38,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="CustomerPONumber" Title="Customer PO Number" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="CustomerPODate" FormatString="{0:dd/mm/yy}" Title="Customer PO Date" Type="string">
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="CustomerPODate" FormatString="{0:MM/dd/yyyy}" Title="Customer PO Date" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="BillTo_FK" SortProperty="TblGnAddressBook1.AddressBook_ID" FilterProperty="TblGnAddressBook1.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
               <Template Context="data">
@@ -57,9 +57,9 @@
               @data.TblGnShipVium?.ShipVia_ID
               </Template>
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="ActualShipDate" FormatString="{0:dd/mm/yy}" Title="Actual Ship Date" Type="string">
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="ActualShipDate" FormatString="{0:MM/dd/yyyy}" Title="Actual Ship Date" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="ExpectedShipDate" FormatString="{0:dd/mm/yy}" Title="Expected Ship Date" Type="string">
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="ExpectedShipDate" FormatString="{0:MM/dd/yyyy}" Title="Expected Ship Date" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Shipper_FK" Title="Shipper FK" Type="integer">
             </RadzenGridColumn>
@@ -95,7 +95,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="Notes" Title="Notes" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="LastUpdatedDate" FormatString="{0:dd/mm/yy}" Title="Last Updated Date" Type="string">
+            <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Format="date-time" Property="LastUpdatedDate" FormatString="{0:MM/dd/yyyy}" Title="Last Updated Date" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblSoSalesOrder" Context="tblSoSalesOrder" Property="LastUpdatedBy_FK" Title="Last Updated By FK" Type="integer">
             </RadzenGridColumn>

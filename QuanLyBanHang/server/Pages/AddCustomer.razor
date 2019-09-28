@@ -1,23 +1,15 @@
-﻿@page "/thêm-khách-hàng"
+﻿@page "/add-customer"
 @layout MainLayout
-@inherits QuanLyBanHang.Pages.ThemKhachHangComponent
+@inherits QuanLyBanHang.Pages.AddCustomerComponent
 
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
 <RadzenContent @ref="content1" @ref:suppressField Container="main">
   <ChildContent>
-    <RadzenTemplateForm @ref="templateForm0" @ref:suppressField Data="@(SoCustomer)" style="height: 797px; width: 887px">
+    <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblsocustomer)" style="height: 797px; width: 887px" Visible="@(tblsocustomer != null)" Submit="@Form0Submit">
       <ChildContent>
         <div class="row">
-          <div class="col-md-12 col-lg-1">
-            <RadzenLabel @ref="label0" @ref:suppressField Text="PK">
-            </RadzenLabel>
-          </div>
-          <div class="col-md-1">
-            <RadzenNumeric @ref="numeric0" @ref:suppressField ReadOnly="true" style="width: 73px" Value="@(SoCustomer.Customer_SEQ)" Name="Numeric0" TItem="dynamic">
-            </RadzenNumeric>
-          </div>
           <div class="col-md-2">
             <RadzenLabel @ref="label1" @ref:suppressField Text="Mã khách hàng">
             </RadzenLabel>
@@ -31,7 +23,7 @@
             </RadzenLabel>
           </div>
           <div class="col-md-3">
-            <RadzenDropDown @ref="dropdown0" @ref:suppressField Name="Dropdown0">
+            <RadzenDropDown @ref="dropdown0" @ref:suppressField Data="@(CustomersResult)" Disabled="true" TextProperty="FirstName" ValueProperty="AddressBook_SEQ" Name="Dropdown0">
             </RadzenDropDown>
           </div>
         </div>
@@ -77,7 +69,7 @@
             </RadzenLabel>
           </div>
           <div class="col-md-3">
-            <RadzenDropDown @ref="dropdown1" @ref:suppressField Name="Dropdown1">
+            <RadzenDropDown @ref="dropdown1" @ref:suppressField Data="@(PaymentTermsResult)" TextProperty="PaymentTerm_ID" ValueProperty="PaymentTerm_SEQ" Name="Dropdown1">
             </RadzenDropDown>
           </div>
           <div class="col-md-3">
@@ -85,7 +77,7 @@
             </RadzenLabel>
           </div>
           <div class="col-md-3">
-            <RadzenDropDown @ref="dropdown2" @ref:suppressField Name="Dropdown2">
+            <RadzenDropDown @ref="dropdown2" @ref:suppressField Data="@(PaymentTypesResult)" TextProperty="PaymentType_ID" ValueProperty="PaymentType_SEQ" Name="Dropdown2">
             </RadzenDropDown>
           </div>
         </div>
@@ -189,7 +181,7 @@
             </RadzenLabel>
           </div>
           <div class="col-md-3">
-            <RadzenDropDown @ref="dropdown3" @ref:suppressField Name="Dropdown3">
+            <RadzenDropDown @ref="dropdown3" @ref:suppressField Data="@(EmployeesResult)" TextProperty="FirstName" ValueProperty="AddressBook_SEQ" Name="Dropdown3">
             </RadzenDropDown>
           </div>
         </div>
@@ -296,6 +288,8 @@
         <div class="row">
           <div class="offset-sm-3 col-md-9">
             <RadzenButton @ref="button0" @ref:suppressField ButtonType="submit" Icon="save" Text="Save">
+            </RadzenButton>
+            <RadzenButton @ref="button1" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button1Click">
             </RadzenButton>
           </div>
         </div>

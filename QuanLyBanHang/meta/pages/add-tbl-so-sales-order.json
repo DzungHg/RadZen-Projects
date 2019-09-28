@@ -88,7 +88,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "SODate",
                               "style": {
@@ -280,7 +280,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "CustomerPODate",
                               "style": {
@@ -472,7 +472,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "ActualShipDate",
                               "style": {
@@ -510,7 +510,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "ExpectedShipDate",
                               "style": {
@@ -1122,7 +1122,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastUpdatedDate",
                               "style": {

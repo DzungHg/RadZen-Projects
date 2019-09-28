@@ -19,12 +19,12 @@ namespace QuanLyBanHang.Models.OtErp
 
     [InverseProperty("TblGnPaymentTerm")]
     public ICollection<TblSoCustomer> TblSoCustomers { get; set; }
-    public string PaymentTermText
+    public string PaymentTerm_ID
     {
       get;
       set;
     }
-    public string PaymentTerm_ID
+    public string PaymentTermText
     {
       get;
       set;

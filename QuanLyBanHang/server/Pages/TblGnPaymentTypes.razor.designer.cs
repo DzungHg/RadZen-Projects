@@ -77,10 +77,17 @@ namespace QuanLyBanHang.Pages
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblGnPaymentType data)
         {
-            var otErpDeleteTblGnPaymentTypeResult = await OtErp.DeleteTblGnPaymentType(data.PaymentType_SEQ);
-            if (otErpDeleteTblGnPaymentTypeResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblGnPaymentTypeResult = await OtErp.DeleteTblGnPaymentType(data.PaymentType_SEQ);
+                if (otErpDeleteTblGnPaymentTypeResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblGnPaymentTypeException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblGnPaymentType" });
+            }
         }
     }
 }

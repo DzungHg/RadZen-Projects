@@ -1,23 +1,35 @@
 {
   "components": [
     {
+      "type": "content",
+      "container": "main",
       "components": [
         {
+          "type": "heading",
           "name": "pageTitle",
           "size": "H1",
-          "text": "Tbl So Customers",
-          "type": "heading"
+          "text": "Tbl So Customers"
         },
         {
+          "type": "row",
           "components": [
             {
+              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
                   "events": {
                     "click": [
                       {
-                        "path": "thêm-khách-hàng",
+                        "path": "add-tbl-so-customer",
+                        "type": "popup",
                         "then": [
                           {
                             "code": "grid0.Reload();",
@@ -27,25 +39,40 @@
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
                             "type": "execute"
                           }
-                        ],
-                        "title": "Thêm Khách Hàng",
-                        "type": "popup",
-                        "width": 940
+                        ]
                       }
                     ]
-                  },
-                  "icon": "add_circle_outline",
-                  "name": "button0",
-                  "style": {
-                    "marginBottom": "10px"
-                  },
-                  "text": "Add",
-                  "type": "button"
+                  }
                 },
                 {
+                  "name": "grid0",
                   "allowFiltering": true,
                   "allowPaging": true,
                   "allowSorting": true,
+                  "data": "${getTblSoCustomersResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowSelect": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "Customer_SEQ",
+                            "value": "${event.Customer_SEQ}"
+                          }
+                        ],
+                        "path": "edit-tbl-so-customer",
+                        "type": "popup",
+                        "argType": "TblSoCustomer",
+                        "then": [
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
                   "columns": [
                     {
                       "property": "Customer_SEQ",
@@ -68,9 +95,9 @@
                       "type": "string"
                     },
                     {
-                      "filterProperty": "TblGnAddressBook.AddressBook_ID",
                       "property": "CustomerAdressBook_FK",
                       "sortProperty": "TblGnAddressBook.AddressBook_ID",
+                      "filterProperty": "TblGnAddressBook.AddressBook_ID",
                       "template": "${data.TblGnAddressBook?.AddressBook_ID}",
                       "title": "Tbl Gn Address Book",
                       "type": "string"
@@ -83,24 +110,24 @@
                     },
                     {
                       "format": "date-time",
-                      "formatString": "{0:dd/mm/yy}",
                       "property": "LastRevisedCreditLimitDate",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "Last Revised Credit Limit Date",
                       "type": "string"
                     },
                     {
-                      "filterProperty": "TblGnPaymentTerm.PaymentTermText",
                       "property": "PaymentTerm_FK",
-                      "sortProperty": "TblGnPaymentTerm.PaymentTermText",
-                      "template": "${data.TblGnPaymentTerm?.PaymentTermText}",
+                      "sortProperty": "TblGnPaymentTerm.PaymentTerm_ID",
+                      "filterProperty": "TblGnPaymentTerm.PaymentTerm_ID",
+                      "template": "${data.TblGnPaymentTerm?.PaymentTerm_ID}",
                       "title": "Tbl Gn Payment Term",
                       "type": "string"
                     },
                     {
-                      "filterProperty": "TblGnPaymentType.PaymentTypeText",
                       "property": "PaymentType_FK",
-                      "sortProperty": "TblGnPaymentType.PaymentTypeText",
-                      "template": "${data.TblGnPaymentType?.PaymentTypeText}",
+                      "sortProperty": "TblGnPaymentType.PaymentType_ID",
+                      "filterProperty": "TblGnPaymentType.PaymentType_ID",
+                      "template": "${data.TblGnPaymentType?.PaymentType_ID}",
                       "title": "Tbl Gn Payment Type",
                       "type": "string"
                     },
@@ -215,8 +242,8 @@
                     },
                     {
                       "format": "date-time",
-                      "formatString": "{0:dd/mm/yy}",
                       "property": "LastUpdatedDate",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "Last Updated Date",
                       "type": "string"
                     },
@@ -231,16 +258,21 @@
                       "type": "boolean"
                     },
                     {
-                      "bubble": false,
                       "filterable": false,
                       "sortable": false,
+                      "bubble": false,
+                      "width": "70px",
                       "template": [
                         {
                           "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
                           "events": {
                             "click": [
                               {
-                                "argType": "TblSoCustomer",
                                 "error": [
                                   {
                                     "detail": "Unable to delete TblSoCustomer",
@@ -263,57 +295,23 @@
                                     "type": "execute"
                                   }
                                 ],
-                                "type": "invoke"
+                                "type": "invoke",
+                                "argType": "TblSoCustomer"
                               }
                             ]
-                          },
-                          "icon": "close",
-                          "name": "gridDeleteButton",
-                          "size": "sm",
-                          "text": "",
-                          "type": "button"
+                          }
                         }
-                      ],
-                      "width": "70px"
+                      ]
                     }
                   ],
-                  "data": "${getTblSoCustomersResult}",
-                  "events": {
-                    "loadData": [],
-                    "rowSelect": [
-                      {
-                        "argType": "TblSoCustomer",
-                        "parameters": [
-                          {
-                            "name": "Customer_SEQ",
-                            "value": "${event.Customer_SEQ}"
-                          }
-                        ],
-                        "path": "edit-tbl-so-customer",
-                        "then": [
-                          {
-                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
-                            "type": "execute"
-                          }
-                        ],
-                        "type": "popup"
-                      }
-                    ]
-                  },
-                  "itemType": "TblSoCustomer",
-                  "name": "grid0",
-                  "title": "",
-                  "type": "grid"
+                  "type": "grid",
+                  "itemType": "TblSoCustomer"
                 }
-              ],
-              "type": "col"
+              ]
             }
-          ],
-          "type": "row"
+          ]
         }
-      ],
-      "container": "main",
-      "type": "content"
+      ]
     }
   ],
   "events": {
@@ -333,6 +331,6 @@
       }
     ]
   },
-  "layout": "Main",
-  "name": "Tbl So Customers"
+  "name": "Tbl So Customers",
+  "layout": "Main"
 }

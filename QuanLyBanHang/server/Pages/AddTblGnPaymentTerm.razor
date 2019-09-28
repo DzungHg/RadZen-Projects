@@ -13,25 +13,25 @@
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" @ref:suppressField Text="Payment Term Text" Component="PaymentTermText" style="width: 100%">
-                </RadzenLabel>
-              </div>
-              <div class="col-md-9">
-                <RadzenTextBox @ref="paymentTermText" @ref:suppressField MaxLength="50" style="display: block; width: 100%" Name="PaymentTermText">
-                </RadzenTextBox>
-                <RadzenRequiredValidator @ref="paymentTermTextRequiredValidator" @ref:suppressField Component="PaymentTermText" Text="PaymentTermText is required" style="position: absolute">
-                </RadzenRequiredValidator>
-              </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-              <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="Payment Term Id" Component="PaymentTerm_ID" style="width: 100%">
+                <RadzenLabel @ref="label1" @ref:suppressField Text="Payment Term Id" Component="PaymentTerm_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenTextBox @ref="paymentTermId" @ref:suppressField MaxLength="20" style="display: block; width: 100%" Name="PaymentTerm_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator @ref="paymentTermIdRequiredValidator" @ref:suppressField Component="PaymentTerm_ID" Text="PaymentTerm_ID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" @ref:suppressField Text="Payment Term Text" Component="PaymentTermText" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="paymentTermText" @ref:suppressField MaxLength="80" style="display: block; width: 100%" Name="PaymentTermText">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="paymentTermTextRequiredValidator" @ref:suppressField Component="PaymentTermText" Text="PaymentTermText is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>

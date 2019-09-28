@@ -10,34 +10,6 @@
             {
               "components": [
                 {
-                  "class": "col-md-12 col-lg-1",
-                  "components": [
-                    {
-                      "name": "label0",
-                      "text": "PK",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "col0",
-                  "type": "col"
-                },
-                {
-                  "class": "col-md-1",
-                  "components": [
-                    {
-                      "name": "numeric0",
-                      "readOnly": true,
-                      "style": {
-                        "width": "73px"
-                      },
-                      "type": "numeric",
-                      "value": "${SoCustomer.Customer_SEQ}"
-                    }
-                  ],
-                  "name": "col2",
-                  "type": "col"
-                },
-                {
                   "class": "col-md-2",
                   "components": [
                     {
@@ -80,8 +52,14 @@
                   "class": "col-md-3",
                   "components": [
                     {
+                      "data": "${CustomersResult}",
+                      "disabled": true,
                       "name": "dropdown0",
-                      "type": "dropdown"
+                      "template": "",
+                      "textProperty": "FirstName",
+                      "type": "dropdown",
+                      "value": "",
+                      "valueProperty": "AddressBook_SEQ"
                     }
                   ],
                   "name": "col6",
@@ -233,8 +211,12 @@
                   "class": "col-md-3",
                   "components": [
                     {
+                      "data": "${PaymentTermsResult}",
                       "name": "dropdown1",
-                      "type": "dropdown"
+                      "textProperty": "PaymentTerm_ID",
+                      "type": "dropdown",
+                      "value": "",
+                      "valueProperty": "PaymentTerm_SEQ"
                     }
                   ],
                   "name": "col35",
@@ -256,8 +238,11 @@
                   "class": "col-md-3",
                   "components": [
                     {
+                      "data": "${PaymentTypesResult}",
                       "name": "dropdown2",
-                      "type": "dropdown"
+                      "textProperty": "PaymentType_ID",
+                      "type": "dropdown",
+                      "valueProperty": "PaymentType_SEQ"
                     }
                   ],
                   "name": "col31",
@@ -604,8 +589,11 @@
                   "class": "col-md-3",
                   "components": [
                     {
+                      "data": "${EmployeesResult}",
                       "name": "dropdown3",
-                      "type": "dropdown"
+                      "textProperty": "FirstName",
+                      "type": "dropdown",
+                      "valueProperty": "AddressBook_SEQ"
                     }
                   ],
                   "name": "col43",
@@ -954,6 +942,19 @@
                       "name": "button0",
                       "text": "Save",
                       "type": "button"
+                    },
+                    {
+                      "buttonStyle": "light",
+                      "events": {
+                        "click": [
+                          {
+                            "type": "close-popup"
+                          }
+                        ]
+                      },
+                      "name": "button1",
+                      "text": "Cancel",
+                      "type": "button"
                     }
                   ],
                   "name": "col1",
@@ -964,13 +965,28 @@
               "type": "row"
             }
           ],
-          "data": "${SoCustomer}",
-          "name": "templateForm0",
+          "data": "${tblsocustomer}",
+          "events": {
+            "submit": [
+              {
+                "name": "OT_ERP.createTblSoCustomer",
+                "parameters": [
+                  {
+                    "name": "TblSoCustomer",
+                    "value": "${tblsocustomer}"
+                  }
+                ],
+                "type": "invoke"
+              }
+            ]
+          },
+          "name": "Form0",
           "style": {
             "height": "797px",
             "width": "887px"
           },
-          "type": "template-form"
+          "type": "template-form",
+          "visible": "${tblsocustomer != null}"
         }
       ],
       "container": "main",
@@ -980,12 +996,56 @@
   "events": {
     "load": [
       {
-        "name": "OT_ERP.getTblSoCustomers",
+        "name": "OT_ERP.getViwGnAddBookCusts",
         "parameters": [],
+        "then": [
+          {
+            "name": "CustomersResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<ViwGnAddBookCust>"
+          }
+        ],
         "type": "invoke"
       },
       {
-        "name": "SoCustomer",
+        "name": "OT_ERP.getTblGnPaymentTerms",
+        "then": [
+          {
+            "name": "PaymentTermsResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<TblGnPaymentTerm>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "OT_ERP.getTblGnPaymentTypes",
+        "then": [
+          {
+            "name": "PaymentTypesResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<TblGnPaymentType>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "OT_ERP.getViwGnAddBookEmps",
+        "then": [
+          {
+            "name": "EmployeesResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<ViwGnAddBookEmp>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "tblsocustomer",
         "type": "set",
         "value": "new TblSoCustomer()",
         "valueType": "TblSoCustomer"
@@ -993,5 +1053,5 @@
     ]
   },
   "layout": "Main",
-  "name": "Thêm Khách Hàng"
+  "name": "Add Customer"
 }

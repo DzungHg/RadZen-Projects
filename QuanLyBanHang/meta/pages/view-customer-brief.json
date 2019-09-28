@@ -1,0 +1,111 @@
+{
+  "access": [
+    "Everybody"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "View Customer Brief",
+          "type": "heading"
+        },
+        {
+          "class": "col-md-12",
+          "components": [
+            {
+              "events": {
+                "click": [
+                  {
+                    "path": "add-customer",
+                    "then": [
+                      {
+                        "code": "grid0.Reload();",
+                        "type": "execute"
+                      },
+                      {
+                        "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                        "type": "execute"
+                      }
+                    ],
+                    "type": "popup",
+                    "width": 940
+                  }
+                ]
+              },
+              "icon": "add_circle_outline",
+              "name": "button0",
+              "style": {
+                "marginBottom": "10px"
+              },
+              "text": "Add",
+              "type": "button"
+            }
+          ],
+          "name": "col0",
+          "type": "col"
+        },
+        {
+          "class": "col-md-12",
+          "components": [
+            {
+              "allowFiltering": true,
+              "allowPaging": true,
+              "allowSorting": true,
+              "columns": [
+                {
+                  "property": "Customer_ID",
+                  "title": "Customer ID",
+                  "type": "string"
+                },
+                {
+                  "property": "LastName",
+                  "title": "Last Name",
+                  "type": "string"
+                },
+                {
+                  "property": "FirstName",
+                  "title": "First Name",
+                  "type": "string"
+                },
+                {
+                  "format": "",
+                  "property": "Customer_SEQ",
+                  "title": "Customer SEQ",
+                  "type": "integer"
+                }
+              ],
+              "data": "${CustomerResult}",
+              "itemType": "ViwSoCustBrief",
+              "name": "grid0",
+              "type": "grid"
+            }
+          ],
+          "name": "col1",
+          "type": "col"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "OT_ERP.getViwSoCustBriefs",
+        "then": [
+          {
+            "name": "CustomerResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<ViwSoCustBrief>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "View Customer Brief"
+}

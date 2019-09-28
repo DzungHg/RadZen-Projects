@@ -1,6 +1,6 @@
-﻿@page "/sửa-address-book-type/{AddressBookType_SEQ}"
+﻿@page "/edit-tbl-gn-gender/{Gender_SEQ}"
 @layout MainLayout
-@inherits QuanLyBanHang.Pages.SửaAddressBookTypeComponent
+@inherits QuanLyBanHang.Pages.EditTblGnGenderComponent
 
 @using Radzen
 @using Radzen.Blazor
@@ -19,31 +19,31 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbooktype)" TItem="TblGnAddressBookType" Visible="@(tblgnaddressbooktype != null && canEdit)" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgngender)" Visible="@(tblgngender != null && canEdit)" TItem="TblGnGender" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Component="AddressBookType_ID" style="width: 100%" Text="ID">
+                <RadzenLabel @ref="label2" @ref:suppressField Text="Gender Id" Component="Gender_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="addressBookTypeId" @ref:suppressField MaxLength="10" style="width: 100%" Name="AddressBookType_ID">
+                <RadzenTextBox @ref="genderId" @ref:suppressField MaxLength="6" style="width: 100%" Name="Gender_ID">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Component="AddressBookTypeText" style="width: 100%" Text="Text">
+                <RadzenLabel @ref="label3" @ref:suppressField Text="Gender" Component="Gender" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="addressBookTypeText" @ref:suppressField MaxLength="150" style="width: 100%" Name="AddressBookTypeText">
+                <RadzenTextBox @ref="gender" @ref:suppressField MaxLength="10" style="width: 100%" Name="Gender">
                 </RadzenTextBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="primary" ButtonType="submit" Icon="save" Text="Save">
+                <RadzenButton @ref="button2" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
                 </RadzenButton>
                 <RadzenButton @ref="button3" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>

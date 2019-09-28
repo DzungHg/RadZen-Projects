@@ -32,7 +32,13 @@
   <ChildContent>
     <RadzenPanelMenu @ref="panelmenu0" @ref:suppressField style="height: 100%">
       <ChildContent>
-        <RadzenPanelMenuItem Selected="true" Text="Khách hàng">
+        <RadzenPanelMenuItem Selected="true" Text="Đơn Đặt Hàng">
+          <ChildContent>
+            <RadzenPanelMenuItem Path="view-customer-brief" Selected="true" Text="1. DS Khách Hàng">
+            </RadzenPanelMenuItem>
+          </ChildContent>
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Selected="false" Text="Khách hàng">
           <ChildContent>
             <RadzenPanelMenuItem Path="tbl-so-customers" Selected="true" Text="DS Khách Hàng">
             </RadzenPanelMenuItem>
@@ -47,6 +53,8 @@
         <RadzenPanelMenuItem Text="Thiết lập">
           <ChildContent>
             <RadzenPanelMenuItem Path="tbl-gn-address-book-types" Text="Addresss Book Type">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Path="tbl-gn-cities" Text="Tỉnh Thành">
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenuItem>

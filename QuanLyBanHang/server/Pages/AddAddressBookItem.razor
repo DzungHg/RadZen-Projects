@@ -59,8 +59,8 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="gender" @ref:suppressField MaxLength="50" style="width: 100%" Name="Gender">
-                </RadzenTextBox>
+                <RadzenDropDown @ref="genderFk" @ref:suppressField AllowFiltering="false" Data="@(GendersResult)" Placeholder="Chọn giới tính" TextProperty="Gender" ValueProperty="Gender_SEQ" Name="Gender_FK">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -139,7 +139,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="cityPk" @ref:suppressField Data="@(getTblGnCitiesResult)" Placeholder="Choose TblGnCity" style="width: 100%" TextProperty="City_ID" ValueProperty="City_SEQ" Name="City_PK">
+                <RadzenDropDown @ref="cityPk" @ref:suppressField Data="@(getTblGnCitiesResult)" Placeholder="Choose TblGnCity" style="width: 100%" TextProperty="CityName" ValueProperty="City_SEQ" Name="City_PK">
                 </RadzenDropDown>
               </div>
             </div>

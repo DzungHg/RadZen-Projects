@@ -331,7 +331,7 @@
           }
         }
       },
-      "Radzen.Blazor/0.0.62": {
+      "Radzen.Blazor/0.0.66": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components": "3.0.0-preview8.19405.7",
@@ -1055,10 +1055,10 @@
         "version.txt"
       ]
     },
-    "Radzen.Blazor/0.0.62": {
-      "sha512": "HtDxNxpkRk2kVfCm4KdQ84xBjRNl3HPbYrF7ekRKkfWFnDYiZY2n6/s2B2QheYNd3x9dAxqCgcyVMS6UPPEGyw==",
+    "Radzen.Blazor/0.0.66": {
+      "sha512": "Fx6UvpMvNv2p6+O47n70M28vzFuShsSsHEELZvla33Jwmt7L2B726yvi6ohtXIncqd3VQToQgcr9GNfrFxw7Ag==",
       "type": "package",
-      "path": "radzen.blazor/0.0.62",
+      "path": "radzen.blazor/0.0.66",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1067,7 +1067,7 @@
         "buildMultiTargeting/Radzen.Blazor.props",
         "buildTransitive/Radzen.Blazor.props",
         "lib/netstandard2.0/Radzen.Blazor.dll",
-        "radzen.blazor.0.0.62.nupkg.sha512",
+        "radzen.blazor.0.0.66.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/.DS_Store",
@@ -1783,7 +1783,7 @@
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.EntityFrameworkCore >= 3.0.0-preview8.19405.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0-preview8.19405.11",
-      "Radzen.Blazor >= 0.0.62",
+      "Radzen.Blazor >= 0.0.66",
       "System.ComponentModel.Annotations >= 4.6.0-preview8.19405.3",
       "System.Data.SqlClient >= 4.7.0-preview8.19405.3"
     ]
@@ -1839,7 +1839,7 @@
           },
           "Radzen.Blazor": {
             "target": "Package",
-            "version": "[0.0.62, )"
+            "version": "[0.0.66, )"
           },
           "System.ComponentModel.Annotations": {
             "target": "Package",

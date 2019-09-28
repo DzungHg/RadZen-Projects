@@ -69,9 +69,21 @@
           "type": "string",
           "length": 50
         },
-        "Gender": {
-          "type": "string",
-          "length": 50
+        "TblGnGender": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnGender"
+        },
+        "Gender_FK": {
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_Gender",
+            "parentEntityType": "TblGnGender",
+            "type": "TblGnGender",
+            "principalKey": "Gender_SEQ",
+            "name": "TblGnGender",
+            "textProperty": "Gender_ID",
+            "navigationProperty": "TblGnAddressBooks"
+          }
         },
         "DOB": {
           "type": "string",
@@ -106,7 +118,7 @@
           "type": "object",
           "$ref": "#/definitions/TblGnCity"
         },
-        "City_PK": {
+        "City_FK": {
           "type": "integer",
           "x-foreignKey": {
             "parentTable": "tblGN_City",
@@ -204,12 +216,46 @@
         }
       }
     },
+    "TblGnGender": {
+      "x-table": "dbo.tblGN_Gender",
+      "resource": "TblGnGenders",
+      "required": [],
+      "properties": {
+        "Gender_SEQ": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnGender",
+              "name": "TblGnAddressBooks",
+              "type": "TblGnAddressBook"
+            }
+          ]
+        },
+        "Gender_ID": {
+          "type": "string",
+          "length": 6
+        },
+        "Gender": {
+          "type": "string",
+          "length": 10
+        },
+        "TblGnAddressBooks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblGnAddressBook"
+          }
+        }
+      }
+    },
     "TblGnPaymentTerm": {
       "x-table": "dbo.tblGN_PaymentTerms",
       "resource": "TblGnPaymentTerms",
       "required": [
-        "PaymentTermText",
-        "PaymentTerm_ID"
+        "PaymentTerm_ID",
+        "PaymentTermText"
       ],
       "properties": {
         "PaymentTerm_SEQ": {
@@ -225,13 +271,13 @@
             }
           ]
         },
-        "PaymentTermText": {
-          "type": "string",
-          "length": 50
-        },
         "PaymentTerm_ID": {
           "type": "string",
           "length": 20
+        },
+        "PaymentTermText": {
+          "type": "string",
+          "length": 80
         },
         "TblSoCustomers": {
           "type": "array",
@@ -245,8 +291,8 @@
       "x-table": "dbo.tblGN_PaymentType",
       "resource": "TblGnPaymentTypes",
       "required": [
-        "PaymentTypeText",
-        "PaymentType_ID"
+        "PaymentType_ID",
+        "PaymentTypeText"
       ],
       "properties": {
         "PaymentType_SEQ": {
@@ -262,13 +308,13 @@
             }
           ]
         },
-        "PaymentTypeText": {
-          "type": "string",
-          "length": 50
-        },
         "PaymentType_ID": {
           "type": "string",
           "length": 20
+        },
+        "PaymentTypeText": {
+          "type": "string",
+          "length": 50
         },
         "TblSoCustomers": {
           "type": "array",
@@ -383,7 +429,7 @@
             "type": "TblGnPaymentTerm",
             "principalKey": "PaymentTerm_SEQ",
             "name": "TblGnPaymentTerm",
-            "textProperty": "PaymentTermText",
+            "textProperty": "PaymentTerm_ID",
             "navigationProperty": "TblSoCustomers"
           }
         },
@@ -399,7 +445,7 @@
             "type": "TblGnPaymentType",
             "principalKey": "PaymentType_SEQ",
             "name": "TblGnPaymentType",
-            "textProperty": "PaymentTypeText",
+            "textProperty": "PaymentType_ID",
             "navigationProperty": "TblSoCustomers"
           }
         },
@@ -888,6 +934,87 @@
           }
         }
       }
+    },
+    "ViwGnAddBookCust": {
+      "x-view": true,
+      "x-table": "dbo.viwGN_AddBookCust",
+      "resource": "ViwGnAddBookCusts",
+      "required": [
+        "AddressBook_SEQ",
+        "AddressBook_ID"
+      ],
+      "properties": {
+        "AddressBook_SEQ": {
+          "type": "integer",
+          "x-key": true
+        },
+        "AddressBook_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "LastName": {
+          "type": "string",
+          "length": 50
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "ViwGnAddBookEmp": {
+      "x-view": true,
+      "x-table": "dbo.viwGN_AddBookEmp",
+      "resource": "ViwGnAddBookEmps",
+      "required": [
+        "AddressBook_SEQ",
+        "AddressBook_ID"
+      ],
+      "properties": {
+        "AddressBook_SEQ": {
+          "type": "integer",
+          "x-key": true
+        },
+        "AddressBook_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "LastName": {
+          "type": "string",
+          "length": 50
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 50
+        }
+      }
+    },
+    "ViwSoCustBrief": {
+      "x-view": true,
+      "x-table": "dbo.viwSO_CustBrief",
+      "resource": "ViwSoCustBriefs",
+      "required": [
+        "Customer_SEQ",
+        "Customer_ID"
+      ],
+      "properties": {
+        "Customer_SEQ": {
+          "type": "integer",
+          "x-key": true
+        },
+        "Customer_ID": {
+          "type": "string",
+          "length": 10
+        },
+        "LastName": {
+          "type": "string",
+          "length": 50
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 50
+        }
+      }
     }
   },
   "paths": {
@@ -1064,6 +1191,67 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/TblGnCity"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnGenders": {
+      "get": {
+        "operationId": "getTblGnGenders",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/TblGnGender"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTblGnGender",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnGender",
+            "schema": {
+              "$ref": "#/definitions/TblGnGender"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/TblGnGender"
             }
           },
           "default": {
@@ -1562,6 +1750,117 @@
         }
       }
     },
+    "/ViwGnAddBookCusts": {
+      "get": {
+        "operationId": "getViwGnAddBookCusts",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ViwGnAddBookCust"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ViwGnAddBookEmps": {
+      "get": {
+        "operationId": "getViwGnAddBookEmps",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ViwGnAddBookEmp"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ViwSoCustBriefs": {
+      "get": {
+        "operationId": "getViwSoCustBriefs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/ViwSoCustBrief"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/TblGnAddressBooks({AddressBook_SEQ})": {
       "delete": {
         "operationId": "deleteTblGnAddressBook",
@@ -1750,6 +2049,73 @@
             "name": "TblGnCity",
             "schema": {
               "$ref": "#/definitions/TblGnCity"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/TblGnGenders({Gender_SEQ})": {
+      "delete": {
+        "operationId": "deleteTblGnGender",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Gender_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTblGnGenderByGender_SEQ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Gender_SEQ",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TblGnGender"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTblGnGender",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Gender_SEQ",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "TblGnGender",
+            "schema": {
+              "$ref": "#/definitions/TblGnGender"
             }
           }
         ],

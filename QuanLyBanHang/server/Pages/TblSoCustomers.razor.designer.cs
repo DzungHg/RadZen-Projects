@@ -63,7 +63,7 @@ namespace QuanLyBanHang.Pages
 
         protected async void Button0Click(UIMouseEventArgs args)
         {
-            var result = await DialogService.OpenAsync<ThemKhachHang>($"Thêm Khách Hàng", null, new DialogOptions(){ Width = $"{940}px" });
+            var result = await DialogService.OpenAsync<AddTblSoCustomer>("Add Tbl So Customer", null);
               grid0.Reload();
 
               await InvokeAsync(() => { StateHasChanged(); });
@@ -77,10 +77,17 @@ namespace QuanLyBanHang.Pages
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblSoCustomer data)
         {
-            var otErpDeleteTblSoCustomerResult = await OtErp.DeleteTblSoCustomer(data.Customer_SEQ);
-            if (otErpDeleteTblSoCustomerResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblSoCustomerResult = await OtErp.DeleteTblSoCustomer(data.Customer_SEQ);
+                if (otErpDeleteTblSoCustomerResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblSoCustomerException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblSoCustomer" });
+            }
         }
     }
 }

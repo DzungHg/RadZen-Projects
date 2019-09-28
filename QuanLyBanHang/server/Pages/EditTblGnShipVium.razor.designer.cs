@@ -91,8 +91,15 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblGnShipViumByShipViaSeqResult = await OtErp.GetTblGnShipViumByShipViaSeq(int.Parse(ShipVia_SEQ));
-            tblgnshipvium = otErpGetTblGnShipViumByShipViaSeqResult;
+            try
+            {
+                var otErpGetTblGnShipViumByShipViaSeqResult = await OtErp.GetTblGnShipViumByShipViaSeq(int.Parse(ShipVia_SEQ));
+                tblgnshipvium = otErpGetTblGnShipViumByShipViaSeqResult;
+            }
+            catch (Exception otErpGetTblGnShipViumByShipViaSeqException)
+            {
+
+            }
         }
 
         protected async void CloseButtonClick(UIMouseEventArgs args)
@@ -102,8 +109,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnShipVium args)
         {
-            var otErpUpdateTblGnShipViumResult = await OtErp.UpdateTblGnShipVium(int.Parse(ShipVia_SEQ), tblgnshipvium);
-            DialogService.Close(tblgnshipvium);
+            try
+            {
+                var otErpUpdateTblGnShipViumResult = await OtErp.UpdateTblGnShipVium(int.Parse(ShipVia_SEQ), tblgnshipvium);
+                DialogService.Close(tblgnshipvium);
+            }
+            catch (Exception otErpUpdateTblGnShipViumException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblGnShipVium" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

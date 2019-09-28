@@ -77,10 +77,17 @@ namespace QuanLyBanHang.Pages
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblSoOrderDetail data)
         {
-            var otErpDeleteTblSoOrderDetailResult = await OtErp.DeleteTblSoOrderDetail(data.SODetail_SEQ);
-            if (otErpDeleteTblSoOrderDetailResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblSoOrderDetailResult = await OtErp.DeleteTblSoOrderDetail(data.SODetail_SEQ);
+                if (otErpDeleteTblSoOrderDetailResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblSoOrderDetailException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblSoOrderDetail" });
+            }
         }
     }
 }

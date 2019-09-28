@@ -87,7 +87,7 @@
                     {
                       "format": "date-time",
                       "property": "SODate",
-                      "formatString": "{0:dd/mm/yy}",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "SO Date",
                       "type": "string"
                     },
@@ -123,7 +123,7 @@
                     {
                       "format": "date-time",
                       "property": "CustomerPODate",
-                      "formatString": "{0:dd/mm/yy}",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "Customer PO Date",
                       "type": "string"
                     },
@@ -159,14 +159,14 @@
                     {
                       "format": "date-time",
                       "property": "ActualShipDate",
-                      "formatString": "{0:dd/mm/yy}",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "Actual Ship Date",
                       "type": "string"
                     },
                     {
                       "format": "date-time",
                       "property": "ExpectedShipDate",
-                      "formatString": "{0:dd/mm/yy}",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "Expected Ship Date",
                       "type": "string"
                     },
@@ -265,7 +265,7 @@
                     {
                       "format": "date-time",
                       "property": "LastUpdatedDate",
-                      "formatString": "{0:dd/mm/yy}",
+                      "formatString": "{0:MM/dd/yyyy}",
                       "title": "Last Updated Date",
                       "type": "string"
                     },

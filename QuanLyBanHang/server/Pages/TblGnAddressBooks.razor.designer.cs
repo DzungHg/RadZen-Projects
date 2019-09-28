@@ -63,7 +63,7 @@ namespace QuanLyBanHang.Pages
 
         protected async void Button0Click(UIMouseEventArgs args)
         {
-            var result = await DialogService.OpenAsync<AddAddressBookItem>("Add AddressBook Item", null);
+            var result = await DialogService.OpenAsync<AddTblGnAddressBook>("Add Tbl Gn Address Book", null);
               grid0.Reload();
 
               await InvokeAsync(() => { StateHasChanged(); });
@@ -77,10 +77,17 @@ namespace QuanLyBanHang.Pages
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblGnAddressBook data)
         {
-            var otErpDeleteTblGnAddressBookResult = await OtErp.DeleteTblGnAddressBook(data.AddressBook_SEQ);
-            if (otErpDeleteTblGnAddressBookResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblGnAddressBookResult = await OtErp.DeleteTblGnAddressBook(data.AddressBook_SEQ);
+                if (otErpDeleteTblGnAddressBookResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblGnAddressBookException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblGnAddressBook" });
+            }
         }
     }
 }

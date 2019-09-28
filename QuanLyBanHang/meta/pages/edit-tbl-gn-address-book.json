@@ -235,8 +235,8 @@
                           "components": [
                             {
                               "type": "label",
-                              "text": "Gender",
-                              "component": "Gender",
+                              "text": "Tbl Gn Gender",
+                              "component": "Gender_FK",
                               "style": {
                                 "width": "100%"
                               }
@@ -248,10 +248,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
-                              "maxLength": 50,
-                              "type": "textbox",
-                              "name": "Gender",
+                              "data": "${getTblGnGendersResult}",
+                              "textProperty": "Gender_ID",
+                              "valueProperty": "Gender_SEQ",
+                              "placeholder": "Choose TblGnGender",
+                              "type": "dropdown",
+                              "name": "Gender_FK",
                               "style": {
                                 "width": "100%"
                               }
@@ -286,7 +288,7 @@
                           "components": [
                             {
                               "valueType": "DateTime?",
-                              "dateFormat": "dd/mm/yy",
+                              "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "DOB",
                               "style": {
@@ -532,7 +534,7 @@
                             {
                               "type": "label",
                               "text": "Tbl Gn City",
-                              "component": "City_PK",
+                              "component": "City_FK",
                               "style": {
                                 "width": "100%"
                               }
@@ -549,7 +551,7 @@
                               "valueProperty": "City_SEQ",
                               "placeholder": "Choose TblGnCity",
                               "type": "dropdown",
-                              "name": "City_PK",
+                              "name": "City_FK",
                               "style": {
                                 "width": "100%"
                               }
@@ -682,6 +684,19 @@
             "type": "set",
             "value": "${result.value}",
             "valueType": "IEnumerable<TblGnAddressBookType>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "OT_ERP.getTblGnGenders",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblGnGendersResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<TblGnGender>"
           }
         ],
         "type": "invoke"

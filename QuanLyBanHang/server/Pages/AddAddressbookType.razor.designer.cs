@@ -68,8 +68,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblGnAddressBookType args)
         {
-            var otErpCreateTblGnAddressBookTypeResult = await OtErp.CreateTblGnAddressBookType(tblgnaddressbooktype);
-            DialogService.Close(tblgnaddressbooktype);
+            try
+            {
+                var otErpCreateTblGnAddressBookTypeResult = await OtErp.CreateTblGnAddressBookType(tblgnaddressbooktype);
+                DialogService.Close(tblgnaddressbooktype);
+            }
+            catch (Exception otErpCreateTblGnAddressBookTypeException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnAddressBookType!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

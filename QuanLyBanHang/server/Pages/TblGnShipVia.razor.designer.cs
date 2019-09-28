@@ -77,10 +77,17 @@ namespace QuanLyBanHang.Pages
 
         protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblGnShipVium data)
         {
-            var otErpDeleteTblGnShipViumResult = await OtErp.DeleteTblGnShipVium(data.ShipVia_SEQ);
-            if (otErpDeleteTblGnShipViumResult != null) {
-                grid0.Reload();
+            try
+            {
+                var otErpDeleteTblGnShipViumResult = await OtErp.DeleteTblGnShipVium(data.ShipVia_SEQ);
+                if (otErpDeleteTblGnShipViumResult != null) {
+                    grid0.Reload();
 }
+            }
+            catch (Exception otErpDeleteTblGnShipViumException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblGnShipVium" });
+            }
         }
     }
 }

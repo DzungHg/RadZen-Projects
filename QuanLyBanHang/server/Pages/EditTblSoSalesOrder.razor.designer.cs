@@ -283,8 +283,15 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblSoSalesOrderBySoSeqResult = await OtErp.GetTblSoSalesOrderBySoSeq(int.Parse(SO_SEQ));
-            tblsosalesorder = otErpGetTblSoSalesOrderBySoSeqResult;
+            try
+            {
+                var otErpGetTblSoSalesOrderBySoSeqResult = await OtErp.GetTblSoSalesOrderBySoSeq(int.Parse(SO_SEQ));
+                tblsosalesorder = otErpGetTblSoSalesOrderBySoSeqResult;
+            }
+            catch (Exception otErpGetTblSoSalesOrderBySoSeqException)
+            {
+
+            }
 
             var otErpGetTblGnAddressBooksResult = await OtErp.GetTblGnAddressBooks(null, null);
             getTblGnAddressBooksResult = otErpGetTblGnAddressBooksResult;
@@ -306,8 +313,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblSoSalesOrder args)
         {
-            var otErpUpdateTblSoSalesOrderResult = await OtErp.UpdateTblSoSalesOrder(int.Parse(SO_SEQ), tblsosalesorder);
-            DialogService.Close(tblsosalesorder);
+            try
+            {
+                var otErpUpdateTblSoSalesOrderResult = await OtErp.UpdateTblSoSalesOrder(int.Parse(SO_SEQ), tblsosalesorder);
+                DialogService.Close(tblsosalesorder);
+            }
+            catch (Exception otErpUpdateTblSoSalesOrderException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblSoSalesOrder" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

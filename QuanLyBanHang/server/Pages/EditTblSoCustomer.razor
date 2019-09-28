@@ -79,7 +79,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="lastRevisedCreditLimitDate" @ref:suppressField DateFormat="dd/mm/yy" style="width: 100%" Name="LastRevisedCreditLimitDate">
+                <RadzenDatePicker @ref="lastRevisedCreditLimitDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="LastRevisedCreditLimitDate">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -89,7 +89,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="paymentTermFk" @ref:suppressField Data="@(getTblGnPaymentTermsResult)" TextProperty="PaymentTermText" ValueProperty="PaymentTerm_SEQ" Placeholder="Choose TblGnPaymentTerm" style="width: 100%" Name="PaymentTerm_FK">
+                <RadzenDropDown @ref="paymentTermFk" @ref:suppressField Data="@(getTblGnPaymentTermsResult)" TextProperty="PaymentTerm_ID" ValueProperty="PaymentTerm_SEQ" Placeholder="Choose TblGnPaymentTerm" style="width: 100%" Name="PaymentTerm_FK">
                 </RadzenDropDown>
               </div>
             </div>
@@ -99,7 +99,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="paymentTypeFk" @ref:suppressField Data="@(getTblGnPaymentTypesResult)" TextProperty="PaymentTypeText" ValueProperty="PaymentType_SEQ" Placeholder="Choose TblGnPaymentType" style="width: 100%" Name="PaymentType_FK">
+                <RadzenDropDown @ref="paymentTypeFk" @ref:suppressField Data="@(getTblGnPaymentTypesResult)" TextProperty="PaymentType_ID" ValueProperty="PaymentType_SEQ" Placeholder="Choose TblGnPaymentType" style="width: 100%" Name="PaymentType_FK">
                 </RadzenDropDown>
               </div>
             </div>
@@ -299,7 +299,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="lastUpdatedDate" @ref:suppressField DateFormat="dd/mm/yy" style="width: 100%" Name="LastUpdatedDate">
+                <RadzenDatePicker @ref="lastUpdatedDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="LastUpdatedDate">
                 </RadzenDatePicker>
               </div>
             </div>

@@ -254,8 +254,15 @@ namespace QuanLyBanHang.Pages
         {
             canEdit = true;
 
-            var otErpGetTblSoCustomerByCustomerSeqResult = await OtErp.GetTblSoCustomerByCustomerSeq(int.Parse(Customer_SEQ));
-            tblsocustomer = otErpGetTblSoCustomerByCustomerSeqResult;
+            try
+            {
+                var otErpGetTblSoCustomerByCustomerSeqResult = await OtErp.GetTblSoCustomerByCustomerSeq(int.Parse(Customer_SEQ));
+                tblsocustomer = otErpGetTblSoCustomerByCustomerSeqResult;
+            }
+            catch (Exception otErpGetTblSoCustomerByCustomerSeqException)
+            {
+
+            }
 
             var otErpGetTblGnAddressBooksResult = await OtErp.GetTblGnAddressBooks(null, null);
             getTblGnAddressBooksResult = otErpGetTblGnAddressBooksResult;
@@ -274,8 +281,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblSoCustomer args)
         {
-            var otErpUpdateTblSoCustomerResult = await OtErp.UpdateTblSoCustomer(int.Parse(Customer_SEQ), tblsocustomer);
-            DialogService.Close(tblsocustomer);
+            try
+            {
+                var otErpUpdateTblSoCustomerResult = await OtErp.UpdateTblSoCustomer(int.Parse(Customer_SEQ), tblsocustomer);
+                DialogService.Close(tblsocustomer);
+            }
+            catch (Exception otErpUpdateTblSoCustomerException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblSoCustomer" });
+            }
         }
 
         protected async void Button3Click(UIMouseEventArgs args)

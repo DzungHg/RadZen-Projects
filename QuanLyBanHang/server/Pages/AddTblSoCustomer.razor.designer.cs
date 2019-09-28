@@ -242,8 +242,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblSoCustomer args)
         {
-            var otErpCreateTblSoCustomerResult = await OtErp.CreateTblSoCustomer(tblsocustomer);
-            DialogService.Close(tblsocustomer);
+            try
+            {
+                var otErpCreateTblSoCustomerResult = await OtErp.CreateTblSoCustomer(tblsocustomer);
+                DialogService.Close(tblsocustomer);
+            }
+            catch (Exception otErpCreateTblSoCustomerException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblSoCustomer!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)

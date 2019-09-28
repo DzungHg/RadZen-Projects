@@ -274,8 +274,15 @@ namespace QuanLyBanHang.Pages
 
         protected async void Form0Submit(TblSoSalesOrder args)
         {
-            var otErpCreateTblSoSalesOrderResult = await OtErp.CreateTblSoSalesOrder(tblsosalesorder);
-            DialogService.Close(tblsosalesorder);
+            try
+            {
+                var otErpCreateTblSoSalesOrderResult = await OtErp.CreateTblSoSalesOrder(tblsosalesorder);
+                DialogService.Close(tblsosalesorder);
+            }
+            catch (Exception otErpCreateTblSoSalesOrderException)
+            {
+                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblSoSalesOrder!" });
+            }
         }
 
         protected async void Button2Click(UIMouseEventArgs args)
