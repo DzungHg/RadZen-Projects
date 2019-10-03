@@ -1,1154 +1,1165 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "main",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Customer Id",
                               "component": "Customer_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Mã khách hàng",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
-                              "type": "textbox",
                               "name": "Customer_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "Customer_IDRequiredValidator",
                               "component": "Customer_ID",
-                              "text": "Customer_ID is required",
+                              "name": "Customer_IDRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "Customer_ID is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
-                              "text": "Last Name",
-                              "component": "LastName",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "string",
-                              "maxLength": 50,
-                              "type": "textbox",
-                              "name": "LastName",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        }
-                      ]
+                      "type": "row"
                     },
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "First Name",
-                              "component": "FirstName",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "string",
-                              "maxLength": 50,
-                              "type": "textbox",
-                              "name": "FirstName",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
-                              "text": "Tbl Gn Address Book",
                               "component": "CustomerAdressBook_FK",
+                              "name": "label0",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Danh bạ khách hàng",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "name": "col0",
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnAddressBooksResult}",
-                              "textProperty": "AddressBook_ID",
-                              "valueProperty": "AddressBook_SEQ",
-                              "placeholder": "Choose TblGnAddressBook",
-                              "type": "dropdown",
                               "name": "CustomerAdressBook_FK",
+                              "placeholder": "Choose TblGnAddressBook",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "textProperty": "AddressBook_ID",
+                              "type": "dropdown",
+                              "valueProperty": "AddressBook_SEQ"
                             }
-                          ]
+                          ],
+                          "name": "col1",
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
+                      "name": "row0",
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Credit Limit",
+                              "component": "LastName",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Last Name",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "LastName",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "FirstName",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "First Name",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 50,
+                              "name": "FirstName",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
                               "component": "CreditLimit",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Mức tín dụng",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "CreditLimit",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Revised Credit Limit Date",
                               "component": "LastRevisedCreditLimitDate",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Ngạy duyệt tín dụng gần nhất",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
-                              "type": "datepicker",
                               "name": "LastRevisedCreditLimitDate",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "type": "datepicker",
+                              "value": "DateTime.Now",
+                              "valueType": "DateTime?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Tbl Gn Payment Term",
                               "component": "PaymentTerm_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Điều kiện thanh toán",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnPaymentTermsResult}",
-                              "textProperty": "PaymentTerm_ID",
-                              "valueProperty": "PaymentTerm_SEQ",
-                              "placeholder": "Choose TblGnPaymentTerm",
-                              "type": "dropdown",
                               "name": "PaymentTerm_FK",
+                              "placeholder": "Choose TblGnPaymentTerm",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "textProperty": "PaymentTerm_ID",
+                              "type": "dropdown",
+                              "valueProperty": "PaymentTerm_SEQ"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Tbl Gn Payment Type",
                               "component": "PaymentType_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Hình thức thanh toán",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnPaymentTypesResult}",
-                              "textProperty": "PaymentType_ID",
-                              "valueProperty": "PaymentType_SEQ",
-                              "placeholder": "Choose TblGnPaymentType",
-                              "type": "dropdown",
                               "name": "PaymentType_FK",
+                              "placeholder": "Choose TblGnPaymentType",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "textProperty": "PaymentType_ID",
+                              "type": "dropdown",
+                              "valueProperty": "PaymentType_SEQ"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Discount Percent",
                               "component": "DiscountPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "% Chiết khấu",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
-                              "type": "numeric",
                               "name": "DiscountPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "int?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Current Mtd Sales",
                               "component": "Current_MTD_Sales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "MDT Bán",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Current_MTD_Sales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Current Mtd Returns",
                               "component": "Current_MTD_Returns",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tiền hàng trả lại hiện hành MTD",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Current_MTD_Returns",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Ytd Gross Sales",
                               "component": "YTD_GrossSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Doanh thu YTD",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "YTD_GrossSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Ytd Returns",
                               "component": "YTD_Returns",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tiền hàng trả lại YTD",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "YTD_Returns",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Ytd Cogs",
                               "component": "YTD_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Chi phí bán hàng YTD",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "YTD_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Lyr Gross Sales",
                               "component": "LYR_GrossSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Doanh thu xổi năm trước LYR",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "LYR_GrossSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Lyr Cogs",
                               "component": "LYR_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Giá phí bán hàng LYR",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "LYR_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Amount Sales",
                               "component": "LastAmountSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Doanh thu lần chót",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "LastAmountSales",
                               "style": {
                                 "width": "100%"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
-                              "text": "Sales Person Adress Book Fk",
-                              "component": "SalesPersonAdressBook_FK",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "int?",
+                              },
                               "type": "numeric",
-                              "name": "SalesPersonAdressBook_FK",
-                              "style": {
-                                "width": "100%"
-                              }
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Commission Percent",
                               "component": "CommissionPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Hoa hồng nhân viên bán hàng",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "CommissionPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Sales Person Mtd Goal",
+                              "component": "CommissionPercent",
+                              "name": "label1",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Danh bạ NV bán hàng",
+                              "type": "label"
+                            }
+                          ],
+                          "name": "col2",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getTblGnAddressBooksResult}",
+                              "name": "dropdown0",
+                              "placeholder": "Choose TblGnAddressBook",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "textProperty": "AddressBook_ID",
+                              "type": "dropdown",
+                              "valueProperty": "AddressBook_SEQ"
+                            }
+                          ],
+                          "name": "col3",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row1",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
                               "component": "SalesPerson_MTD_Goal",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "MTD Kế hoạch người bán",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "SalesPerson_MTD_Goal",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Sales Person Ytd Goal",
                               "component": "SalesPerson_YTD_Goal",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "YTD Kế hoạch người bán",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "SalesPerson_YTD_Goal",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Charge Interest",
                               "component": "ChargeInterest",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tính lãi?",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
-                              "type": "checkbox",
                               "name": "ChargeInterest",
-                              "triState": true
+                              "triState": true,
+                              "type": "checkbox",
+                              "valueType": "bool?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Statement",
                               "component": "Statement",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Liệt kê công nợ?",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
-                              "type": "checkbox",
                               "name": "Statement",
-                              "triState": true
+                              "triState": true,
+                              "type": "checkbox",
+                              "valueType": "bool?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Aging 30 Day Amout",
                               "component": "Aging30DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tuổi nợ 30",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Aging30DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Aging 60 Day Amout",
                               "component": "Aging60DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tuổi nợ 60",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Aging60DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Aging 90 Day Amout",
                               "component": "Aging90DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Aging 90 Day Amout",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Aging90DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "decimal?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
-                              "text": "Notes",
-                              "component": "Notes",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "string",
-                              "type": "textbox",
-                              "name": "Notes",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        }
-                      ]
+                      "type": "row"
                     },
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Updated Date",
                               "component": "LastUpdatedDate",
+                              "name": "label2",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Ngày nhật tu gần nhất",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "name": "col4",
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
-                              "type": "datepicker",
                               "name": "LastUpdatedDate",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "type": "datepicker",
+                              "value": "DateTime.Now",
+                              "valueType": "DateTime?"
                             }
-                          ]
+                          ],
+                          "name": "col5",
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
+                      "name": "row2",
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Udpated By",
+                              "component": "Notes",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Ghi chú",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "Notes",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
                               "component": "LastUdpatedBy",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Người nhật tu gần nhất",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
-                              "type": "numeric",
                               "name": "LastUdpatedBy",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "numeric",
+                              "valueType": "int?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Inactive",
                               "component": "Inactive",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Không dùng nữa?",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
-                              "type": "checkbox",
                               "name": "Inactive",
-                              "triState": true
+                              "triState": true,
+                              "type": "checkbox",
+                              "valueType": "bool?"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
-                              "text": "Save",
-                              "buttonStyle": "primary"
+                              "text": "Lưu",
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblsocustomer}",
                   "events": {
                     "submit": [
                       {
+                        "argType": "TblSoCustomer",
                         "error": [
                           {
                             "detail": "Unable to create new TblSoCustomer!",
@@ -1166,24 +1177,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblsocustomer}"
+                            "result": "${tblsocustomer}",
+                            "type": "close-popup"
                           }
                         ],
-                        "type": "invoke",
-                        "argType": "TblSoCustomer"
+                        "type": "invoke"
                       }
                     ]
                   },
-                  "data": "${tblsocustomer}",
-                  "visible": "${tblsocustomer != null}",
-                  "itemType": "TblSoCustomer"
+                  "itemType": "TblSoCustomer",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblsocustomer != null}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "main",
+      "type": "content"
     }
   ],
   "events": {
@@ -1235,6 +1250,6 @@
       }
     ]
   },
-  "name": "Add Tbl So Customer",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Add Tbl So Customer"
 }

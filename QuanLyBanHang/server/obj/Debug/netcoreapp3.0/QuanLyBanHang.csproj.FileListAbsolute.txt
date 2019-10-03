@@ -32,7 +32,6 @@ F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\bin\Debug\netcoreapp3.0\runtime
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\QuanLyBanHang.csprojAssemblyReference.cache
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\staticwebassets\QuanLyBanHang.StaticWebAssets.Manifest.cache
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\staticwebassets\QuanLyBanHang.StaticWebAssets.xml
-F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\QuanLyBanHang.MvcApplicationPartsAssemblyInfo.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\QuanLyBanHang.MvcApplicationPartsAssemblyInfo.cache
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\QuanLyBanHang.RazorComponent.input.cache
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\RazorDeclaration\App.razor.g.cs
@@ -270,3 +269,5 @@ F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\P
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\AddTblGnGender.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblGnGender.razor.g.cs
 F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\obj\Debug\netcoreapp3.0\Razor\Pages\TblGnGenders.razor.g.cs
+F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\bin\Debug\netcoreapp3.0\Microsoft.Identity.Client.dll

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using QuanLyBanHang.Models.OtErp;
@@ -12,7 +13,7 @@ namespace QuanLyBanHang.Pages
     public partial class AddTblGnGenderComponent : ComponentBase
     {
         [Inject]
-        protected IUriHelper UriHelper { get; set; }
+        protected NavigationManager UriHelper { get; set; }
 
         [Inject]
         protected DialogService DialogService { get; set; }
@@ -56,7 +57,7 @@ namespace QuanLyBanHang.Pages
             }
         }
 
-        protected override async Task OnInitializedAsync()
+        protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Load();
         }
@@ -75,11 +76,11 @@ namespace QuanLyBanHang.Pages
             }
             catch (Exception otErpCreateTblGnGenderException)
             {
-                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnGender!" });
+                    NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to create new TblGnGender!");
             }
         }
 
-        protected async void Button2Click(UIMouseEventArgs args)
+        protected async void Button2Click(MouseEventArgs args)
         {
             DialogService.Close(null);
         }

@@ -36,7 +36,8 @@
             {
               "class": "col-md-6 text-lg-right",
               "name": "rightCol",
-              "type": "col"
+              "type": "col",
+              "components": []
             }
           ],
           "name": "headerRow",

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using QuanLyBanHang.Models.OtErp;
@@ -12,7 +13,7 @@ namespace QuanLyBanHang.Pages
     public partial class AddTblGnAddressBookComponent : ComponentBase
     {
         [Inject]
-        protected IUriHelper UriHelper { get; set; }
+        protected NavigationManager UriHelper { get; set; }
 
         [Inject]
         protected DialogService DialogService { get; set; }
@@ -153,20 +154,20 @@ namespace QuanLyBanHang.Pages
             }
         }
 
-        protected override async Task OnInitializedAsync()
+        protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Load();
         }
 
         protected async void Load()
         {
-            var otErpGetTblGnAddressBookTypesResult = await OtErp.GetTblGnAddressBookTypes(null, null);
+            var otErpGetTblGnAddressBookTypesResult = await OtErp.GetTblGnAddressBookTypes();
             getTblGnAddressBookTypesResult = otErpGetTblGnAddressBookTypesResult;
 
-            var otErpGetTblGnGendersResult = await OtErp.GetTblGnGenders(null, null);
+            var otErpGetTblGnGendersResult = await OtErp.GetTblGnGenders();
             getTblGnGendersResult = otErpGetTblGnGendersResult;
 
-            var otErpGetTblGnCitiesResult = await OtErp.GetTblGnCities(null, null);
+            var otErpGetTblGnCitiesResult = await OtErp.GetTblGnCities();
             getTblGnCitiesResult = otErpGetTblGnCitiesResult;
 
             tblgnaddressbook = new TblGnAddressBook();
@@ -181,11 +182,11 @@ namespace QuanLyBanHang.Pages
             }
             catch (Exception otErpCreateTblGnAddressBookException)
             {
-                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblGnAddressBook!" });
+                    NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to create new TblGnAddressBook!");
             }
         }
 
-        protected async void Button2Click(UIMouseEventArgs args)
+        protected async void Button2Click(MouseEventArgs args)
         {
             DialogService.Close(null);
         }

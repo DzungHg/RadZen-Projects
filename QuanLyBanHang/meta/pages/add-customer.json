@@ -967,18 +967,7 @@
           ],
           "data": "${tblsocustomer}",
           "events": {
-            "submit": [
-              {
-                "name": "OT_ERP.createTblSoCustomer",
-                "parameters": [
-                  {
-                    "name": "TblSoCustomer",
-                    "value": "${tblsocustomer}"
-                  }
-                ],
-                "type": "invoke"
-              }
-            ]
+            "submit": []
           },
           "name": "Form0",
           "style": {

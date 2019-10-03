@@ -5,149 +5,149 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-<RadzenContent @ref="content1" @ref:suppressField Container="main">
+<RadzenContent @ref="content1" Container="main">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbook)" TItem="TblGnAddressBook" Visible="@(tblgnaddressbook != null)" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" Data="@(tblgnaddressbook)" TItem="TblGnAddressBook" Visible="@(tblgnaddressbook != null)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" @ref:suppressField Component="AddressBook_ID" style="width: 100%" Text="ID">
+                <RadzenLabel @ref="label1" Component="AddressBook_ID" style="width: 100%" Text="ID">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="addressBookId" @ref:suppressField MaxLength="10" style="display: block; width: 100%" Name="AddressBook_ID">
+                <RadzenTextBox @ref="addressBookId" MaxLength="10" style="display: block; width: 100%" Name="AddressBook_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="addressBookIdRequiredValidator" @ref:suppressField Component="AddressBook_ID" style="position: absolute" Text="AddressBook_ID is required">
+                <RadzenRequiredValidator @ref="addressBookIdRequiredValidator" Component="AddressBook_ID" style="position: absolute" Text="AddressBook_ID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Component="AddressBookType_FK" style="width: 100%" Text="Loại AddressBook">
+                <RadzenLabel @ref="label2" Component="AddressBookType_FK" style="width: 100%" Text="Loại AddressBook">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="addressBookTypeFk" @ref:suppressField Data="@(getTblGnAddressBookTypesResult)" Placeholder="Choose TblGnAddressBookType" style="width: 100%" TextProperty="AddressBookTypeText" ValueProperty="AddressBookType_SEQ" Name="AddressBookType_FK">
+                <RadzenDropDown @ref="addressBookTypeFk" Data="@(getTblGnAddressBookTypesResult)" Placeholder="Choose TblGnAddressBookType" style="width: 100%" TextProperty="AddressBookTypeText" ValueProperty="AddressBookType_SEQ" Name="AddressBookType_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Component="LastName" style="width: 100%" Text="Họ">
+                <RadzenLabel @ref="label3" Component="LastName" style="width: 100%" Text="Họ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="lastName" @ref:suppressField MaxLength="50" style="width: 100%" Name="LastName">
+                <RadzenTextBox @ref="lastName" MaxLength="50" style="width: 100%" Name="LastName">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label4" @ref:suppressField Component="FirstName" style="width: 100%" Text="Tên">
+                <RadzenLabel @ref="label4" Component="FirstName" style="width: 100%" Text="Tên">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="firstName" @ref:suppressField MaxLength="50" style="width: 100%" Name="FirstName">
+                <RadzenTextBox @ref="firstName" MaxLength="50" style="width: 100%" Name="FirstName">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label5" @ref:suppressField Component="Gender" style="width: 100%" Text="Giới Tính">
+                <RadzenLabel @ref="label5" Component="Gender" style="width: 100%" Text="Giới Tính">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="genderFk" @ref:suppressField AllowFiltering="false" Data="@(GendersResult)" Placeholder="Chọn giới tính" TextProperty="Gender" ValueProperty="Gender_SEQ" Name="Gender_FK">
+                <RadzenDropDown @ref="genderFk" AllowFiltering="false" Data="@(GendersResult)" Placeholder="Chọn giới tính" TextProperty="Gender" ValueProperty="Gender_SEQ" Name="Gender_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label6" @ref:suppressField Component="DOB" style="width: 100%" Text="Sinh Nhật">
+                <RadzenLabel @ref="label6" Component="DOB" style="width: 100%" Text="Sinh Nhật">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="dob" @ref:suppressField DateFormat="dd/mm/yy" style="width: 100%" Value="DateTime.Now" Name="DOB">
+                <RadzenDatePicker @ref="dob" DateFormat="dd/mm/yy" style="width: 100%" Value="DateTime.Now" Name="DOB">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label7" @ref:suppressField Component="Origin" style="width: 100%" Text="Nguyên Quán">
+                <RadzenLabel @ref="label7" Component="Origin" style="width: 100%" Text="Nguyên Quán">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="origin" @ref:suppressField MaxLength="50" style="width: 100%" Name="Origin">
+                <RadzenTextBox @ref="origin" MaxLength="50" style="width: 100%" Name="Origin">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label8" @ref:suppressField Component="IDNumber" style="width: 100%" Text="Số CMND/CC">
+                <RadzenLabel @ref="label8" Component="IDNumber" style="width: 100%" Text="Số CMND/CC">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="idNumber" @ref:suppressField MaxLength="20" style="width: 100%" Name="IDNumber">
+                <RadzenTextBox @ref="idNumber" MaxLength="20" style="width: 100%" Name="IDNumber">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label9" @ref:suppressField Component="TaxIDNumber" style="width: 100%" Text="Mã Số TTNCN">
+                <RadzenLabel @ref="label9" Component="TaxIDNumber" style="width: 100%" Text="Mã Số TTNCN">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="taxIdNumber" @ref:suppressField MaxLength="10" style="width: 100%" Name="TaxIDNumber">
+                <RadzenTextBox @ref="taxIdNumber" MaxLength="10" style="width: 100%" Name="TaxIDNumber">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label10" @ref:suppressField Component="OrganizationName" style="width: 100%" Text="Tên Tổ Chức">
+                <RadzenLabel @ref="label10" Component="OrganizationName" style="width: 100%" Text="Tên Tổ Chức">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="organizationName" @ref:suppressField MaxLength="100" style="width: 100%" Name="OrganizationName">
+                <RadzenTextBox @ref="organizationName" MaxLength="100" style="width: 100%" Name="OrganizationName">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label11" @ref:suppressField Component="JobPosition" style="width: 100%" Text="Chức Vụ">
+                <RadzenLabel @ref="label11" Component="JobPosition" style="width: 100%" Text="Chức Vụ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="jobPosition" @ref:suppressField MaxLength="50" style="width: 100%" Name="JobPosition">
+                <RadzenTextBox @ref="jobPosition" MaxLength="50" style="width: 100%" Name="JobPosition">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label12" @ref:suppressField Component="Address" style="width: 100%" Text="Địa Chỉ">
+                <RadzenLabel @ref="label12" Component="Address" style="width: 100%" Text="Địa Chỉ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="address" @ref:suppressField MaxLength="100" style="width: 100%" Name="Address">
+                <RadzenTextBox @ref="address" MaxLength="100" style="width: 100%" Name="Address">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label13" @ref:suppressField Component="City_PK" style="width: 100%" Text="Thành Phố">
+                <RadzenLabel @ref="label13" Component="City_PK" style="width: 100%" Text="Thành Phố">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="cityPk" @ref:suppressField Data="@(getTblGnCitiesResult)" Placeholder="Choose TblGnCity" style="width: 100%" TextProperty="CityName" ValueProperty="City_SEQ" Name="City_PK">
+                <RadzenDropDown @ref="cityPk" Data="@(getTblGnCitiesResult)" Placeholder="Choose TblGnCity" style="width: 100%" TextProperty="CityName" ValueProperty="City_SEQ" Name="City_PK">
                 </RadzenDropDown>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" @ref:suppressField ButtonStyle="primary" ButtonType="submit" Icon="save" Text="Save">
+                <RadzenButton @ref="button1" ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
-                <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button2Click">
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>

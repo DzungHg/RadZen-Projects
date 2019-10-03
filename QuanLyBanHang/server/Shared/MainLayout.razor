@@ -3,17 +3,16 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-
 <RadzenDialog />
 <RadzenNotification />
 
-<RadzenHeader @ref="header0" @ref:suppressField>
+<RadzenHeader @ref="header0">
   <ChildContent>
     <div class="row justify-content-start align-items-center">
       <div class="col-md-6 d-flex align-items-center">
-        <RadzenSidebarToggle @ref="sidebarToggle0" @ref:suppressField Click="@SidebarToggle0Click">
+        <RadzenSidebarToggle @ref="sidebarToggle0" Click="@SidebarToggle0Click">
         </RadzenSidebarToggle>
-        <RadzenLabel @ref="label0" @ref:suppressField Text="QuanLyBanHang">
+        <RadzenLabel @ref="label0" Text="QuanLyBanHang">
         </RadzenLabel>
       </div>
       <div class="col-md-6 text-lg-right">
@@ -21,16 +20,16 @@
     </div>
   </ChildContent>
 </RadzenHeader>
-<RadzenBody @ref="body0" @ref:suppressField>
+<RadzenBody @ref="body0">
   <ChildContent>
-    <RadzenContentContainer @ref="main" @ref:suppressField Name="main">
+    <RadzenContentContainer @ref="main" Name="main">
     @Body
     </RadzenContentContainer>
   </ChildContent>
 </RadzenBody>
-<RadzenSidebar @ref="sidebar0" @ref:suppressField>
+<RadzenSidebar @ref="sidebar0">
   <ChildContent>
-    <RadzenPanelMenu @ref="panelmenu0" @ref:suppressField style="height: 100%">
+    <RadzenPanelMenu @ref="panelmenu0" style="height: 100%">
       <ChildContent>
         <RadzenPanelMenuItem Selected="true" Text="Đơn Đặt Hàng">
           <ChildContent>
@@ -62,9 +61,9 @@
     </RadzenPanelMenu>
   </ChildContent>
 </RadzenSidebar>
-<RadzenFooter @ref="footer0" @ref:suppressField>
+<RadzenFooter @ref="footer0">
   <ChildContent>
-    <RadzenLabel @ref="footerText" @ref:suppressField Text="QuanLyBanHang, Copyright &copy; 2019">
+    <RadzenLabel @ref="footerText" Text="QuanLyBanHang, Copyright &copy; 2019">
     </RadzenLabel>
   </ChildContent>
 </RadzenFooter>

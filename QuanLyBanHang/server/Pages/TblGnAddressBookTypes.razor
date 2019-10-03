@@ -5,15 +5,15 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-<RadzenContent @ref="content1" @ref:suppressField Container="main">
+<RadzenContent @ref="content1" Container="main">
   <ChildContent>
-    <RadzenHeading @ref="pageTitle" @ref:suppressField Size="H1" Text="Tbl Gn Address Book Types">
+    <RadzenHeading @ref="pageTitle" Size="H1" Text="Tbl Gn Address Book Types">
     </RadzenHeading>
     <div class="row">
       <div class="col-md-12">
-        <RadzenButton @ref="button0" @ref:suppressField Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        <RadzenButton @ref="button0" Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
         </RadzenButton>
-        <RadzenGrid @ref="grid0" @ref:suppressField AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getTblGnAddressBookTypesResult)" TItem="TblGnAddressBookType" RowSelect="@Grid0RowSelect">
+        <RadzenGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getTblGnAddressBookTypesResult)" TItem="TblGnAddressBookType" RowSelect="@Grid0RowSelect">
           <Columns>
             <RadzenGridColumn TItem="TblGnAddressBookType" Context="tblGnAddressBookType" Property="AddressBookType_SEQ" Title="Address Book Type SEQ" Type="integer">
             </RadzenGridColumn>
@@ -23,7 +23,7 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="TblGnAddressBookType" Context="tblGnAddressBookType" Bubble="false" Filterable="false" Sortable="false" Width="70px">
               <Template Context="tblGnAddressBookType">
-                <RadzenButton @ref="gridDeleteButton" @ref:suppressField ButtonStyle="danger" Icon="close" Size="sm" Click="@((args) =>GridDeleteButtonClick(args, tblGnAddressBookType))">
+                <RadzenButton @ref="gridDeleteButton" ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, tblGnAddressBookType))">
                 </RadzenButton>
               </Template>
             </RadzenGridColumn>

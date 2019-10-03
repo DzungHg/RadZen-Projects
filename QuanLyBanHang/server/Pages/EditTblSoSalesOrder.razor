@@ -5,359 +5,359 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-<RadzenContent @ref="content1" @ref:suppressField Container="main">
+<RadzenContent @ref="content1" Container="main">
   <ChildContent>
     <div style="" class="row">
       <div class="col-md-9">
-        <RadzenLabel @ref="closeLabel" @ref:suppressField style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
+        <RadzenLabel @ref="closeLabel" style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
         </RadzenLabel>
       </div>
       <div class="col-md-3">
-        <RadzenButton @ref="closeButton" @ref:suppressField ButtonStyle="secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
+        <RadzenButton @ref="closeButton" ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
         </RadzenButton>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblsosalesorder)" Visible="@(tblsosalesorder != null && canEdit)" TItem="TblSoSalesOrder" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" Data="@(tblsosalesorder)" Visible="@(tblsosalesorder != null && canEdit)" TItem="TblSoSalesOrder" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="So Id" Component="SO_ID" style="width: 100%">
+                <RadzenLabel @ref="label2" Text="So Id" Component="SO_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="soId" @ref:suppressField MaxLength="15" style="display: block; width: 100%" Name="SO_ID">
+                <RadzenTextBox @ref="soId" MaxLength="15" style="display: block; width: 100%" Name="SO_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="soIdRequiredValidator" @ref:suppressField Component="SO_ID" Text="SO_ID is required" style="position: absolute">
+                <RadzenRequiredValidator @ref="soIdRequiredValidator" Component="SO_ID" Text="SO_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Text="So Date" Component="SODate" style="width: 100%">
+                <RadzenLabel @ref="label3" Text="So Date" Component="SODate" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="soDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="SODate">
+                <RadzenDatePicker @ref="soDate" DateFormat="MM/dd/yyyy" style="width: 100%" Name="SODate">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label4" @ref:suppressField Text="Tbl Gn Address Book" Component="CreatedBy_FK" style="width: 100%">
+                <RadzenLabel @ref="label4" Text="Tbl Gn Address Book" Component="CreatedBy_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="createdByFk" @ref:suppressField Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="CreatedBy_FK">
+                <RadzenDropDown @ref="createdByFk" Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="CreatedBy_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label5" @ref:suppressField Text="Tbl So Order Status" Component="SOStatus_FK" style="width: 100%">
+                <RadzenLabel @ref="label5" Text="Tbl So Order Status" Component="SOStatus_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="soStatusFk" @ref:suppressField Data="@(getTblSoOrderStatusesResult)" TextProperty="SOStatus_ID" ValueProperty="SOStatus_SEQ" Placeholder="Choose TblSoOrderStatus" style="width: 100%" Name="SOStatus_FK">
+                <RadzenDropDown @ref="soStatusFk" Data="@(getTblSoOrderStatusesResult)" TextProperty="SOStatus_ID" ValueProperty="SOStatus_SEQ" Placeholder="Choose TblSoOrderStatus" style="width: 100%" Name="SOStatus_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label6" @ref:suppressField Text="Tbl So Customer" Component="Customer_FK" style="width: 100%">
+                <RadzenLabel @ref="label6" Text="Tbl So Customer" Component="Customer_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="customerFk" @ref:suppressField Data="@(getTblSoCustomersResult)" TextProperty="Customer_ID" ValueProperty="Customer_SEQ" Placeholder="Choose TblSoCustomer" style="width: 100%" Name="Customer_FK">
+                <RadzenDropDown @ref="customerFk" Data="@(getTblSoCustomersResult)" TextProperty="Customer_ID" ValueProperty="Customer_SEQ" Placeholder="Choose TblSoCustomer" style="width: 100%" Name="Customer_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label7" @ref:suppressField Text="Customer Po Number" Component="CustomerPONumber" style="width: 100%">
+                <RadzenLabel @ref="label7" Text="Customer Po Number" Component="CustomerPONumber" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="customerPoNumber" @ref:suppressField MaxLength="15" style="width: 100%" Name="CustomerPONumber">
+                <RadzenTextBox @ref="customerPoNumber" MaxLength="15" style="width: 100%" Name="CustomerPONumber">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label8" @ref:suppressField Text="Customer Po Date" Component="CustomerPODate" style="width: 100%">
+                <RadzenLabel @ref="label8" Text="Customer Po Date" Component="CustomerPODate" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="customerPoDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="CustomerPODate">
+                <RadzenDatePicker @ref="customerPoDate" DateFormat="MM/dd/yyyy" style="width: 100%" Name="CustomerPODate">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label9" @ref:suppressField Text="Tbl Gn Address Book" Component="BillTo_FK" style="width: 100%">
+                <RadzenLabel @ref="label9" Text="Tbl Gn Address Book" Component="BillTo_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="billToFk" @ref:suppressField Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="BillTo_FK">
+                <RadzenDropDown @ref="billToFk" Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="BillTo_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label10" @ref:suppressField Text="Tbl Gn Address Book" Component="ShipTo_FK" style="width: 100%">
+                <RadzenLabel @ref="label10" Text="Tbl Gn Address Book" Component="ShipTo_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="shipToFk" @ref:suppressField Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="ShipTo_FK">
+                <RadzenDropDown @ref="shipToFk" Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="ShipTo_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label11" @ref:suppressField Text="Attention" Component="Attention" style="width: 100%">
+                <RadzenLabel @ref="label11" Text="Attention" Component="Attention" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="attention" @ref:suppressField MaxLength="100" style="width: 100%" Name="Attention">
+                <RadzenTextBox @ref="attention" MaxLength="100" style="width: 100%" Name="Attention">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label12" @ref:suppressField Text="Tbl Gn Ship Vium" Component="ShipVia_FK" style="width: 100%">
+                <RadzenLabel @ref="label12" Text="Tbl Gn Ship Vium" Component="ShipVia_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown @ref="shipViaFk" @ref:suppressField Data="@(getTblGnShipViaResult)" TextProperty="ShipVia_ID" ValueProperty="ShipVia_SEQ" Placeholder="Choose TblGnShipVium" style="width: 100%" Name="ShipVia_FK">
+                <RadzenDropDown @ref="shipViaFk" Data="@(getTblGnShipViaResult)" TextProperty="ShipVia_ID" ValueProperty="ShipVia_SEQ" Placeholder="Choose TblGnShipVium" style="width: 100%" Name="ShipVia_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label13" @ref:suppressField Text="Actual Ship Date" Component="ActualShipDate" style="width: 100%">
+                <RadzenLabel @ref="label13" Text="Actual Ship Date" Component="ActualShipDate" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="actualShipDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="ActualShipDate">
+                <RadzenDatePicker @ref="actualShipDate" DateFormat="MM/dd/yyyy" style="width: 100%" Name="ActualShipDate">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label14" @ref:suppressField Text="Expected Ship Date" Component="ExpectedShipDate" style="width: 100%">
+                <RadzenLabel @ref="label14" Text="Expected Ship Date" Component="ExpectedShipDate" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="expectedShipDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="ExpectedShipDate">
+                <RadzenDatePicker @ref="expectedShipDate" DateFormat="MM/dd/yyyy" style="width: 100%" Name="ExpectedShipDate">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label15" @ref:suppressField Text="Shipper Fk" Component="Shipper_FK" style="width: 100%">
+                <RadzenLabel @ref="label15" Text="Shipper Fk" Component="Shipper_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="shipperFk" @ref:suppressField style="width: 100%" Name="Shipper_FK" TItem="int?">
+                <RadzenNumeric @ref="shipperFk" style="width: 100%" Name="Shipper_FK" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label16" @ref:suppressField Text="Payment Term Fk" Component="PaymentTerm_FK" style="width: 100%">
+                <RadzenLabel @ref="label16" Text="Payment Term Fk" Component="PaymentTerm_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="paymentTermFk" @ref:suppressField style="width: 100%" Name="PaymentTerm_FK" TItem="int?">
+                <RadzenNumeric @ref="paymentTermFk" style="width: 100%" Name="PaymentTerm_FK" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label17" @ref:suppressField Text="Payment Type Fk" Component="PaymentType_FK" style="width: 100%">
+                <RadzenLabel @ref="label17" Text="Payment Type Fk" Component="PaymentType_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="paymentTypeFk" @ref:suppressField style="width: 100%" Name="PaymentType_FK" TItem="int?">
+                <RadzenNumeric @ref="paymentTypeFk" style="width: 100%" Name="PaymentType_FK" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label18" @ref:suppressField Text="Sales Persion Fk" Component="SalesPersion_FK" style="width: 100%">
+                <RadzenLabel @ref="label18" Text="Sales Persion Fk" Component="SalesPersion_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="salesPersionFk" @ref:suppressField style="width: 100%" Name="SalesPersion_FK" TItem="int?">
+                <RadzenNumeric @ref="salesPersionFk" style="width: 100%" Name="SalesPersion_FK" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label19" @ref:suppressField Text="Commission" Component="Commission" style="width: 100%">
+                <RadzenLabel @ref="label19" Text="Commission" Component="Commission" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="commission" @ref:suppressField style="width: 100%" Name="Commission" TItem="decimal?">
+                <RadzenNumeric @ref="commission" style="width: 100%" Name="Commission" TItem="decimal?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label20" @ref:suppressField Text="Pick No" Component="Pick_No" style="width: 100%">
+                <RadzenLabel @ref="label20" Text="Pick No" Component="Pick_No" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="pickNo" @ref:suppressField style="width: 100%" Name="Pick_No" TItem="int?">
+                <RadzenNumeric @ref="pickNo" style="width: 100%" Name="Pick_No" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label21" @ref:suppressField Text="Ship No" Component="Ship_No" style="width: 100%">
+                <RadzenLabel @ref="label21" Text="Ship No" Component="Ship_No" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="shipNo" @ref:suppressField style="width: 100%" Name="Ship_No" TItem="int?">
+                <RadzenNumeric @ref="shipNo" style="width: 100%" Name="Ship_No" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label22" @ref:suppressField Text="Tax Yn" Component="TaxYN" style="width: 100%">
+                <RadzenLabel @ref="label22" Text="Tax Yn" Component="TaxYN" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox @ref="taxYn" @ref:suppressField TriState="true" Name="TaxYN">
+                <RadzenCheckBox @ref="taxYn" TriState="true" Name="TaxYN">
                 </RadzenCheckBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label23" @ref:suppressField Text="Taxt Rate" Component="TaxtRate" style="width: 100%">
+                <RadzenLabel @ref="label23" Text="Taxt Rate" Component="TaxtRate" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="taxtRate" @ref:suppressField style="width: 100%" Name="TaxtRate" TItem="decimal?">
+                <RadzenNumeric @ref="taxtRate" style="width: 100%" Name="TaxtRate" TItem="decimal?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label24" @ref:suppressField Text="Subtotal" Component="Subtotal" style="width: 100%">
+                <RadzenLabel @ref="label24" Text="Subtotal" Component="Subtotal" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="subtotal" @ref:suppressField style="width: 100%" Name="Subtotal" TItem="decimal?">
+                <RadzenNumeric @ref="subtotal" style="width: 100%" Name="Subtotal" TItem="decimal?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label25" @ref:suppressField Text="Taxt Amount" Component="Taxt_Amount" style="width: 100%">
+                <RadzenLabel @ref="label25" Text="Taxt Amount" Component="Taxt_Amount" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="taxtAmount" @ref:suppressField style="width: 100%" Name="Taxt_Amount" TItem="decimal?">
+                <RadzenNumeric @ref="taxtAmount" style="width: 100%" Name="Taxt_Amount" TItem="decimal?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label26" @ref:suppressField Text="Discount Amt" Component="Discount_Amt" style="width: 100%">
+                <RadzenLabel @ref="label26" Text="Discount Amt" Component="Discount_Amt" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="discountAmt" @ref:suppressField style="width: 100%" Name="Discount_Amt" TItem="decimal?">
+                <RadzenNumeric @ref="discountAmt" style="width: 100%" Name="Discount_Amt" TItem="decimal?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label27" @ref:suppressField Text="Freight" Component="Freight" style="width: 100%">
+                <RadzenLabel @ref="label27" Text="Freight" Component="Freight" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="freight" @ref:suppressField style="width: 100%" Name="Freight" TItem="decimal?">
+                <RadzenNumeric @ref="freight" style="width: 100%" Name="Freight" TItem="decimal?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label28" @ref:suppressField Text="Description" Component="Description" style="width: 100%">
+                <RadzenLabel @ref="label28" Text="Description" Component="Description" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="description" @ref:suppressField style="width: 100%" Name="Description">
+                <RadzenTextBox @ref="description" style="width: 100%" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label29" @ref:suppressField Text="Change Long" Component="ChangeLong" style="width: 100%">
+                <RadzenLabel @ref="label29" Text="Change Long" Component="ChangeLong" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="changeLong" @ref:suppressField style="width: 100%" Name="ChangeLong">
+                <RadzenTextBox @ref="changeLong" style="width: 100%" Name="ChangeLong">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label30" @ref:suppressField Text="Notes" Component="Notes" style="width: 100%">
+                <RadzenLabel @ref="label30" Text="Notes" Component="Notes" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="notes" @ref:suppressField style="width: 100%" Name="Notes">
+                <RadzenTextBox @ref="notes" style="width: 100%" Name="Notes">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label31" @ref:suppressField Text="Last Updated Date" Component="LastUpdatedDate" style="width: 100%">
+                <RadzenLabel @ref="label31" Text="Last Updated Date" Component="LastUpdatedDate" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="lastUpdatedDate" @ref:suppressField DateFormat="MM/dd/yyyy" style="width: 100%" Name="LastUpdatedDate">
+                <RadzenDatePicker @ref="lastUpdatedDate" DateFormat="MM/dd/yyyy" style="width: 100%" Name="LastUpdatedDate">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label32" @ref:suppressField Text="Last Updated By Fk" Component="LastUpdatedBy_FK" style="width: 100%">
+                <RadzenLabel @ref="label32" Text="Last Updated By Fk" Component="LastUpdatedBy_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="lastUpdatedByFk" @ref:suppressField style="width: 100%" Name="LastUpdatedBy_FK" TItem="int?">
+                <RadzenNumeric @ref="lastUpdatedByFk" style="width: 100%" Name="LastUpdatedBy_FK" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label33" @ref:suppressField Text="Inactive" Component="Inactive" style="width: 100%">
+                <RadzenLabel @ref="label33" Text="Inactive" Component="Inactive" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox @ref="inactive" @ref:suppressField TriState="true" Name="Inactive">
+                <RadzenCheckBox @ref="inactive" TriState="true" Name="Inactive">
                 </RadzenCheckBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label34" @ref:suppressField Text="Sequence" Component="Sequence" style="width: 100%">
+                <RadzenLabel @ref="label34" Text="Sequence" Component="Sequence" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="sequence" @ref:suppressField style="width: 100%" Name="Sequence" TItem="int?">
+                <RadzenNumeric @ref="sequence" style="width: 100%" Name="Sequence" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button2" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                <RadzenButton @ref="button2" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton @ref="button3" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button3Click">
+                <RadzenButton @ref="button3" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>
               </div>
             </div>

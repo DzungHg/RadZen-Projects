@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using QuanLyBanHang.Models.OtErp;
@@ -12,7 +13,7 @@ namespace QuanLyBanHang.Pages
     public partial class TblSoSalesOrdersComponent : ComponentBase
     {
         [Inject]
-        protected IUriHelper UriHelper { get; set; }
+        protected NavigationManager UriHelper { get; set; }
 
         [Inject]
         protected DialogService DialogService { get; set; }
@@ -50,18 +51,18 @@ namespace QuanLyBanHang.Pages
             }
         }
 
-        protected override async Task OnInitializedAsync()
+        protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Load();
         }
 
         protected async void Load()
         {
-            var otErpGetTblSoSalesOrdersResult = await OtErp.GetTblSoSalesOrders(null, null);
+            var otErpGetTblSoSalesOrdersResult = await OtErp.GetTblSoSalesOrders();
             getTblSoSalesOrdersResult = otErpGetTblSoSalesOrdersResult;
         }
 
-        protected async void Button0Click(UIMouseEventArgs args)
+        protected async void Button0Click(MouseEventArgs args)
         {
             var result = await DialogService.OpenAsync<AddTblSoSalesOrder>("Add Tbl So Sales Order", null);
               grid0.Reload();
@@ -75,7 +76,7 @@ namespace QuanLyBanHang.Pages
               await InvokeAsync(() => { StateHasChanged(); });
         }
 
-        protected async void GridDeleteButtonClick(UIMouseEventArgs args, TblSoSalesOrder data)
+        protected async void GridDeleteButtonClick(MouseEventArgs args, TblSoSalesOrder data)
         {
             try
             {
@@ -86,7 +87,7 @@ namespace QuanLyBanHang.Pages
             }
             catch (Exception otErpDeleteTblSoSalesOrderException)
             {
-                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to delete TblSoSalesOrder" });
+                    NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to delete TblSoSalesOrder");
             }
         }
     }

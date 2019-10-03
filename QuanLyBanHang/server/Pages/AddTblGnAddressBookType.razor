@@ -5,37 +5,37 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-<RadzenContent @ref="content1" @ref:suppressField Container="main">
+<RadzenContent @ref="content1" Container="main">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblgnaddressbooktype)" Visible="@(tblgnaddressbooktype != null)" TItem="TblGnAddressBookType" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" Data="@(tblgnaddressbooktype)" Visible="@(tblgnaddressbooktype != null)" TItem="TblGnAddressBookType" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" @ref:suppressField Text="Address Book Type Id" Component="AddressBookType_ID" style="width: 100%">
+                <RadzenLabel @ref="label1" Text="Address Book Type Id" Component="AddressBookType_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="addressBookTypeId" @ref:suppressField MaxLength="10" style="width: 100%" Name="AddressBookType_ID">
+                <RadzenTextBox @ref="addressBookTypeId" MaxLength="10" style="width: 100%" Name="AddressBookType_ID">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="Address Book Type Text" Component="AddressBookTypeText" style="width: 100%">
+                <RadzenLabel @ref="label2" Text="Address Book Type Text" Component="AddressBookTypeText" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="addressBookTypeText" @ref:suppressField MaxLength="150" style="width: 100%" Name="AddressBookTypeText">
+                <RadzenTextBox @ref="addressBookTypeText" MaxLength="150" style="width: 100%" Name="AddressBookTypeText">
                 </RadzenTextBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button2Click">
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>

@@ -5,59 +5,59 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-<RadzenContent @ref="content1" @ref:suppressField Container="main">
+<RadzenContent @ref="content1" Container="main">
   <ChildContent>
     <div style="" class="row">
       <div class="col-md-9">
-        <RadzenLabel @ref="closeLabel" @ref:suppressField style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
+        <RadzenLabel @ref="closeLabel" style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
         </RadzenLabel>
       </div>
       <div class="col-md-3">
-        <RadzenButton @ref="closeButton" @ref:suppressField ButtonStyle="secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
+        <RadzenButton @ref="closeButton" ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
         </RadzenButton>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblsoorderstatus)" Visible="@(tblsoorderstatus != null && canEdit)" TItem="TblSoOrderStatus" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" Data="@(tblsoorderstatus)" Visible="@(tblsoorderstatus != null && canEdit)" TItem="TblSoOrderStatus" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="So Status Id" Component="SOStatus_ID" style="width: 100%">
+                <RadzenLabel @ref="label2" Text="So Status Id" Component="SOStatus_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="soStatusId" @ref:suppressField MaxLength="20" style="display: block; width: 100%" Name="SOStatus_ID">
+                <RadzenTextBox @ref="soStatusId" MaxLength="20" style="display: block; width: 100%" Name="SOStatus_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="soStatusIdRequiredValidator" @ref:suppressField Component="SOStatus_ID" Text="SOStatus_ID is required" style="position: absolute">
+                <RadzenRequiredValidator @ref="soStatusIdRequiredValidator" Component="SOStatus_ID" Text="SOStatus_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Text="So Status Text" Component="SOStatusText" style="width: 100%">
+                <RadzenLabel @ref="label3" Text="So Status Text" Component="SOStatusText" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="soStatusText" @ref:suppressField MaxLength="50" style="width: 100%" Name="SOStatusText">
+                <RadzenTextBox @ref="soStatusText" MaxLength="50" style="width: 100%" Name="SOStatusText">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label4" @ref:suppressField Text="Description" Component="Description" style="width: 100%">
+                <RadzenLabel @ref="label4" Text="Description" Component="Description" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="description" @ref:suppressField MaxLength="255" style="width: 100%" Name="Description">
+                <RadzenTextBox @ref="description" MaxLength="255" style="width: 100%" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button2" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                <RadzenButton @ref="button2" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton @ref="button3" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button3Click">
+                <RadzenButton @ref="button3" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>
               </div>
             </div>

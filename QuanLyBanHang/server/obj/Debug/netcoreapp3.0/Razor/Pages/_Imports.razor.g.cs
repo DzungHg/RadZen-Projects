@@ -25,11 +25,21 @@ using Microsoft.AspNetCore.Components.Routing;
 #line default
 #line hidden
 #line 4 "F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\_Imports.razor"
-using Microsoft.JSInterop;
+using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #line 5 "F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\_Imports.razor"
+using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#line 6 "F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\_Imports.razor"
+using Microsoft.JSInterop;
+
+#line default
+#line hidden
+#line 7 "F:\GitHub02\RadZen-Projects\QuanLyBanHang\server\_Imports.razor"
 using QuanLyBanHang.Shared;
 
 #line default

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using QuanLyBanHang.Models.OtErp;
@@ -12,7 +13,7 @@ namespace QuanLyBanHang.Pages
     public partial class AddTblSoCustomerComponent : ComponentBase
     {
         [Inject]
-        protected IUriHelper UriHelper { get; set; }
+        protected NavigationManager UriHelper { get; set; }
 
         [Inject]
         protected DialogService DialogService { get; set; }
@@ -33,17 +34,17 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenRequiredValidator customerIdRequiredValidator;
 
-        protected RadzenLabel label2;
+        protected RadzenLabel label0;
 
-        protected RadzenTextBox lastName;
+        protected RadzenDropDown customerAdressBookFk;
 
         protected RadzenLabel label3;
 
-        protected RadzenTextBox firstName;
+        protected RadzenTextBox lastName;
 
         protected RadzenLabel label4;
 
-        protected RadzenDropDown customerAdressBookFk;
+        protected RadzenTextBox firstName;
 
         protected RadzenLabel label5;
 
@@ -99,11 +100,11 @@ namespace QuanLyBanHang.Pages
 
         protected RadzenLabel label18;
 
-        protected dynamic salesPersonAdressBookFk;
-
-        protected RadzenLabel label19;
-
         protected dynamic commissionPercent;
+
+        protected RadzenLabel label1;
+
+        protected RadzenDropDown dropdown0;
 
         protected RadzenLabel label20;
 
@@ -133,13 +134,13 @@ namespace QuanLyBanHang.Pages
 
         protected dynamic aging90DayAmout;
 
-        protected RadzenLabel label27;
+        protected RadzenLabel label2;
 
-        protected RadzenTextBox notes;
+        protected RadzenDatePicker lastUpdatedDate;
 
         protected RadzenLabel label28;
 
-        protected RadzenDatePicker lastUpdatedDate;
+        protected RadzenTextBox notes;
 
         protected RadzenLabel label29;
 
@@ -221,20 +222,20 @@ namespace QuanLyBanHang.Pages
             }
         }
 
-        protected override async Task OnInitializedAsync()
+        protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Load();
         }
 
         protected async void Load()
         {
-            var otErpGetTblGnAddressBooksResult = await OtErp.GetTblGnAddressBooks(null, null);
+            var otErpGetTblGnAddressBooksResult = await OtErp.GetTblGnAddressBooks();
             getTblGnAddressBooksResult = otErpGetTblGnAddressBooksResult;
 
-            var otErpGetTblGnPaymentTermsResult = await OtErp.GetTblGnPaymentTerms(null, null);
+            var otErpGetTblGnPaymentTermsResult = await OtErp.GetTblGnPaymentTerms();
             getTblGnPaymentTermsResult = otErpGetTblGnPaymentTermsResult;
 
-            var otErpGetTblGnPaymentTypesResult = await OtErp.GetTblGnPaymentTypes(null, null);
+            var otErpGetTblGnPaymentTypesResult = await OtErp.GetTblGnPaymentTypes();
             getTblGnPaymentTypesResult = otErpGetTblGnPaymentTypesResult;
 
             tblsocustomer = new TblSoCustomer();
@@ -249,11 +250,11 @@ namespace QuanLyBanHang.Pages
             }
             catch (Exception otErpCreateTblSoCustomerException)
             {
-                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to create new TblSoCustomer!" });
+                    NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to create new TblSoCustomer!");
             }
         }
 
-        protected async void Button2Click(UIMouseEventArgs args)
+        protected async void Button2Click(MouseEventArgs args)
         {
             DialogService.Close(null);
         }

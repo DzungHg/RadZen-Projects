@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using QuanLyBanHang.Data;
 using Radzen;
 
@@ -30,23 +35,27 @@ namespace QuanLyBanHang
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
             services.AddScoped<HttpClient>(serviceProvider =>
             {
-              var uriHelper = serviceProvider.GetRequiredService<IUriHelper>();
+
+              var uriHelper = serviceProvider.GetRequiredService<NavigationManager>();
 
               return new HttpClient
               {
-                BaseAddress = new Uri(uriHelper.GetBaseUri())
+                BaseAddress = new Uri(uriHelper.BaseUri)
               };
             });
 
-            services.AddScoped<OtErpService>();
+            services.AddHttpClient();
 
+            services.AddScoped<OtErpService>();
 
             services.AddDbContext<QuanLyBanHang.Data.OtErpContext>(options =>
             {
               options.UseSqlServer(Configuration.GetConnectionString("OtErpConnection"));
             });
+
             services.AddRazorPages();
             services.AddServerSideBlazor().AddHubOptions(o =>
             {
@@ -89,4 +98,5 @@ namespace QuanLyBanHang
             OnConfigure(app, env);
         }
     }
+
 }

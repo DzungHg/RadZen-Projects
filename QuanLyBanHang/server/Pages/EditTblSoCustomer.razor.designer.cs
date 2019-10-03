@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using QuanLyBanHang.Models.OtErp;
@@ -12,7 +13,7 @@ namespace QuanLyBanHang.Pages
     public partial class EditTblSoCustomerComponent : ComponentBase
     {
         [Inject]
-        protected IUriHelper UriHelper { get; set; }
+        protected NavigationManager UriHelper { get; set; }
 
         [Inject]
         protected DialogService DialogService { get; set; }
@@ -245,7 +246,7 @@ namespace QuanLyBanHang.Pages
             }
         }
 
-        protected override async Task OnInitializedAsync()
+        protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Load();
         }
@@ -264,17 +265,17 @@ namespace QuanLyBanHang.Pages
 
             }
 
-            var otErpGetTblGnAddressBooksResult = await OtErp.GetTblGnAddressBooks(null, null);
+            var otErpGetTblGnAddressBooksResult = await OtErp.GetTblGnAddressBooks();
             getTblGnAddressBooksResult = otErpGetTblGnAddressBooksResult;
 
-            var otErpGetTblGnPaymentTermsResult = await OtErp.GetTblGnPaymentTerms(null, null);
+            var otErpGetTblGnPaymentTermsResult = await OtErp.GetTblGnPaymentTerms();
             getTblGnPaymentTermsResult = otErpGetTblGnPaymentTermsResult;
 
-            var otErpGetTblGnPaymentTypesResult = await OtErp.GetTblGnPaymentTypes(null, null);
+            var otErpGetTblGnPaymentTypesResult = await OtErp.GetTblGnPaymentTypes();
             getTblGnPaymentTypesResult = otErpGetTblGnPaymentTypesResult;
         }
 
-        protected async void CloseButtonClick(UIMouseEventArgs args)
+        protected async void CloseButtonClick(MouseEventArgs args)
         {
             DialogService.Close(null);
         }
@@ -288,11 +289,11 @@ namespace QuanLyBanHang.Pages
             }
             catch (Exception otErpUpdateTblSoCustomerException)
             {
-                NotificationService.Notify(new NotificationMessage() { Severity = "error", Summary = $"Error", Detail = $"Unable to update TblSoCustomer" });
+                    NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to update TblSoCustomer");
             }
         }
 
-        protected async void Button3Click(UIMouseEventArgs args)
+        protected async void Button3Click(MouseEventArgs args)
         {
             DialogService.Close(null);
         }

@@ -5,47 +5,47 @@
 @using Radzen
 @using Radzen.Blazor
 @using QuanLyBanHang.Models.OtErp
-<RadzenContent @ref="content1" @ref:suppressField Container="main">
+<RadzenContent @ref="content1" Container="main">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" @ref:suppressField Data="@(tblsoorderdetailstatus)" Visible="@(tblsoorderdetailstatus != null)" TItem="TblSoOrderDetailStatus" Submit="@Form0Submit">
+        <RadzenTemplateForm @ref="form0" Data="@(tblsoorderdetailstatus)" Visible="@(tblsoorderdetailstatus != null)" TItem="TblSoOrderDetailStatus" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" @ref:suppressField Text="So Detail Status Id" Component="SODetailStatus_ID" style="width: 100%">
+                <RadzenLabel @ref="label1" Text="So Detail Status Id" Component="SODetailStatus_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="soDetailStatusId" @ref:suppressField style="width: 100%" Name="SODetailStatus_ID" TItem="int?">
+                <RadzenNumeric @ref="soDetailStatusId" style="width: 100%" Name="SODetailStatus_ID" TItem="int?">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" @ref:suppressField Text="So Detail Status Text" Component="SODetailStatusText" style="width: 100%">
+                <RadzenLabel @ref="label2" Text="So Detail Status Text" Component="SODetailStatusText" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="soDetailStatusText" @ref:suppressField MaxLength="50" style="width: 100%" Name="SODetailStatusText">
+                <RadzenTextBox @ref="soDetailStatusText" MaxLength="50" style="width: 100%" Name="SODetailStatusText">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" @ref:suppressField Text="Description" Component="Description" style="width: 100%">
+                <RadzenLabel @ref="label3" Text="Description" Component="Description" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="description" @ref:suppressField MaxLength="255" style="width: 100%" Name="Description">
+                <RadzenTextBox @ref="description" MaxLength="255" style="width: 100%" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" @ref:suppressField ButtonType="submit" Icon="save" Text="Save" ButtonStyle="primary">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton @ref="button2" @ref:suppressField ButtonStyle="light" Text="Cancel" Click="@Button2Click">
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>
