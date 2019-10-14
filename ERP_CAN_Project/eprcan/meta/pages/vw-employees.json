@@ -1,0 +1,134 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Vw Employees"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getVwEmployeesResult}",
+                  "events": {
+                    "loadData": []
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "AddressBook_SEQ",
+                      "title": "Address Book SEQ",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "AddressBook_ID",
+                      "title": "Address Book ID",
+                      "type": "string"
+                    },
+                    {
+                      "property": "AddressBookType_FK",
+                      "title": "Address Book Type FK",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "LastName",
+                      "title": "Last Name",
+                      "type": "string"
+                    },
+                    {
+                      "property": "FirstName",
+                      "title": "First Name",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Gender_FK",
+                      "title": "Gender FK",
+                      "type": "integer"
+                    },
+                    {
+                      "format": "date-time",
+                      "property": "DOB",
+                      "formatString": "{0:ddMM/yyyy}",
+                      "title": "DOB",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Origin",
+                      "title": "Origin",
+                      "type": "string"
+                    },
+                    {
+                      "property": "IDNumber",
+                      "title": "ID Number",
+                      "type": "string"
+                    },
+                    {
+                      "property": "TaxIDNumber",
+                      "title": "Tax ID Number",
+                      "type": "string"
+                    },
+                    {
+                      "property": "OrganizationName",
+                      "title": "Organization Name",
+                      "type": "string"
+                    },
+                    {
+                      "property": "JobPosition",
+                      "title": "Job Position",
+                      "type": "string"
+                    },
+                    {
+                      "property": "Address",
+                      "title": "Address",
+                      "type": "string"
+                    },
+                    {
+                      "property": "City_FK",
+                      "title": "City FK",
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "grid",
+                  "itemType": "ErpCan.Models.CanErpDbAt132.VwEmployee"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "CanERP_DB_AT132.getVwEmployees",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getVwEmployeesResult",
+            "type": "set",
+            "value": "${result.value}",
+            "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.VwEmployee>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Vw Employees",
+  "layout": "Main",
+  "access": []
+}

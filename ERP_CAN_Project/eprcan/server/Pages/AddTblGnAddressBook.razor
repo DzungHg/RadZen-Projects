@@ -1,0 +1,159 @@
+﻿@page "/add-tbl-gn-address-book"
+@layout MainLayout
+@inherits ErpCan.Pages.AddTblGnAddressBookComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" Data="@(tblgnaddressbook)" Visible="@(tblgnaddressbook != null)" TItem="ErpCan.Models.CanErpDbAt132.TblGnAddressBook" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" Text="Address Book Id" Component="AddressBook_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="addressBookId" MaxLength="10" style="display: block; width: 100%" Name="AddressBook_ID">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="addressBookIdRequiredValidator" Component="AddressBook_ID" Text="AddressBook_ID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Tbl Gn Address Book Type" Component="AddressBookType_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="addressBookTypeFk" Data="@(getTblGnAddressBookTypesResult)" TextProperty="AddressBookType_ID" ValueProperty="AddressBookType_SEQ" Placeholder="Choose TblGnAddressBookType" style="width: 100%" Name="AddressBookType_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Last Name" Component="LastName" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="lastName" MaxLength="50" style="width: 100%" Name="LastName">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" Text="First Name" Component="FirstName" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="firstName" MaxLength="50" style="width: 100%" Name="FirstName">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label5" Text="Tbl Gn Gender" Component="Gender_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="genderFk" Data="@(getTblGnGendersResult)" TextProperty="Gender_ID" ValueProperty="Gender_SEQ" Placeholder="Choose TblGnGender" style="width: 100%" Name="Gender_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label6" Text="Dob" Component="DOB" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker @ref="dob" DateFormat="MM/dd/yyyy" style="width: 100%" Value="DateTime.Now" Name="DOB">
+                </RadzenDatePicker>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label7" Text="Origin" Component="Origin" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="origin" MaxLength="50" style="width: 100%" Name="Origin">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label8" Text="Id Number" Component="IDNumber" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="idNumber" MaxLength="20" style="width: 100%" Name="IDNumber">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label9" Text="Tax Id Number" Component="TaxIDNumber" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="taxIdNumber" MaxLength="10" style="width: 100%" Name="TaxIDNumber">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label10" Text="Organization Name" Component="OrganizationName" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="organizationName" MaxLength="100" style="width: 100%" Name="OrganizationName">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label11" Text="Job Position" Component="JobPosition" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="jobPosition" MaxLength="50" style="width: 100%" Name="JobPosition">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label12" Text="Address" Component="Address" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="address" MaxLength="100" style="width: 100%" Name="Address">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label13" Text="Tbl Gn City" Component="City_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="cityFk" Data="@(getTblGnCitiesResult)" TextProperty="City_ID" ValueProperty="City_SEQ" Placeholder="Choose TblGnCity" style="width: 100%" Name="City_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

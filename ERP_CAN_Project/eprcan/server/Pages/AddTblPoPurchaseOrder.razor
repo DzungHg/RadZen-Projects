@@ -1,0 +1,179 @@
+﻿@page "/add-tbl-po-purchase-order"
+@layout MainLayout
+@inherits ErpCan.Pages.AddTblPoPurchaseOrderComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" Data="@(tblpopurchaseorder)" Visible="@(tblpopurchaseorder != null)" TItem="ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" Text="Po Id" Component="PO_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="poId" MaxLength="15" style="display: block; width: 100%" Name="PO_ID">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="poIdRequiredValidator" Component="PO_ID" Text="PO_ID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Po Date" Component="PODate" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker @ref="poDate" DateFormat="MM/dd/yyyy" style="width: 100%" Value="DateTime.Now" Name="PODate">
+                </RadzenDatePicker>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Tbl Gn Address Book" Component="CreatedBy_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="createdByFk" Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" Name="CreatedBy_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" Text="Tbl Po Order Status" Component="POStatus_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="poStatusFk" Data="@(getTblPoOrderStatusesResult)" TextProperty="POStatusText" ValueProperty="POStatus_ID" Placeholder="Choose TblPoOrderStatus" style="width: 100%" Name="POStatus_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label5" Text="Tbl Po Vendor" Component="Vendor_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="vendorFk" Data="@(getTblPoVendorsResult)" TextProperty="LastName" ValueProperty="Vendor_ID" Placeholder="Choose TblPoVendor" style="width: 100%" Name="Vendor_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label6" Text="Description" Component="Description" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="description" MaxLength="150" style="width: 100%" Name="Description">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label7" Text="Incoterm Id" Component="Incoterm_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="incotermId" MaxLength="3" style="width: 100%" Name="Incoterm_ID">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label8" Text="Tbl Gn Ship Vium" Component="ShipVia_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="shipViaFk" Data="@(getTblGnShipViaResult)" TextProperty="ShipVia_ID" ValueProperty="ShipVia_SEQ" Placeholder="Choose TblGnShipVium" style="width: 100%" Name="ShipVia_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label9" Text="Tbl Gn Payment Term" Component="PaymentTerm_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="paymentTermFk" Data="@(getTblGnPaymentTermsResult)" TextProperty="PaymentTerm_ID" ValueProperty="PaymentTerm_SEQ" Placeholder="Choose TblGnPaymentTerm" style="width: 100%" Name="PaymentTerm_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label10" Text="Tbl Gn Payment Type" Component="PaymentType_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="paymentTypeFk" Data="@(getTblGnPaymentTypesResult)" TextProperty="PaymentType_ID" ValueProperty="PaymentType_SEQ" Placeholder="Choose TblGnPaymentType" style="width: 100%" Name="PaymentType_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label11" Text="Buyer Fk" Component="Buyer_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="buyerFk" style="width: 100%" Name="Buyer_FK" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label12" Text="Tax Yn" Component="TaxYN" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenCheckBox @ref="taxYn" TriState="true" Name="TaxYN">
+                </RadzenCheckBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label13" Text="Taxt Rate" Component="TaxtRate" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="taxtRate" style="width: 100%" Name="TaxtRate" TItem="double?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label14" Text="Department Fk" Component="Department_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="departmentFk" MaxLength="5" style="width: 100%" Name="Department_FK">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label15" Text="Po Amount" Component="PO_Amount" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="poAmount" style="width: 100%" Name="PO_Amount" TItem="decimal?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

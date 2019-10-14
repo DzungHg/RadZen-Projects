@@ -1,0 +1,59 @@
+﻿@page "/add-tbl-ic-classification"
+@layout MainLayout
+@inherits ErpCan.Pages.AddTblIcClassificationComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" Data="@(tblicclassification)" Visible="@(tblicclassification != null)" TItem="ErpCan.Models.CanErpDbAt132.TblIcClassification" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" Text="Classifi Id" Component="Classifi_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="classifiId" MaxLength="5" style="display: block; width: 100%" Name="Classifi_ID">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="classifiIdRequiredValidator" Component="Classifi_ID" Text="Classifi_ID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Classifi Name" Component="Classifi_Name" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="classifiName" MaxLength="50" style="width: 100%" Name="Classifi_Name">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Inactive" Component="Inactive" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenCheckBox @ref="inactive" TriState="true" Name="Inactive">
+                </RadzenCheckBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

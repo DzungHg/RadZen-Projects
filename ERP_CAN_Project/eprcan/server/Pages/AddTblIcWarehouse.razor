@@ -1,0 +1,69 @@
+﻿@page "/add-tbl-ic-warehouse"
+@layout MainLayout
+@inherits ErpCan.Pages.AddTblIcWarehouseComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" Data="@(tblicwarehouse)" Visible="@(tblicwarehouse != null)" TItem="ErpCan.Models.CanErpDbAt132.TblIcWarehouse" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" Text="Warehouse Id" Component="Warehouse_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="warehouseId" MaxLength="5" style="display: block; width: 100%" Name="Warehouse_ID">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="warehouseIdRequiredValidator" Component="Warehouse_ID" Text="Warehouse_ID is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Warehouse Name" Component="WarehouseName" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="warehouseName" MaxLength="50" style="width: 100%" Name="WarehouseName">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Warehouse Address" Component="WarehouseAddress" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="warehouseAddress" MaxLength="100" style="width: 100%" Name="WarehouseAddress">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" Text="Inactive" Component="Inactive" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenCheckBox @ref="inactive" TriState="true" Name="Inactive">
+                </RadzenCheckBox>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

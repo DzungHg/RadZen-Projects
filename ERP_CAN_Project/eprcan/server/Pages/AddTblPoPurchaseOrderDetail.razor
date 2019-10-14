@@ -1,0 +1,101 @@
+﻿@page "/add-tbl-po-purchase-order-detail"
+@layout MainLayout
+@inherits ErpCan.Pages.AddTblPoPurchaseOrderDetailComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" Data="@(tblpopurchaseorderdetail)" Visible="@(tblpopurchaseorderdetail != null)" TItem="ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrderDetail" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" Text="Tbl Po Purchase Order" Component="PO_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="poFk" Data="@(getTblPoPurchaseOrdersResult)" TextProperty="POStatus_FK" ValueProperty="PO_ID" Placeholder="Choose TblPoPurchaseOrder" style="display: block; width: 100%" Name="PO_FK">
+                </RadzenDropDown>
+                <RadzenRequiredValidator @ref="poFkRequiredValidator" Component="PO_FK" Text="PO_FK is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Tbl Ic Inventory" Component="Inventory_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="inventoryFk" Data="@(getTblIcInventoriesResult)" TextProperty="Warehouse_FK" ValueProperty="Inventory_SEQ" Placeholder="Choose TblIcInventory" style="display: block; width: 100%" Name="Inventory_FK">
+                </RadzenDropDown>
+                <RadzenRequiredValidator @ref="inventoryFkRequiredValidator" Component="Inventory_FK" Text="Inventory_FK is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Unit Price" Component="Unit_Price" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="unitPrice" style="width: 100%" Name="Unit_Price" TItem="decimal?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" Text="Qty Ordered" Component="QtyOrdered" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyOrdered" style="width: 100%" Name="QtyOrdered" TItem="double?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label5" Text="Qty Received" Component="QtyReceived" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyReceived" style="width: 100%" Name="QtyReceived" TItem="double?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label6" Text="Tax Rate" Component="TaxRate" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="taxRate" style="width: 100%" Name="TaxRate" TItem="double?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label7" Text="Discount Percent" Component="DiscountPercent" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="discountPercent" style="width: 100%" Name="DiscountPercent" TItem="double?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

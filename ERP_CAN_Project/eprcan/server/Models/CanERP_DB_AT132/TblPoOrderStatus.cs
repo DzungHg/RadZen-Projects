@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ErpCan.Models.CanErpDbAt132
+{
+  [Table("tblPO_OrderStatus", Schema = "dbo")]
+  public partial class TblPoOrderStatus
+  {
+    [Key]
+    public string POStatus_ID
+    {
+      get;
+      set;
+    }
+
+
+    [InverseProperty("TblPoOrderStatus")]
+    public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
+    public string POStatusText
+    {
+      get;
+      set;
+    }
+    public string Description
+    {
+      get;
+      set;
+    }
+  }
+}

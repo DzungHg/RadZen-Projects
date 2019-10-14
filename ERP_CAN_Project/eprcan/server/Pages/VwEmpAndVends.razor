@@ -1,0 +1,49 @@
+﻿@page "/vw-emp-and-vends"
+@layout MainLayout
+@inherits ErpCan.Pages.VwEmpAndVendsComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="main">
+  <ChildContent>
+    <RadzenHeading @ref="pageTitle" Size="H1" Text="Vw Emp And Vends">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@(getVwEmpAndVendsResult)" TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend">
+          <Columns>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="AddressBook_SEQ" Title="Address Book SEQ" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="AddressBook_ID" Title="Address Book ID" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="AddressBookType_FK" Title="Address Book Type FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="LastName" Title="Last Name" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="FirstName" Title="First Name" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="Gender_FK" Title="Gender FK" Type="integer">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Format="date-time" Property="DOB" FormatString="{0:ddMM/yyyy}" Title="DOB" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="Origin" Title="Origin" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="IDNumber" Title="ID Number" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="TaxIDNumber" Title="Tax ID Number" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="OrganizationName" Title="Organization Name" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="JobPosition" Title="Job Position" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="Address" Title="Address" Type="string">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.VwEmpAndVend" Context="erpCanModelsCanErpDbAt132VwEmpAndVend" Property="City_FK" Title="City FK" Type="integer">
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

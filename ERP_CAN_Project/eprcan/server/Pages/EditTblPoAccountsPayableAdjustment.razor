@@ -1,0 +1,169 @@
+﻿@page "/edit-tbl-po-accounts-payable-adjustment/{Voucher_No}"
+@layout MainLayout
+@inherits ErpCan.Pages.EditTblPoAccountsPayableAdjustmentComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div style="" class="row">
+      <div class="col-md-9">
+        <RadzenLabel @ref="closeLabel" style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
+        </RadzenLabel>
+      </div>
+      <div class="col-md-3">
+        <RadzenButton @ref="closeButton" ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
+        </RadzenButton>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" TItem="ErpCan.Models.CanErpDbAt132.TblPoAccountsPayableAdjustment" Data="@(tblpoaccountspayableadjustment)" Visible="@(tblpoaccountspayableadjustment != null && canEdit)" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Voucher No" Component="Voucher_No" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="voucherNo" MaxLength="10" style="display: block; width: 100%" Value="@($"{tblpoaccountspayableadjustment.Voucher_No}")" Name="Voucher_No">
+                </RadzenTextBox>
+                <RadzenRequiredValidator @ref="voucherNoRequiredValidator" Component="Voucher_No" Text="Voucher_No is required" style="position: absolute">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Voucher Date" Component="Voucher_Date" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker @ref="voucherDate" DateFormat="MM/dd/yyyy" style="width: 100%" Value="@(tblpoaccountspayableadjustment.Voucher_Date)" Name="Voucher_Date">
+                </RadzenDatePicker>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" Text="Vendor Fk" Component="Vendor_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="vendorFk" MaxLength="10" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Vendor_FK}")" Name="Vendor_FK">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label5" Text="Transact Id" Component="Transact_ID" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="transactId" MaxLength="2" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Transact_ID}")" Name="Transact_ID">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label6" Text="Record Code" Component="Record_Code" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="recordCode" MaxLength="2" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Record_Code}")" Name="Record_Code">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label7" Text="Po No" Component="PO_No" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="poNo" MaxLength="15" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.PO_No}")" Name="PO_No">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label8" Text="Invoice No" Component="Invoice_No" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="invoiceNo" MaxLength="10" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Invoice_No}")" Name="Invoice_No">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label9" Text="Invoice Date" Component="Invoice_Date" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDatePicker @ref="invoiceDate" DateFormat="MM/dd/yyyy" style="width: 100%" Value="@(tblpoaccountspayableadjustment.Invoice_Date)" Name="Invoice_Date">
+                </RadzenDatePicker>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label10" Text="Debit Account" Component="Debit_Account" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="debitAccount" MaxLength="7" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Debit_Account}")" Name="Debit_Account">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label11" Text="Credit Account" Component="Credit_Account" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="creditAccount" MaxLength="7" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Credit_Account}")" Name="Credit_Account">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label12" Text="Description" Component="Description" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox @ref="description" MaxLength="150" style="width: 100%" Value="@($"{tblpoaccountspayableadjustment.Description}")" Name="Description">
+                </RadzenTextBox>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label13" Text="Amount" Component="Amount" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="amount" style="width: 100%" Value="@(tblpoaccountspayableadjustment.Amount)" Name="Amount" TItem="decimal?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label14" Text="Authorize By" Component="Authorize_By" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="authorizeBy" style="width: 100%" Value="@(tblpoaccountspayableadjustment.Authorize_By)" Name="Authorize_By" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button2" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button3" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

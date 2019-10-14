@@ -1,0 +1,137 @@
+﻿@page "/add-tbl-so-order-detail"
+@layout MainLayout
+@inherits ErpCan.Pages.AddTblSoOrderDetailComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using ErpCan.Models.CanErpDbAt132
+<RadzenContent @ref="content1" Container="contentContainer0">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm @ref="form0" Data="@(tblsoorderdetail)" Visible="@(tblsoorderdetail != null)" TItem="ErpCan.Models.CanErpDbAt132.TblSoOrderDetail" Submit="@Form0Submit">
+          <ChildContent>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label1" Text="Tbl So Order Detail Status" Component="SODetailStatus_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="soDetailStatusFk" Data="@(getTblSoOrderDetailStatusesResult)" TextProperty="SODetailStatusText" ValueProperty="SODetailStatus_SEQ" Placeholder="Choose TblSoOrderDetailStatus" style="width: 100%" Name="SODetailStatus_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label2" Text="Tbl So Sales Order" Component="SO_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="soFk" Data="@(getTblSoSalesOrdersResult)" TextProperty="SO_ID" ValueProperty="SO_SEQ" Placeholder="Choose TblSoSalesOrder" style="width: 100%" Name="SO_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label3" Text="Tbl Ic Inventory" Component="Inventory_FK" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown @ref="inventoryFk" Data="@(getTblIcInventoriesResult)" TextProperty="Warehouse_FK" ValueProperty="Inventory_SEQ" Placeholder="Choose TblIcInventory" style="width: 100%" Name="Inventory_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label4" Text="Unit Price" Component="UnitPrice" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="unitPrice" style="width: 100%" Name="UnitPrice" TItem="decimal?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label5" Text="Qty On Hand" Component="QtyOnHand" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyOnHand" style="width: 100%" Name="QtyOnHand" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label6" Text="Qty Ordered" Component="QtyOrdered" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyOrdered" style="width: 100%" Name="QtyOrdered" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label7" Text="Qty Ordered Now" Component="QtyOrderedNow" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyOrderedNow" style="width: 100%" Name="QtyOrderedNow" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label8" Text="Qty Back Ordered" Component="QtyBackOrdered" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyBackOrdered" style="width: 100%" Name="QtyBackOrdered" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label9" Text="Qty Picked" Component="QtyPicked" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="qtyPicked" style="width: 100%" Name="QtyPicked" TItem="int?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label10" Text="Discount Percent" Component="DiscountPercent" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="discountPercent" style="width: 100%" Name="DiscountPercent" TItem="decimal?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel @ref="label11" Text="Tax Rate" Component="TaxRate" style="width: 100%">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenNumeric @ref="taxRate" style="width: 100%" Name="TaxRate" TItem="decimal?">
+                </RadzenNumeric>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                </RadzenButton>
+                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>
