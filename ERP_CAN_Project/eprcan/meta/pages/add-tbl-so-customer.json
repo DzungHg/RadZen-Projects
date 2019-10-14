@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Customer_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Customer_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,13 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "LastName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.LastName}"
                             }
                           ]
                         }
@@ -124,13 +124,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "FirstName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.FirstName}"
                             }
                           ]
                         }
@@ -169,7 +169,8 @@
                               "name": "CustomerAdressBook_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.CustomerAdressBook_FK}"
                             }
                           ]
                         }
@@ -200,12 +201,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "CreditLimit",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.CreditLimit}"
                             }
                           ]
                         }
@@ -236,14 +237,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastRevisedCreditLimitDate",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblsocustomer.LastRevisedCreditLimitDate}"
                             }
                           ]
                         }
@@ -282,7 +282,8 @@
                               "name": "PaymentTerm_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.PaymentTerm_FK}"
                             }
                           ]
                         }
@@ -321,7 +322,8 @@
                               "name": "PaymentType_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.PaymentType_FK}"
                             }
                           ]
                         }
@@ -352,12 +354,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "DiscountPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.DiscountPercent}"
                             }
                           ]
                         }
@@ -388,12 +390,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Current_MTD_Sales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Current_MTD_Sales}"
                             }
                           ]
                         }
@@ -424,12 +426,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Current_MTD_Returns",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Current_MTD_Returns}"
                             }
                           ]
                         }
@@ -460,12 +462,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "YTD_GrossSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.YTD_GrossSales}"
                             }
                           ]
                         }
@@ -496,12 +498,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "YTD_Returns",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.YTD_Returns}"
                             }
                           ]
                         }
@@ -532,12 +534,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "YTD_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.YTD_COGS}"
                             }
                           ]
                         }
@@ -568,12 +570,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LYR_GrossSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.LYR_GrossSales}"
                             }
                           ]
                         }
@@ -604,12 +606,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LYR_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.LYR_COGS}"
                             }
                           ]
                         }
@@ -640,12 +642,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LastAmountSales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.LastAmountSales}"
                             }
                           ]
                         }
@@ -676,12 +678,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "SalesPersonAdressBook_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.SalesPersonAdressBook_FK}"
                             }
                           ]
                         }
@@ -712,12 +714,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "CommissionPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.CommissionPercent}"
                             }
                           ]
                         }
@@ -748,12 +750,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "SalesPerson_MTD_Goal",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.SalesPerson_MTD_Goal}"
                             }
                           ]
                         }
@@ -784,12 +786,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "SalesPerson_YTD_Goal",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.SalesPerson_YTD_Goal}"
                             }
                           ]
                         }
@@ -820,10 +822,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "ChargeInterest",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblsocustomer.ChargeInterest}"
                             }
                           ]
                         }
@@ -854,10 +856,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Statement",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblsocustomer.Statement}"
                             }
                           ]
                         }
@@ -888,12 +890,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Aging30DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Aging30DayAmout}"
                             }
                           ]
                         }
@@ -924,12 +926,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Aging60DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Aging60DayAmout}"
                             }
                           ]
                         }
@@ -960,12 +962,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Aging90DayAmout",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Aging90DayAmout}"
                             }
                           ]
                         }
@@ -996,12 +998,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "type": "textbox",
                               "name": "Notes",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.Notes}"
                             }
                           ]
                         }
@@ -1032,14 +1034,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastUpdatedDate",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblsocustomer.LastUpdatedDate}"
                             }
                           ]
                         }
@@ -1070,12 +1071,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "LastUdpatedBy",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsocustomer.LastUdpatedBy}"
                             }
                           ]
                         }
@@ -1106,10 +1107,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblsocustomer.Inactive}"
                             }
                           ]
                         }

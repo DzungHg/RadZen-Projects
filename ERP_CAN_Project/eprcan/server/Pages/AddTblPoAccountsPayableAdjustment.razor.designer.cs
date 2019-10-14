@@ -24,68 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoAccountsPayableAdjustment> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox voucherNo;
-
-        protected RadzenRequiredValidator voucherNoRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDatePicker voucherDate;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox vendorFk;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox transactId;
-
-        protected RadzenLabel label5;
-
-        protected RadzenTextBox recordCode;
-
-        protected RadzenLabel label6;
-
-        protected RadzenTextBox poNo;
-
-        protected RadzenLabel label7;
-
-        protected RadzenTextBox invoiceNo;
-
-        protected RadzenLabel label8;
-
-        protected RadzenDatePicker invoiceDate;
-
-        protected RadzenLabel label9;
-
-        protected RadzenTextBox debitAccount;
-
-        protected RadzenLabel label10;
-
-        protected RadzenTextBox creditAccount;
-
-        protected RadzenLabel label11;
-
-        protected RadzenTextBox description;
-
-        protected RadzenLabel label12;
-
-        protected dynamic amount;
-
-        protected RadzenLabel label13;
-
-        protected dynamic authorizeBy;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblPoAccountsPayableAdjustment _tblpoaccountspayableadjustment;
         protected ErpCan.Models.CanErpDbAt132.TblPoAccountsPayableAdjustment tblpoaccountspayableadjustment
         {

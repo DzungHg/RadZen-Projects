@@ -1,175 +1,171 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "contentContainer0",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Department Id",
                               "component": "Department_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Mã Phòng Ban",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 5,
-                              "type": "textbox",
                               "name": "Department_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "value": "${tblgndepartment.Department_ID}"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "Department_IDRequiredValidator",
                               "component": "Department_ID",
-                              "text": "Department_ID is required",
+                              "name": "Department_IDRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "Department_ID is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Deparment Name",
                               "component": "Deparment_Name",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Tên Phòng Ban",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
-                              "type": "textbox",
                               "name": "Deparment_Name",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "value": "${tblgndepartment.Deparment_Name}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Description",
                               "component": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Diễn Giải",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
-                              "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "type": "textbox",
+                              "value": "${tblgndepartment.Description}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "buttonStyle": "primary"
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblgndepartment}",
                   "events": {
                     "submit": [
                       {
+                        "argType": "ErpCan.Models.CanErpDbAt132.TblGnDepartment",
                         "error": [
                           {
                             "detail": "Unable to create new TblGnDepartment!",
@@ -187,24 +183,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblgndepartment}"
+                            "result": "${tblgndepartment}",
+                            "type": "close-popup"
                           }
                         ],
-                        "type": "invoke",
-                        "argType": "ErpCan.Models.CanErpDbAt132.TblGnDepartment"
+                        "type": "invoke"
                       }
                     ]
                   },
-                  "data": "${tblgndepartment}",
-                  "visible": "${tblgndepartment != null}",
-                  "itemType": "ErpCan.Models.CanErpDbAt132.TblGnDepartment"
+                  "itemType": "ErpCan.Models.CanErpDbAt132.TblGnDepartment",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblgndepartment != null}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "contentContainer0",
+      "type": "content"
     }
   ],
   "events": {
@@ -217,6 +217,6 @@
       }
     ]
   },
-  "name": "Add Tbl Gn Department",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Add Tbl Gn Department"
 }

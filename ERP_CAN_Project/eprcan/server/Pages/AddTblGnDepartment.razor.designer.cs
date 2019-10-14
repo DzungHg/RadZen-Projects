@@ -24,28 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnDepartment> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox departmentId;
-
-        protected RadzenRequiredValidator departmentIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox deparmentName;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnDepartment _tblgndepartment;
         protected ErpCan.Models.CanErpDbAt132.TblGnDepartment tblgndepartment
         {

@@ -40,11 +40,14 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-    public int? VendorAdressBook_FK
+    public int? VendorAddressBook_FK
     {
       get;
       set;
     }
+
+    [ForeignKey("VendorAddressBook_FK")]
+    public TblGnAddressBook TblGnAddressBook { get; set; }
     public string Performing_Rating
     {
       get;
@@ -71,11 +74,6 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     public DateTime? Last_Payment_Date
-    {
-      get;
-      set;
-    }
-    public decimal? Current_MTD_Returns
     {
       get;
       set;

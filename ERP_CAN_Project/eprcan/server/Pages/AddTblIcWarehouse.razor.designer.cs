@@ -24,32 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcWarehouse> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox warehouseId;
-
-        protected RadzenRequiredValidator warehouseIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox warehouseName;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox warehouseAddress;
-
-        protected RadzenLabel label4;
-
-        protected RadzenCheckBox inactive;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblIcWarehouse _tblicwarehouse;
         protected ErpCan.Models.CanErpDbAt132.TblIcWarehouse tblicwarehouse
         {

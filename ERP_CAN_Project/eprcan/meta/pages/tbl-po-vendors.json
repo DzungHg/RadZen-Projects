@@ -62,7 +62,6 @@
                         ],
                         "path": "edit-tbl-po-vendor",
                         "type": "popup",
-                        "argType": "ErpCan.Models.CanErpDbAt132.TblPoVendor",
                         "then": [
                           {
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
@@ -90,9 +89,12 @@
                       "type": "string"
                     },
                     {
-                      "property": "VendorAdressBook_FK",
-                      "title": "Vendor Adress Book FK",
-                      "type": "integer"
+                      "property": "VendorAddressBook_FK",
+                      "sortProperty": "TblGnAddressBook.AddressBook_ID",
+                      "filterProperty": "TblGnAddressBook.AddressBook_ID",
+                      "template": "${data.TblGnAddressBook?.AddressBook_ID}",
+                      "title": "Tbl Gn Address Book",
+                      "type": "string"
                     },
                     {
                       "property": "Performing_Rating",
@@ -204,8 +206,7 @@
                                     "type": "execute"
                                   }
                                 ],
-                                "type": "invoke",
-                                "argType": "ErpCan.Models.CanErpDbAt132.TblPoVendor"
+                                "type": "invoke"
                               }
                             ]
                           }

@@ -24,68 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox addressBookId;
-
-        protected RadzenRequiredValidator addressBookIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown addressBookTypeFk;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox lastName;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox firstName;
-
-        protected RadzenLabel label5;
-
-        protected RadzenDropDown genderFk;
-
-        protected RadzenLabel label6;
-
-        protected RadzenDatePicker dob;
-
-        protected RadzenLabel label7;
-
-        protected RadzenTextBox origin;
-
-        protected RadzenLabel label8;
-
-        protected RadzenTextBox idNumber;
-
-        protected RadzenLabel label9;
-
-        protected RadzenTextBox taxIdNumber;
-
-        protected RadzenLabel label10;
-
-        protected RadzenTextBox organizationName;
-
-        protected RadzenLabel label11;
-
-        protected RadzenTextBox jobPosition;
-
-        protected RadzenLabel label12;
-
-        protected RadzenTextBox address;
-
-        protected RadzenLabel label13;
-
-        protected RadzenDropDown cityFk;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBookType> _getTblGnAddressBookTypesResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBookType> getTblGnAddressBookTypesResult
         {

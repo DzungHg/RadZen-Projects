@@ -188,7 +188,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Unit_Price",
                               "style": {
@@ -225,7 +224,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "QtyOrdered",
                               "style": {
@@ -262,7 +260,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "QtyReceived",
                               "style": {
@@ -299,7 +296,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "TaxRate",
                               "style": {
@@ -336,7 +332,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "DiscountPercent",
                               "style": {

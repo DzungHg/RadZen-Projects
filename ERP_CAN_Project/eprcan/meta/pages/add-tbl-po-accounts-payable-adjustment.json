@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Voucher_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Voucher_No}"
                             },
                             {
                               "type": "required-validator",
@@ -87,14 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Voucher_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoaccountspayableadjustment.Voucher_Date}"
                             }
                           ]
                         }
@@ -125,13 +124,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Vendor_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Vendor_FK}"
                             }
                           ]
                         }
@@ -162,13 +161,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 2,
                               "type": "textbox",
                               "name": "Transact_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Transact_ID}"
                             }
                           ]
                         }
@@ -199,13 +198,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 2,
                               "type": "textbox",
                               "name": "Record_Code",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Record_Code}"
                             }
                           ]
                         }
@@ -236,13 +235,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "PO_No",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.PO_No}"
                             }
                           ]
                         }
@@ -273,13 +272,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Invoice_No",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Invoice_No}"
                             }
                           ]
                         }
@@ -310,14 +309,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Invoice_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoaccountspayableadjustment.Invoice_Date}"
                             }
                           ]
                         }
@@ -348,13 +346,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "Debit_Account",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Debit_Account}"
                             }
                           ]
                         }
@@ -385,13 +383,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "Credit_Account",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Credit_Account}"
                             }
                           ]
                         }
@@ -422,13 +420,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Description}"
                             }
                           ]
                         }
@@ -459,12 +457,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Amount}"
                             }
                           ]
                         }
@@ -495,12 +493,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "Authorize_By",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountspayableadjustment.Authorize_By}"
                             }
                           ]
                         }

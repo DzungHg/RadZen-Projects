@@ -88,7 +88,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 5,
                               "type": "textbox",
                               "name": "Warehouse_ID",
@@ -136,7 +135,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "WarehouseName",
@@ -174,7 +172,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 100,
                               "type": "textbox",
                               "name": "WarehouseAddress",
@@ -212,7 +209,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
                               "triState": true,

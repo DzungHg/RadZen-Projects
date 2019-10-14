@@ -30,42 +30,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Inventory_FK { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoRrOrderDetail> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown rrFk;
-
-        protected RadzenRequiredValidator rrFkRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenDropDown inventoryFk;
-
-        protected RadzenRequiredValidator inventoryFkRequiredValidator;
-
-        protected RadzenLabel label4;
-
-        protected dynamic unitPrice;
-
-        protected RadzenLabel label5;
-
-        protected dynamic qtyOrdered;
-
-        protected RadzenLabel label6;
-
-        protected dynamic qtyReceived;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

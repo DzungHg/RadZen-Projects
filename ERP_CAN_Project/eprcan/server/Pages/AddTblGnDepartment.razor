@@ -5,49 +5,49 @@
 @using Radzen
 @using Radzen.Blazor
 @using ErpCan.Models.CanErpDbAt132
-<RadzenContent @ref="content1" Container="contentContainer0">
+<RadzenContent Container="contentContainer0">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" Data="@(tblgndepartment)" Visible="@(tblgndepartment != null)" TItem="ErpCan.Models.CanErpDbAt132.TblGnDepartment" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@(tblgndepartment)" TItem="ErpCan.Models.CanErpDbAt132.TblGnDepartment" Visible="@(tblgndepartment != null)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" Text="Department Id" Component="Department_ID" style="width: 100%">
+                <RadzenLabel Component="Department_ID" style="width: 100%" Text="Mã Phòng Ban">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="departmentId" MaxLength="5" style="display: block; width: 100%" Name="Department_ID">
+                <RadzenTextBox MaxLength="5" style="display: block; width: 100%" @bind-Value="@(tblgndepartment.Department_ID)" Name="Department_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="departmentIdRequiredValidator" Component="Department_ID" Text="Department_ID is required" style="position: absolute">
+                <RadzenRequiredValidator Component="Department_ID" style="position: absolute" Text="Department_ID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" Text="Deparment Name" Component="Deparment_Name" style="width: 100%">
+                <RadzenLabel Component="Deparment_Name" style="width: 100%" Text="Tên Phòng Ban">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="deparmentName" MaxLength="15" style="width: 100%" Name="Deparment_Name">
+                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@(tblgndepartment.Deparment_Name)" Name="Deparment_Name">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" Text="Description" Component="Description" style="width: 100%">
+                <RadzenLabel Component="Description" style="width: 100%" Text="Diễn Giải">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="description" MaxLength="150" style="width: 100%" Name="Description">
+                <RadzenTextBox MaxLength="150" style="width: 100%" @bind-Value="@(tblgndepartment.Description)" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
-                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>

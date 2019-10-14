@@ -208,7 +208,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "UnitPrice",
                               "style": {
@@ -245,7 +244,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyOnHand",
                               "style": {
@@ -282,7 +280,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyOrdered",
                               "style": {
@@ -319,7 +316,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyOrderedNow",
                               "style": {
@@ -356,7 +352,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyBackOrdered",
                               "style": {
@@ -393,7 +388,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyPicked",
                               "style": {
@@ -430,7 +424,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "DiscountPercent",
                               "style": {
@@ -467,7 +460,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "TaxRate",
                               "style": {

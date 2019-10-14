@@ -24,26 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblSoOrderDetailStatus> form0;
-
-        protected RadzenLabel label1;
-
-        protected dynamic soDetailStatusId;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox soDetailStatusText;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblSoOrderDetailStatus _tblsoorderdetailstatus;
         protected ErpCan.Models.CanErpDbAt132.TblSoOrderDetailStatus tblsoorderdetailstatus
         {

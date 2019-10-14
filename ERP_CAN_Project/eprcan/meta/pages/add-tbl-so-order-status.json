@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 20,
                               "type": "textbox",
                               "name": "SOStatus_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderstatus.SOStatus_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,13 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "SOStatusText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderstatus.SOStatusText}"
                             }
                           ]
                         }
@@ -124,13 +124,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 255,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderstatus.Description}"
                             }
                           ]
                         }

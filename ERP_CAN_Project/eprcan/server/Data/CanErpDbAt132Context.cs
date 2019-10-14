@@ -188,6 +188,11 @@ namespace ErpCan.Data
               .WithMany(i => i.TblPoRrOrderDetails)
               .HasForeignKey(i => i.Inventory_FK)
               .HasPrincipalKey(i => i.Inventory_SEQ);
+        builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoVendor>()
+              .HasOne(i => i.TblGnAddressBook)
+              .WithMany(i => i.TblPoVendors)
+              .HasForeignKey(i => i.VendorAddressBook_FK)
+              .HasPrincipalKey(i => i.AddressBook_SEQ);
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblSoCustomer>()
               .HasOne(i => i.TblGnAddressBook)
               .WithMany(i => i.TblSoCustomers)

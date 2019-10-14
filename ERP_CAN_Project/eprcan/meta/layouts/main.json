@@ -73,8 +73,8 @@
                   "text": "PO"
                 },
                 {
-                  "path": "tbl-ic-classifications",
-                  "text": "P. Loại Tồn Kho"
+                  "path": "tbl-po-vendors",
+                  "text": "Vendor"
                 }
               ],
               "text": "Thu Mua"
@@ -106,6 +106,26 @@
               "icon": "",
               "items": [
                 {
+                  "path": "tbl-gn-address-books",
+                  "text": "DS Liên Hệ"
+                },
+                {
+                  "path": "tbl-gn-cities",
+                  "text": "Tỉnh Thành"
+                }
+              ],
+              "text": "Liên hệ"
+            }
+          ],
+          "name": "panelmenu3",
+          "type": "panelmenu"
+        },
+        {
+          "items": [
+            {
+              "icon": "",
+              "items": [
+                {
                   "path": "tbl-ic-categories",
                   "text": "DM Tồn Kho"
                 },
@@ -116,7 +136,7 @@
                 {
                   "icon": "",
                   "path": "tbl-ic-warehouses",
-                  "text": "Kho bãi"
+                  "text": "Kho"
                 }
               ],
               "text": "Cài đặt"

@@ -24,15 +24,7 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenHeading pageTitle;
-
-        protected RadzenButton button0;
-
         protected RadzenGrid<ErpCan.Models.CanErpDbAt132.TblPoVendor> grid0;
-
-        protected RadzenButton gridDeleteButton;
 
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> _getTblPoVendorsResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> getTblPoVendorsResult
@@ -76,7 +68,7 @@ namespace ErpCan.Pages
               await InvokeAsync(() => { StateHasChanged(); });
         }
 
-        protected async void GridDeleteButtonClick(MouseEventArgs args, ErpCan.Models.CanErpDbAt132.TblPoVendor data)
+        protected async void GridDeleteButtonClick(MouseEventArgs args, dynamic data)
         {
             try
             {

@@ -49,7 +49,8 @@
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoicesdetail.Vendor_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -89,14 +90,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "Invoice_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoicesdetail.Invoice_No}"
                             },
                             {
                               "type": "required-validator",
@@ -136,14 +137,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Invoice_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoapinvoicesdetail.Invoice_Date}"
                             }
                           ]
                         }
@@ -182,7 +182,8 @@
                               "name": "Inventory_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoicesdetail.Inventory_FK}"
                             }
                           ]
                         }
@@ -221,7 +222,8 @@
                               "name": "Unit_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoicesdetail.Unit_FK}"
                             }
                           ]
                         }
@@ -252,12 +254,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Unit_Price",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoicesdetail.Unit_Price}"
                             }
                           ]
                         }
@@ -288,12 +290,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_Ordered",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoicesdetail.Qty_Ordered}"
                             }
                           ]
                         }

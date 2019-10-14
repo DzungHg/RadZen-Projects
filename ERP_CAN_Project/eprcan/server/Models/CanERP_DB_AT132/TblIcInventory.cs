@@ -154,7 +154,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime? Leadtime
+    public DateTime Leadtime
     {
       get;
       set;
@@ -190,7 +190,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public double? TotalInventory
+    public double TotalInventory
     {
       get;
       set;
@@ -270,7 +270,7 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-    public bool? Inactive
+    public bool Inactive
     {
       get;
       set;

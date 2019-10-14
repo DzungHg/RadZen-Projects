@@ -27,32 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string POStatus_ID { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoOrderStatus> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox poStatusId;
-
-        protected RadzenRequiredValidator poStatusIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox poStatusText;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

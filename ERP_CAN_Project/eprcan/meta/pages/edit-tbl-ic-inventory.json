@@ -268,7 +268,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "Product_Code",
@@ -306,7 +305,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 30,
                               "type": "textbox",
                               "name": "ProductDesc",
@@ -344,7 +342,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "FixAsset",
                               "triState": true,
@@ -419,7 +416,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "QuantityPerUnit",
                               "style": {
@@ -456,7 +452,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 100,
                               "type": "textbox",
                               "name": "Location",
@@ -494,7 +489,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Taxable",
                               "triState": true,
@@ -529,7 +523,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "TaxRate",
                               "style": {
@@ -566,7 +559,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "ROP",
                               "style": {
@@ -603,7 +595,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "EOQ",
                               "style": {
@@ -640,7 +631,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "UnitPrice",
                               "style": {
@@ -677,7 +667,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_Asset",
@@ -715,7 +704,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_COGS",
@@ -753,7 +741,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_Sales",
@@ -791,7 +778,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_NonTaxSales",
@@ -829,7 +815,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastSaleDate",
@@ -867,7 +852,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastPODate",
@@ -905,7 +889,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastReceiptDate",
@@ -943,7 +926,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LastCost",
                               "style": {
@@ -980,7 +962,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "EverageCost",
                               "style": {
@@ -1017,7 +998,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_On_Order",
                               "style": {
@@ -1054,7 +1034,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_In_Stock",
                               "style": {
@@ -1091,7 +1070,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_On_Hand",
                               "style": {
@@ -1128,7 +1106,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_Allocated",
                               "style": {
@@ -1165,7 +1142,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "MTD_Qty_Sold",
                               "style": {
@@ -1202,7 +1178,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "MTD_Gross_Sales",
                               "style": {
@@ -1239,7 +1214,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "MTD_COGS",
                               "style": {
@@ -1276,7 +1250,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "YTD_Qty_Sold",
                               "style": {
@@ -1313,7 +1286,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "YTD_Gross_Sales",
                               "style": {
@@ -1350,7 +1322,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "YTD_COGS",
                               "style": {
@@ -1387,7 +1358,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "YTD_Qty_Returned",
                               "style": {
@@ -1424,7 +1394,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "LTD_Qty_Sold",
                               "style": {
@@ -1461,7 +1430,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LTD_Gross_Sales",
                               "style": {
@@ -1498,7 +1466,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LTD_COGS",
                               "style": {
@@ -1535,7 +1502,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "NetGrossRate",
                               "style": {
@@ -1572,7 +1538,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "VendorNumber_FK",
                               "style": {
@@ -1609,7 +1574,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "LastUpdatedDate",
@@ -1647,7 +1611,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "LastUpdatedBy_FK",
                               "style": {
@@ -1684,7 +1647,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "type": "textbox",
                               "name": "Notes",
                               "style": {
@@ -1721,7 +1683,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
                               "triState": true,

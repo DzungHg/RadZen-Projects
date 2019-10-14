@@ -23,27 +23,9 @@ namespace ErpCan.Layouts
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenHeader header0;
-
-        protected RadzenSidebarToggle sidebarToggle0;
-
-        protected RadzenLabel label0;
-
         protected RadzenBody body0;
 
-        protected RadzenContentContainer contentContainer0;
-
         protected RadzenSidebar sidebar0;
-
-        protected RadzenPanelMenu panelmenu1;
-
-        protected RadzenPanelMenu panelmenu0;
-
-        protected RadzenPanelMenu panelmenu2;
-
-        protected RadzenFooter footer0;
-
-        protected RadzenLabel footerText;
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {

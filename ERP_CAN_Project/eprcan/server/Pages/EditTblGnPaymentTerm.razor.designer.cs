@@ -27,30 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string PaymentTerm_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnPaymentTerm> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox paymentTermId;
-
-        protected RadzenRequiredValidator paymentTermIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox paymentTermText;
-
-        protected RadzenRequiredValidator paymentTermTextRequiredValidator;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

@@ -5,51 +5,51 @@
 @using Radzen
 @using Radzen.Blazor
 @using ErpCan.Models.CanErpDbAt132
-<RadzenContent @ref="content1" Container="contentContainer0">
+<RadzenContent Container="contentContainer0">
   <ChildContent>
     <div style="" class="row">
       <div class="col-md-9">
-        <RadzenLabel @ref="closeLabel" style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
+        <RadzenLabel style="font-weight: bold" Text="Item no longer available." Visible="@(!canEdit)">
         </RadzenLabel>
       </div>
       <div class="col-md-3">
-        <RadzenButton @ref="closeButton" ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
+        <RadzenButton ButtonStyle="ButtonStyle.Secondary" style="margin-bottom: 20px" Text="Close" Visible="@(!canEdit)" Click="@CloseButtonClick">
         </RadzenButton>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" TItem="ErpCan.Models.CanErpDbAt132.TblGnPaymentType" Data="@(tblgnpaymenttype)" Visible="@(tblgnpaymenttype != null && canEdit)" Submit="@Form0Submit">
+        <RadzenTemplateForm TItem="ErpCan.Models.CanErpDbAt132.TblGnPaymentType" Data="@(tblgnpaymenttype)" Visible="@(tblgnpaymenttype != null && canEdit)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" Text="Payment Type Id" Component="PaymentType_ID" style="width: 100%">
+                <RadzenLabel Text="Payment Type Id" Component="PaymentType_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="paymentTypeId" MaxLength="20" style="display: block; width: 100%" Value="@($"{tblgnpaymenttype.PaymentType_ID}")" Name="PaymentType_ID">
+                <RadzenTextBox MaxLength="20" style="display: block; width: 100%" @bind-Value="@(tblgnpaymenttype.PaymentType_ID)" Name="PaymentType_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="paymentTypeIdRequiredValidator" Component="PaymentType_ID" Text="PaymentType_ID is required" style="position: absolute">
+                <RadzenRequiredValidator Component="PaymentType_ID" Text="PaymentType_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" Text="Payment Type Text" Component="PaymentTypeText" style="width: 100%">
+                <RadzenLabel Text="Payment Type Text" Component="PaymentTypeText" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="paymentTypeText" MaxLength="50" style="display: block; width: 100%" Value="@($"{tblgnpaymenttype.PaymentTypeText}")" Name="PaymentTypeText">
+                <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@(tblgnpaymenttype.PaymentTypeText)" Name="PaymentTypeText">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="paymentTypeTextRequiredValidator" Component="PaymentTypeText" Text="PaymentTypeText is required" style="position: absolute">
+                <RadzenRequiredValidator Component="PaymentTypeText" Text="PaymentTypeText is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button2" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton @ref="button3" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>
               </div>
             </div>

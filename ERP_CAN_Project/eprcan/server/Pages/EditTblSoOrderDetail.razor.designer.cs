@@ -27,62 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string SODetail_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblSoOrderDetail> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown soDetailStatusFk;
-
-        protected RadzenLabel label3;
-
-        protected RadzenDropDown soFk;
-
-        protected RadzenLabel label4;
-
-        protected RadzenDropDown inventoryFk;
-
-        protected RadzenLabel label5;
-
-        protected dynamic unitPrice;
-
-        protected RadzenLabel label6;
-
-        protected dynamic qtyOnHand;
-
-        protected RadzenLabel label7;
-
-        protected dynamic qtyOrdered;
-
-        protected RadzenLabel label8;
-
-        protected dynamic qtyOrderedNow;
-
-        protected RadzenLabel label9;
-
-        protected dynamic qtyBackOrdered;
-
-        protected RadzenLabel label10;
-
-        protected dynamic qtyPicked;
-
-        protected RadzenLabel label11;
-
-        protected dynamic discountPercent;
-
-        protected RadzenLabel label12;
-
-        protected dynamic taxRate;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

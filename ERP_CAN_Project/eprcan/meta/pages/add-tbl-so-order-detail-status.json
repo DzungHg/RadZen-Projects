@@ -40,12 +40,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "SODetailStatus_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetailstatus.SODetailStatus_ID}"
                             }
                           ]
                         }
@@ -76,13 +76,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "SODetailStatusText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetailstatus.SODetailStatusText}"
                             }
                           ]
                         }
@@ -113,13 +113,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 255,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetailstatus.Description}"
                             }
                           ]
                         }

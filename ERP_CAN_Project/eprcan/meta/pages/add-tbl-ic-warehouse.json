@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 5,
                               "type": "textbox",
                               "name": "Warehouse_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblicwarehouse.Warehouse_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,13 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "WarehouseName",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblicwarehouse.WarehouseName}"
                             }
                           ]
                         }
@@ -124,13 +124,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 100,
                               "type": "textbox",
                               "name": "WarehouseAddress",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblicwarehouse.WarehouseAddress}"
                             }
                           ]
                         }
@@ -161,10 +161,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblicwarehouse.Inactive}"
                             }
                           ]
                         }

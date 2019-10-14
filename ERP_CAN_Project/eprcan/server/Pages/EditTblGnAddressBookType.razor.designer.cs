@@ -27,26 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string AddressBookType_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnAddressBookType> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox addressBookTypeId;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox addressBookTypeText;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

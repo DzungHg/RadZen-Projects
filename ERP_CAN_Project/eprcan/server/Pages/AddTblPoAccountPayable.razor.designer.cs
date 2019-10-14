@@ -24,52 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoAccountPayable> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox apNo;
-
-        protected RadzenRequiredValidator apNoRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown vendorFk;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox transactNo;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox recordCode;
-
-        protected RadzenLabel label5;
-
-        protected RadzenTextBox poNo;
-
-        protected RadzenLabel label6;
-
-        protected RadzenDatePicker transactDate;
-
-        protected RadzenLabel label7;
-
-        protected RadzenTextBox description;
-
-        protected RadzenLabel label8;
-
-        protected dynamic amount;
-
-        protected RadzenLabel label9;
-
-        protected RadzenDropDown departmentFk;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> _getTblPoVendorsResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> getTblPoVendorsResult
         {

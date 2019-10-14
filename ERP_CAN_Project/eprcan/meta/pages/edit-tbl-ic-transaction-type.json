@@ -88,7 +88,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 2,
                               "type": "textbox",
                               "name": "Transaction_ID",
@@ -136,7 +135,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 70,
                               "type": "textbox",
                               "name": "Transaction_Name",
@@ -174,7 +172,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 250,
                               "type": "textbox",
                               "name": "Description",

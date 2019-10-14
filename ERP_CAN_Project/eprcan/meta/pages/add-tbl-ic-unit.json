@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 25,
                               "type": "textbox",
                               "name": "UnitText",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblicunit.UnitText}"
                             },
                             {
                               "type": "required-validator",
@@ -87,14 +87,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 20,
                               "type": "textbox",
                               "name": "Unit_FK",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblicunit.Unit_FK}"
                             },
                             {
                               "type": "required-validator",

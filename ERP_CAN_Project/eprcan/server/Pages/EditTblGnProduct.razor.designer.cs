@@ -27,30 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Product_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnProduct> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox productId;
-
-        protected RadzenRequiredValidator productIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox productName;
-
-        protected RadzenRequiredValidator productNameRequiredValidator;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

@@ -24,10 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenHeading pageTitle;
-
         protected RadzenGrid<ErpCan.Models.CanErpDbAt132.VwEmployee> grid0;
 
         IEnumerable<ErpCan.Models.CanErpDbAt132.VwEmployee> _getVwEmployeesResult;

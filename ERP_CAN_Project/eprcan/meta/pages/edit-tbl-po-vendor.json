@@ -1,8 +1,6 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "contentContainer0",
       "components": [
         {
           "components": [
@@ -53,653 +51,617 @@
           "type": "row"
         },
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Vendor Id",
                               "component": "Vendor_ID",
+                              "name": "Vendor_IDLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Vendor Id",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
-                              "type": "textbox",
                               "name": "Vendor_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblpovendor.Vendor_ID}"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "Vendor_IDRequiredValidator",
                               "component": "Vendor_ID",
-                              "text": "Vendor_ID is required",
+                              "name": "Vendor_IDRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "Vendor_ID is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Name",
                               "component": "LastName",
+                              "name": "LastNameLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Last Name",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "LastName",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblpovendor.LastName}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "First Name",
                               "component": "FirstName",
+                              "name": "FirstNameLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "First Name",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "FirstName",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblpovendor.FirstName}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Vendor Adress Book Fk",
-                              "component": "VendorAdressBook_FK",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "int?",
-                              "type": "numeric",
-                              "name": "VendorAdressBook_FK",
+                              "component": "VendorAddressBook_FK",
+                              "name": "VendorAddressBook_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "${tblpovendor.VendorAdressBook_FK}"
+                              "text": "Tbl Gn Address Book",
+                              "type": "label"
                             }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
-                              "text": "Performing Rating",
-                              "component": "Performing_Rating",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
+                              "data": "${getTblGnAddressBooksResult}",
+                              "name": "VendorAddressBook_FK",
+                              "placeholder": "Choose TblGnAddressBook",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "textProperty": "AddressBook_ID",
+                              "type": "dropdown",
+                              "value": "${tblpovendor.VendorAddressBook_FK}",
+                              "valueProperty": "AddressBook_SEQ"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Performing_Rating",
+                              "name": "Performing_RatingLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Performing Rating",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
                               "maxLength": 10,
-                              "type": "textbox",
                               "name": "Performing_Rating",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblpovendor.Performing_Rating}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Ap Balance",
                               "component": "AP_Balance",
+                              "name": "AP_BalanceLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Ap Balance",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "AP_Balance",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "numeric",
                               "value": "${tblpovendor.AP_Balance}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Outstand Inv Amt",
                               "component": "Outstand_Inv_Amt",
+                              "name": "Outstand_Inv_AmtLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Outstand Inv Amt",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Outstand_Inv_Amt",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "numeric",
                               "value": "${tblpovendor.Outstand_Inv_Amt}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Outstand Credit",
                               "component": "Outstand_Credit",
+                              "name": "Outstand_CreditLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Outstand Credit",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "Outstand_Credit",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "numeric",
                               "value": "${tblpovendor.Outstand_Credit}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Purchase Date",
                               "component": "Last_Purchase_Date",
+                              "name": "Last_Purchase_DateLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Last Purchase Date",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
-                              "type": "datepicker",
                               "name": "Last_Purchase_Date",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "datepicker",
                               "value": "${tblpovendor.Last_Purchase_Date}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Last Payment Date",
                               "component": "Last_Payment_Date",
+                              "name": "Last_Payment_DateLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Last Payment Date",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
-                              "type": "datepicker",
                               "name": "Last_Payment_Date",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "datepicker",
                               "value": "${tblpovendor.Last_Payment_Date}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Current Mtd Returns",
-                              "component": "Current_MTD_Returns",
-                              "style": {
-                                "width": "100%"
-                              }
-                            }
-                          ]
-                        },
-                        {
-                          "type": "col",
-                          "class": "col-md-9",
-                          "components": [
-                            {
-                              "valueType": "decimal?",
-                              "type": "numeric",
-                              "name": "Current_MTD_Returns",
+                              "component": "MTD_Purchase",
+                              "name": "MTD_PurchaseLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "${tblpovendor.Current_MTD_Returns}"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "components": [
-                        {
-                          "type": "col",
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "type": "label",
                               "text": "Mtd Purchase",
-                              "component": "MTD_Purchase",
-                              "style": {
-                                "width": "100%"
-                              }
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "MTD_Purchase",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "numeric",
                               "value": "${tblpovendor.MTD_Purchase}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Ytd Purchase",
                               "component": "YTD_Purchase",
+                              "name": "YTD_PurchaseLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Ytd Purchase",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "YTD_Purchase",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "numeric",
                               "value": "${tblpovendor.YTD_Purchase}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Lyr Purchase",
                               "component": "LYR_Purchase",
+                              "name": "LYR_PurchaseLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Lyr Purchase",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
-                              "type": "numeric",
                               "name": "LYR_Purchase",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "numeric",
                               "value": "${tblpovendor.LYR_Purchase}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Notes",
                               "component": "Notes",
+                              "name": "NotesLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Notes",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
-                              "type": "textbox",
                               "name": "Notes",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblpovendor.Notes}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Inactive",
                               "component": "Inactive",
+                              "name": "InactiveLabel",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Inactive",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
-                              "type": "checkbox",
                               "name": "Inactive",
                               "triState": true,
+                              "type": "checkbox",
                               "value": "${tblpovendor.Inactive}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "buttonStyle": "primary"
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblpovendor}",
                   "events": {
                     "submit": [
                       {
@@ -724,24 +686,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblpovendor}"
+                            "result": "${tblpovendor}",
+                            "type": "close-popup"
                           }
                         ],
-                        "type": "invoke",
-                        "argType": "ErpCan.Models.CanErpDbAt132.TblPoVendor"
+                        "type": "invoke"
                       }
                     ]
                   },
                   "itemType": "ErpCan.Models.CanErpDbAt132.TblPoVendor",
-                  "data": "${tblpovendor}",
+                  "name": "form0",
+                  "type": "template-form",
                   "visible": "${tblpovendor != null && canEdit}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "contentContainer0",
+      "type": "content"
     }
   ],
   "events": {
@@ -753,6 +719,7 @@
         "valueType": "bool"
       },
       {
+        "error": [],
         "name": "CanERP_DB_AT132.getTblPoVendorByVendor_ID",
         "parameters": [
           {
@@ -768,11 +735,23 @@
             "valueType": "ErpCan.Models.CanErpDbAt132.TblPoVendor"
           }
         ],
-        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "CanERP_DB_AT132.getTblGnAddressBooks",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblGnAddressBooksResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook>"
+          }
+        ],
         "type": "invoke"
       }
     ]
   },
-  "name": "Edit Tbl Po Vendor",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Edit Tbl Po Vendor"
 }

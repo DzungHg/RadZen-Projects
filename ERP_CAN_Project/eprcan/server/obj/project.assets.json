@@ -141,6 +141,22 @@
       "Microsoft.EntityFrameworkCore.Analyzers/3.0.0": {
         "type": "package"
       },
+      "Microsoft.EntityFrameworkCore.Design/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.EntityFrameworkCore.Relational": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "build": {
+          "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -365,7 +381,7 @@
           }
         }
       },
-      "Radzen.Blazor/1.0.9": {
+      "Radzen.Blazor/1.1.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components": "3.0.0",
@@ -1603,6 +1619,21 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.Design/3.0.0": {
+      "sha512": "rOV5eClv+dq09htWNHv56y7TYZVAbLc6O+09ljg2FfSUsvlOJDsWHBLqAUofevZ2QxHTTZlAJLZkZGEBC6gUww==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.design/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net461/Microsoft.EntityFrameworkCore.Design.props",
+        "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.3.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore.Relational/3.0.0": {
       "sha512": "lODmNpgEvFXcEIIxIr2KvkHT5x9Gqc69To0r6HYcwKXWJz71qP6yZ7h1ynM0aooTT4ggIVADJL9PJ0RLYdhYqA==",
       "type": "package",
@@ -1926,10 +1957,10 @@
         "version.txt"
       ]
     },
-    "Radzen.Blazor/1.0.9": {
-      "sha512": "8vgXGvTkKBhQp2kQRQfGFgj6+UztOyP0algl0oV3uItVlxrqCbttva/RFvrk4YU/2hNfQR/05AazGvF6k11qhw==",
+    "Radzen.Blazor/1.1.5": {
+      "sha512": "ffcwxvPm+DE+mSAVItRQlKtdv6QR2TEuW2GfZyeddIOoLgitVmZRvOeH7iegiMX7bsQRtNikxoVvOMMkkZsk4Q==",
       "type": "package",
-      "path": "radzen.blazor/1.0.9",
+      "path": "radzen.blazor/1.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1940,7 +1971,7 @@
         "content/Properties/launchSettings.json",
         "contentFiles/any/netstandard2.0/Properties/launchSettings.json",
         "lib/netstandard2.0/Radzen.Blazor.dll",
-        "radzen.blazor.1.0.9.nupkg.sha512",
+        "radzen.blazor.1.1.5.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/.DS_Store",
@@ -5266,30 +5297,33 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.EntityFrameworkCore >= 3.0.0",
+      "Microsoft.EntityFrameworkCore.Design >= 3.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
-      "Radzen.Blazor >= 1.0.9",
+      "Radzen.Blazor >= 1.1.5",
       "System.ComponentModel.Annotations >= 4.6.0",
       "System.Data.SqlClient >= 4.7.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\BK\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ZDung HDD\\GitHub\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
+      "projectUniqueName": "F:\\GitHub02\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
       "projectName": "ErpCan",
-      "projectPath": "C:\\ZDung HDD\\GitHub\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\ZDung HDD\\GitHub\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\obj\\",
+      "projectPath": "F:\\GitHub02\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
+      "packagesPath": "C:\\Users\\BK\\.nuget\\packages\\",
+      "outputPath": "F:\\GitHub02\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5318,13 +5352,17 @@
             "target": "Package",
             "version": "[3.0.0, )"
           },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[3.0.0, )"
           },
           "Radzen.Blazor": {
             "target": "Package",
-            "version": "[1.0.9, )"
+            "version": "[1.1.5, )"
           },
           "System.ComponentModel.Annotations": {
             "target": "Package",

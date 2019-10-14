@@ -24,26 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnProduct> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox productId;
-
-        protected RadzenRequiredValidator productIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox productName;
-
-        protected RadzenRequiredValidator productNameRequiredValidator;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnProduct _tblgnproduct;
         protected ErpCan.Models.CanErpDbAt132.TblGnProduct tblgnproduct
         {

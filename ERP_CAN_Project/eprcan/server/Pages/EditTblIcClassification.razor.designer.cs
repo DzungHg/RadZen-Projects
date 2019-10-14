@@ -27,32 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Classifi_ID { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcClassification> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox classifiId;
-
-        protected RadzenRequiredValidator classifiIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox classifiName;
-
-        protected RadzenLabel label4;
-
-        protected RadzenCheckBox inactive;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

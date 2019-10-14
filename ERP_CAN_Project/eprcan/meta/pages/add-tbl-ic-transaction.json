@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "Trans_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Trans_No}"
                             },
                             {
                               "type": "required-validator",
@@ -96,7 +96,8 @@
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Trans_Code}"
                             },
                             {
                               "type": "required-validator",
@@ -136,14 +137,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Trans_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblictransaction.Trans_Date}"
                             }
                           ]
                         }
@@ -183,7 +183,8 @@
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Warehouse_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -231,7 +232,8 @@
                               "name": "Item_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Item_FK}"
                             }
                           ]
                         }
@@ -262,13 +264,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "Reference_No",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Reference_No}"
                             }
                           ]
                         }
@@ -299,14 +301,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Reference_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblictransaction.Reference_Date}"
                             }
                           ]
                         }
@@ -337,10 +338,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Taxable",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblictransaction.Taxable}"
                             }
                           ]
                         }
@@ -371,13 +372,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Cust_Vend_WarID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Cust_Vend_WarID}"
                             }
                           ]
                         }
@@ -408,12 +409,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Trans_Qty",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Trans_Qty}"
                             }
                           ]
                         }
@@ -444,13 +445,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 2,
                               "type": "textbox",
                               "name": "UOM",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.UOM}"
                             }
                           ]
                         }
@@ -481,12 +482,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Trans_Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Trans_Amount}"
                             }
                           ]
                         }
@@ -517,12 +518,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_On_Hand_EOB",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Qty_On_Hand_EOB}"
                             }
                           ]
                         }
@@ -553,12 +554,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_On_Order_EOB",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Qty_On_Order_EOB}"
                             }
                           ]
                         }
@@ -589,12 +590,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "Qty_On_Allowed_EOB",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.Qty_On_Allowed_EOB}"
                             }
                           ]
                         }
@@ -625,13 +626,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_Asset",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.GL_Asset}"
                             }
                           ]
                         }
@@ -662,13 +663,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_COGS",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.GL_COGS}"
                             }
                           ]
                         }
@@ -699,13 +700,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "GL_Sales",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblictransaction.GL_Sales}"
                             }
                           ]
                         }

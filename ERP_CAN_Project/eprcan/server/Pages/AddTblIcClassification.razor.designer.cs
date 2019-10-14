@@ -24,28 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcClassification> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox classifiId;
-
-        protected RadzenRequiredValidator classifiIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox classifiName;
-
-        protected RadzenLabel label3;
-
-        protected RadzenCheckBox inactive;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblIcClassification _tblicclassification;
         protected ErpCan.Models.CanErpDbAt132.TblIcClassification tblicclassification
         {

@@ -24,46 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrderDetail> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenDropDown poFk;
-
-        protected RadzenRequiredValidator poFkRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown inventoryFk;
-
-        protected RadzenRequiredValidator inventoryFkRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected dynamic unitPrice;
-
-        protected RadzenLabel label4;
-
-        protected dynamic qtyOrdered;
-
-        protected RadzenLabel label5;
-
-        protected dynamic qtyReceived;
-
-        protected RadzenLabel label6;
-
-        protected dynamic taxRate;
-
-        protected RadzenLabel label7;
-
-        protected dynamic discountPercent;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder> _getTblPoPurchaseOrdersResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder> getTblPoPurchaseOrdersResult
         {

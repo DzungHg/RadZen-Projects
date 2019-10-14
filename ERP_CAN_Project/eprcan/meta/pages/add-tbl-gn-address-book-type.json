@@ -40,13 +40,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "AddressBookType_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblgnaddressbooktype.AddressBookType_ID}"
                             }
                           ]
                         }
@@ -77,13 +77,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
                               "type": "textbox",
                               "name": "AddressBookTypeText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblgnaddressbooktype.AddressBookTypeText}"
                             }
                           ]
                         }

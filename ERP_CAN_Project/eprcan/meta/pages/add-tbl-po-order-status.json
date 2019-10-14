@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "POStatus_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoorderstatus.POStatus_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,13 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "POStatusText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoorderstatus.POStatusText}"
                             }
                           ]
                         }
@@ -124,13 +124,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 100,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoorderstatus.Description}"
                             }
                           ]
                         }

@@ -49,7 +49,8 @@
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoice.Vendor_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -89,14 +90,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "Invoice_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoice.Invoice_No}"
                             },
                             {
                               "type": "required-validator",
@@ -136,14 +137,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Invoice_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoapinvoice.Invoice_Date}"
                             }
                           ]
                         }
@@ -174,13 +174,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "PO_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoice.PO_ID}"
                             }
                           ]
                         }
@@ -211,14 +211,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "PO_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoapinvoice.PO_Date}"
                             }
                           ]
                         }
@@ -249,13 +248,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoice.Description}"
                             }
                           ]
                         }
@@ -286,12 +285,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Invoice_Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoice.Invoice_Amount}"
                             }
                           ]
                         }
@@ -322,12 +321,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Discount_Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoapinvoice.Discount_Amount}"
                             }
                           ]
                         }
@@ -358,14 +357,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Due_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoapinvoice.Due_Date}"
                             }
                           ]
                         }
@@ -396,10 +394,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Paid",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblpoapinvoice.Paid}"
                             }
                           ]
                         }

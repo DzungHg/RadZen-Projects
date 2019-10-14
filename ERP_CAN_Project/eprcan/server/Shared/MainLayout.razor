@@ -6,13 +6,13 @@
 <RadzenDialog />
 <RadzenNotification />
 
-<RadzenHeader @ref="header0">
+<RadzenHeader>
   <ChildContent>
     <div class="row justify-content-start align-items-center">
       <div class="col-md-6 d-flex align-items-center">
-        <RadzenSidebarToggle @ref="sidebarToggle0" Click="@SidebarToggle0Click">
+        <RadzenSidebarToggle Click="@SidebarToggle0Click">
         </RadzenSidebarToggle>
-        <RadzenLabel @ref="label0" Text="ErpCan">
+        <RadzenLabel Text="ErpCan">
         </RadzenLabel>
       </div>
       <div class="col-md-6 text-lg-right">
@@ -22,26 +22,26 @@
 </RadzenHeader>
 <RadzenBody @ref="body0">
   <ChildContent>
-    <RadzenContentContainer @ref="contentContainer0" style="height: 21px" Name="contentContainer0">
+    <RadzenContentContainer style="height: 21px" Name="contentContainer0">
     @Body
     </RadzenContentContainer>
   </ChildContent>
 </RadzenBody>
 <RadzenSidebar @ref="sidebar0">
   <ChildContent>
-    <RadzenPanelMenu @ref="panelmenu1">
+    <RadzenPanelMenu>
       <ChildContent>
         <RadzenPanelMenuItem Text="Thu Mua">
           <ChildContent>
             <RadzenPanelMenuItem Path="tbl-po-purchase-orders" Text="PO">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Path="tbl-ic-classifications" Text="P. Loại Tồn Kho">
+            <RadzenPanelMenuItem Path="tbl-po-vendors" Text="Vendor">
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenuItem>
       </ChildContent>
     </RadzenPanelMenu>
-    <RadzenPanelMenu @ref="panelmenu0">
+    <RadzenPanelMenu>
       <ChildContent>
         <RadzenPanelMenuItem Text="Tồn kho">
           <ChildContent>
@@ -51,7 +51,19 @@
         </RadzenPanelMenuItem>
       </ChildContent>
     </RadzenPanelMenu>
-    <RadzenPanelMenu @ref="panelmenu2">
+    <RadzenPanelMenu>
+      <ChildContent>
+        <RadzenPanelMenuItem Text="Liên hệ">
+          <ChildContent>
+            <RadzenPanelMenuItem Path="tbl-gn-address-books" Text="DS Liên Hệ">
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Path="tbl-gn-cities" Text="Tỉnh Thành">
+            </RadzenPanelMenuItem>
+          </ChildContent>
+        </RadzenPanelMenuItem>
+      </ChildContent>
+    </RadzenPanelMenu>
+    <RadzenPanelMenu>
       <ChildContent>
         <RadzenPanelMenuItem Text="Cài đặt">
           <ChildContent>
@@ -59,7 +71,7 @@
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Path="tbl-ic-classifications" Text="P. Loại Tồn Kho">
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Path="tbl-ic-warehouses" Text="Kho bãi">
+            <RadzenPanelMenuItem Path="tbl-ic-warehouses" Text="Kho">
             </RadzenPanelMenuItem>
           </ChildContent>
         </RadzenPanelMenuItem>
@@ -67,9 +79,9 @@
     </RadzenPanelMenu>
   </ChildContent>
 </RadzenSidebar>
-<RadzenFooter @ref="footer0">
+<RadzenFooter>
   <ChildContent>
-    <RadzenLabel @ref="footerText" Text="ErpCan, Copyright &copy; 2019">
+    <RadzenLabel Text="ErpCan, Copyright &copy; 2019">
     </RadzenLabel>
   </ChildContent>
 </RadzenFooter>

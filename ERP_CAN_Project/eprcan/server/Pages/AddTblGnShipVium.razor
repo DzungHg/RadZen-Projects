@@ -5,39 +5,39 @@
 @using Radzen
 @using Radzen.Blazor
 @using ErpCan.Models.CanErpDbAt132
-<RadzenContent @ref="content1" Container="contentContainer0">
+<RadzenContent Container="contentContainer0">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" Data="@(tblgnshipvium)" Visible="@(tblgnshipvium != null)" TItem="ErpCan.Models.CanErpDbAt132.TblGnShipVium" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@(tblgnshipvium)" Visible="@(tblgnshipvium != null)" TItem="ErpCan.Models.CanErpDbAt132.TblGnShipVium" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" Text="Ship Via Id" Component="ShipVia_ID" style="width: 100%">
+                <RadzenLabel Text="Ship Via Id" Component="ShipVia_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="shipViaId" MaxLength="25" style="display: block; width: 100%" Name="ShipVia_ID">
+                <RadzenTextBox MaxLength="25" style="display: block; width: 100%" @bind-Value="@(tblgnshipvium.ShipVia_ID)" Name="ShipVia_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="shipViaIdRequiredValidator" Component="ShipVia_ID" Text="ShipVia_ID is required" style="position: absolute">
+                <RadzenRequiredValidator Component="ShipVia_ID" Text="ShipVia_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" Text="Description" Component="Description" style="width: 100%">
+                <RadzenLabel Text="Description" Component="Description" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="description" MaxLength="50" style="width: 100%" Name="Description">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(tblgnshipvium.Description)" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
-                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>

@@ -24,26 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnCity> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox cityId;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox cityName;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox cityAbbreviation;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnCity _tblgncity;
         protected ErpCan.Models.CanErpDbAt132.TblGnCity tblgncity
         {

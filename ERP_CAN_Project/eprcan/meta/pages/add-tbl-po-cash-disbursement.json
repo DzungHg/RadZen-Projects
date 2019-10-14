@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "PO_CashDisb_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.PO_CashDisb_No}"
                             },
                             {
                               "type": "required-validator",
@@ -87,14 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "PO_CashDisb_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpocashdisbursement.PO_CashDisb_Date}"
                             }
                           ]
                         }
@@ -133,7 +132,8 @@
                               "name": "Customer_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Customer_FK}"
                             }
                           ]
                         }
@@ -164,13 +164,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Description}"
                             }
                           ]
                         }
@@ -201,14 +201,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 2,
                               "type": "textbox",
                               "name": "Disbursement_Type",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Disbursement_Type}"
                             },
                             {
                               "type": "required-validator",
@@ -248,12 +248,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Gross_Invt_Amt",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Gross_Invt_Amt}"
                             }
                           ]
                         }
@@ -284,12 +284,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Discount_Invt_Amt",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Discount_Invt_Amt}"
                             }
                           ]
                         }
@@ -320,14 +320,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "Check_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Check_No}"
                             },
                             {
                               "type": "required-validator",
@@ -367,14 +367,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Check_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpocashdisbursement.Check_Date}"
                             }
                           ]
                         }
@@ -405,12 +404,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Check_Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.Check_Amount}"
                             }
                           ]
                         }
@@ -441,13 +440,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "DebiAccount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.DebiAccount}"
                             }
                           ]
                         }
@@ -478,13 +477,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 7,
                               "type": "textbox",
                               "name": "CreditAccount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpocashdisbursement.CreditAccount}"
                             }
                           ]
                         }
@@ -515,10 +514,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Payment",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblpocashdisbursement.Payment}"
                             }
                           ]
                         }

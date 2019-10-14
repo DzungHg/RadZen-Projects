@@ -25,10 +25,6 @@ namespace ErpCan.Layouts
 
         protected RadzenBody body0;
 
-        protected RadzenCard card0;
-
-        protected RadzenContentContainer main;
-
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
         }

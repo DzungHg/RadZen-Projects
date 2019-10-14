@@ -24,26 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcUnit> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox unitText;
-
-        protected RadzenRequiredValidator unitTextRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox unitFk;
-
-        protected RadzenRequiredValidator unitFkRequiredValidator;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblIcUnit _tblicunit;
         protected ErpCan.Models.CanErpDbAt132.TblIcUnit tblicunit
         {

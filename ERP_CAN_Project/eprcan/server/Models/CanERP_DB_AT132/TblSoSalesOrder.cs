@@ -165,7 +165,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public decimal? Total_Order
+    public decimal Total_Order
     {
       get;
       set;

@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 5,
                               "type": "textbox",
                               "name": "Category_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tbliccategory.Category_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,13 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "CategoryText",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tbliccategory.CategoryText}"
                             }
                           ]
                         }
@@ -124,10 +124,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tbliccategory.Inactive}"
                             }
                           ]
                         }

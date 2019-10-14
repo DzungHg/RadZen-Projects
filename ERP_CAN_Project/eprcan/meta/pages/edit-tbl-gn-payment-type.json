@@ -88,7 +88,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 20,
                               "type": "textbox",
                               "name": "PaymentType_ID",
@@ -136,7 +135,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "PaymentTypeText",

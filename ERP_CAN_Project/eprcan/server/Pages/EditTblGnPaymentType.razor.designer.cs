@@ -27,30 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string PaymentType_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnPaymentType> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox paymentTypeId;
-
-        protected RadzenRequiredValidator paymentTypeIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox paymentTypeText;
-
-        protected RadzenRequiredValidator paymentTypeTextRequiredValidator;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

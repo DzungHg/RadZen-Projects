@@ -27,30 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string SODetailStatus_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblSoOrderDetailStatus> form0;
-
-        protected RadzenLabel label2;
-
-        protected dynamic soDetailStatusId;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox soDetailStatusText;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

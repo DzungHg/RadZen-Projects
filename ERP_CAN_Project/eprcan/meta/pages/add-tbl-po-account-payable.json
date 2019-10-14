@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "AP_No",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.AP_No}"
                             },
                             {
                               "type": "required-validator",
@@ -95,7 +95,8 @@
                               "name": "Vendor_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.Vendor_FK}"
                             }
                           ]
                         }
@@ -126,13 +127,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "Transact_No",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.Transact_No}"
                             }
                           ]
                         }
@@ -163,13 +164,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 2,
                               "type": "textbox",
                               "name": "Record_Code",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.Record_Code}"
                             }
                           ]
                         }
@@ -200,13 +201,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "PO_No",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.PO_No}"
                             }
                           ]
                         }
@@ -237,14 +238,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Transact_Date",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpoaccountpayable.Transact_Date}"
                             }
                           ]
                         }
@@ -275,13 +275,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.Description}"
                             }
                           ]
                         }
@@ -312,12 +312,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.Amount}"
                             }
                           ]
                         }
@@ -356,7 +356,8 @@
                               "name": "Department_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpoaccountpayable.Department_FK}"
                             }
                           ]
                         }

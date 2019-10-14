@@ -27,28 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string ShipVia_SEQ { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnShipVium> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox shipViaId;
-
-        protected RadzenRequiredValidator shipViaIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

@@ -24,22 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnGender> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox genderId;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox gender;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnGender _tblgngender;
         protected ErpCan.Models.CanErpDbAt132.TblGnGender tblgngender
         {

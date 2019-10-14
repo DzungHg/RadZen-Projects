@@ -24,22 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnAddressBookType> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox addressBookTypeId;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox addressBookTypeText;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnAddressBookType _tblgnaddressbooktype;
         protected ErpCan.Models.CanErpDbAt132.TblGnAddressBookType tblgnaddressbooktype
         {

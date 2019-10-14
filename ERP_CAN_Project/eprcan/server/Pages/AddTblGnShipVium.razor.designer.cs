@@ -24,24 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnShipVium> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox shipViaId;
-
-        protected RadzenRequiredValidator shipViaIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnShipVium _tblgnshipvium;
         protected ErpCan.Models.CanErpDbAt132.TblGnShipVium tblgnshipvium
         {

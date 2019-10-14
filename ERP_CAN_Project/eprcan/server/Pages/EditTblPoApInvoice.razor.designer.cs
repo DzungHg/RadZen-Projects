@@ -30,62 +30,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Invoice_No { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoApInvoice> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown vendorId;
-
-        protected RadzenRequiredValidator vendorIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox invoiceNo;
-
-        protected RadzenRequiredValidator invoiceNoRequiredValidator;
-
-        protected RadzenLabel label4;
-
-        protected RadzenDatePicker invoiceDate;
-
-        protected RadzenLabel label5;
-
-        protected RadzenTextBox poId;
-
-        protected RadzenLabel label6;
-
-        protected RadzenDatePicker poDate;
-
-        protected RadzenLabel label7;
-
-        protected RadzenTextBox description;
-
-        protected RadzenLabel label8;
-
-        protected dynamic invoiceAmount;
-
-        protected RadzenLabel label9;
-
-        protected dynamic discountAmount;
-
-        protected RadzenLabel label10;
-
-        protected RadzenDatePicker dueDate;
-
-        protected RadzenLabel label11;
-
-        protected RadzenCheckBox paid;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

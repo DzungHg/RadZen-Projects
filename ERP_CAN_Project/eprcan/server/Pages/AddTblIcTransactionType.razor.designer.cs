@@ -24,28 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcTransactionType> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox transactionId;
-
-        protected RadzenRequiredValidator transactionIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox transactionName;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblIcTransactionType _tblictransactiontype;
         protected ErpCan.Models.CanErpDbAt132.TblIcTransactionType tblictransactiontype
         {

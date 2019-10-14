@@ -24,58 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblSoOrderDetail> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenDropDown soDetailStatusFk;
-
-        protected RadzenLabel label2;
-
-        protected RadzenDropDown soFk;
-
-        protected RadzenLabel label3;
-
-        protected RadzenDropDown inventoryFk;
-
-        protected RadzenLabel label4;
-
-        protected dynamic unitPrice;
-
-        protected RadzenLabel label5;
-
-        protected dynamic qtyOnHand;
-
-        protected RadzenLabel label6;
-
-        protected dynamic qtyOrdered;
-
-        protected RadzenLabel label7;
-
-        protected dynamic qtyOrderedNow;
-
-        protected RadzenLabel label8;
-
-        protected dynamic qtyBackOrdered;
-
-        protected RadzenLabel label9;
-
-        protected dynamic qtyPicked;
-
-        protected RadzenLabel label10;
-
-        protected dynamic discountPercent;
-
-        protected RadzenLabel label11;
-
-        protected dynamic taxRate;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblSoOrderDetailStatus> _getTblSoOrderDetailStatusesResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblSoOrderDetailStatus> getTblSoOrderDetailStatusesResult
         {

@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 15,
                               "type": "textbox",
                               "name": "PO_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.PO_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,14 +87,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "PODate",
                               "style": {
                                 "width": "100%"
                               },
-                              "value": "DateTime.Now"
+                              "value": "${tblpopurchaseorder.PODate}"
                             }
                           ]
                         }
@@ -133,7 +132,8 @@
                               "name": "CreatedBy_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.CreatedBy_FK}"
                             }
                           ]
                         }
@@ -172,7 +172,8 @@
                               "name": "POStatus_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.POStatus_FK}"
                             }
                           ]
                         }
@@ -211,7 +212,8 @@
                               "name": "Vendor_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.Vendor_FK}"
                             }
                           ]
                         }
@@ -242,13 +244,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 150,
                               "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.Description}"
                             }
                           ]
                         }
@@ -279,13 +281,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 3,
                               "type": "textbox",
                               "name": "Incoterm_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.Incoterm_ID}"
                             }
                           ]
                         }
@@ -324,7 +326,8 @@
                               "name": "ShipVia_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.ShipVia_FK}"
                             }
                           ]
                         }
@@ -363,7 +366,8 @@
                               "name": "PaymentTerm_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.PaymentTerm_FK}"
                             }
                           ]
                         }
@@ -402,7 +406,8 @@
                               "name": "PaymentType_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.PaymentType_FK}"
                             }
                           ]
                         }
@@ -433,12 +438,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "Buyer_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.Buyer_FK}"
                             }
                           ]
                         }
@@ -469,10 +474,10 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "TaxYN",
-                              "triState": true
+                              "triState": true,
+                              "value": "${tblpopurchaseorder.TaxYN}"
                             }
                           ]
                         }
@@ -503,12 +508,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "TaxtRate",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.TaxtRate}"
                             }
                           ]
                         }
@@ -539,13 +544,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 5,
                               "type": "textbox",
                               "name": "Department_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.Department_FK}"
                             }
                           ]
                         }
@@ -576,12 +581,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "PO_Amount",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorder.PO_Amount}"
                             }
                           ]
                         }

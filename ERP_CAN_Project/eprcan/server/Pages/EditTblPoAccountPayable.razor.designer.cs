@@ -27,56 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string AP_No { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoAccountPayable> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox apNo;
-
-        protected RadzenRequiredValidator apNoRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenDropDown vendorFk;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox transactNo;
-
-        protected RadzenLabel label5;
-
-        protected RadzenTextBox recordCode;
-
-        protected RadzenLabel label6;
-
-        protected RadzenTextBox poNo;
-
-        protected RadzenLabel label7;
-
-        protected RadzenDatePicker transactDate;
-
-        protected RadzenLabel label8;
-
-        protected RadzenTextBox description;
-
-        protected RadzenLabel label9;
-
-        protected dynamic amount;
-
-        protected RadzenLabel label10;
-
-        protected RadzenDropDown departmentFk;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

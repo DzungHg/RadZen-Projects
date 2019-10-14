@@ -5,179 +5,169 @@
 @using Radzen
 @using Radzen.Blazor
 @using ErpCan.Models.CanErpDbAt132
-<RadzenContent @ref="content1" Container="contentContainer0">
+<RadzenContent Container="contentContainer0">
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm @ref="form0" Data="@(tblpovendor)" Visible="@(tblpovendor != null)" TItem="ErpCan.Models.CanErpDbAt132.TblPoVendor" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@(tblpovendor)" TItem="ErpCan.Models.CanErpDbAt132.TblPoVendor" Visible="@(tblpovendor != null)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label1" Text="Vendor Id" Component="Vendor_ID" style="width: 100%">
+                <RadzenLabel Component="VendorAddressBook_FK" style="width: 100%" Text="Danh bạ khách hàng">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="vendorId" MaxLength="10" style="display: block; width: 100%" Name="Vendor_ID">
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="OrganizationName" @bind-Value="@(tblpovendor.VendorAddressBook_FK)" ValueProperty="AddressBook_SEQ" Name="VendorAddressBook_FK">
+                </RadzenDropDown>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="Vendor_ID" style="width: 100%" Text="Mã nhà cung cấp">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="10" style="display: block; width: 100%" @bind-Value="@(tblpovendor.Vendor_ID)" Name="Vendor_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator @ref="vendorIdRequiredValidator" Component="Vendor_ID" Text="Vendor_ID is required" style="position: absolute">
+                <RadzenRequiredValidator Component="Vendor_ID" style="position: absolute" Text="Vendor_ID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label2" Text="Last Name" Component="LastName" style="width: 100%">
+                <RadzenLabel Component="LastName" style="width: 100%" Text="Họ và tên lót">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="lastName" MaxLength="50" style="width: 100%" Name="LastName">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(tblpovendor.LastName)" Name="LastName">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label3" Text="First Name" Component="FirstName" style="width: 100%">
+                <RadzenLabel Component="FirstName" style="width: 100%" Text="Tên">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox @ref="firstName" MaxLength="50" style="width: 100%" Name="FirstName">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(tblpovendor.FirstName)" Name="FirstName">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label4" Text="Vendor Adress Book Fk" Component="VendorAdressBook_FK" style="width: 100%">
+                <RadzenLabel Component="Performing_Rating" style="width: 100%" Text="Đánh giá thành tích">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="vendorAdressBookFk" style="width: 100%" Name="VendorAdressBook_FK" TItem="int?">
-                </RadzenNumeric>
-              </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-              <div class="col-md-3">
-                <RadzenLabel @ref="label5" Text="Performing Rating" Component="Performing_Rating" style="width: 100%">
-                </RadzenLabel>
-              </div>
-              <div class="col-md-9">
-                <RadzenTextBox @ref="performingRating" MaxLength="10" style="width: 100%" Name="Performing_Rating">
+                <RadzenTextBox MaxLength="10" style="width: 100%" @bind-Value="@(tblpovendor.Performing_Rating)" Name="Performing_Rating">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label6" Text="Ap Balance" Component="AP_Balance" style="width: 100%">
+                <RadzenLabel Component="AP_Balance" style="width: 100%" Text="Kết sổ">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="apBalance" style="width: 100%" Name="AP_Balance" TItem="decimal?">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblpovendor.AP_Balance)" Name="AP_Balance">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label7" Text="Outstand Inv Amt" Component="Outstand_Inv_Amt" style="width: 100%">
+                <RadzenLabel Component="Outstand_Inv_Amt" style="width: 100%" Text="Số tiền hóa đơn đáo hạn">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="outstandInvAmt" style="width: 100%" Name="Outstand_Inv_Amt" TItem="decimal?">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblpovendor.Outstand_Inv_Amt)" Name="Outstand_Inv_Amt">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label8" Text="Outstand Credit" Component="Outstand_Credit" style="width: 100%">
+                <RadzenLabel Component="Outstand_Credit" style="width: 100%" Text="Tín dụng đáo hạn">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="outstandCredit" style="width: 100%" Name="Outstand_Credit" TItem="decimal?">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblpovendor.Outstand_Credit)" Name="Outstand_Credit">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label9" Text="Last Purchase Date" Component="Last_Purchase_Date" style="width: 100%">
+                <RadzenLabel Component="Last_Purchase_Date" style="width: 100%" Text="Ngày đặt mua hàng chót">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="lastPurchaseDate" DateFormat="MM/dd/yyyy" style="width: 100%" Value="DateTime.Now" Name="Last_Purchase_Date">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblpovendor.Last_Purchase_Date)" Name="Last_Purchase_Date">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label10" Text="Last Payment Date" Component="Last_Payment_Date" style="width: 100%">
+                <RadzenLabel Component="Last_Payment_Date" style="width: 100%" Text="Ngày thanh toán chót">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker @ref="lastPaymentDate" DateFormat="MM/dd/yyyy" style="width: 100%" Value="DateTime.Now" Name="Last_Payment_Date">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblpovendor.Last_Payment_Date)" Name="Last_Payment_Date">
                 </RadzenDatePicker>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label11" Text="Current Mtd Returns" Component="Current_MTD_Returns" style="width: 100%">
+                <RadzenLabel Component="MTD_Purchase" style="width: 100%" Text="Mua hàng MTD">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="currentMtdReturns" style="width: 100%" Name="Current_MTD_Returns" TItem="decimal?">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblpovendor.MTD_Purchase)" Name="MTD_Purchase">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label12" Text="Mtd Purchase" Component="MTD_Purchase" style="width: 100%">
+                <RadzenLabel Component="YTD_Purchase" style="width: 100%" Text="Mua hàng YTD">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="mtdPurchase" style="width: 100%" Name="MTD_Purchase" TItem="decimal?">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblpovendor.YTD_Purchase)" Name="YTD_Purchase">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label13" Text="Ytd Purchase" Component="YTD_Purchase" style="width: 100%">
+                <RadzenLabel Component="LYR_Purchase" style="width: 100%" Text="Mua hàng LYR">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="ytdPurchase" style="width: 100%" Name="YTD_Purchase" TItem="decimal?">
+                <RadzenNumeric style="width: 100%" @bind-Value="@(tblpovendor.LYR_Purchase)" Name="LYR_Purchase">
                 </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label14" Text="Lyr Purchase" Component="LYR_Purchase" style="width: 100%">
+                <RadzenLabel Component="Notes" style="width: 100%" Text="Ghi chú">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric @ref="lyrPurchase" style="width: 100%" Name="LYR_Purchase" TItem="decimal?">
-                </RadzenNumeric>
-              </div>
-            </div>
-            <div style="margin-bottom: 1rem" class="row">
-              <div class="col-md-3">
-                <RadzenLabel @ref="label15" Text="Notes" Component="Notes" style="width: 100%">
-                </RadzenLabel>
-              </div>
-              <div class="col-md-9">
-                <RadzenTextBox @ref="notes" style="width: 100%" Name="Notes">
+                <RadzenTextBox style="width: 100%" @bind-Value="@(tblpovendor.Notes)" Name="Notes">
                 </RadzenTextBox>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel @ref="label16" Text="Inactive" Component="Inactive" style="width: 100%">
+                <RadzenLabel Component="Inactive" style="width: 100%" Text="Không dùng nữa">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox @ref="inactive" TriState="true" Name="Inactive">
+                <RadzenCheckBox TriState="true" @bind-Value="@(tblpovendor.Inactive)" Name="Inactive">
                 </RadzenCheckBox>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton @ref="button1" ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
-                <RadzenButton @ref="button2" ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
+                <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>
               </div>
             </div>

@@ -49,7 +49,8 @@
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.PO_FK}"
                             },
                             {
                               "type": "required-validator",
@@ -98,7 +99,8 @@
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.Inventory_FK}"
                             },
                             {
                               "type": "required-validator",
@@ -138,12 +140,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Unit_Price",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.Unit_Price}"
                             }
                           ]
                         }
@@ -174,12 +176,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "QtyOrdered",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.QtyOrdered}"
                             }
                           ]
                         }
@@ -210,12 +212,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "QtyReceived",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.QtyReceived}"
                             }
                           ]
                         }
@@ -246,12 +248,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "TaxRate",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.TaxRate}"
                             }
                           ]
                         }
@@ -282,12 +284,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "double?",
                               "type": "numeric",
                               "name": "DiscountPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblpopurchaseorderdetail.DiscountPercent}"
                             }
                           ]
                         }

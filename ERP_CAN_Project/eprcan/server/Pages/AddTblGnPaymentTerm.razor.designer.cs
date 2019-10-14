@@ -24,26 +24,6 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        protected RadzenContent content1;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblGnPaymentTerm> form0;
-
-        protected RadzenLabel label1;
-
-        protected RadzenTextBox paymentTermId;
-
-        protected RadzenRequiredValidator paymentTermIdRequiredValidator;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox paymentTermText;
-
-        protected RadzenRequiredValidator paymentTermTextRequiredValidator;
-
-        protected RadzenButton button1;
-
-        protected RadzenButton button2;
-
         ErpCan.Models.CanErpDbAt132.TblGnPaymentTerm _tblgnpaymentterm;
         protected ErpCan.Models.CanErpDbAt132.TblGnPaymentTerm tblgnpaymentterm
         {

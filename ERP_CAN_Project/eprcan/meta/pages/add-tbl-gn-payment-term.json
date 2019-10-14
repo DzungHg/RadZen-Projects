@@ -40,14 +40,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 20,
                               "type": "textbox",
                               "name": "PaymentTerm_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblgnpaymentterm.PaymentTerm_ID}"
                             },
                             {
                               "type": "required-validator",
@@ -87,14 +87,14 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 80,
                               "type": "textbox",
                               "name": "PaymentTermText",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblgnpaymentterm.PaymentTermText}"
                             },
                             {
                               "type": "required-validator",

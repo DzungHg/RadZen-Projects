@@ -27,32 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Transaction_ID { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcTransactionType> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox transactionId;
-
-        protected RadzenRequiredValidator transactionIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox transactionName;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox description;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

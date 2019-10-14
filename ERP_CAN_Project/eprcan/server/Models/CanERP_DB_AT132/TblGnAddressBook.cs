@@ -28,6 +28,9 @@ namespace ErpCan.Models.CanErpDbAt132
 
     [InverseProperty("TblGnAddressBook")]
     public ICollection<TblPoCashDisbursement> TblPoCashDisbursements { get; set; }
+
+    [InverseProperty("TblGnAddressBook")]
+    public ICollection<TblPoVendor> TblPoVendors { get; set; }
     public string AddressBook_ID
     {
       get;

@@ -27,32 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Category_ID { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblIcCategory> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox categoryId;
-
-        protected RadzenRequiredValidator categoryIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox categoryText;
-
-        protected RadzenLabel label4;
-
-        protected RadzenCheckBox inactive;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {

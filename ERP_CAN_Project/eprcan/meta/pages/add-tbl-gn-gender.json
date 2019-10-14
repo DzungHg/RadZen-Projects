@@ -40,13 +40,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 6,
                               "type": "textbox",
                               "name": "Gender_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblgngender.Gender_ID}"
                             }
                           ]
                         }
@@ -77,13 +77,13 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Gender",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblgngender.Gender}"
                             }
                           ]
                         }

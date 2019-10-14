@@ -48,7 +48,8 @@
                               "name": "SODetailStatus_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.SODetailStatus_FK}"
                             }
                           ]
                         }
@@ -87,7 +88,8 @@
                               "name": "SO_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.SO_FK}"
                             }
                           ]
                         }
@@ -126,7 +128,8 @@
                               "name": "Inventory_FK",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.Inventory_FK}"
                             }
                           ]
                         }
@@ -157,12 +160,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "UnitPrice",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.UnitPrice}"
                             }
                           ]
                         }
@@ -193,12 +196,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyOnHand",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.QtyOnHand}"
                             }
                           ]
                         }
@@ -229,12 +232,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyOrdered",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.QtyOrdered}"
                             }
                           ]
                         }
@@ -265,12 +268,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyOrderedNow",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.QtyOrderedNow}"
                             }
                           ]
                         }
@@ -301,12 +304,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyBackOrdered",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.QtyBackOrdered}"
                             }
                           ]
                         }
@@ -337,12 +340,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "int?",
                               "type": "numeric",
                               "name": "QtyPicked",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.QtyPicked}"
                             }
                           ]
                         }
@@ -373,12 +376,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "DiscountPercent",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.DiscountPercent}"
                             }
                           ]
                         }
@@ -409,12 +412,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "TaxRate",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "value": "${tblsoorderdetail.TaxRate}"
                             }
                           ]
                         }

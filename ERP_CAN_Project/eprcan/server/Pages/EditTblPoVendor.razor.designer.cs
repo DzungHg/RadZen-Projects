@@ -27,84 +27,6 @@ namespace ErpCan.Pages
         [Parameter]
         public string Vendor_ID { get; set; }
 
-        protected RadzenContent content1;
-
-        protected RadzenLabel closeLabel;
-
-        protected RadzenButton closeButton;
-
-        protected RadzenTemplateForm<ErpCan.Models.CanErpDbAt132.TblPoVendor> form0;
-
-        protected RadzenLabel label2;
-
-        protected RadzenTextBox vendorId;
-
-        protected RadzenRequiredValidator vendorIdRequiredValidator;
-
-        protected RadzenLabel label3;
-
-        protected RadzenTextBox lastName;
-
-        protected RadzenLabel label4;
-
-        protected RadzenTextBox firstName;
-
-        protected RadzenLabel label5;
-
-        protected dynamic vendorAdressBookFk;
-
-        protected RadzenLabel label6;
-
-        protected RadzenTextBox performingRating;
-
-        protected RadzenLabel label7;
-
-        protected dynamic apBalance;
-
-        protected RadzenLabel label8;
-
-        protected dynamic outstandInvAmt;
-
-        protected RadzenLabel label9;
-
-        protected dynamic outstandCredit;
-
-        protected RadzenLabel label10;
-
-        protected RadzenDatePicker lastPurchaseDate;
-
-        protected RadzenLabel label11;
-
-        protected RadzenDatePicker lastPaymentDate;
-
-        protected RadzenLabel label12;
-
-        protected dynamic currentMtdReturns;
-
-        protected RadzenLabel label13;
-
-        protected dynamic mtdPurchase;
-
-        protected RadzenLabel label14;
-
-        protected dynamic ytdPurchase;
-
-        protected RadzenLabel label15;
-
-        protected dynamic lyrPurchase;
-
-        protected RadzenLabel label16;
-
-        protected RadzenTextBox notes;
-
-        protected RadzenLabel label17;
-
-        protected RadzenCheckBox inactive;
-
-        protected RadzenButton button2;
-
-        protected RadzenButton button3;
-
         bool _canEdit;
         protected bool canEdit
         {
@@ -139,6 +61,23 @@ namespace ErpCan.Pages
             }
         }
 
+        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> _getTblGnAddressBooksResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> getTblGnAddressBooksResult
+        {
+            get
+            {
+                return _getTblGnAddressBooksResult;
+            }
+            set
+            {
+                if(_getTblGnAddressBooksResult != value)
+                {
+                    _getTblGnAddressBooksResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {
             Load();
@@ -150,6 +89,9 @@ namespace ErpCan.Pages
 
             var canErpDbAt132GetTblPoVendorByVendorIdResult = await CanErpDbAt132.GetTblPoVendorByVendorId($"{Vendor_ID}");
             tblpovendor = canErpDbAt132GetTblPoVendorByVendorIdResult;
+
+            var canErpDbAt132GetTblGnAddressBooksResult = await CanErpDbAt132.GetTblGnAddressBooks();
+            getTblGnAddressBooksResult = canErpDbAt132GetTblGnAddressBooksResult;
         }
 
         protected async void CloseButtonClick(MouseEventArgs args)
