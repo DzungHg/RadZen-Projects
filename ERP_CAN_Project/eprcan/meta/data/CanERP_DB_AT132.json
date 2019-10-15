@@ -598,7 +598,7 @@
           "x-key": true,
           "x-nullable": false,
           "type": "string",
-          "length": 5,
+          "length": 11,
           "x-navigation": [
             {
               "inversePropertyName": "TblIcClassification",
@@ -700,7 +700,7 @@
         },
         "Classifi_FK": {
           "type": "string",
-          "length": 5,
+          "length": 11,
           "x-foreignKey": {
             "parentTable": "tblIC_Classification",
             "parentEntityType": "TblIcClassification",
@@ -715,7 +715,7 @@
           "type": "object",
           "$ref": "#/definitions/TblGnProduct"
         },
-        "Item_SK": {
+        "Item_FK": {
           "type": "integer",
           "x-foreignKey": {
             "parentTable": "tblGN_Product",

@@ -52,13 +52,13 @@ namespace ErpCan.Models.CanErpDbAt132
 
     [ForeignKey("Classifi_FK")]
     public TblIcClassification TblIcClassification { get; set; }
-    public int? Item_SK
+    public int? Item_FK
     {
       get;
       set;
     }
 
-    [ForeignKey("Item_SK")]
+    [ForeignKey("Item_FK")]
     public TblGnProduct TblGnProduct { get; set; }
     public string Product_Code
     {

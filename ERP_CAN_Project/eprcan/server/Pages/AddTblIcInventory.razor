@@ -9,55 +9,55 @@
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm Data="@(tblicinventory)" Visible="@(tblicinventory != null)" TItem="ErpCan.Models.CanErpDbAt132.TblIcInventory" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@(tblicinventory)" TItem="ErpCan.Models.CanErpDbAt132.TblIcInventory" Visible="@(tblicinventory != null)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tbl Ic Warehouse" Component="Warehouse_FK" style="width: 100%">
+                <RadzenLabel Component="Warehouse_FK" style="width: 100%" Text="Tbl Ic Warehouse">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcWarehousesResult)" TextProperty="WarehouseName" ValueProperty="Warehouse_ID" Placeholder="Choose TblIcWarehouse" style="display: block; width: 100%" @bind-Value="@(tblicinventory.Warehouse_FK)" Name="Warehouse_FK">
+                <RadzenDropDown Data="@(getTblIcWarehousesResult)" Placeholder="Choose TblIcWarehouse" style="display: block; width: 100%" TextProperty="WarehouseName" @bind-Value="@(tblicinventory.Warehouse_FK)" ValueProperty="Warehouse_ID" Name="Warehouse_FK">
                 </RadzenDropDown>
-                <RadzenRequiredValidator Component="Warehouse_FK" Text="Warehouse_FK is required" style="position: absolute">
+                <RadzenRequiredValidator Component="Warehouse_FK" style="position: absolute" Text="Warehouse_FK is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tbl Ic Category" Component="Category_FK" style="width: 100%">
+                <RadzenLabel Component="Category_FK" style="width: 100%" Text="Tbl Ic Category">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcCategoriesResult)" TextProperty="CategoryText" ValueProperty="Category_ID" Placeholder="Choose TblIcCategory" style="display: block; width: 100%" @bind-Value="@(tblicinventory.Category_FK)" Name="Category_FK">
+                <RadzenDropDown Data="@(getTblIcCategoriesResult)" Placeholder="Choose TblIcCategory" style="display: block; width: 100%" TextProperty="CategoryText" @bind-Value="@(tblicinventory.Category_FK)" ValueProperty="Category_ID" Name="Category_FK">
                 </RadzenDropDown>
-                <RadzenRequiredValidator Component="Category_FK" Text="Category_FK is required" style="position: absolute">
+                <RadzenRequiredValidator Component="Category_FK" style="position: absolute" Text="Category_FK is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tbl Ic Classification" Component="Classifi_FK" style="width: 100%">
+                <RadzenLabel Component="Classifi_FK" style="width: 100%" Text="Tbl Ic Classification">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcClassificationsResult)" TextProperty="Classifi_Name" ValueProperty="Classifi_ID" Placeholder="Choose TblIcClassification" style="width: 100%" @bind-Value="@(tblicinventory.Classifi_FK)" Name="Classifi_FK">
+                <RadzenDropDown Data="@(getTblIcClassificationsResult)" Placeholder="Choose TblIcClassification" style="width: 100%" TextProperty="Classifi_Name" @bind-Value="@(tblicinventory.Classifi_FK)" ValueProperty="Classifi_ID" Name="Classifi_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tbl Gn Product" Component="Item_SK" style="width: 100%">
+                <RadzenLabel Component="Item_SK" style="width: 100%" Text="Tbl Gn Product">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblGnProductsResult)" TextProperty="Product_ID" ValueProperty="Product_SEQ" Placeholder="Choose TblGnProduct" style="width: 100%" @bind-Value="@(tblicinventory.Item_SK)" Name="Item_SK">
+                <RadzenDropDown Data="@(getTblGnProductsResult)" Placeholder="Choose TblGnProduct" style="width: 100%" TextProperty="Product_ID" @bind-Value="@(tblicinventory.Item_FK)" ValueProperty="Product_SEQ" Name="Item_SK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Product Code" Component="Product_Code" style="width: 100%">
+                <RadzenLabel Component="Product_Code" style="width: 100%" Text="Product Code">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -67,7 +67,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Product Desc" Component="ProductDesc" style="width: 100%">
+                <RadzenLabel Component="ProductDesc" style="width: 100%" Text="Product Desc">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -77,7 +77,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Fix Asset" Component="FixAsset" style="width: 100%">
+                <RadzenLabel Component="FixAsset" style="width: 100%" Text="Fix Asset">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -87,17 +87,17 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tbl Ic Unit" Component="Unit_FK" style="width: 100%">
+                <RadzenLabel Component="Unit_FK" style="width: 100%" Text="Tbl Ic Unit">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcUnitsResult)" TextProperty="UnitText" ValueProperty="Unit_SEQ" Placeholder="Choose TblIcUnit" style="width: 100%" @bind-Value="@(tblicinventory.Unit_FK)" Name="Unit_FK">
+                <RadzenDropDown Data="@(getTblIcUnitsResult)" Placeholder="Choose TblIcUnit" style="width: 100%" TextProperty="UnitText" @bind-Value="@(tblicinventory.Unit_FK)" ValueProperty="Unit_SEQ" Name="Unit_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Quantity Per Unit" Component="QuantityPerUnit" style="width: 100%">
+                <RadzenLabel Component="QuantityPerUnit" style="width: 100%" Text="Quantity Per Unit">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -107,7 +107,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Location" Component="Location" style="width: 100%">
+                <RadzenLabel Component="Location" style="width: 100%" Text="Location">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -117,7 +117,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Taxable" Component="Taxable" style="width: 100%">
+                <RadzenLabel Component="Taxable" style="width: 100%" Text="Taxable">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -127,7 +127,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Tax Rate" Component="TaxRate" style="width: 100%">
+                <RadzenLabel Component="TaxRate" style="width: 100%" Text="Tax Rate">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -137,7 +137,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Rop" Component="ROP" style="width: 100%">
+                <RadzenLabel Component="ROP" style="width: 100%" Text="Rop">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -147,7 +147,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Eoq" Component="EOQ" style="width: 100%">
+                <RadzenLabel Component="EOQ" style="width: 100%" Text="Eoq">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -157,7 +157,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Unit Price" Component="UnitPrice" style="width: 100%">
+                <RadzenLabel Component="UnitPrice" style="width: 100%" Text="Unit Price">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -167,7 +167,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Gl Asset" Component="GL_Asset" style="width: 100%">
+                <RadzenLabel Component="GL_Asset" style="width: 100%" Text="Gl Asset">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -177,7 +177,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Gl Cogs" Component="GL_COGS" style="width: 100%">
+                <RadzenLabel Component="GL_COGS" style="width: 100%" Text="Gl Cogs">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -187,7 +187,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Gl Sales" Component="GL_Sales" style="width: 100%">
+                <RadzenLabel Component="GL_Sales" style="width: 100%" Text="Gl Sales">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -197,7 +197,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Gl Non Tax Sales" Component="GL_NonTaxSales" style="width: 100%">
+                <RadzenLabel Component="GL_NonTaxSales" style="width: 100%" Text="Gl Non Tax Sales">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -207,7 +207,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Last Sale Date" Component="LastSaleDate" style="width: 100%">
+                <RadzenLabel Component="LastSaleDate" style="width: 100%" Text="Last Sale Date">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -217,7 +217,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Last Po Date" Component="LastPODate" style="width: 100%">
+                <RadzenLabel Component="LastPODate" style="width: 100%" Text="Last Po Date">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -227,7 +227,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Last Receipt Date" Component="LastReceiptDate" style="width: 100%">
+                <RadzenLabel Component="LastReceiptDate" style="width: 100%" Text="Last Receipt Date">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -237,7 +237,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Last Cost" Component="LastCost" style="width: 100%">
+                <RadzenLabel Component="LastCost" style="width: 100%" Text="Last Cost">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -247,7 +247,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Everage Cost" Component="EverageCost" style="width: 100%">
+                <RadzenLabel Component="EverageCost" style="width: 100%" Text="Everage Cost">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -257,7 +257,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Qty On Order" Component="Qty_On_Order" style="width: 100%">
+                <RadzenLabel Component="Qty_On_Order" style="width: 100%" Text="Qty On Order">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -267,7 +267,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Qty In Stock" Component="Qty_In_Stock" style="width: 100%">
+                <RadzenLabel Component="Qty_In_Stock" style="width: 100%" Text="Qty In Stock">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -277,7 +277,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Qty On Hand" Component="Qty_On_Hand" style="width: 100%">
+                <RadzenLabel Component="Qty_On_Hand" style="width: 100%" Text="Qty On Hand">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -287,7 +287,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Qty Allocated" Component="Qty_Allocated" style="width: 100%">
+                <RadzenLabel Component="Qty_Allocated" style="width: 100%" Text="Qty Allocated">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -297,7 +297,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Mtd Qty Sold" Component="MTD_Qty_Sold" style="width: 100%">
+                <RadzenLabel Component="MTD_Qty_Sold" style="width: 100%" Text="Mtd Qty Sold">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -307,7 +307,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Mtd Gross Sales" Component="MTD_Gross_Sales" style="width: 100%">
+                <RadzenLabel Component="MTD_Gross_Sales" style="width: 100%" Text="Mtd Gross Sales">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -317,7 +317,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Mtd Cogs" Component="MTD_COGS" style="width: 100%">
+                <RadzenLabel Component="MTD_COGS" style="width: 100%" Text="Mtd Cogs">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -327,7 +327,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ytd Qty Sold" Component="YTD_Qty_Sold" style="width: 100%">
+                <RadzenLabel Component="YTD_Qty_Sold" style="width: 100%" Text="Ytd Qty Sold">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -337,7 +337,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ytd Gross Sales" Component="YTD_Gross_Sales" style="width: 100%">
+                <RadzenLabel Component="YTD_Gross_Sales" style="width: 100%" Text="Ytd Gross Sales">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -347,7 +347,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ytd Cogs" Component="YTD_COGS" style="width: 100%">
+                <RadzenLabel Component="YTD_COGS" style="width: 100%" Text="Ytd Cogs">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -357,7 +357,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ytd Qty Returned" Component="YTD_Qty_Returned" style="width: 100%">
+                <RadzenLabel Component="YTD_Qty_Returned" style="width: 100%" Text="Ytd Qty Returned">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -367,7 +367,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ltd Qty Sold" Component="LTD_Qty_Sold" style="width: 100%">
+                <RadzenLabel Component="LTD_Qty_Sold" style="width: 100%" Text="Ltd Qty Sold">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -377,7 +377,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ltd Gross Sales" Component="LTD_Gross_Sales" style="width: 100%">
+                <RadzenLabel Component="LTD_Gross_Sales" style="width: 100%" Text="Ltd Gross Sales">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -387,7 +387,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Ltd Cogs" Component="LTD_COGS" style="width: 100%">
+                <RadzenLabel Component="LTD_COGS" style="width: 100%" Text="Ltd Cogs">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -397,7 +397,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Net Gross Rate" Component="NetGrossRate" style="width: 100%">
+                <RadzenLabel Component="NetGrossRate" style="width: 100%" Text="Net Gross Rate">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -407,7 +407,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Vendor Number Fk" Component="VendorNumber_FK" style="width: 100%">
+                <RadzenLabel Component="VendorNumber_FK" style="width: 100%" Text="Vendor Number Fk">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -417,7 +417,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Last Updated Date" Component="LastUpdatedDate" style="width: 100%">
+                <RadzenLabel Component="LastUpdatedDate" style="width: 100%" Text="Last Updated Date">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -427,7 +427,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Last Updated By Fk" Component="LastUpdatedBy_FK" style="width: 100%">
+                <RadzenLabel Component="LastUpdatedBy_FK" style="width: 100%" Text="Last Updated By Fk">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -437,7 +437,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Notes" Component="Notes" style="width: 100%">
+                <RadzenLabel Component="Notes" style="width: 100%" Text="Notes">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -447,7 +447,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Inactive" Component="Inactive" style="width: 100%">
+                <RadzenLabel Component="Inactive" style="width: 100%" Text="Inactive">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -457,7 +457,7 @@
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
                 <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button2Click">
                 </RadzenButton>

@@ -71,7 +71,7 @@ namespace ErpCan.Data
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblIcInventory>()
               .HasOne(i => i.TblGnProduct)
               .WithMany(i => i.TblIcInventories)
-              .HasForeignKey(i => i.Item_SK)
+              .HasForeignKey(i => i.Item_FK)
               .HasPrincipalKey(i => i.Product_SEQ);
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblIcInventory>()
               .HasOne(i => i.TblIcUnit)
