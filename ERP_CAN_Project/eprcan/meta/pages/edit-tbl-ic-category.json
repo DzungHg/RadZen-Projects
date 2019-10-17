@@ -89,7 +89,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 5,
                               "type": "textbox",
                               "name": "Category_ID",
@@ -138,7 +137,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "CategoryText",
@@ -177,7 +175,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
                               "triState": true,

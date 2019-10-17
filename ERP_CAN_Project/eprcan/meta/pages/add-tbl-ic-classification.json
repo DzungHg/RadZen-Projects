@@ -1,172 +1,168 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "contentContainer0",
       "components": [
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "type": "template-form",
-                  "name": "form0",
                   "components": [
                     {
-                      "type": "row",
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Classifi Id",
                               "component": "Classifi_ID",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Classifi Id",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "maxLength": 5,
-                              "type": "textbox",
+                              "maxLength": 11,
                               "name": "Classifi_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblicclassification.Classifi_ID}"
                             },
                             {
-                              "type": "required-validator",
-                              "name": "Classifi_IDRequiredValidator",
                               "component": "Classifi_ID",
-                              "text": "Classifi_ID is required",
+                              "name": "Classifi_IDRequiredValidator",
                               "style": {
                                 "position": "absolute"
-                              }
+                              },
+                              "text": "Classifi_ID is required",
+                              "type": "required-validator"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Classifi Name",
                               "component": "Classifi_Name",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Classifi Name",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "maxLength": 50,
-                              "type": "textbox",
                               "name": "Classifi_Name",
                               "style": {
                                 "width": "100%"
                               },
+                              "type": "textbox",
                               "value": "${tblicclassification.Classifi_Name}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
-                    },
-                    {
-                      "type": "row",
+                      ],
                       "style": {
                         "marginBottom": "1rem"
                       },
+                      "type": "row"
+                    },
+                    {
                       "components": [
                         {
-                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
-                              "type": "label",
-                              "text": "Inactive",
                               "component": "Inactive",
                               "style": {
                                 "width": "100%"
-                              }
+                              },
+                              "text": "Inactive",
+                              "type": "label"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         },
                         {
-                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "type": "checkbox",
                               "name": "Inactive",
                               "triState": true,
+                              "type": "checkbox",
                               "value": "${tblicclassification.Inactive}"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
                     },
                     {
-                      "type": "row",
                       "components": [
                         {
-                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "type": "button",
+                              "buttonStyle": "primary",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "buttonStyle": "primary"
+                              "type": "button"
                             },
                             {
-                              "type": "button",
                               "buttonStyle": "light",
-                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              }
+                              },
+                              "text": "Cancel",
+                              "type": "button"
                             }
-                          ]
+                          ],
+                          "type": "col"
                         }
-                      ]
+                      ],
+                      "type": "row"
                     }
                   ],
+                  "data": "${tblicclassification}",
                   "events": {
                     "submit": [
                       {
+                        "argType": "ErpCan.Models.CanErpDbAt132.TblIcClassification",
                         "error": [
                           {
                             "detail": "Unable to create new TblIcClassification!",
@@ -184,24 +180,28 @@
                         ],
                         "then": [
                           {
-                            "type": "close-popup",
-                            "result": "${tblicclassification}"
+                            "result": "${tblicclassification}",
+                            "type": "close-popup"
                           }
                         ],
-                        "type": "invoke",
-                        "argType": "ErpCan.Models.CanErpDbAt132.TblIcClassification"
+                        "type": "invoke"
                       }
                     ]
                   },
-                  "data": "${tblicclassification}",
-                  "visible": "${tblicclassification != null}",
-                  "itemType": "ErpCan.Models.CanErpDbAt132.TblIcClassification"
+                  "itemType": "ErpCan.Models.CanErpDbAt132.TblIcClassification",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${tblicclassification != null}"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "contentContainer0",
+      "type": "content"
     }
   ],
   "events": {
@@ -214,6 +214,6 @@
       }
     ]
   },
-  "name": "Add Tbl Ic Classification",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Add Tbl Ic Classification"
 }

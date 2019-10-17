@@ -5305,25 +5305,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BK\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GitHub02\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
+      "projectUniqueName": "C:\\ZDung HDD\\GitHub\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
       "projectName": "ErpCan",
-      "projectPath": "F:\\GitHub02\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
-      "packagesPath": "C:\\Users\\BK\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHub02\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\obj\\",
+      "projectPath": "C:\\ZDung HDD\\GitHub\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\ErpCan.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\ZDung HDD\\GitHub\\RadZen-Projects\\ERP_CAN_Project\\eprcan\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\BK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

@@ -19,23 +19,23 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm TItem="ErpCan.Models.CanErpDbAt132.TblIcClassification" Data="@(tblicclassification)" Visible="@(tblicclassification != null && canEdit)" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@(tblicclassification)" TItem="ErpCan.Models.CanErpDbAt132.TblIcClassification" Visible="@(tblicclassification != null && canEdit)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Classifi Id" Component="Classifi_ID" style="width: 100%">
+                <RadzenLabel Component="Classifi_ID" style="width: 100%" Text="Classifi Id">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="5" style="display: block; width: 100%" @bind-Value="@(tblicclassification.Classifi_ID)" Name="Classifi_ID">
+                <RadzenTextBox MaxLength="11" style="display: block; width: 100%" @bind-Value="@(tblicclassification.Classifi_ID)" Name="Classifi_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="Classifi_ID" Text="Classifi_ID is required" style="position: absolute">
+                <RadzenRequiredValidator Component="Classifi_ID" style="position: absolute" Text="Classifi_ID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Classifi Name" Component="Classifi_Name" style="width: 100%">
+                <RadzenLabel Component="Classifi_Name" style="width: 100%" Text="Classifi Name">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -45,7 +45,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Inactive" Component="Inactive" style="width: 100%">
+                <RadzenLabel Component="Inactive" style="width: 100%" Text="Inactive">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -55,7 +55,7 @@
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
                 <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>
