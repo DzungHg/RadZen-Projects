@@ -19,9 +19,9 @@ namespace ErpCan.Models.CanErpDbAt132
 
     public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
 
-    public ICollection<TblSoSalesOrder> TblSoSalesOrders { get; set; }
-
     public ICollection<TblSoCustomer> TblSoCustomers { get; set; }
+
+    public ICollection<TblSoSalesOrder> TblSoSalesOrders { get; set; }
     public string PaymentType_ID
     {
       get;

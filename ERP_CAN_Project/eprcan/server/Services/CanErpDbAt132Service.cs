@@ -25,7 +25,22 @@ namespace ErpCan
             this.navigationManager = navigationManager;
         }
 
-                public async Task ExportTblGnAddressBooksToExcel(Query query = null)
+        
+      public async Task<IQueryable<Models.CanErpDbAt132.SpGetAddressBookByContactSeq>> GetSpGetAddressBookByContactSeqs(int? ContactSEQ)
+      {
+          OnSpGetAddressBookByContactSeqsDefaultParams(ref ContactSEQ);
+
+          var items = context.SpGetAddressBookByContactSeqs.FromSqlRaw("EXEC [dbo].[sp_GetAddressBookByContactSEQ] @ContactSEQ={0}", ContactSEQ);
+
+          OnSpGetAddressBookByContactSeqsInvoke(ref items);
+
+          return await Task.FromResult(items);
+      }
+
+      partial void OnSpGetAddressBookByContactSeqsDefaultParams(ref int? ContactSEQ);
+
+      partial void OnSpGetAddressBookByContactSeqsInvoke(ref IQueryable<Models.CanErpDbAt132.SpGetAddressBookByContactSeq> items);
+            public async Task ExportTblGnAddressBooksToExcel(Query query = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnaddressbooks/excel") : "/export/canerpdbat132/tblgnaddressbooks/excel", true);
         }
@@ -2442,8 +2457,8 @@ namespace ErpCan
                               .Where(i => i.AddressBook_SEQ == addressBookSeq)
                               .Include(i => i.TblPoPurchaseOrders)
                               .Include(i => i.TblPoRecReports)
-                              .Include(i => i.TblSoCustomers)
                               .Include(i => i.TblPoCashDisbursements)
+                              .Include(i => i.TblSoCustomers)
                               .Include(i => i.TblPoVendors)
                               .FirstOrDefault();
 
@@ -2494,7 +2509,7 @@ namespace ErpCan
 
             return tblGnAddressBook;
         }
-    
+        
         partial void OnTblGnAddressBookTypeDeleted(Models.CanErpDbAt132.TblGnAddressBookType item);
 
         public async Task<Models.CanErpDbAt132.TblGnAddressBookType> DeleteTblGnAddressBookType(int? addressBookTypeSeq)
@@ -2551,7 +2566,7 @@ namespace ErpCan
 
             return tblGnAddressBookType;
         }
-    
+        
         partial void OnTblGnCityDeleted(Models.CanErpDbAt132.TblGnCity item);
 
         public async Task<Models.CanErpDbAt132.TblGnCity> DeleteTblGnCity(int? citySeq)
@@ -2608,7 +2623,7 @@ namespace ErpCan
 
             return tblGnCity;
         }
-    
+        
         partial void OnTblGnDepartmentDeleted(Models.CanErpDbAt132.TblGnDepartment item);
 
         public async Task<Models.CanErpDbAt132.TblGnDepartment> DeleteTblGnDepartment(string departmentId)
@@ -2665,7 +2680,7 @@ namespace ErpCan
 
             return tblGnDepartment;
         }
-    
+        
         partial void OnTblGnGenderDeleted(Models.CanErpDbAt132.TblGnGender item);
 
         public async Task<Models.CanErpDbAt132.TblGnGender> DeleteTblGnGender(int? genderSeq)
@@ -2722,7 +2737,7 @@ namespace ErpCan
 
             return tblGnGender;
         }
-    
+        
         partial void OnTblGnIncotermDeleted(Models.CanErpDbAt132.TblGnIncoterm item);
 
         public async Task<Models.CanErpDbAt132.TblGnIncoterm> DeleteTblGnIncoterm(string incotermId)
@@ -2778,7 +2793,7 @@ namespace ErpCan
 
             return tblGnIncoterm;
         }
-    
+        
         partial void OnTblGnPaymentTermDeleted(Models.CanErpDbAt132.TblGnPaymentTerm item);
 
         public async Task<Models.CanErpDbAt132.TblGnPaymentTerm> DeleteTblGnPaymentTerm(int? paymentTermSeq)
@@ -2786,8 +2801,8 @@ namespace ErpCan
             var item = context.TblGnPaymentTerms
                               .Where(i => i.PaymentTerm_SEQ == paymentTermSeq)
                               .Include(i => i.TblPoPurchaseOrders)
-                              .Include(i => i.TblSoSalesOrders)
                               .Include(i => i.TblSoCustomers)
+                              .Include(i => i.TblSoSalesOrders)
                               .FirstOrDefault();
 
             OnTblGnPaymentTermDeleted(item);
@@ -2837,7 +2852,7 @@ namespace ErpCan
 
             return tblGnPaymentTerm;
         }
-    
+        
         partial void OnTblGnPaymentTypeDeleted(Models.CanErpDbAt132.TblGnPaymentType item);
 
         public async Task<Models.CanErpDbAt132.TblGnPaymentType> DeleteTblGnPaymentType(int? paymentTypeSeq)
@@ -2845,8 +2860,8 @@ namespace ErpCan
             var item = context.TblGnPaymentTypes
                               .Where(i => i.PaymentType_SEQ == paymentTypeSeq)
                               .Include(i => i.TblPoPurchaseOrders)
-                              .Include(i => i.TblSoSalesOrders)
                               .Include(i => i.TblSoCustomers)
+                              .Include(i => i.TblSoSalesOrders)
                               .FirstOrDefault();
 
             OnTblGnPaymentTypeDeleted(item);
@@ -2896,15 +2911,15 @@ namespace ErpCan
 
             return tblGnPaymentType;
         }
-    
+        
         partial void OnTblGnProductDeleted(Models.CanErpDbAt132.TblGnProduct item);
 
         public async Task<Models.CanErpDbAt132.TblGnProduct> DeleteTblGnProduct(int? productSeq)
         {
             var item = context.TblGnProducts
                               .Where(i => i.Product_SEQ == productSeq)
-                              .Include(i => i.TblIcInventories)
                               .Include(i => i.TblIcTransactions)
+                              .Include(i => i.TblIcInventories)
                               .FirstOrDefault();
 
             OnTblGnProductDeleted(item);
@@ -2954,7 +2969,7 @@ namespace ErpCan
 
             return tblGnProduct;
         }
-    
+        
         partial void OnTblGnShipViumDeleted(Models.CanErpDbAt132.TblGnShipVium item);
 
         public async Task<Models.CanErpDbAt132.TblGnShipVium> DeleteTblGnShipVium(int? shipViaSeq)
@@ -3012,7 +3027,7 @@ namespace ErpCan
 
             return tblGnShipVium;
         }
-    
+        
         partial void OnTblIcCategoryDeleted(Models.CanErpDbAt132.TblIcCategory item);
 
         public async Task<Models.CanErpDbAt132.TblIcCategory> DeleteTblIcCategory(string categoryId)
@@ -3069,7 +3084,7 @@ namespace ErpCan
 
             return tblIcCategory;
         }
-    
+        
         partial void OnTblIcClassificationDeleted(Models.CanErpDbAt132.TblIcClassification item);
 
         public async Task<Models.CanErpDbAt132.TblIcClassification> DeleteTblIcClassification(string classifiId)
@@ -3126,17 +3141,17 @@ namespace ErpCan
 
             return tblIcClassification;
         }
-    
+        
         partial void OnTblIcInventoryDeleted(Models.CanErpDbAt132.TblIcInventory item);
 
         public async Task<Models.CanErpDbAt132.TblIcInventory> DeleteTblIcInventory(int? inventorySeq)
         {
             var item = context.TblIcInventories
                               .Where(i => i.Inventory_SEQ == inventorySeq)
+                              .Include(i => i.TblPoPurchaseOrderDetails)
                               .Include(i => i.TblPoApInvoicesDetails)
                               .Include(i => i.TblPoRrOrderDetails)
                               .Include(i => i.TblSoOrderDetails)
-                              .Include(i => i.TblPoPurchaseOrderDetails)
                               .FirstOrDefault();
 
             OnTblIcInventoryDeleted(item);
@@ -3186,7 +3201,7 @@ namespace ErpCan
 
             return tblIcInventory;
         }
-    
+        
         partial void OnTblIcTransactionDeleted(Models.CanErpDbAt132.TblIcTransaction item);
 
         public async Task<Models.CanErpDbAt132.TblIcTransaction> DeleteTblIcTransaction(string transNo)
@@ -3242,7 +3257,7 @@ namespace ErpCan
 
             return tblIcTransaction;
         }
-    
+        
         partial void OnTblIcTransactionTypeDeleted(Models.CanErpDbAt132.TblIcTransactionType item);
 
         public async Task<Models.CanErpDbAt132.TblIcTransactionType> DeleteTblIcTransactionType(string transactionId)
@@ -3299,7 +3314,7 @@ namespace ErpCan
 
             return tblIcTransactionType;
         }
-    
+        
         partial void OnTblIcUnitDeleted(Models.CanErpDbAt132.TblIcUnit item);
 
         public async Task<Models.CanErpDbAt132.TblIcUnit> DeleteTblIcUnit(int? unitSeq)
@@ -3357,15 +3372,15 @@ namespace ErpCan
 
             return tblIcUnit;
         }
-    
+        
         partial void OnTblIcWarehouseDeleted(Models.CanErpDbAt132.TblIcWarehouse item);
 
         public async Task<Models.CanErpDbAt132.TblIcWarehouse> DeleteTblIcWarehouse(string warehouseId)
         {
             var item = context.TblIcWarehouses
                               .Where(i => i.Warehouse_ID == warehouseId)
-                              .Include(i => i.TblIcInventories)
                               .Include(i => i.TblIcTransactions)
+                              .Include(i => i.TblIcInventories)
                               .FirstOrDefault();
 
             OnTblIcWarehouseDeleted(item);
@@ -3415,7 +3430,7 @@ namespace ErpCan
 
             return tblIcWarehouse;
         }
-    
+        
         partial void OnTblPoAccountPayableDeleted(Models.CanErpDbAt132.TblPoAccountPayable item);
 
         public async Task<Models.CanErpDbAt132.TblPoAccountPayable> DeleteTblPoAccountPayable(string apNo)
@@ -3471,7 +3486,7 @@ namespace ErpCan
 
             return tblPoAccountPayable;
         }
-    
+        
         partial void OnTblPoAccountsPayableAdjustmentDeleted(Models.CanErpDbAt132.TblPoAccountsPayableAdjustment item);
 
         public async Task<Models.CanErpDbAt132.TblPoAccountsPayableAdjustment> DeleteTblPoAccountsPayableAdjustment(string voucherNo)
@@ -3527,7 +3542,7 @@ namespace ErpCan
 
             return tblPoAccountsPayableAdjustment;
         }
-    
+        
         partial void OnTblPoApInvoiceDeleted(Models.CanErpDbAt132.TblPoApInvoice item);
 
         public async Task<Models.CanErpDbAt132.TblPoApInvoice> DeleteTblPoApInvoice(string vendorId, string invoiceNo)
@@ -3583,7 +3598,7 @@ namespace ErpCan
 
             return tblPoApInvoice;
         }
-    
+        
         partial void OnTblPoApInvoicesDetailDeleted(Models.CanErpDbAt132.TblPoApInvoicesDetail item);
 
         public async Task<Models.CanErpDbAt132.TblPoApInvoicesDetail> DeleteTblPoApInvoicesDetail(string vendorId, string invoiceNo)
@@ -3639,7 +3654,7 @@ namespace ErpCan
 
             return tblPoApInvoicesDetail;
         }
-    
+        
         partial void OnTblPoCashDisbursementDeleted(Models.CanErpDbAt132.TblPoCashDisbursement item);
 
         public async Task<Models.CanErpDbAt132.TblPoCashDisbursement> DeleteTblPoCashDisbursement(string poCashDisbNo)
@@ -3695,7 +3710,7 @@ namespace ErpCan
 
             return tblPoCashDisbursement;
         }
-    
+        
         partial void OnTblPoOrderStatusDeleted(Models.CanErpDbAt132.TblPoOrderStatus item);
 
         public async Task<Models.CanErpDbAt132.TblPoOrderStatus> DeleteTblPoOrderStatus(string poStatusId)
@@ -3752,7 +3767,7 @@ namespace ErpCan
 
             return tblPoOrderStatus;
         }
-    
+        
         partial void OnTblPoPurchaseOrderDeleted(Models.CanErpDbAt132.TblPoPurchaseOrder item);
 
         public async Task<Models.CanErpDbAt132.TblPoPurchaseOrder> DeleteTblPoPurchaseOrder(string poId)
@@ -3809,7 +3824,7 @@ namespace ErpCan
 
             return tblPoPurchaseOrder;
         }
-    
+        
         partial void OnTblPoPurchaseOrderDetailDeleted(Models.CanErpDbAt132.TblPoPurchaseOrderDetail item);
 
         public async Task<Models.CanErpDbAt132.TblPoPurchaseOrderDetail> DeleteTblPoPurchaseOrderDetail(string poFk, int? inventoryFk)
@@ -3865,7 +3880,7 @@ namespace ErpCan
 
             return tblPoPurchaseOrderDetail;
         }
-    
+        
         partial void OnTblPoRecReportDeleted(Models.CanErpDbAt132.TblPoRecReport item);
 
         public async Task<Models.CanErpDbAt132.TblPoRecReport> DeleteTblPoRecReport(string rrNo)
@@ -3922,7 +3937,7 @@ namespace ErpCan
 
             return tblPoRecReport;
         }
-    
+        
         partial void OnTblPoRrOrderDetailDeleted(Models.CanErpDbAt132.TblPoRrOrderDetail item);
 
         public async Task<Models.CanErpDbAt132.TblPoRrOrderDetail> DeleteTblPoRrOrderDetail(string rrFk, int? inventoryFk)
@@ -3978,7 +3993,7 @@ namespace ErpCan
 
             return tblPoRrOrderDetail;
         }
-    
+        
         partial void OnTblPoVendorDeleted(Models.CanErpDbAt132.TblPoVendor item);
 
         public async Task<Models.CanErpDbAt132.TblPoVendor> DeleteTblPoVendor(string vendorId)
@@ -4039,7 +4054,7 @@ namespace ErpCan
 
             return tblPoVendor;
         }
-    
+        
         partial void OnTblSoCustomerDeleted(Models.CanErpDbAt132.TblSoCustomer item);
 
         public async Task<Models.CanErpDbAt132.TblSoCustomer> DeleteTblSoCustomer(int? customerSeq)
@@ -4096,7 +4111,7 @@ namespace ErpCan
 
             return tblSoCustomer;
         }
-    
+        
         partial void OnTblSoOrderDetailDeleted(Models.CanErpDbAt132.TblSoOrderDetail item);
 
         public async Task<Models.CanErpDbAt132.TblSoOrderDetail> DeleteTblSoOrderDetail(int? soDetailSeq)
@@ -4152,7 +4167,7 @@ namespace ErpCan
 
             return tblSoOrderDetail;
         }
-    
+        
         partial void OnTblSoOrderDetailStatusDeleted(Models.CanErpDbAt132.TblSoOrderDetailStatus item);
 
         public async Task<Models.CanErpDbAt132.TblSoOrderDetailStatus> DeleteTblSoOrderDetailStatus(int? soDetailStatusSeq)
@@ -4209,7 +4224,7 @@ namespace ErpCan
 
             return tblSoOrderDetailStatus;
         }
-    
+        
         partial void OnTblSoOrderStatusDeleted(Models.CanErpDbAt132.TblSoOrderStatus item);
 
         public async Task<Models.CanErpDbAt132.TblSoOrderStatus> DeleteTblSoOrderStatus(int? soStatusSeq)
@@ -4266,7 +4281,7 @@ namespace ErpCan
 
             return tblSoOrderStatus;
         }
-    
+        
         partial void OnTblSoSalesOrderDeleted(Models.CanErpDbAt132.TblSoSalesOrder item);
 
         public async Task<Models.CanErpDbAt132.TblSoSalesOrder> DeleteTblSoSalesOrder(int? soSeq)
@@ -4323,5 +4338,5 @@ namespace ErpCan
 
             return tblSoSalesOrder;
         }
-    }
+        }
 }

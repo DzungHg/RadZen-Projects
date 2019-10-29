@@ -12,6 +12,18 @@ namespace ErpCan
             this.context = context;
         }
 
+        [HttpGet("/export/CanErpDbAt132/spgetaddressbookbycontactseqs/csv")]
+        public FileStreamResult ExportSpGetAddressBookByContactSeqsToCSV()
+        {
+            return ToCSV(ApplyQuery(context.SpGetAddressBookByContactSeqs, Request.Query));
+        }
+
+        [HttpGet("/export/CanErpDbAt132/spgetaddressbookbycontactseqs/excel")]
+        public FileStreamResult ExportSpGetAddressBookByContactSeqsToExcel()
+        {
+            return ToExcel(ApplyQuery(context.SpGetAddressBookByContactSeqs, Request.Query));
+        }
+
         [HttpGet("/export/CanErpDbAt132/tblgnaddressbooks/csv")]
         public FileStreamResult ExportTblGnAddressBooksToCSV()
         {

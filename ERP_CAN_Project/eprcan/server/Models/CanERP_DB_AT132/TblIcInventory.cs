@@ -17,13 +17,13 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
+    public ICollection<TblPoPurchaseOrderDetail> TblPoPurchaseOrderDetails { get; set; }
+
     public ICollection<TblPoApInvoicesDetail> TblPoApInvoicesDetails { get; set; }
 
     public ICollection<TblPoRrOrderDetail> TblPoRrOrderDetails { get; set; }
 
     public ICollection<TblSoOrderDetail> TblSoOrderDetails { get; set; }
-
-    public ICollection<TblPoPurchaseOrderDetail> TblPoPurchaseOrderDetails { get; set; }
     public string Warehouse_FK
     {
       get;
@@ -140,7 +140,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime Leadtime
+    public DateTime? Leadtime
     {
       get;
       set;
@@ -176,7 +176,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public double TotalInventory
+    public double? TotalInventory
     {
       get;
       set;
@@ -256,7 +256,7 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-    public bool Inactive
+    public bool? Inactive
     {
       get;
       set;

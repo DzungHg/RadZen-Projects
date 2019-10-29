@@ -63,7 +63,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public decimal SubTotal
+    public decimal? SubTotal
     {
       get;
       set;
@@ -74,7 +74,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public decimal Discount
+    public decimal? Discount
     {
       get;
       set;
@@ -85,7 +85,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public decimal Tax
+    public decimal? Tax
     {
       get;
       set;

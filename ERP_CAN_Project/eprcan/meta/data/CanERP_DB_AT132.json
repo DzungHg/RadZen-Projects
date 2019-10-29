@@ -6,6 +6,80 @@
     "x-connector-version": 12
   },
   "definitions": {
+    "SpGetAddressBookByContactSeq": {
+      "x-view": "sp",
+      "x-table": "dbo.sp_GetAddressBookByContactSEQ",
+      "x-parameters": [
+        {
+          "name": "ContactSEQ",
+          "type": "integer"
+        }
+      ],
+      "resource": "SpGetAddressBookByContactSeqs",
+      "required": [
+        "AddressBook_SEQ",
+        "AddressBook_ID"
+      ],
+      "properties": {
+        "AddressBook_SEQ": {
+          "x-key": true,
+          "x-nullable": false,
+          "type": "integer",
+          "x-virtual": true
+        },
+        "AddressBook_ID": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "AddressBookType_FK": {
+          "type": "integer"
+        },
+        "LastName": {
+          "type": "string",
+          "length": 100
+        },
+        "FirstName": {
+          "type": "string",
+          "length": 100
+        },
+        "Gender_FK": {
+          "type": "integer"
+        },
+        "DOB": {
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "date"
+        },
+        "Origin": {
+          "type": "string",
+          "length": 100
+        },
+        "IDNumber": {
+          "type": "string",
+          "length": 20
+        },
+        "TaxIDNumber": {
+          "type": "string",
+          "length": 10
+        },
+        "OrganizationName": {
+          "type": "string",
+          "length": 200
+        },
+        "JobPosition": {
+          "type": "string",
+          "length": 100
+        },
+        "Address": {
+          "type": "string",
+          "length": 200
+        },
+        "City_FK": {
+          "type": "integer"
+        }
+      }
+    },
     "TblGnAddressBook": {
       "x-table": "dbo.tblGN_AddressBook",
       "resource": "TblGnAddressBooks",
@@ -31,13 +105,13 @@
             },
             {
               "inversePropertyName": "TblGnAddressBook",
-              "name": "TblSoCustomers",
-              "type": "TblSoCustomer"
+              "name": "TblPoCashDisbursements",
+              "type": "TblPoCashDisbursement"
             },
             {
               "inversePropertyName": "TblGnAddressBook",
-              "name": "TblPoCashDisbursements",
-              "type": "TblPoCashDisbursement"
+              "name": "TblSoCustomers",
+              "type": "TblSoCustomer"
             },
             {
               "inversePropertyName": "TblGnAddressBook",
@@ -148,16 +222,16 @@
             "$ref": "#/definitions/TblPoRecReport"
           }
         },
-        "TblSoCustomers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TblSoCustomer"
-          }
-        },
         "TblPoCashDisbursements": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblPoCashDisbursement"
+          }
+        },
+        "TblSoCustomers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoCustomer"
           }
         },
         "TblPoVendors": {
@@ -353,13 +427,13 @@
             },
             {
               "inversePropertyName": "TblGnPaymentTerm",
-              "name": "TblSoSalesOrders",
-              "type": "TblSoSalesOrder"
+              "name": "TblSoCustomers",
+              "type": "TblSoCustomer"
             },
             {
               "inversePropertyName": "TblGnPaymentTerm",
-              "name": "TblSoCustomers",
-              "type": "TblSoCustomer"
+              "name": "TblSoSalesOrders",
+              "type": "TblSoSalesOrder"
             }
           ]
         },
@@ -379,16 +453,16 @@
             "$ref": "#/definitions/TblPoPurchaseOrder"
           }
         },
-        "TblSoSalesOrders": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TblSoSalesOrder"
-          }
-        },
         "TblSoCustomers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblSoCustomer"
+          }
+        },
+        "TblSoSalesOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoSalesOrder"
           }
         }
       }
@@ -414,13 +488,13 @@
             },
             {
               "inversePropertyName": "TblGnPaymentType",
-              "name": "TblSoSalesOrders",
-              "type": "TblSoSalesOrder"
+              "name": "TblSoCustomers",
+              "type": "TblSoCustomer"
             },
             {
               "inversePropertyName": "TblGnPaymentType",
-              "name": "TblSoCustomers",
-              "type": "TblSoCustomer"
+              "name": "TblSoSalesOrders",
+              "type": "TblSoSalesOrder"
             }
           ]
         },
@@ -440,16 +514,16 @@
             "$ref": "#/definitions/TblPoPurchaseOrder"
           }
         },
-        "TblSoSalesOrders": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TblSoSalesOrder"
-          }
-        },
         "TblSoCustomers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblSoCustomer"
+          }
+        },
+        "TblSoSalesOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblSoSalesOrder"
           }
         }
       }
@@ -470,13 +544,13 @@
           "x-navigation": [
             {
               "inversePropertyName": "TblGnProduct",
-              "name": "TblIcInventories",
-              "type": "TblIcInventory"
+              "name": "TblIcTransactions",
+              "type": "TblIcTransaction"
             },
             {
               "inversePropertyName": "TblGnProduct",
-              "name": "TblIcTransactions",
-              "type": "TblIcTransaction"
+              "name": "TblIcInventories",
+              "type": "TblIcInventory"
             }
           ]
         },
@@ -490,16 +564,16 @@
           "type": "string",
           "length": 50
         },
-        "TblIcInventories": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TblIcInventory"
-          }
-        },
         "TblIcTransactions": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblIcTransaction"
+          }
+        },
+        "TblIcInventories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblIcInventory"
           }
         }
       }
@@ -638,6 +712,11 @@
           "x-navigation": [
             {
               "inversePropertyName": "TblIcInventory",
+              "name": "TblPoPurchaseOrderDetails",
+              "type": "TblPoPurchaseOrderDetail"
+            },
+            {
+              "inversePropertyName": "TblIcInventory",
               "name": "TblPoApInvoicesDetails",
               "type": "TblPoApInvoicesDetail"
             },
@@ -650,11 +729,6 @@
               "inversePropertyName": "TblIcInventory",
               "name": "TblSoOrderDetails",
               "type": "TblSoOrderDetail"
-            },
-            {
-              "inversePropertyName": "TblIcInventory",
-              "name": "TblPoPurchaseOrderDetails",
-              "type": "TblPoPurchaseOrderDetail"
             }
           ]
         },
@@ -814,7 +888,6 @@
         },
         "Leadtime": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "string",
           "format": "date-time",
           "x-datetime": "datetime"
@@ -845,7 +918,6 @@
         },
         "TotalInventory": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "double"
         },
@@ -909,8 +981,13 @@
         },
         "Inactive": {
           "x-default-sql": "((0))",
-          "x-nullable": false,
           "type": "boolean"
+        },
+        "TblPoPurchaseOrderDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblPoPurchaseOrderDetail"
+          }
         },
         "TblPoApInvoicesDetails": {
           "type": "array",
@@ -928,12 +1005,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblSoOrderDetail"
-          }
-        },
-        "TblPoPurchaseOrderDetails": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TblPoPurchaseOrderDetail"
           }
         }
       }
@@ -1165,13 +1236,13 @@
           "x-navigation": [
             {
               "inversePropertyName": "TblIcWarehouse",
-              "name": "TblIcInventories",
-              "type": "TblIcInventory"
+              "name": "TblIcTransactions",
+              "type": "TblIcTransaction"
             },
             {
               "inversePropertyName": "TblIcWarehouse",
-              "name": "TblIcTransactions",
-              "type": "TblIcTransaction"
+              "name": "TblIcInventories",
+              "type": "TblIcInventory"
             }
           ]
         },
@@ -1186,16 +1257,16 @@
         "Inactive": {
           "type": "boolean"
         },
-        "TblIcInventories": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TblIcInventory"
-          }
-        },
         "TblIcTransactions": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblIcTransaction"
+          }
+        },
+        "TblIcInventories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblIcInventory"
           }
         }
       }
@@ -1819,7 +1890,6 @@
         },
         "SubTotal": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "double"
         },
@@ -1833,13 +1903,11 @@
         },
         "Discount": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "double"
         },
         "Tax": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "double"
         }
@@ -2421,7 +2489,6 @@
         },
         "SubTotal": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "decimal"
         },
@@ -2431,7 +2498,6 @@
         },
         "Discount": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "decimal"
         },
@@ -2441,7 +2507,6 @@
         },
         "Tax": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "decimal"
         }
@@ -2708,7 +2773,6 @@
         },
         "Total_Order": {
           "x-computed": true,
-          "x-nullable": false,
           "type": "number",
           "format": "decimal"
         },
@@ -2755,7 +2819,8 @@
         "AddressBook_SEQ": {
           "x-nullable": false,
           "type": "integer",
-          "x-key": true
+          "x-key": true,
+          "x-virtual": true
         },
         "AddressBook_ID": {
           "x-nullable": false,
@@ -2822,7 +2887,8 @@
         "AddressBook_SEQ": {
           "x-nullable": false,
           "type": "integer",
-          "x-key": true
+          "x-key": true,
+          "x-virtual": true
         },
         "AddressBook_ID": {
           "x-nullable": false,
@@ -2889,7 +2955,8 @@
         "AddressBook_SEQ": {
           "x-nullable": false,
           "type": "integer",
-          "x-key": true
+          "x-key": true,
+          "x-virtual": true
         },
         "AddressBook_ID": {
           "x-nullable": false,
@@ -2956,7 +3023,8 @@
         "AddressBook_SEQ": {
           "x-nullable": false,
           "type": "integer",
-          "x-key": true
+          "x-key": true,
+          "x-virtual": true
         },
         "AddressBook_ID": {
           "x-nullable": false,
@@ -3013,6 +3081,68 @@
     }
   },
   "paths": {
+    "/SpGetAddressBookByContactSeqsFunc(ContactSEQ={ContactSEQ})": {
+      "get": {
+        "operationId": "getSpGetAddressBookByContactSeqs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ContactSEQ",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/SpGetAddressBookByContactSeq"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/TblGnAddressBooks": {
       "get": {
         "operationId": "getTblGnAddressBooks",
@@ -3041,6 +3171,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3117,6 +3252,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3193,6 +3333,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3269,6 +3414,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3345,6 +3495,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3421,6 +3576,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3497,6 +3657,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3573,6 +3738,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3649,6 +3819,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3725,6 +3900,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3801,6 +3981,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3877,6 +4062,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -3953,6 +4143,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4029,6 +4224,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4105,6 +4305,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4181,6 +4386,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4257,6 +4467,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4333,6 +4548,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4409,6 +4629,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4485,6 +4710,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4561,6 +4791,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4637,6 +4872,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4713,6 +4953,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4789,6 +5034,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4865,6 +5115,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -4941,6 +5196,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5017,6 +5277,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5093,6 +5358,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5169,6 +5439,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5245,6 +5520,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5321,6 +5601,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5397,6 +5682,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5473,6 +5763,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5549,6 +5844,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5601,6 +5901,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5653,6 +5958,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5705,6 +6015,11 @@
             "in": "query",
             "name": "$skip",
             "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
           }
         ],
         "responses": {
@@ -5794,6 +6109,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnAddressBookChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnAddressBook",
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBook"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblGnAddressBookTypes({AddressBookType_SEQ})": {
@@ -5845,6 +6180,26 @@
             "name": "AddressBookType_SEQ",
             "type": "integer"
           },
+          {
+            "in": "body",
+            "name": "TblGnAddressBookType",
+            "schema": {
+              "$ref": "#/definitions/TblGnAddressBookType"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnAddressBookTypeChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblGnAddressBookType",
@@ -5928,6 +6283,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnCityChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnCity",
+            "schema": {
+              "$ref": "#/definitions/TblGnCity"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblGnDepartments('{Department_ID}')": {
@@ -5979,6 +6354,26 @@
             "name": "Department_ID",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblGnDepartment",
+            "schema": {
+              "$ref": "#/definitions/TblGnDepartment"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnDepartmentChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblGnDepartment",
@@ -6062,6 +6457,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnGenderChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnGender",
+            "schema": {
+              "$ref": "#/definitions/TblGnGender"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblGnIncoterms('{Incoterm_ID}')": {
@@ -6113,6 +6528,26 @@
             "name": "Incoterm_ID",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblGnIncoterm",
+            "schema": {
+              "$ref": "#/definitions/TblGnIncoterm"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnIncotermChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblGnIncoterm",
@@ -6196,6 +6631,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnPaymentTermChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnPaymentTerm",
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentTerm"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblGnPaymentTypes({PaymentType_SEQ})": {
@@ -6247,6 +6702,26 @@
             "name": "PaymentType_SEQ",
             "type": "integer"
           },
+          {
+            "in": "body",
+            "name": "TblGnPaymentType",
+            "schema": {
+              "$ref": "#/definitions/TblGnPaymentType"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnPaymentTypeChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblGnPaymentType",
@@ -6330,6 +6805,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnProductChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblGnProduct",
+            "schema": {
+              "$ref": "#/definitions/TblGnProduct"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblGnShipVia({ShipVia_SEQ})": {
@@ -6381,6 +6876,26 @@
             "name": "ShipVia_SEQ",
             "type": "integer"
           },
+          {
+            "in": "body",
+            "name": "TblGnShipVium",
+            "schema": {
+              "$ref": "#/definitions/TblGnShipVium"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblGnShipViumChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblGnShipVium",
@@ -6464,6 +6979,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcCategoryChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblIcCategory",
+            "schema": {
+              "$ref": "#/definitions/TblIcCategory"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblIcClassifications('{Classifi_ID}')": {
@@ -6515,6 +7050,26 @@
             "name": "Classifi_ID",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblIcClassification",
+            "schema": {
+              "$ref": "#/definitions/TblIcClassification"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcClassificationChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblIcClassification",
@@ -6598,6 +7153,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcInventoryChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblIcInventory",
+            "schema": {
+              "$ref": "#/definitions/TblIcInventory"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblIcTransactions('{Trans_No}')": {
@@ -6649,6 +7224,26 @@
             "name": "Trans_No",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblIcTransaction",
+            "schema": {
+              "$ref": "#/definitions/TblIcTransaction"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcTransactionChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblIcTransaction",
@@ -6732,6 +7327,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcTransactionTypeChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblIcTransactionType",
+            "schema": {
+              "$ref": "#/definitions/TblIcTransactionType"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblIcUnits({Unit_SEQ})": {
@@ -6783,6 +7398,26 @@
             "name": "Unit_SEQ",
             "type": "integer"
           },
+          {
+            "in": "body",
+            "name": "TblIcUnit",
+            "schema": {
+              "$ref": "#/definitions/TblIcUnit"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcUnitChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblIcUnit",
@@ -6866,6 +7501,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblIcWarehouseChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblIcWarehouse",
+            "schema": {
+              "$ref": "#/definitions/TblIcWarehouse"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoAccountPayables('{AP_No}')": {
@@ -6933,6 +7588,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoAccountPayableChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblPoAccountPayable",
+            "schema": {
+              "$ref": "#/definitions/TblPoAccountPayable"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoAccountsPayableAdjustments('{Voucher_No}')": {
@@ -6984,6 +7659,26 @@
             "name": "Voucher_No",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblPoAccountsPayableAdjustment",
+            "schema": {
+              "$ref": "#/definitions/TblPoAccountsPayableAdjustment"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoAccountsPayableAdjustmentChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblPoAccountsPayableAdjustment",
@@ -7082,6 +7777,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoApInvoiceChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblPoApInvoice",
+            "schema": {
+              "$ref": "#/definitions/TblPoApInvoice"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoApInvoicesDetails(Vendor_ID='{Vendor_ID}',Invoice_No='{Invoice_No}')": {
@@ -7148,6 +7863,26 @@
             "name": "Invoice_No",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblPoApInvoicesDetail",
+            "schema": {
+              "$ref": "#/definitions/TblPoApInvoicesDetail"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoApInvoicesDetailChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblPoApInvoicesDetail",
@@ -7231,6 +7966,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoCashDisbursementChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblPoCashDisbursement",
+            "schema": {
+              "$ref": "#/definitions/TblPoCashDisbursement"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoOrderStatuses('{POStatus_ID}')": {
@@ -7298,6 +8053,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoOrderStatusChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblPoOrderStatus",
+            "schema": {
+              "$ref": "#/definitions/TblPoOrderStatus"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoPurchaseOrders('{PO_ID}')": {
@@ -7349,6 +8124,26 @@
             "name": "PO_ID",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblPoPurchaseOrder",
+            "schema": {
+              "$ref": "#/definitions/TblPoPurchaseOrder"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoPurchaseOrderChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblPoPurchaseOrder",
@@ -7447,6 +8242,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoPurchaseOrderDetailChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblPoPurchaseOrderDetail",
+            "schema": {
+              "$ref": "#/definitions/TblPoPurchaseOrderDetail"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoRecReports('{RR_No}')": {
@@ -7498,6 +8313,26 @@
             "name": "RR_No",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblPoRecReport",
+            "schema": {
+              "$ref": "#/definitions/TblPoRecReport"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoRecReportChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblPoRecReport",
@@ -7596,6 +8431,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoRrOrderDetailChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblPoRrOrderDetail",
+            "schema": {
+              "$ref": "#/definitions/TblPoRrOrderDetail"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblPoVendors('{Vendor_ID}')": {
@@ -7647,6 +8502,26 @@
             "name": "Vendor_ID",
             "type": "string"
           },
+          {
+            "in": "body",
+            "name": "TblPoVendor",
+            "schema": {
+              "$ref": "#/definitions/TblPoVendor"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblPoVendorChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblPoVendor",
@@ -7730,6 +8605,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblSoCustomerChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoCustomer",
+            "schema": {
+              "$ref": "#/definitions/TblSoCustomer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblSoOrderDetails({SODetail_SEQ})": {
@@ -7781,6 +8676,26 @@
             "name": "SODetail_SEQ",
             "type": "integer"
           },
+          {
+            "in": "body",
+            "name": "TblSoOrderDetail",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetail"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblSoOrderDetailChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblSoOrderDetail",
@@ -7864,6 +8779,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblSoOrderDetailStatusChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoOrderDetailStatus",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderDetailStatus"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblSoOrderStatuses({SOStatus_SEQ})": {
@@ -7931,6 +8866,26 @@
             }
           }
         }
+      },
+      "cancel": {
+        "operationId": "cancelTblSoOrderStatusChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "TblSoOrderStatus",
+            "schema": {
+              "$ref": "#/definitions/TblSoOrderStatus"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
       }
     },
     "/TblSoSalesOrders({SO_SEQ})": {
@@ -7982,6 +8937,26 @@
             "name": "SO_SEQ",
             "type": "integer"
           },
+          {
+            "in": "body",
+            "name": "TblSoSalesOrder",
+            "schema": {
+              "$ref": "#/definitions/TblSoSalesOrder"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTblSoSalesOrderChanges",
+        "parameters": [
           {
             "in": "body",
             "name": "TblSoSalesOrder",

@@ -21,9 +21,9 @@ namespace ErpCan.Models.CanErpDbAt132
 
     public ICollection<TblPoRecReport> TblPoRecReports { get; set; }
 
-    public ICollection<TblSoCustomer> TblSoCustomers { get; set; }
-
     public ICollection<TblPoCashDisbursement> TblPoCashDisbursements { get; set; }
+
+    public ICollection<TblSoCustomer> TblSoCustomers { get; set; }
 
     public ICollection<TblPoVendor> TblPoVendors { get; set; }
     public string AddressBook_ID

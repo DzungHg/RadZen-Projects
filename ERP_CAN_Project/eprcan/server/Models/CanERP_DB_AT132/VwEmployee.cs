@@ -7,7 +7,6 @@ namespace ErpCan.Models.CanErpDbAt132
   [Table("vw_Employee", Schema = "dbo")]
   public partial class VwEmployee
   {
-    [Key]
     public int AddressBook_SEQ
     {
       get;

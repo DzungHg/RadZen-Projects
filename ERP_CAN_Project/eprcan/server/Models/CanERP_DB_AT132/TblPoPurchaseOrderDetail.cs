@@ -36,7 +36,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public double SubTotal
+    public double? SubTotal
     {
       get;
       set;
@@ -52,13 +52,13 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public double Discount
+    public double? Discount
     {
       get;
       set;
     }
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public double Tax
+    public double? Tax
     {
       get;
       set;

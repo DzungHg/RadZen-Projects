@@ -17,9 +17,9 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    public ICollection<TblIcInventory> TblIcInventories { get; set; }
-
     public ICollection<TblIcTransaction> TblIcTransactions { get; set; }
+
+    public ICollection<TblIcInventory> TblIcInventories { get; set; }
     public string Product_ID
     {
       get;

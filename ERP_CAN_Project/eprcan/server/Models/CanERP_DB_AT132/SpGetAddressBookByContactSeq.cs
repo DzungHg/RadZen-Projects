@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ErpCan.Models.CanErpDbAt132
 {
-  [Table("vw_Customer", Schema = "dbo")]
-  public partial class VwCustomer
+  [Table("sp_GetAddressBookByContactSEQ", Schema = "dbo")]
+  public partial class SpGetAddressBookByContactSeq
   {
     public int AddressBook_SEQ
     {
