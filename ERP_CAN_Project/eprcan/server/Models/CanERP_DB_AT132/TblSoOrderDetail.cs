@@ -19,24 +19,18 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("SODetailStatus_FK")]
     public TblSoOrderDetailStatus TblSoOrderDetailStatus { get; set; }
     public int? SO_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("SO_FK")]
     public TblSoSalesOrder TblSoSalesOrder { get; set; }
     public int? Inventory_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Inventory_FK")]
     public TblIcInventory TblIcInventory { get; set; }
     public decimal? UnitPrice
     {

@@ -16,19 +16,14 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblPoVendor")]
     public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
 
-    [InverseProperty("TblPoVendor")]
     public ICollection<TblPoAccountPayable> TblPoAccountPayables { get; set; }
 
-    [InverseProperty("TblPoVendor")]
     public ICollection<TblPoApInvoice> TblPoApInvoices { get; set; }
 
-    [InverseProperty("TblPoVendor")]
     public ICollection<TblPoApInvoicesDetail> TblPoApInvoicesDetails { get; set; }
 
-    [InverseProperty("TblPoVendor")]
     public ICollection<TblPoRecReport> TblPoRecReports { get; set; }
     public string LastName
     {
@@ -45,8 +40,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("VendorAddressBook_FK")]
     public TblGnAddressBook TblGnAddressBook { get; set; }
     public string Performing_Rating
     {

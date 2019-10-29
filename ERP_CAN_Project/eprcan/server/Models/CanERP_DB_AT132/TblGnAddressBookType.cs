@@ -17,7 +17,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnAddressBookType")]
     public ICollection<TblGnAddressBook> TblGnAddressBooks { get; set; }
     public string AddressBookType_ID
     {

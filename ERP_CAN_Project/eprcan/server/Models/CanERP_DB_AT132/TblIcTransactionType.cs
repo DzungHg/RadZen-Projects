@@ -16,7 +16,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblIcTransactionType")]
     public ICollection<TblIcTransaction> TblIcTransactions { get; set; }
     public string Transaction_Name
     {

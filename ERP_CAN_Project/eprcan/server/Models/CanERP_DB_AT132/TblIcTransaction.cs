@@ -18,8 +18,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Trans_Code")]
     public TblIcTransactionType TblIcTransactionType { get; set; }
     public DateTime? Trans_Date
     {
@@ -31,16 +29,12 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Warehouse_ID")]
     public TblIcWarehouse TblIcWarehouse { get; set; }
     public int? Item_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Item_FK")]
     public TblGnProduct TblGnProduct { get; set; }
     public string Reference_No
     {

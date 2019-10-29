@@ -17,48 +17,36 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblIcInventory")]
     public ICollection<TblPoApInvoicesDetail> TblPoApInvoicesDetails { get; set; }
 
-    [InverseProperty("TblIcInventory")]
     public ICollection<TblPoRrOrderDetail> TblPoRrOrderDetails { get; set; }
 
-    [InverseProperty("TblIcInventory")]
     public ICollection<TblSoOrderDetail> TblSoOrderDetails { get; set; }
 
-    [InverseProperty("TblIcInventory")]
     public ICollection<TblPoPurchaseOrderDetail> TblPoPurchaseOrderDetails { get; set; }
     public string Warehouse_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Warehouse_FK")]
     public TblIcWarehouse TblIcWarehouse { get; set; }
     public string Category_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Category_FK")]
     public TblIcCategory TblIcCategory { get; set; }
     public string Classifi_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Classifi_FK")]
     public TblIcClassification TblIcClassification { get; set; }
     public int? Item_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Item_FK")]
     public TblGnProduct TblGnProduct { get; set; }
     public string Product_Code
     {
@@ -80,8 +68,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Unit_FK")]
     public TblIcUnit TblIcUnit { get; set; }
     public double? QuantityPerUnit
     {

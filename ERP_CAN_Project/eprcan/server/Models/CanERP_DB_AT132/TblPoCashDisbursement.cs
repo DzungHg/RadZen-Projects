@@ -23,8 +23,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Customer_FK")]
     public TblGnAddressBook TblGnAddressBook { get; set; }
     public string Description
     {

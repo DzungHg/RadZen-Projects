@@ -17,7 +17,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnGender")]
     public ICollection<TblGnAddressBook> TblGnAddressBooks { get; set; }
     public string Gender_ID
     {

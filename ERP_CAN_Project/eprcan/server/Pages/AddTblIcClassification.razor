@@ -17,7 +17,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="11" style="display: block; width: 100%" @bind-Value="@(tblicclassification.Classifi_ID)" Name="Classifi_ID">
+                <RadzenTextBox MaxLength="11" style="display: block; width: 100%" @bind-Value="@((tblicclassification.Classifi_ID))" Name="Classifi_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Classifi_ID" style="position: absolute" Text="Classifi_ID is required">
                 </RadzenRequiredValidator>
@@ -29,7 +29,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(tblicclassification.Classifi_Name)" Name="Classifi_Name">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@((tblicclassification.Classifi_Name))" Name="Classifi_Name">
                 </RadzenTextBox>
               </div>
             </div>
@@ -39,7 +39,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox TriState="true" @bind-Value="@(tblicclassification.Inactive)" Name="Inactive">
+                <RadzenCheckBox TriState="true" @bind-Value="@((tblicclassification.Inactive))" Name="Inactive">
                 </RadzenCheckBox>
               </div>
             </div>

@@ -27,7 +27,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="25" style="display: block; width: 100%" @bind-Value="@(tblgnshipvium.ShipVia_ID)" Name="ShipVia_ID">
+                <RadzenTextBox MaxLength="25" style="display: block; width: 100%" @bind-Value="@((tblgnshipvium.ShipVia_ID))" Name="ShipVia_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="ShipVia_ID" Text="ShipVia_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
@@ -39,7 +39,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(tblgnshipvium.Description)" Name="Description">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@((tblgnshipvium.Description))" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>

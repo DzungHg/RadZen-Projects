@@ -17,7 +17,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="20" style="display: block; width: 100%" @bind-Value="@(tblgnpaymentterm.PaymentTerm_ID)" Name="PaymentTerm_ID">
+                <RadzenTextBox MaxLength="20" style="display: block; width: 100%" @bind-Value="@((tblgnpaymentterm.PaymentTerm_ID))" Name="PaymentTerm_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="PaymentTerm_ID" Text="PaymentTerm_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
@@ -29,7 +29,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="80" style="display: block; width: 100%" @bind-Value="@(tblgnpaymentterm.PaymentTermText)" Name="PaymentTermText">
+                <RadzenTextBox MaxLength="80" style="display: block; width: 100%" @bind-Value="@((tblgnpaymentterm.PaymentTermText))" Name="PaymentTermText">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="PaymentTermText" Text="PaymentTermText is required" style="position: absolute">
                 </RadzenRequiredValidator>

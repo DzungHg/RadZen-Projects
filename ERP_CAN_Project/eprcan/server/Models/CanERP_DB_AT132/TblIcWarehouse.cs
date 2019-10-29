@@ -16,10 +16,8 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblIcWarehouse")]
     public ICollection<TblIcInventory> TblIcInventories { get; set; }
 
-    [InverseProperty("TblIcWarehouse")]
     public ICollection<TblIcTransaction> TblIcTransactions { get; set; }
     public string WarehouseName
     {

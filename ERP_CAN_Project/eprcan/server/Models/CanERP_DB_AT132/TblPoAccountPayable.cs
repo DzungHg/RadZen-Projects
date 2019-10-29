@@ -18,8 +18,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Vendor_FK")]
     public TblPoVendor TblPoVendor { get; set; }
     public string Transact_No
     {
@@ -56,8 +54,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Department_FK")]
     public TblGnDepartment TblGnDepartment { get; set; }
   }
 }

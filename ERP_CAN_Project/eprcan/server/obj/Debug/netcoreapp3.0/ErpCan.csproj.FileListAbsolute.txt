@@ -538,3 +538,5 @@ F:\GitHub02\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.
 F:\GitHub02\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\ErpCan.pdb
 F:\GitHub02\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\DocumentFormat.OpenXml.dll
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\System.IO.Packaging.dll

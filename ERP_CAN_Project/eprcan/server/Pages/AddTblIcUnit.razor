@@ -17,7 +17,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="25" style="display: block; width: 100%" @bind-Value="@(tblicunit.UnitText)" Name="UnitText">
+                <RadzenTextBox MaxLength="25" style="display: block; width: 100%" @bind-Value="@((tblicunit.UnitText))" Name="UnitText">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="UnitText" Text="UnitText is required" style="position: absolute">
                 </RadzenRequiredValidator>
@@ -29,7 +29,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="20" style="display: block; width: 100%" @bind-Value="@(tblicunit.Unit_FK)" Name="Unit_FK">
+                <RadzenTextBox MaxLength="20" style="display: block; width: 100%" @bind-Value="@((tblicunit.Unit_FK))" Name="Unit_FK">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Unit_FK" Text="Unit_FK is required" style="position: absolute">
                 </RadzenRequiredValidator>

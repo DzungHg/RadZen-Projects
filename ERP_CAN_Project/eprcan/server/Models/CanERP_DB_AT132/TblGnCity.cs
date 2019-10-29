@@ -17,7 +17,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnCity")]
     public ICollection<TblGnAddressBook> TblGnAddressBooks { get; set; }
     public string City_ID
     {

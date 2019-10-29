@@ -17,7 +17,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="5" style="display: block; width: 100%" @bind-Value="@(tblgndepartment.Department_ID)" Name="Department_ID">
+                <RadzenTextBox MaxLength="5" style="display: block; width: 100%" @bind-Value="@((tblgndepartment.Department_ID))" Name="Department_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Department_ID" style="position: absolute" Text="Department_ID is required">
                 </RadzenRequiredValidator>
@@ -29,7 +29,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@(tblgndepartment.Deparment_Name)" Name="Deparment_Name">
+                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@((tblgndepartment.Deparment_Name))" Name="Deparment_Name">
                 </RadzenTextBox>
               </div>
             </div>
@@ -39,7 +39,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="150" style="width: 100%" @bind-Value="@(tblgndepartment.Description)" Name="Description">
+                <RadzenTextBox MaxLength="150" style="width: 100%" @bind-Value="@((tblgndepartment.Description))" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>

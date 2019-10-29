@@ -17,13 +17,10 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnPaymentTerm")]
     public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
 
-    [InverseProperty("TblGnPaymentTerm")]
     public ICollection<TblSoSalesOrder> TblSoSalesOrders { get; set; }
 
-    [InverseProperty("TblGnPaymentTerm")]
     public ICollection<TblSoCustomer> TblSoCustomers { get; set; }
     public string PaymentTerm_ID
     {

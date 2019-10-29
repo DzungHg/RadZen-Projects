@@ -17,7 +17,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblSoSalesOrder")]
     public ICollection<TblSoOrderDetail> TblSoOrderDetails { get; set; }
     public string SO_ID
     {
@@ -39,16 +38,12 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("SOStatus_FK")]
     public TblSoOrderStatus TblSoOrderStatus { get; set; }
     public int? Customer_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Customer_FK")]
     public TblSoCustomer TblSoCustomer { get; set; }
     public string CustomerPONumber
     {
@@ -70,8 +65,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("ShipTo_FK")]
     public TblGnShipVium TblGnShipVium { get; set; }
     public string Attention
     {
@@ -103,16 +96,12 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("PaymentTerm_FK")]
     public TblGnPaymentTerm TblGnPaymentTerm { get; set; }
     public int? PaymentType_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("PaymentType_FK")]
     public TblGnPaymentType TblGnPaymentType { get; set; }
     public int? SalesPersion_FK
     {

@@ -16,7 +16,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblPoOrderStatus")]
     public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
     public string POStatusText
     {

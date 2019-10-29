@@ -17,7 +17,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcWarehousesResult)" Placeholder="Choose TblIcWarehouse" style="display: block; width: 100%" TextProperty="WarehouseName" @bind-Value="@(tblicinventory.Warehouse_FK)" ValueProperty="Warehouse_ID" Name="Warehouse_FK">
+                <RadzenDropDown Data="@(getTblIcWarehousesResult)" Placeholder="Choose TblIcWarehouse" style="display: block; width: 100%" TextProperty="WarehouseName" @bind-Value="@((tblicinventory.Warehouse_FK))" ValueProperty="Warehouse_ID" Name="Warehouse_FK">
                 </RadzenDropDown>
                 <RadzenRequiredValidator Component="Warehouse_FK" style="position: absolute" Text="Warehouse_FK is required">
                 </RadzenRequiredValidator>
@@ -29,7 +29,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcCategoriesResult)" Placeholder="Choose TblIcCategory" style="display: block; width: 100%" TextProperty="CategoryText" @bind-Value="@(tblicinventory.Category_FK)" ValueProperty="Category_ID" Name="Category_FK">
+                <RadzenDropDown Data="@(getTblIcCategoriesResult)" Placeholder="Choose TblIcCategory" style="display: block; width: 100%" TextProperty="CategoryText" @bind-Value="@((tblicinventory.Category_FK))" ValueProperty="Category_ID" Name="Category_FK">
                 </RadzenDropDown>
                 <RadzenRequiredValidator Component="Category_FK" style="position: absolute" Text="Category_FK is required">
                 </RadzenRequiredValidator>
@@ -41,7 +41,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcClassificationsResult)" Placeholder="Choose TblIcClassification" style="width: 100%" TextProperty="Classifi_Name" @bind-Value="@(tblicinventory.Classifi_FK)" ValueProperty="Classifi_ID" Name="Classifi_FK">
+                <RadzenDropDown Data="@(getTblIcClassificationsResult)" Placeholder="Choose TblIcClassification" style="width: 100%" TextProperty="Classifi_Name" @bind-Value="@((tblicinventory.Classifi_FK))" ValueProperty="Classifi_ID" Name="Classifi_FK">
                 </RadzenDropDown>
               </div>
             </div>
@@ -51,7 +51,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblGnProductsResult)" Placeholder="Choose TblGnProduct" style="width: 100%" TextProperty="Product_ID" @bind-Value="@(tblicinventory.Item_FK)" ValueProperty="Product_SEQ" Name="Item_SK">
+                <RadzenDropDown Data="@(getTblGnProductsResult)" Placeholder="Choose TblGnProduct" style="width: 100%" TextProperty="Product_ID" @bind-Value="@((tblicinventory.Item_FK))" ValueProperty="Product_SEQ" Name="Item_SK">
                 </RadzenDropDown>
               </div>
             </div>
@@ -61,7 +61,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@(tblicinventory.Product_Code)" Name="Product_Code">
+                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@((tblicinventory.Product_Code))" Name="Product_Code">
                 </RadzenTextBox>
               </div>
             </div>
@@ -71,7 +71,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="30" style="width: 100%" @bind-Value="@(tblicinventory.ProductDesc)" Name="ProductDesc">
+                <RadzenTextBox MaxLength="30" style="width: 100%" @bind-Value="@((tblicinventory.ProductDesc))" Name="ProductDesc">
                 </RadzenTextBox>
               </div>
             </div>
@@ -81,7 +81,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox TriState="true" @bind-Value="@(tblicinventory.FixAsset)" Name="FixAsset">
+                <RadzenCheckBox TriState="true" @bind-Value="@((tblicinventory.FixAsset))" Name="FixAsset">
                 </RadzenCheckBox>
               </div>
             </div>
@@ -91,7 +91,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIcUnitsResult)" Placeholder="Choose TblIcUnit" style="width: 100%" TextProperty="UnitText" @bind-Value="@(tblicinventory.Unit_FK)" ValueProperty="Unit_SEQ" Name="Unit_FK">
+                <RadzenDropDown Data="@(getTblIcUnitsResult)" Placeholder="Choose TblIcUnit" style="width: 100%" TextProperty="UnitText" @bind-Value="@((tblicinventory.Unit_FK))" ValueProperty="Unit_SEQ" Name="Unit_FK">
                 </RadzenDropDown>
               </div>
             </div>
@@ -101,7 +101,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.QuantityPerUnit)" Name="QuantityPerUnit">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.QuantityPerUnit))" Name="QuantityPerUnit">
                 </RadzenNumeric>
               </div>
             </div>
@@ -111,7 +111,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="100" style="width: 100%" @bind-Value="@(tblicinventory.Location)" Name="Location">
+                <RadzenTextBox MaxLength="100" style="width: 100%" @bind-Value="@((tblicinventory.Location))" Name="Location">
                 </RadzenTextBox>
               </div>
             </div>
@@ -121,7 +121,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox TriState="true" @bind-Value="@(tblicinventory.Taxable)" Name="Taxable">
+                <RadzenCheckBox TriState="true" @bind-Value="@((tblicinventory.Taxable))" Name="Taxable">
                 </RadzenCheckBox>
               </div>
             </div>
@@ -131,7 +131,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.TaxRate)" Name="TaxRate">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.TaxRate))" Name="TaxRate">
                 </RadzenNumeric>
               </div>
             </div>
@@ -141,7 +141,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.ROP)" Name="ROP">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.ROP))" Name="ROP">
                 </RadzenNumeric>
               </div>
             </div>
@@ -151,7 +151,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.EOQ)" Name="EOQ">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.EOQ))" Name="EOQ">
                 </RadzenNumeric>
               </div>
             </div>
@@ -161,7 +161,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.UnitPrice)" Name="UnitPrice">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.UnitPrice))" Name="UnitPrice">
                 </RadzenNumeric>
               </div>
             </div>
@@ -171,7 +171,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@(tblicinventory.GL_Asset)" Name="GL_Asset">
+                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@((tblicinventory.GL_Asset))" Name="GL_Asset">
                 </RadzenTextBox>
               </div>
             </div>
@@ -181,7 +181,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@(tblicinventory.GL_COGS)" Name="GL_COGS">
+                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@((tblicinventory.GL_COGS))" Name="GL_COGS">
                 </RadzenTextBox>
               </div>
             </div>
@@ -191,7 +191,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@(tblicinventory.GL_Sales)" Name="GL_Sales">
+                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@((tblicinventory.GL_Sales))" Name="GL_Sales">
                 </RadzenTextBox>
               </div>
             </div>
@@ -201,7 +201,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@(tblicinventory.GL_NonTaxSales)" Name="GL_NonTaxSales">
+                <RadzenTextBox MaxLength="7" style="width: 100%" @bind-Value="@((tblicinventory.GL_NonTaxSales))" Name="GL_NonTaxSales">
                 </RadzenTextBox>
               </div>
             </div>
@@ -211,7 +211,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblicinventory.LastSaleDate)" Name="LastSaleDate">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@((tblicinventory.LastSaleDate))" Name="LastSaleDate">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -221,7 +221,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblicinventory.LastPODate)" Name="LastPODate">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@((tblicinventory.LastPODate))" Name="LastPODate">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -231,7 +231,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblicinventory.LastReceiptDate)" Name="LastReceiptDate">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@((tblicinventory.LastReceiptDate))" Name="LastReceiptDate">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -241,7 +241,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.LastCost)" Name="LastCost">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.LastCost))" Name="LastCost">
                 </RadzenNumeric>
               </div>
             </div>
@@ -251,7 +251,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.EverageCost)" Name="EverageCost">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.EverageCost))" Name="EverageCost">
                 </RadzenNumeric>
               </div>
             </div>
@@ -261,7 +261,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.Qty_On_Order)" Name="Qty_On_Order">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.Qty_On_Order))" Name="Qty_On_Order">
                 </RadzenNumeric>
               </div>
             </div>
@@ -271,7 +271,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.Qty_In_Stock)" Name="Qty_In_Stock">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.Qty_In_Stock))" Name="Qty_In_Stock">
                 </RadzenNumeric>
               </div>
             </div>
@@ -281,7 +281,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.Qty_On_Hand)" Name="Qty_On_Hand">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.Qty_On_Hand))" Name="Qty_On_Hand">
                 </RadzenNumeric>
               </div>
             </div>
@@ -291,7 +291,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.Qty_Allocated)" Name="Qty_Allocated">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.Qty_Allocated))" Name="Qty_Allocated">
                 </RadzenNumeric>
               </div>
             </div>
@@ -301,7 +301,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.MTD_Qty_Sold)" Name="MTD_Qty_Sold">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.MTD_Qty_Sold))" Name="MTD_Qty_Sold">
                 </RadzenNumeric>
               </div>
             </div>
@@ -311,7 +311,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.MTD_Gross_Sales)" Name="MTD_Gross_Sales">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.MTD_Gross_Sales))" Name="MTD_Gross_Sales">
                 </RadzenNumeric>
               </div>
             </div>
@@ -321,7 +321,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.MTD_COGS)" Name="MTD_COGS">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.MTD_COGS))" Name="MTD_COGS">
                 </RadzenNumeric>
               </div>
             </div>
@@ -331,7 +331,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.YTD_Qty_Sold)" Name="YTD_Qty_Sold">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.YTD_Qty_Sold))" Name="YTD_Qty_Sold">
                 </RadzenNumeric>
               </div>
             </div>
@@ -341,7 +341,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.YTD_Gross_Sales)" Name="YTD_Gross_Sales">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.YTD_Gross_Sales))" Name="YTD_Gross_Sales">
                 </RadzenNumeric>
               </div>
             </div>
@@ -351,7 +351,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.YTD_COGS)" Name="YTD_COGS">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.YTD_COGS))" Name="YTD_COGS">
                 </RadzenNumeric>
               </div>
             </div>
@@ -361,7 +361,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.YTD_Qty_Returned)" Name="YTD_Qty_Returned">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.YTD_Qty_Returned))" Name="YTD_Qty_Returned">
                 </RadzenNumeric>
               </div>
             </div>
@@ -371,7 +371,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.LTD_Qty_Sold)" Name="LTD_Qty_Sold">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.LTD_Qty_Sold))" Name="LTD_Qty_Sold">
                 </RadzenNumeric>
               </div>
             </div>
@@ -381,7 +381,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.LTD_Gross_Sales)" Name="LTD_Gross_Sales">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.LTD_Gross_Sales))" Name="LTD_Gross_Sales">
                 </RadzenNumeric>
               </div>
             </div>
@@ -391,7 +391,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.LTD_COGS)" Name="LTD_COGS">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.LTD_COGS))" Name="LTD_COGS">
                 </RadzenNumeric>
               </div>
             </div>
@@ -401,7 +401,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.NetGrossRate)" Name="NetGrossRate">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.NetGrossRate))" Name="NetGrossRate">
                 </RadzenNumeric>
               </div>
             </div>
@@ -411,7 +411,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.VendorNumber_FK)" Name="VendorNumber_FK">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.VendorNumber_FK))" Name="VendorNumber_FK">
                 </RadzenNumeric>
               </div>
             </div>
@@ -421,7 +421,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@(tblicinventory.LastUpdatedDate)" Name="LastUpdatedDate">
+                <RadzenDatePicker DateFormat="MM/dd/yyyy" style="width: 100%" @bind-Value="@((tblicinventory.LastUpdatedDate))" Name="LastUpdatedDate">
                 </RadzenDatePicker>
               </div>
             </div>
@@ -431,7 +431,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@(tblicinventory.LastUpdatedBy_FK)" Name="LastUpdatedBy_FK">
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblicinventory.LastUpdatedBy_FK))" Name="LastUpdatedBy_FK">
                 </RadzenNumeric>
               </div>
             </div>
@@ -441,7 +441,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox style="width: 100%" @bind-Value="@(tblicinventory.Notes)" Name="Notes">
+                <RadzenTextBox style="width: 100%" @bind-Value="@((tblicinventory.Notes))" Name="Notes">
                 </RadzenTextBox>
               </div>
             </div>
@@ -451,7 +451,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox TriState="true" @bind-Value="@(tblicinventory.Inactive)" Name="Inactive">
+                <RadzenCheckBox TriState="true" @bind-Value="@((tblicinventory.Inactive))" Name="Inactive">
                 </RadzenCheckBox>
               </div>
             </div>

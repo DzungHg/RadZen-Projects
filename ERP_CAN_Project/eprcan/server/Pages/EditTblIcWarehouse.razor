@@ -27,7 +27,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="5" style="display: block; width: 100%" @bind-Value="@(tblicwarehouse.Warehouse_ID)" Name="Warehouse_ID">
+                <RadzenTextBox MaxLength="5" style="display: block; width: 100%" @bind-Value="@((tblicwarehouse.Warehouse_ID))" Name="Warehouse_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Warehouse_ID" Text="Warehouse_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
@@ -39,7 +39,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@(tblicwarehouse.WarehouseName)" Name="WarehouseName">
+                <RadzenTextBox MaxLength="50" style="width: 100%" @bind-Value="@((tblicwarehouse.WarehouseName))" Name="WarehouseName">
                 </RadzenTextBox>
               </div>
             </div>
@@ -49,7 +49,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="100" style="width: 100%" @bind-Value="@(tblicwarehouse.WarehouseAddress)" Name="WarehouseAddress">
+                <RadzenTextBox MaxLength="100" style="width: 100%" @bind-Value="@((tblicwarehouse.WarehouseAddress))" Name="WarehouseAddress">
                 </RadzenTextBox>
               </div>
             </div>
@@ -59,7 +59,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenCheckBox TriState="true" @bind-Value="@(tblicwarehouse.Inactive)" Name="Inactive">
+                <RadzenCheckBox TriState="true" @bind-Value="@((tblicwarehouse.Inactive))" Name="Inactive">
                 </RadzenCheckBox>
               </div>
             </div>

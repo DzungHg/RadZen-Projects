@@ -1,3 +1,4 @@
+using Radzen;
 using System;
 using System.Web;
 using System.Linq;
@@ -15,13 +16,25 @@ namespace ErpCan
 {
     public partial class CanErpDbAt132Service
     {
-        public CanErpDbAt132Service(CanErpDbAt132Context context)
+        private readonly CanErpDbAt132Context context;
+        private readonly NavigationManager navigationManager;
+        
+        public CanErpDbAt132Service(CanErpDbAt132Context context, NavigationManager navigationManager)
         {
             this.context = context;
+            this.navigationManager = navigationManager;
         }
 
-        public CanErpDbAt132Context context { get; set; }
-        
+                public async Task ExportTblGnAddressBooksToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnaddressbooks/excel") : "/export/canerpdbat132/tblgnaddressbooks/excel", true);
+        }
+
+        public async Task ExportTblGnAddressBooksToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnaddressbooks/csv") : "/export/canerpdbat132/tblgnaddressbooks/csv", true);
+        }
+
         partial void OnTblGnAddressBooksRead(ref IQueryable<Models.CanErpDbAt132.TblGnAddressBook> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnAddressBook>> GetTblGnAddressBooks(Query query = null)
@@ -82,7 +95,16 @@ namespace ErpCan
 
             return tblGnAddressBook;
         }
-    
+            public async Task ExportTblGnAddressBookTypesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnaddressbooktypes/excel") : "/export/canerpdbat132/tblgnaddressbooktypes/excel", true);
+        }
+
+        public async Task ExportTblGnAddressBookTypesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnaddressbooktypes/csv") : "/export/canerpdbat132/tblgnaddressbooktypes/csv", true);
+        }
+
         partial void OnTblGnAddressBookTypesRead(ref IQueryable<Models.CanErpDbAt132.TblGnAddressBookType> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnAddressBookType>> GetTblGnAddressBookTypes(Query query = null)
@@ -137,7 +159,16 @@ namespace ErpCan
 
             return tblGnAddressBookType;
         }
-    
+            public async Task ExportTblGnCitiesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgncities/excel") : "/export/canerpdbat132/tblgncities/excel", true);
+        }
+
+        public async Task ExportTblGnCitiesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgncities/csv") : "/export/canerpdbat132/tblgncities/csv", true);
+        }
+
         partial void OnTblGnCitiesRead(ref IQueryable<Models.CanErpDbAt132.TblGnCity> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnCity>> GetTblGnCities(Query query = null)
@@ -192,7 +223,16 @@ namespace ErpCan
 
             return tblGnCity;
         }
-    
+            public async Task ExportTblGnDepartmentsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgndepartments/excel") : "/export/canerpdbat132/tblgndepartments/excel", true);
+        }
+
+        public async Task ExportTblGnDepartmentsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgndepartments/csv") : "/export/canerpdbat132/tblgndepartments/csv", true);
+        }
+
         partial void OnTblGnDepartmentsRead(ref IQueryable<Models.CanErpDbAt132.TblGnDepartment> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnDepartment>> GetTblGnDepartments(Query query = null)
@@ -247,7 +287,16 @@ namespace ErpCan
 
             return tblGnDepartment;
         }
-    
+            public async Task ExportTblGnGendersToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgngenders/excel") : "/export/canerpdbat132/tblgngenders/excel", true);
+        }
+
+        public async Task ExportTblGnGendersToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgngenders/csv") : "/export/canerpdbat132/tblgngenders/csv", true);
+        }
+
         partial void OnTblGnGendersRead(ref IQueryable<Models.CanErpDbAt132.TblGnGender> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnGender>> GetTblGnGenders(Query query = null)
@@ -302,7 +351,16 @@ namespace ErpCan
 
             return tblGnGender;
         }
-    
+            public async Task ExportTblGnIncotermsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnincoterms/excel") : "/export/canerpdbat132/tblgnincoterms/excel", true);
+        }
+
+        public async Task ExportTblGnIncotermsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnincoterms/csv") : "/export/canerpdbat132/tblgnincoterms/csv", true);
+        }
+
         partial void OnTblGnIncotermsRead(ref IQueryable<Models.CanErpDbAt132.TblGnIncoterm> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnIncoterm>> GetTblGnIncoterms(Query query = null)
@@ -357,7 +415,16 @@ namespace ErpCan
 
             return tblGnIncoterm;
         }
-    
+            public async Task ExportTblGnPaymentTermsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnpaymentterms/excel") : "/export/canerpdbat132/tblgnpaymentterms/excel", true);
+        }
+
+        public async Task ExportTblGnPaymentTermsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnpaymentterms/csv") : "/export/canerpdbat132/tblgnpaymentterms/csv", true);
+        }
+
         partial void OnTblGnPaymentTermsRead(ref IQueryable<Models.CanErpDbAt132.TblGnPaymentTerm> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnPaymentTerm>> GetTblGnPaymentTerms(Query query = null)
@@ -412,7 +479,16 @@ namespace ErpCan
 
             return tblGnPaymentTerm;
         }
-    
+            public async Task ExportTblGnPaymentTypesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnpaymenttypes/excel") : "/export/canerpdbat132/tblgnpaymenttypes/excel", true);
+        }
+
+        public async Task ExportTblGnPaymentTypesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnpaymenttypes/csv") : "/export/canerpdbat132/tblgnpaymenttypes/csv", true);
+        }
+
         partial void OnTblGnPaymentTypesRead(ref IQueryable<Models.CanErpDbAt132.TblGnPaymentType> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnPaymentType>> GetTblGnPaymentTypes(Query query = null)
@@ -467,7 +543,16 @@ namespace ErpCan
 
             return tblGnPaymentType;
         }
-    
+            public async Task ExportTblGnProductsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnproducts/excel") : "/export/canerpdbat132/tblgnproducts/excel", true);
+        }
+
+        public async Task ExportTblGnProductsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnproducts/csv") : "/export/canerpdbat132/tblgnproducts/csv", true);
+        }
+
         partial void OnTblGnProductsRead(ref IQueryable<Models.CanErpDbAt132.TblGnProduct> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnProduct>> GetTblGnProducts(Query query = null)
@@ -522,7 +607,16 @@ namespace ErpCan
 
             return tblGnProduct;
         }
-    
+            public async Task ExportTblGnShipViaToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnshipvia/excel") : "/export/canerpdbat132/tblgnshipvia/excel", true);
+        }
+
+        public async Task ExportTblGnShipViaToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnshipvia/csv") : "/export/canerpdbat132/tblgnshipvia/csv", true);
+        }
+
         partial void OnTblGnShipViaRead(ref IQueryable<Models.CanErpDbAt132.TblGnShipVium> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblGnShipVium>> GetTblGnShipVia(Query query = null)
@@ -577,7 +671,16 @@ namespace ErpCan
 
             return tblGnShipVium;
         }
-    
+            public async Task ExportTblIcCategoriesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tbliccategories/excel") : "/export/canerpdbat132/tbliccategories/excel", true);
+        }
+
+        public async Task ExportTblIcCategoriesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tbliccategories/csv") : "/export/canerpdbat132/tbliccategories/csv", true);
+        }
+
         partial void OnTblIcCategoriesRead(ref IQueryable<Models.CanErpDbAt132.TblIcCategory> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcCategory>> GetTblIcCategories(Query query = null)
@@ -632,7 +735,16 @@ namespace ErpCan
 
             return tblIcCategory;
         }
-    
+            public async Task ExportTblIcClassificationsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicclassifications/excel") : "/export/canerpdbat132/tblicclassifications/excel", true);
+        }
+
+        public async Task ExportTblIcClassificationsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicclassifications/csv") : "/export/canerpdbat132/tblicclassifications/csv", true);
+        }
+
         partial void OnTblIcClassificationsRead(ref IQueryable<Models.CanErpDbAt132.TblIcClassification> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcClassification>> GetTblIcClassifications(Query query = null)
@@ -687,7 +799,16 @@ namespace ErpCan
 
             return tblIcClassification;
         }
-    
+            public async Task ExportTblIcInventoriesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicinventories/excel") : "/export/canerpdbat132/tblicinventories/excel", true);
+        }
+
+        public async Task ExportTblIcInventoriesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicinventories/csv") : "/export/canerpdbat132/tblicinventories/csv", true);
+        }
+
         partial void OnTblIcInventoriesRead(ref IQueryable<Models.CanErpDbAt132.TblIcInventory> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcInventory>> GetTblIcInventories(Query query = null)
@@ -752,7 +873,16 @@ namespace ErpCan
 
             return tblIcInventory;
         }
-    
+            public async Task ExportTblIcTransactionsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblictransactions/excel") : "/export/canerpdbat132/tblictransactions/excel", true);
+        }
+
+        public async Task ExportTblIcTransactionsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblictransactions/csv") : "/export/canerpdbat132/tblictransactions/csv", true);
+        }
+
         partial void OnTblIcTransactionsRead(ref IQueryable<Models.CanErpDbAt132.TblIcTransaction> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcTransaction>> GetTblIcTransactions(Query query = null)
@@ -813,7 +943,16 @@ namespace ErpCan
 
             return tblIcTransaction;
         }
-    
+            public async Task ExportTblIcTransactionTypesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblictransactiontypes/excel") : "/export/canerpdbat132/tblictransactiontypes/excel", true);
+        }
+
+        public async Task ExportTblIcTransactionTypesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblictransactiontypes/csv") : "/export/canerpdbat132/tblictransactiontypes/csv", true);
+        }
+
         partial void OnTblIcTransactionTypesRead(ref IQueryable<Models.CanErpDbAt132.TblIcTransactionType> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcTransactionType>> GetTblIcTransactionTypes(Query query = null)
@@ -868,7 +1007,16 @@ namespace ErpCan
 
             return tblIcTransactionType;
         }
-    
+            public async Task ExportTblIcUnitsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicunits/excel") : "/export/canerpdbat132/tblicunits/excel", true);
+        }
+
+        public async Task ExportTblIcUnitsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicunits/csv") : "/export/canerpdbat132/tblicunits/csv", true);
+        }
+
         partial void OnTblIcUnitsRead(ref IQueryable<Models.CanErpDbAt132.TblIcUnit> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcUnit>> GetTblIcUnits(Query query = null)
@@ -923,7 +1071,16 @@ namespace ErpCan
 
             return tblIcUnit;
         }
-    
+            public async Task ExportTblIcWarehousesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicwarehouses/excel") : "/export/canerpdbat132/tblicwarehouses/excel", true);
+        }
+
+        public async Task ExportTblIcWarehousesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblicwarehouses/csv") : "/export/canerpdbat132/tblicwarehouses/csv", true);
+        }
+
         partial void OnTblIcWarehousesRead(ref IQueryable<Models.CanErpDbAt132.TblIcWarehouse> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblIcWarehouse>> GetTblIcWarehouses(Query query = null)
@@ -978,7 +1135,16 @@ namespace ErpCan
 
             return tblIcWarehouse;
         }
-    
+            public async Task ExportTblPoAccountPayablesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoaccountpayables/excel") : "/export/canerpdbat132/tblpoaccountpayables/excel", true);
+        }
+
+        public async Task ExportTblPoAccountPayablesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoaccountpayables/csv") : "/export/canerpdbat132/tblpoaccountpayables/csv", true);
+        }
+
         partial void OnTblPoAccountPayablesRead(ref IQueryable<Models.CanErpDbAt132.TblPoAccountPayable> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoAccountPayable>> GetTblPoAccountPayables(Query query = null)
@@ -1037,7 +1203,16 @@ namespace ErpCan
 
             return tblPoAccountPayable;
         }
-    
+            public async Task ExportTblPoAccountsPayableAdjustmentsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoaccountspayableadjustments/excel") : "/export/canerpdbat132/tblpoaccountspayableadjustments/excel", true);
+        }
+
+        public async Task ExportTblPoAccountsPayableAdjustmentsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoaccountspayableadjustments/csv") : "/export/canerpdbat132/tblpoaccountspayableadjustments/csv", true);
+        }
+
         partial void OnTblPoAccountsPayableAdjustmentsRead(ref IQueryable<Models.CanErpDbAt132.TblPoAccountsPayableAdjustment> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoAccountsPayableAdjustment>> GetTblPoAccountsPayableAdjustments(Query query = null)
@@ -1092,7 +1267,16 @@ namespace ErpCan
 
             return tblPoAccountsPayableAdjustment;
         }
-    
+            public async Task ExportTblPoApInvoicesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoapinvoices/excel") : "/export/canerpdbat132/tblpoapinvoices/excel", true);
+        }
+
+        public async Task ExportTblPoApInvoicesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoapinvoices/csv") : "/export/canerpdbat132/tblpoapinvoices/csv", true);
+        }
+
         partial void OnTblPoApInvoicesRead(ref IQueryable<Models.CanErpDbAt132.TblPoApInvoice> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoApInvoice>> GetTblPoApInvoices(Query query = null)
@@ -1149,7 +1333,16 @@ namespace ErpCan
 
             return tblPoApInvoice;
         }
-    
+            public async Task ExportTblPoApInvoicesDetailsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoapinvoicesdetails/excel") : "/export/canerpdbat132/tblpoapinvoicesdetails/excel", true);
+        }
+
+        public async Task ExportTblPoApInvoicesDetailsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoapinvoicesdetails/csv") : "/export/canerpdbat132/tblpoapinvoicesdetails/csv", true);
+        }
+
         partial void OnTblPoApInvoicesDetailsRead(ref IQueryable<Models.CanErpDbAt132.TblPoApInvoicesDetail> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoApInvoicesDetail>> GetTblPoApInvoicesDetails(Query query = null)
@@ -1210,7 +1403,16 @@ namespace ErpCan
 
             return tblPoApInvoicesDetail;
         }
-    
+            public async Task ExportTblPoCashDisbursementsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpocashdisbursements/excel") : "/export/canerpdbat132/tblpocashdisbursements/excel", true);
+        }
+
+        public async Task ExportTblPoCashDisbursementsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpocashdisbursements/csv") : "/export/canerpdbat132/tblpocashdisbursements/csv", true);
+        }
+
         partial void OnTblPoCashDisbursementsRead(ref IQueryable<Models.CanErpDbAt132.TblPoCashDisbursement> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoCashDisbursement>> GetTblPoCashDisbursements(Query query = null)
@@ -1267,7 +1469,16 @@ namespace ErpCan
 
             return tblPoCashDisbursement;
         }
-    
+            public async Task ExportTblPoOrderStatusesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoorderstatuses/excel") : "/export/canerpdbat132/tblpoorderstatuses/excel", true);
+        }
+
+        public async Task ExportTblPoOrderStatusesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpoorderstatuses/csv") : "/export/canerpdbat132/tblpoorderstatuses/csv", true);
+        }
+
         partial void OnTblPoOrderStatusesRead(ref IQueryable<Models.CanErpDbAt132.TblPoOrderStatus> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoOrderStatus>> GetTblPoOrderStatuses(Query query = null)
@@ -1322,7 +1533,16 @@ namespace ErpCan
 
             return tblPoOrderStatus;
         }
-    
+            public async Task ExportTblPoPurchaseOrdersToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpopurchaseorders/excel") : "/export/canerpdbat132/tblpopurchaseorders/excel", true);
+        }
+
+        public async Task ExportTblPoPurchaseOrdersToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpopurchaseorders/csv") : "/export/canerpdbat132/tblpopurchaseorders/csv", true);
+        }
+
         partial void OnTblPoPurchaseOrdersRead(ref IQueryable<Models.CanErpDbAt132.TblPoPurchaseOrder> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoPurchaseOrder>> GetTblPoPurchaseOrders(Query query = null)
@@ -1389,7 +1609,16 @@ namespace ErpCan
 
             return tblPoPurchaseOrder;
         }
-    
+            public async Task ExportTblPoPurchaseOrderDetailsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpopurchaseorderdetails/excel") : "/export/canerpdbat132/tblpopurchaseorderdetails/excel", true);
+        }
+
+        public async Task ExportTblPoPurchaseOrderDetailsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpopurchaseorderdetails/csv") : "/export/canerpdbat132/tblpopurchaseorderdetails/csv", true);
+        }
+
         partial void OnTblPoPurchaseOrderDetailsRead(ref IQueryable<Models.CanErpDbAt132.TblPoPurchaseOrderDetail> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoPurchaseOrderDetail>> GetTblPoPurchaseOrderDetails(Query query = null)
@@ -1448,7 +1677,16 @@ namespace ErpCan
 
             return tblPoPurchaseOrderDetail;
         }
-    
+            public async Task ExportTblPoRecReportsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblporecreports/excel") : "/export/canerpdbat132/tblporecreports/excel", true);
+        }
+
+        public async Task ExportTblPoRecReportsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblporecreports/csv") : "/export/canerpdbat132/tblporecreports/csv", true);
+        }
+
         partial void OnTblPoRecReportsRead(ref IQueryable<Models.CanErpDbAt132.TblPoRecReport> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoRecReport>> GetTblPoRecReports(Query query = null)
@@ -1507,7 +1745,16 @@ namespace ErpCan
 
             return tblPoRecReport;
         }
-    
+            public async Task ExportTblPoRrOrderDetailsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblporrorderdetails/excel") : "/export/canerpdbat132/tblporrorderdetails/excel", true);
+        }
+
+        public async Task ExportTblPoRrOrderDetailsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblporrorderdetails/csv") : "/export/canerpdbat132/tblporrorderdetails/csv", true);
+        }
+
         partial void OnTblPoRrOrderDetailsRead(ref IQueryable<Models.CanErpDbAt132.TblPoRrOrderDetail> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoRrOrderDetail>> GetTblPoRrOrderDetails(Query query = null)
@@ -1566,7 +1813,16 @@ namespace ErpCan
 
             return tblPoRrOrderDetail;
         }
-    
+            public async Task ExportTblPoVendorsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpovendors/excel") : "/export/canerpdbat132/tblpovendors/excel", true);
+        }
+
+        public async Task ExportTblPoVendorsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblpovendors/csv") : "/export/canerpdbat132/tblpovendors/csv", true);
+        }
+
         partial void OnTblPoVendorsRead(ref IQueryable<Models.CanErpDbAt132.TblPoVendor> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblPoVendor>> GetTblPoVendors(Query query = null)
@@ -1623,7 +1879,16 @@ namespace ErpCan
 
             return tblPoVendor;
         }
-    
+            public async Task ExportTblSoCustomersToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsocustomers/excel") : "/export/canerpdbat132/tblsocustomers/excel", true);
+        }
+
+        public async Task ExportTblSoCustomersToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsocustomers/csv") : "/export/canerpdbat132/tblsocustomers/csv", true);
+        }
+
         partial void OnTblSoCustomersRead(ref IQueryable<Models.CanErpDbAt132.TblSoCustomer> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblSoCustomer>> GetTblSoCustomers(Query query = null)
@@ -1684,7 +1949,16 @@ namespace ErpCan
 
             return tblSoCustomer;
         }
-    
+            public async Task ExportTblSoOrderDetailsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsoorderdetails/excel") : "/export/canerpdbat132/tblsoorderdetails/excel", true);
+        }
+
+        public async Task ExportTblSoOrderDetailsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsoorderdetails/csv") : "/export/canerpdbat132/tblsoorderdetails/csv", true);
+        }
+
         partial void OnTblSoOrderDetailsRead(ref IQueryable<Models.CanErpDbAt132.TblSoOrderDetail> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblSoOrderDetail>> GetTblSoOrderDetails(Query query = null)
@@ -1745,7 +2019,16 @@ namespace ErpCan
 
             return tblSoOrderDetail;
         }
-    
+            public async Task ExportTblSoOrderDetailStatusesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsoorderdetailstatuses/excel") : "/export/canerpdbat132/tblsoorderdetailstatuses/excel", true);
+        }
+
+        public async Task ExportTblSoOrderDetailStatusesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsoorderdetailstatuses/csv") : "/export/canerpdbat132/tblsoorderdetailstatuses/csv", true);
+        }
+
         partial void OnTblSoOrderDetailStatusesRead(ref IQueryable<Models.CanErpDbAt132.TblSoOrderDetailStatus> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblSoOrderDetailStatus>> GetTblSoOrderDetailStatuses(Query query = null)
@@ -1800,7 +2083,16 @@ namespace ErpCan
 
             return tblSoOrderDetailStatus;
         }
-    
+            public async Task ExportTblSoOrderStatusesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsoorderstatuses/excel") : "/export/canerpdbat132/tblsoorderstatuses/excel", true);
+        }
+
+        public async Task ExportTblSoOrderStatusesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsoorderstatuses/csv") : "/export/canerpdbat132/tblsoorderstatuses/csv", true);
+        }
+
         partial void OnTblSoOrderStatusesRead(ref IQueryable<Models.CanErpDbAt132.TblSoOrderStatus> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblSoOrderStatus>> GetTblSoOrderStatuses(Query query = null)
@@ -1855,7 +2147,16 @@ namespace ErpCan
 
             return tblSoOrderStatus;
         }
-    
+            public async Task ExportTblSoSalesOrdersToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsosalesorders/excel") : "/export/canerpdbat132/tblsosalesorders/excel", true);
+        }
+
+        public async Task ExportTblSoSalesOrdersToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblsosalesorders/csv") : "/export/canerpdbat132/tblsosalesorders/csv", true);
+        }
+
         partial void OnTblSoSalesOrdersRead(ref IQueryable<Models.CanErpDbAt132.TblSoSalesOrder> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.TblSoSalesOrder>> GetTblSoSalesOrders(Query query = null)
@@ -1920,7 +2221,16 @@ namespace ErpCan
 
             return tblSoSalesOrder;
         }
-    
+            public async Task ExportVwCustomersToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwcustomers/excel") : "/export/canerpdbat132/vwcustomers/excel", true);
+        }
+
+        public async Task ExportVwCustomersToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwcustomers/csv") : "/export/canerpdbat132/vwcustomers/csv", true);
+        }
+
         partial void OnVwCustomersRead(ref IQueryable<Models.CanErpDbAt132.VwCustomer> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.VwCustomer>> GetVwCustomers(Query query = null)
@@ -1964,7 +2274,16 @@ namespace ErpCan
 
             return await Task.FromResult(items);
         }
-    
+            public async Task ExportVwEmpAndVendsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwempandvends/excel") : "/export/canerpdbat132/vwempandvends/excel", true);
+        }
+
+        public async Task ExportVwEmpAndVendsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwempandvends/csv") : "/export/canerpdbat132/vwempandvends/csv", true);
+        }
+
         partial void OnVwEmpAndVendsRead(ref IQueryable<Models.CanErpDbAt132.VwEmpAndVend> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.VwEmpAndVend>> GetVwEmpAndVends(Query query = null)
@@ -2008,7 +2327,16 @@ namespace ErpCan
 
             return await Task.FromResult(items);
         }
-    
+            public async Task ExportVwEmployeesToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwemployees/excel") : "/export/canerpdbat132/vwemployees/excel", true);
+        }
+
+        public async Task ExportVwEmployeesToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwemployees/csv") : "/export/canerpdbat132/vwemployees/csv", true);
+        }
+
         partial void OnVwEmployeesRead(ref IQueryable<Models.CanErpDbAt132.VwEmployee> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.VwEmployee>> GetVwEmployees(Query query = null)
@@ -2052,7 +2380,16 @@ namespace ErpCan
 
             return await Task.FromResult(items);
         }
-    
+            public async Task ExportVwVendorsToExcel(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwvendors/excel") : "/export/canerpdbat132/vwvendors/excel", true);
+        }
+
+        public async Task ExportVwVendorsToCSV(Query query = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/vwvendors/csv") : "/export/canerpdbat132/vwvendors/csv", true);
+        }
+
         partial void OnVwVendorsRead(ref IQueryable<Models.CanErpDbAt132.VwVendor> items);
 
         public async Task<IQueryable<Models.CanErpDbAt132.VwVendor>> GetVwVendors(Query query = null)
@@ -2132,6 +2469,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblGnAddressBook> CancelTblGnAddressBookChanges(Models.CanErpDbAt132.TblGnAddressBook item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblGnAddressBookUpdated(Models.CanErpDbAt132.TblGnAddressBook item);
 
         public async Task<Models.CanErpDbAt132.TblGnAddressBook> UpdateTblGnAddressBook(int? addressBookSeq, Models.CanErpDbAt132.TblGnAddressBook tblGnAddressBook)
@@ -2178,6 +2524,15 @@ namespace ErpCan
             OnTblGnAddressBookTypeGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblGnAddressBookType> CancelTblGnAddressBookTypeChanges(Models.CanErpDbAt132.TblGnAddressBookType item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblGnAddressBookTypeUpdated(Models.CanErpDbAt132.TblGnAddressBookType item);
@@ -2228,6 +2583,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblGnCity> CancelTblGnCityChanges(Models.CanErpDbAt132.TblGnCity item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblGnCityUpdated(Models.CanErpDbAt132.TblGnCity item);
 
         public async Task<Models.CanErpDbAt132.TblGnCity> UpdateTblGnCity(int? citySeq, Models.CanErpDbAt132.TblGnCity tblGnCity)
@@ -2274,6 +2638,15 @@ namespace ErpCan
             OnTblGnDepartmentGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblGnDepartment> CancelTblGnDepartmentChanges(Models.CanErpDbAt132.TblGnDepartment item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblGnDepartmentUpdated(Models.CanErpDbAt132.TblGnDepartment item);
@@ -2324,6 +2697,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblGnGender> CancelTblGnGenderChanges(Models.CanErpDbAt132.TblGnGender item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblGnGenderUpdated(Models.CanErpDbAt132.TblGnGender item);
 
         public async Task<Models.CanErpDbAt132.TblGnGender> UpdateTblGnGender(int? genderSeq, Models.CanErpDbAt132.TblGnGender tblGnGender)
@@ -2369,6 +2751,15 @@ namespace ErpCan
             OnTblGnIncotermGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblGnIncoterm> CancelTblGnIncotermChanges(Models.CanErpDbAt132.TblGnIncoterm item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblGnIncotermUpdated(Models.CanErpDbAt132.TblGnIncoterm item);
@@ -2421,6 +2812,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblGnPaymentTerm> CancelTblGnPaymentTermChanges(Models.CanErpDbAt132.TblGnPaymentTerm item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblGnPaymentTermUpdated(Models.CanErpDbAt132.TblGnPaymentTerm item);
 
         public async Task<Models.CanErpDbAt132.TblGnPaymentTerm> UpdateTblGnPaymentTerm(int? paymentTermSeq, Models.CanErpDbAt132.TblGnPaymentTerm tblGnPaymentTerm)
@@ -2469,6 +2869,15 @@ namespace ErpCan
             OnTblGnPaymentTypeGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblGnPaymentType> CancelTblGnPaymentTypeChanges(Models.CanErpDbAt132.TblGnPaymentType item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblGnPaymentTypeUpdated(Models.CanErpDbAt132.TblGnPaymentType item);
@@ -2520,6 +2929,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblGnProduct> CancelTblGnProductChanges(Models.CanErpDbAt132.TblGnProduct item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblGnProductUpdated(Models.CanErpDbAt132.TblGnProduct item);
 
         public async Task<Models.CanErpDbAt132.TblGnProduct> UpdateTblGnProduct(int? productSeq, Models.CanErpDbAt132.TblGnProduct tblGnProduct)
@@ -2567,6 +2985,15 @@ namespace ErpCan
             OnTblGnShipViumGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblGnShipVium> CancelTblGnShipViumChanges(Models.CanErpDbAt132.TblGnShipVium item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblGnShipViumUpdated(Models.CanErpDbAt132.TblGnShipVium item);
@@ -2617,6 +3044,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblIcCategory> CancelTblIcCategoryChanges(Models.CanErpDbAt132.TblIcCategory item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblIcCategoryUpdated(Models.CanErpDbAt132.TblIcCategory item);
 
         public async Task<Models.CanErpDbAt132.TblIcCategory> UpdateTblIcCategory(string categoryId, Models.CanErpDbAt132.TblIcCategory tblIcCategory)
@@ -2663,6 +3099,15 @@ namespace ErpCan
             OnTblIcClassificationGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblIcClassification> CancelTblIcClassificationChanges(Models.CanErpDbAt132.TblIcClassification item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblIcClassificationUpdated(Models.CanErpDbAt132.TblIcClassification item);
@@ -2716,6 +3161,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblIcInventory> CancelTblIcInventoryChanges(Models.CanErpDbAt132.TblIcInventory item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblIcInventoryUpdated(Models.CanErpDbAt132.TblIcInventory item);
 
         public async Task<Models.CanErpDbAt132.TblIcInventory> UpdateTblIcInventory(int? inventorySeq, Models.CanErpDbAt132.TblIcInventory tblIcInventory)
@@ -2761,6 +3215,15 @@ namespace ErpCan
             OnTblIcTransactionGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblIcTransaction> CancelTblIcTransactionChanges(Models.CanErpDbAt132.TblIcTransaction item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblIcTransactionUpdated(Models.CanErpDbAt132.TblIcTransaction item);
@@ -2809,6 +3272,15 @@ namespace ErpCan
             OnTblIcTransactionTypeGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblIcTransactionType> CancelTblIcTransactionTypeChanges(Models.CanErpDbAt132.TblIcTransactionType item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblIcTransactionTypeUpdated(Models.CanErpDbAt132.TblIcTransactionType item);
@@ -2860,6 +3332,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblIcUnit> CancelTblIcUnitChanges(Models.CanErpDbAt132.TblIcUnit item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblIcUnitUpdated(Models.CanErpDbAt132.TblIcUnit item);
 
         public async Task<Models.CanErpDbAt132.TblIcUnit> UpdateTblIcUnit(int? unitSeq, Models.CanErpDbAt132.TblIcUnit tblIcUnit)
@@ -2909,6 +3390,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblIcWarehouse> CancelTblIcWarehouseChanges(Models.CanErpDbAt132.TblIcWarehouse item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblIcWarehouseUpdated(Models.CanErpDbAt132.TblIcWarehouse item);
 
         public async Task<Models.CanErpDbAt132.TblIcWarehouse> UpdateTblIcWarehouse(string warehouseId, Models.CanErpDbAt132.TblIcWarehouse tblIcWarehouse)
@@ -2954,6 +3444,15 @@ namespace ErpCan
             OnTblPoAccountPayableGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblPoAccountPayable> CancelTblPoAccountPayableChanges(Models.CanErpDbAt132.TblPoAccountPayable item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblPoAccountPayableUpdated(Models.CanErpDbAt132.TblPoAccountPayable item);
@@ -3003,6 +3502,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblPoAccountsPayableAdjustment> CancelTblPoAccountsPayableAdjustmentChanges(Models.CanErpDbAt132.TblPoAccountsPayableAdjustment item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblPoAccountsPayableAdjustmentUpdated(Models.CanErpDbAt132.TblPoAccountsPayableAdjustment item);
 
         public async Task<Models.CanErpDbAt132.TblPoAccountsPayableAdjustment> UpdateTblPoAccountsPayableAdjustment(string voucherNo, Models.CanErpDbAt132.TblPoAccountsPayableAdjustment tblPoAccountsPayableAdjustment)
@@ -3048,6 +3556,15 @@ namespace ErpCan
             OnTblPoApInvoiceGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblPoApInvoice> CancelTblPoApInvoiceChanges(Models.CanErpDbAt132.TblPoApInvoice item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblPoApInvoiceUpdated(Models.CanErpDbAt132.TblPoApInvoice item);
@@ -3097,6 +3614,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblPoApInvoicesDetail> CancelTblPoApInvoicesDetailChanges(Models.CanErpDbAt132.TblPoApInvoicesDetail item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblPoApInvoicesDetailUpdated(Models.CanErpDbAt132.TblPoApInvoicesDetail item);
 
         public async Task<Models.CanErpDbAt132.TblPoApInvoicesDetail> UpdateTblPoApInvoicesDetail(string vendorId, string invoiceNo, Models.CanErpDbAt132.TblPoApInvoicesDetail tblPoApInvoicesDetail)
@@ -3142,6 +3668,15 @@ namespace ErpCan
             OnTblPoCashDisbursementGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblPoCashDisbursement> CancelTblPoCashDisbursementChanges(Models.CanErpDbAt132.TblPoCashDisbursement item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblPoCashDisbursementUpdated(Models.CanErpDbAt132.TblPoCashDisbursement item);
@@ -3192,6 +3727,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblPoOrderStatus> CancelTblPoOrderStatusChanges(Models.CanErpDbAt132.TblPoOrderStatus item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblPoOrderStatusUpdated(Models.CanErpDbAt132.TblPoOrderStatus item);
 
         public async Task<Models.CanErpDbAt132.TblPoOrderStatus> UpdateTblPoOrderStatus(string poStatusId, Models.CanErpDbAt132.TblPoOrderStatus tblPoOrderStatus)
@@ -3240,6 +3784,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblPoPurchaseOrder> CancelTblPoPurchaseOrderChanges(Models.CanErpDbAt132.TblPoPurchaseOrder item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblPoPurchaseOrderUpdated(Models.CanErpDbAt132.TblPoPurchaseOrder item);
 
         public async Task<Models.CanErpDbAt132.TblPoPurchaseOrder> UpdateTblPoPurchaseOrder(string poId, Models.CanErpDbAt132.TblPoPurchaseOrder tblPoPurchaseOrder)
@@ -3285,6 +3838,15 @@ namespace ErpCan
             OnTblPoPurchaseOrderDetailGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblPoPurchaseOrderDetail> CancelTblPoPurchaseOrderDetailChanges(Models.CanErpDbAt132.TblPoPurchaseOrderDetail item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblPoPurchaseOrderDetailUpdated(Models.CanErpDbAt132.TblPoPurchaseOrderDetail item);
@@ -3335,6 +3897,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblPoRecReport> CancelTblPoRecReportChanges(Models.CanErpDbAt132.TblPoRecReport item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblPoRecReportUpdated(Models.CanErpDbAt132.TblPoRecReport item);
 
         public async Task<Models.CanErpDbAt132.TblPoRecReport> UpdateTblPoRecReport(string rrNo, Models.CanErpDbAt132.TblPoRecReport tblPoRecReport)
@@ -3380,6 +3951,15 @@ namespace ErpCan
             OnTblPoRrOrderDetailGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblPoRrOrderDetail> CancelTblPoRrOrderDetailChanges(Models.CanErpDbAt132.TblPoRrOrderDetail item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblPoRrOrderDetailUpdated(Models.CanErpDbAt132.TblPoRrOrderDetail item);
@@ -3434,6 +4014,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblPoVendor> CancelTblPoVendorChanges(Models.CanErpDbAt132.TblPoVendor item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblPoVendorUpdated(Models.CanErpDbAt132.TblPoVendor item);
 
         public async Task<Models.CanErpDbAt132.TblPoVendor> UpdateTblPoVendor(string vendorId, Models.CanErpDbAt132.TblPoVendor tblPoVendor)
@@ -3482,6 +4071,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblSoCustomer> CancelTblSoCustomerChanges(Models.CanErpDbAt132.TblSoCustomer item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblSoCustomerUpdated(Models.CanErpDbAt132.TblSoCustomer item);
 
         public async Task<Models.CanErpDbAt132.TblSoCustomer> UpdateTblSoCustomer(int? customerSeq, Models.CanErpDbAt132.TblSoCustomer tblSoCustomer)
@@ -3527,6 +4125,15 @@ namespace ErpCan
             OnTblSoOrderDetailGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblSoOrderDetail> CancelTblSoOrderDetailChanges(Models.CanErpDbAt132.TblSoOrderDetail item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblSoOrderDetailUpdated(Models.CanErpDbAt132.TblSoOrderDetail item);
@@ -3577,6 +4184,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblSoOrderDetailStatus> CancelTblSoOrderDetailStatusChanges(Models.CanErpDbAt132.TblSoOrderDetailStatus item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblSoOrderDetailStatusUpdated(Models.CanErpDbAt132.TblSoOrderDetailStatus item);
 
         public async Task<Models.CanErpDbAt132.TblSoOrderDetailStatus> UpdateTblSoOrderDetailStatus(int? soDetailStatusSeq, Models.CanErpDbAt132.TblSoOrderDetailStatus tblSoOrderDetailStatus)
@@ -3625,6 +4241,15 @@ namespace ErpCan
             return await Task.FromResult(item);
         }
 
+        public async Task<Models.CanErpDbAt132.TblSoOrderStatus> CancelTblSoOrderStatusChanges(Models.CanErpDbAt132.TblSoOrderStatus item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
+        }
+
         partial void OnTblSoOrderStatusUpdated(Models.CanErpDbAt132.TblSoOrderStatus item);
 
         public async Task<Models.CanErpDbAt132.TblSoOrderStatus> UpdateTblSoOrderStatus(int? soStatusSeq, Models.CanErpDbAt132.TblSoOrderStatus tblSoOrderStatus)
@@ -3671,6 +4296,15 @@ namespace ErpCan
             OnTblSoSalesOrderGet(item);
 
             return await Task.FromResult(item);
+        }
+
+        public async Task<Models.CanErpDbAt132.TblSoSalesOrder> CancelTblSoSalesOrderChanges(Models.CanErpDbAt132.TblSoSalesOrder item)
+        {
+            var entity = context.Entry(item);
+            entity.CurrentValues.SetValues(entity.OriginalValues);
+            entity.State = EntityState.Unchanged;
+
+            return item;
         }
 
         partial void OnTblSoSalesOrderUpdated(Models.CanErpDbAt132.TblSoSalesOrder item);

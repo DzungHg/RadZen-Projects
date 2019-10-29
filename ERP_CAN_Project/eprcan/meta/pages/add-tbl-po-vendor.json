@@ -31,12 +31,12 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "data": "${getTblGnAddressBooksResult}",
+                              "data": "${getVwVendorsResult}",
                               "events": {
                                 "change": []
                               },
                               "name": "VendorAddressBook_FK",
-                              "placeholder": "Choose TblGnAddressBook",
+                              "placeholder": "Choose VendorAddress",
                               "style": {
                                 "width": "100%"
                               },
@@ -672,7 +672,7 @@
         "parameters": [],
         "then": [
           {
-            "name": "getTblGnAddressBooksResult",
+            "name": "getVwVendorsResult",
             "type": "set",
             "value": "${result}",
             "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor>"

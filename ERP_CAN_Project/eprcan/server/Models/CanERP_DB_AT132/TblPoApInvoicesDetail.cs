@@ -13,8 +13,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Vendor_ID")]
     public TblPoVendor TblPoVendor { get; set; }
     public string Invoice_No
     {
@@ -31,16 +29,12 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Inventory_FK")]
     public TblIcInventory TblIcInventory { get; set; }
     public int? Unit_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Unit_FK")]
     public TblIcUnit TblIcUnit { get; set; }
     public decimal? Unit_Price
     {

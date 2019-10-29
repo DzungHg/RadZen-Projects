@@ -16,7 +16,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblIcClassification")]
     public ICollection<TblIcInventory> TblIcInventories { get; set; }
     public string Classifi_Name
     {

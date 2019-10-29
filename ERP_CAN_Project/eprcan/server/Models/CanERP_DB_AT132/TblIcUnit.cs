@@ -17,10 +17,8 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblIcUnit")]
     public ICollection<TblPoApInvoicesDetail> TblPoApInvoicesDetails { get; set; }
 
-    [InverseProperty("TblIcUnit")]
     public ICollection<TblIcInventory> TblIcInventories { get; set; }
     public string UnitText
     {

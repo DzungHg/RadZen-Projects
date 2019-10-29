@@ -17,10 +17,8 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnShipVium")]
     public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
 
-    [InverseProperty("TblGnShipVium")]
     public ICollection<TblSoSalesOrder> TblSoSalesOrders { get; set; }
     public string ShipVia_ID
     {

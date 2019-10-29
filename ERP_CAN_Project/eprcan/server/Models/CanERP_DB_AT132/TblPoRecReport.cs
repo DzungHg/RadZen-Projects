@@ -16,7 +16,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblPoRecReport")]
     public ICollection<TblPoRrOrderDetail> TblPoRrOrderDetails { get; set; }
     public DateTime? RRDate
     {
@@ -28,8 +27,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("CreatedBy_FK")]
     public TblGnAddressBook TblGnAddressBook { get; set; }
     public string PO_ID
     {
@@ -51,8 +48,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Vendor_FK")]
     public TblPoVendor TblPoVendor { get; set; }
     public string Description
     {

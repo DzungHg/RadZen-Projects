@@ -17,7 +17,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="3" style="display: block; width: 100%" @bind-Value="@(tblgnincoterm.Incoterm_ID)" Name="Incoterm_ID">
+                <RadzenTextBox MaxLength="3" style="display: block; width: 100%" @bind-Value="@((tblgnincoterm.Incoterm_ID))" Name="Incoterm_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Incoterm_ID" Text="Incoterm_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
@@ -29,7 +29,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@(tblgnincoterm.Incoterm_Name)" Name="Incoterm_Name">
+                <RadzenTextBox MaxLength="15" style="width: 100%" @bind-Value="@((tblgnincoterm.Incoterm_Name))" Name="Incoterm_Name">
                 </RadzenTextBox>
               </div>
             </div>
@@ -39,7 +39,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox style="width: 100%" @bind-Value="@(tblgnincoterm.Description)" Name="Description">
+                <RadzenTextBox style="width: 100%" @bind-Value="@((tblgnincoterm.Description))" Name="Description">
                 </RadzenTextBox>
               </div>
             </div>

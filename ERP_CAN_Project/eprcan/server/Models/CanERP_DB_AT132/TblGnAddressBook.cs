@@ -17,19 +17,14 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnAddressBook")]
     public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
 
-    [InverseProperty("TblGnAddressBook")]
     public ICollection<TblPoRecReport> TblPoRecReports { get; set; }
 
-    [InverseProperty("TblGnAddressBook")]
     public ICollection<TblSoCustomer> TblSoCustomers { get; set; }
 
-    [InverseProperty("TblGnAddressBook")]
     public ICollection<TblPoCashDisbursement> TblPoCashDisbursements { get; set; }
 
-    [InverseProperty("TblGnAddressBook")]
     public ICollection<TblPoVendor> TblPoVendors { get; set; }
     public string AddressBook_ID
     {
@@ -41,8 +36,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("AddressBookType_FK")]
     public TblGnAddressBookType TblGnAddressBookType { get; set; }
     public string LastName
     {
@@ -59,8 +52,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Gender_FK")]
     public TblGnGender TblGnGender { get; set; }
     public DateTime? DOB
     {
@@ -102,8 +93,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("City_FK")]
     public TblGnCity TblGnCity { get; set; }
   }
 }

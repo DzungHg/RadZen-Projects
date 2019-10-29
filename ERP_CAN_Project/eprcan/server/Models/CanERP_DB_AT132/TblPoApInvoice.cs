@@ -13,8 +13,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("Vendor_ID")]
     public TblPoVendor TblPoVendor { get; set; }
     public string Invoice_No
     {

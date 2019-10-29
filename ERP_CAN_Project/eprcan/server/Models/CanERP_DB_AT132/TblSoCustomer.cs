@@ -17,7 +17,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblSoCustomer")]
     public ICollection<TblSoSalesOrder> TblSoSalesOrders { get; set; }
     public string Customer_ID
     {
@@ -39,8 +38,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("CustomerAdressBook_FK")]
     public TblGnAddressBook TblGnAddressBook { get; set; }
     public decimal? CreditLimit
     {
@@ -57,16 +54,12 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("PaymentTerm_FK")]
     public TblGnPaymentTerm TblGnPaymentTerm { get; set; }
     public int? PaymentType_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("PaymentType_FK")]
     public TblGnPaymentType TblGnPaymentType { get; set; }
     public int? DiscountPercent
     {

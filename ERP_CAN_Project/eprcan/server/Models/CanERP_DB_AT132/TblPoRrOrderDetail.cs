@@ -13,16 +13,12 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-
-    [ForeignKey("RR_FK")]
     public TblPoRecReport TblPoRecReport { get; set; }
     public int Inventory_FK
     {
       get;
       set;
     }
-
-    [ForeignKey("Inventory_FK")]
     public TblIcInventory TblIcInventory { get; set; }
     public decimal? Unit_Price
     {

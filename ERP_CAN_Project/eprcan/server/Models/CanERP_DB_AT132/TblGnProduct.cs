@@ -17,10 +17,8 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnProduct")]
     public ICollection<TblIcInventory> TblIcInventories { get; set; }
 
-    [InverseProperty("TblGnProduct")]
     public ICollection<TblIcTransaction> TblIcTransactions { get; set; }
     public string Product_ID
     {

@@ -24,18 +24,18 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor> _getTblGnAddressBooksResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor> getTblGnAddressBooksResult
+        IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor> _getVwVendorsResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor> getVwVendorsResult
         {
             get
             {
-                return _getTblGnAddressBooksResult;
+                return _getVwVendorsResult;
             }
             set
             {
-                if(_getTblGnAddressBooksResult != value)
+                if(_getVwVendorsResult != value)
                 {
-                    _getTblGnAddressBooksResult = value;
+                    _getVwVendorsResult = value;
                     InvokeAsync(() => { StateHasChanged(); });
                 }
             }
@@ -66,7 +66,7 @@ namespace ErpCan.Pages
         protected async void Load()
         {
             var canErpDbAt132GetVwVendorsResult = await CanErpDbAt132.GetVwVendors();
-            getTblGnAddressBooksResult = canErpDbAt132GetVwVendorsResult;
+            getVwVendorsResult = canErpDbAt132GetVwVendorsResult;
 
             tblpovendor = new ErpCan.Models.CanErpDbAt132.TblPoVendor();
         }

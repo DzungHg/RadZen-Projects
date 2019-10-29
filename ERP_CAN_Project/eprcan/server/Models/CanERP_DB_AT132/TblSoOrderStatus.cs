@@ -17,7 +17,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblSoOrderStatus")]
     public ICollection<TblSoSalesOrder> TblSoSalesOrders { get; set; }
     public string SOStatus_ID
     {

@@ -16,7 +16,6 @@ namespace ErpCan.Models.CanErpDbAt132
     }
 
 
-    [InverseProperty("TblGnDepartment")]
     public ICollection<TblPoAccountPayable> TblPoAccountPayables { get; set; }
     public string Deparment_Name
     {
