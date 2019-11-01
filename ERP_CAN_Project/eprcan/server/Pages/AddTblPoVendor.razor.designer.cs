@@ -84,6 +84,11 @@ namespace ErpCan.Pages
             }
         }
 
+        protected async void VendorAddressBookFkChange(dynamic args)
+        {
+            FillData(tblpovendor.VendorAddressBook_FK);
+        }
+
         protected async void Button2Click(MouseEventArgs args)
         {
             DialogService.Close(null);

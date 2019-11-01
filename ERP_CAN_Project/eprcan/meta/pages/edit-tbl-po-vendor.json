@@ -80,6 +80,7 @@
                             {
                               "maxLength": 10,
                               "name": "Vendor_ID",
+                              "readOnly": true,
                               "style": {
                                 "display": "block",
                                 "width": "100%"

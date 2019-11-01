@@ -27,7 +27,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="10" style="display: block; width: 100%" @bind-Value="@((tblpovendor.Vendor_ID))" Name="Vendor_ID">
+                <RadzenTextBox MaxLength="10" ReadOnly="true" style="display: block; width: 100%" @bind-Value="@((tblpovendor.Vendor_ID))" Name="Vendor_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Vendor_ID" style="position: absolute" Text="Vendor_ID is required">
                 </RadzenRequiredValidator>
