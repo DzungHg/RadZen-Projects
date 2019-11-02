@@ -50,6 +50,7 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
+    public TblGnIncoterm TblGnIncoterm { get; set; }
     public int? ShipVia_FK
     {
       get;
@@ -73,6 +74,7 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
+    public TblGnAddressBook TblGnAddressBook1 { get; set; }
     public bool? TaxYN
     {
       get;

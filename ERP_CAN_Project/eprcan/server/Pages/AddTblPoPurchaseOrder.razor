@@ -39,7 +39,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpopurchaseorder.CreatedBy_FK))" ValueProperty="AddressBook_SEQ" Name="CreatedBy_FK">
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="FirstName" @bind-Value="@((tblpopurchaseorder.CreatedBy_FK))" ValueProperty="AddressBook_SEQ" Name="CreatedBy_FK">
                 </RadzenDropDown>
               </div>
             </div>
@@ -79,8 +79,8 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="3" style="width: 100%" @bind-Value="@((tblpopurchaseorder.Incoterm_ID))" Name="Incoterm_ID">
-                </RadzenTextBox>
+                <RadzenDropDown Data="@(getIncotermsResult)" TItem="ErpCan.Models.CanErpDbAt132.TblGnIncoterm" Placeholder="Chọn incoterm" style="width: 100%" TextProperty="Incoterm_ID" @bind-Value="@((tblpopurchaseorder.Incoterm_ID))" ValueProperty="Incoterm_Name" Name="Dropdown0">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -119,8 +119,8 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" Name="Buyer_FK">
-                </RadzenNumeric>
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="FirstName" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" ValueProperty="AddressBook_SEQ" Name="Buyer_FK">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">

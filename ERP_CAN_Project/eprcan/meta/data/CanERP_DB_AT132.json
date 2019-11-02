@@ -117,6 +117,11 @@
               "inversePropertyName": "TblGnAddressBook",
               "name": "TblPoVendors",
               "type": "TblPoVendor"
+            },
+            {
+              "inversePropertyName": "TblGnAddressBook1",
+              "name": "TblPoPurchaseOrders1",
+              "type": "TblPoPurchaseOrder"
             }
           ]
         },
@@ -395,7 +400,14 @@
           "x-key": true,
           "x-nullable": false,
           "type": "string",
-          "length": 3
+          "length": 3,
+          "x-navigation": [
+            {
+              "inversePropertyName": "TblGnIncoterm",
+              "name": "TblPoPurchaseOrders",
+              "type": "TblPoPurchaseOrder"
+            }
+          ]
         },
         "Incoterm_Name": {
           "type": "string",
@@ -1753,9 +1765,22 @@
           "type": "string",
           "length": 150
         },
+        "TblGnIncoterm": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnIncoterm"
+        },
         "Incoterm_ID": {
           "type": "string",
-          "length": 3
+          "length": 3,
+          "x-foreignKey": {
+            "parentTable": "tblGN_Incoterms",
+            "parentEntityType": "TblGnIncoterm",
+            "type": "TblGnIncoterm",
+            "principalKey": "Incoterm_ID",
+            "name": "TblGnIncoterm",
+            "textProperty": "Incoterm_Name",
+            "navigationProperty": "TblPoPurchaseOrders"
+          }
         },
         "TblGnShipVium": {
           "type": "object",
@@ -1805,8 +1830,21 @@
             "navigationProperty": "TblPoPurchaseOrders"
           }
         },
+        "TblGnAddressBook1": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnAddressBook"
+        },
         "Buyer_FK": {
-          "type": "integer"
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "tblGN_AddressBook",
+            "parentEntityType": "TblGnAddressBook",
+            "type": "TblGnAddressBook",
+            "principalKey": "AddressBook_SEQ",
+            "name": "TblGnAddressBook1",
+            "textProperty": "AddressBook_ID",
+            "navigationProperty": "TblPoPurchaseOrders1"
+          }
         },
         "TaxYN": {
           "type": "boolean"

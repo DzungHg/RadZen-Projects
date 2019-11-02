@@ -24,8 +24,8 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> _getTblGnAddressBooksResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> getTblGnAddressBooksResult
+        IEnumerable<ErpCan.Models.CanErpDbAt132.VwEmployee> _getTblGnAddressBooksResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.VwEmployee> getTblGnAddressBooksResult
         {
             get
             {
@@ -126,6 +126,23 @@ namespace ErpCan.Pages
             }
         }
 
+        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> _getIncotermsResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> getIncotermsResult
+        {
+            get
+            {
+                return _getIncotermsResult;
+            }
+            set
+            {
+                if(_getIncotermsResult != value)
+                {
+                    _getIncotermsResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
         ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder _tblpopurchaseorder;
         protected ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder tblpopurchaseorder
         {
@@ -150,8 +167,8 @@ namespace ErpCan.Pages
 
         protected async void Load()
         {
-            var canErpDbAt132GetTblGnAddressBooksResult = await CanErpDbAt132.GetTblGnAddressBooks();
-            getTblGnAddressBooksResult = canErpDbAt132GetTblGnAddressBooksResult;
+            var canErpDbAt132GetVwEmployeesResult = await CanErpDbAt132.GetVwEmployees();
+            getTblGnAddressBooksResult = canErpDbAt132GetVwEmployeesResult;
 
             var canErpDbAt132GetTblPoOrderStatusesResult = await CanErpDbAt132.GetTblPoOrderStatuses();
             getTblPoOrderStatusesResult = canErpDbAt132GetTblPoOrderStatusesResult;
@@ -167,6 +184,9 @@ namespace ErpCan.Pages
 
             var canErpDbAt132GetTblGnPaymentTypesResult = await CanErpDbAt132.GetTblGnPaymentTypes();
             getTblGnPaymentTypesResult = canErpDbAt132GetTblGnPaymentTypesResult;
+
+            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
+            getIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             tblpopurchaseorder = new ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder();
         }

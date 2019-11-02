@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,6 +14,9 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
+
+
+    public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
     public string Incoterm_Name
     {
       get;

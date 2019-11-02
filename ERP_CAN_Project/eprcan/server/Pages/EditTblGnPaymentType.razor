@@ -19,35 +19,35 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm TItem="ErpCan.Models.CanErpDbAt132.TblGnPaymentType" Data="@(tblgnpaymenttype)" Visible="@(tblgnpaymenttype != null && canEdit)" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@(tblgnpaymenttype)" TItem="ErpCan.Models.CanErpDbAt132.TblGnPaymentType" Visible="@(tblgnpaymenttype != null && canEdit)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Payment Type Id" Component="PaymentType_ID" style="width: 100%">
+                <RadzenLabel Component="PaymentType_ID" style="width: 100%" Text="Loại thanh toán ID">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="20" style="display: block; width: 100%" @bind-Value="@((tblgnpaymenttype.PaymentType_ID))" Name="PaymentType_ID">
+                <RadzenTextBox MaxLength="20" ReadOnly="true" style="display: block; width: 100%" @bind-Value="@((tblgnpaymenttype.PaymentType_ID))" Name="PaymentType_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="PaymentType_ID" Text="PaymentType_ID is required" style="position: absolute">
+                <RadzenRequiredValidator Component="PaymentType_ID" style="position: absolute" Text="PaymentType_ID is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Text="Payment Type Text" Component="PaymentTypeText" style="width: 100%">
+                <RadzenLabel Component="PaymentTypeText" style="width: 100%" Text="Diễn giải">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenTextBox MaxLength="50" style="display: block; width: 100%" @bind-Value="@((tblgnpaymenttype.PaymentTypeText))" Name="PaymentTypeText">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="PaymentTypeText" Text="PaymentTypeText is required" style="position: absolute">
+                <RadzenRequiredValidator Component="PaymentTypeText" style="position: absolute" Text="PaymentTypeText is required">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
                 </RadzenButton>
                 <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>

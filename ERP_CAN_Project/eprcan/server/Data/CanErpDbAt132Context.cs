@@ -149,6 +149,11 @@ namespace ErpCan.Data
               .HasForeignKey(i => i.Vendor_FK)
               .HasPrincipalKey(i => i.Vendor_ID);
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder>()
+              .HasOne(i => i.TblGnIncoterm)
+              .WithMany(i => i.TblPoPurchaseOrders)
+              .HasForeignKey(i => i.Incoterm_ID)
+              .HasPrincipalKey(i => i.Incoterm_ID);
+        builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder>()
               .HasOne(i => i.TblGnShipVium)
               .WithMany(i => i.TblPoPurchaseOrders)
               .HasForeignKey(i => i.ShipVia_FK)
@@ -163,6 +168,11 @@ namespace ErpCan.Data
               .WithMany(i => i.TblPoPurchaseOrders)
               .HasForeignKey(i => i.PaymentType_FK)
               .HasPrincipalKey(i => i.PaymentType_SEQ);
+        builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder>()
+              .HasOne(i => i.TblGnAddressBook1)
+              .WithMany(i => i.TblPoPurchaseOrders1)
+              .HasForeignKey(i => i.Buyer_FK)
+              .HasPrincipalKey(i => i.AddressBook_SEQ);
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrderDetail>()
               .HasOne(i => i.TblPoPurchaseOrder)
               .WithMany(i => i.TblPoPurchaseOrderDetails)

@@ -1570,11 +1570,15 @@ namespace ErpCan
 
             items = items.Include(i => i.TblPoVendor);
 
+            items = items.Include(i => i.TblGnIncoterm);
+
             items = items.Include(i => i.TblGnShipVium);
 
             items = items.Include(i => i.TblGnPaymentTerm);
 
             items = items.Include(i => i.TblGnPaymentType);
+
+            items = items.Include(i => i.TblGnAddressBook1);
 
             if (query != null)
             {
@@ -2460,6 +2464,7 @@ namespace ErpCan
                               .Include(i => i.TblPoCashDisbursements)
                               .Include(i => i.TblSoCustomers)
                               .Include(i => i.TblPoVendors)
+                              .Include(i => i.TblPoPurchaseOrders1)
                               .FirstOrDefault();
 
             OnTblGnAddressBookDeleted(item);
@@ -2744,6 +2749,7 @@ namespace ErpCan
         {
             var item = context.TblGnIncoterms
                               .Where(i => i.Incoterm_ID == incotermId)
+                              .Include(i => i.TblPoPurchaseOrders)
                               .FirstOrDefault();
 
             OnTblGnIncotermDeleted(item);

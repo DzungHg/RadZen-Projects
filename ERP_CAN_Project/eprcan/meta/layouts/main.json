@@ -136,7 +136,25 @@
                 {
                   "icon": "",
                   "path": "tbl-ic-warehouses",
-                  "text": "Kho"
+                  "text": "DS Kho"
+                },
+                {
+                  "path": "tbl-gn-incoterms",
+                  "text": "Incoterm"
+                },
+                {
+                  "icon": "",
+                  "path": "tbl-gn-payment-terms",
+                  "text": "ĐK Thanh Toán"
+                },
+                {
+                  "path": "tbl-gn-payment-types",
+                  "text": "Kiểu Thanh Toán"
+                },
+                {
+                  "icon": "",
+                  "path": "tbl-gn-ship-via",
+                  "text": "Ship Via"
                 }
               ],
               "text": "Cài đặt"
