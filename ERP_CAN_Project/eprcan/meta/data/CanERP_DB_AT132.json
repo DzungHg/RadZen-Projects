@@ -415,6 +415,12 @@
         },
         "Description": {
           "type": "string"
+        },
+        "TblPoPurchaseOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblPoPurchaseOrder"
+          }
         }
       }
     },

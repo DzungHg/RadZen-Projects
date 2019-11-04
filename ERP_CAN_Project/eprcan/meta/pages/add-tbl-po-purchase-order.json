@@ -235,6 +235,7 @@
                             {
                               "maxLength": 150,
                               "name": "Description",
+                              "placeholder": "",
                               "style": {
                                 "width": "100%"
                               },
@@ -270,17 +271,17 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "data": "${getIncotermsResult}",
+                              "data": "${getTblIncotermsResult}",
                               "itemType": "ErpCan.Models.CanErpDbAt132.TblGnIncoterm",
                               "name": "dropdown0",
-                              "placeholder": "Chọn incoterm",
                               "style": {
                                 "width": "100%"
                               },
-                              "textProperty": "Incoterm_ID",
+                              "template": "",
+                              "textProperty": "Incoterm_Name",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Incoterm_ID}",
-                              "valueProperty": "Incoterm_Name"
+                              "valueProperty": "Incoterm_ID"
                             }
                           ],
                           "type": "col"
@@ -755,7 +756,7 @@
         "name": "CanERP_DB_AT132.getTblGnIncoterms",
         "then": [
           {
-            "name": "getIncotermsResult",
+            "name": "getTblIncotermsResult",
             "type": "set",
             "value": "${result}",
             "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm>"

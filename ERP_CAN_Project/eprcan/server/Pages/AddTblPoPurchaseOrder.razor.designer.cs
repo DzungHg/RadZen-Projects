@@ -126,18 +126,18 @@ namespace ErpCan.Pages
             }
         }
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> _getIncotermsResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> getIncotermsResult
+        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> _getTblIncotermsResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> getTblIncotermsResult
         {
             get
             {
-                return _getIncotermsResult;
+                return _getTblIncotermsResult;
             }
             set
             {
-                if(_getIncotermsResult != value)
+                if(_getTblIncotermsResult != value)
                 {
-                    _getIncotermsResult = value;
+                    _getTblIncotermsResult = value;
                     InvokeAsync(() => { StateHasChanged(); });
                 }
             }
@@ -186,7 +186,7 @@ namespace ErpCan.Pages
             getTblGnPaymentTypesResult = canErpDbAt132GetTblGnPaymentTypesResult;
 
             var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
-            getIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
+            getTblIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             tblpopurchaseorder = new ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder();
         }
