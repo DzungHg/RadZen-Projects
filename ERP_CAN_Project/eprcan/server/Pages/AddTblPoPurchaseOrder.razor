@@ -13,7 +13,7 @@
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="PO_ID" style="width: 100%" Text="PO ID">
+                <RadzenLabel Component="PO_ID" style="width: 100%" Text="Po Id">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -25,7 +25,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="PODate" style="width: 100%" Text="Ngày PO">
+                <RadzenLabel Component="PODate" style="width: 100%" Text="Po Date">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -35,17 +35,17 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="CreatedBy_FK" style="width: 100%" Text="Nhân viên tạo">
+                <RadzenLabel Component="CreatedBy_FK" style="width: 100%" Text="Tbl Gn Address Book">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="FirstName" @bind-Value="@((tblpopurchaseorder.CreatedBy_FK))" ValueProperty="AddressBook_SEQ" Name="CreatedBy_FK">
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpopurchaseorder.CreatedBy_FK))" ValueProperty="AddressBook_SEQ" Name="CreatedBy_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="POStatus_FK" style="width: 100%" Text="Tình trạng PO">
+                <RadzenLabel Component="POStatus_FK" style="width: 100%" Text="Tbl Po Order Status">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -55,7 +55,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Vendor_FK" style="width: 100%" Text="Nhà cung cấp">
+                <RadzenLabel Component="Vendor_FK" style="width: 100%" Text="Tbl Po Vendor">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -65,7 +65,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Description" style="width: 100%" Text="Diễn giải">
+                <RadzenLabel Component="Description" style="width: 100%" Text="Description">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -75,17 +75,17 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Incoterm_ID" style="width: 100%" Text="Incoterm">
+                <RadzenLabel Component="Incoterm_FK" style="width: 100%" Text="Tbl Gn Incoterm">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIncotermsResult)" TItem="ErpCan.Models.CanErpDbAt132.TblGnIncoterm" Placeholder="Choose TblPoOrderStatus" style="width: 100%" TextProperty="POStatusText" @bind-Value="@((tblpopurchaseorder.POStatus_FK))" ValueProperty="POStatus_ID" Name="Incoterm_FK">
+                <RadzenDropDown Data="@(getTblGnIncotermsResult)" Placeholder="Choose TblGnIncoterm" style="width: 100%" TextProperty="Incoterm_Name" @bind-Value="@((tblpopurchaseorder.Incoterm_FK))" ValueProperty="Incoterm_ID" Name="Incoterm_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="ShipVia_FK" style="width: 100%" Text="Ship via">
+                <RadzenLabel Component="ShipVia_FK" style="width: 100%" Text="Tbl Gn Ship Vium">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -95,7 +95,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="PaymentTerm_FK" style="width: 100%" Text="Điều kiện thanh toán">
+                <RadzenLabel Component="PaymentTerm_FK" style="width: 100%" Text="Tbl Gn Payment Term">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -105,7 +105,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="PaymentType_FK" style="width: 100%" Text="Kiểu thanh toán">
+                <RadzenLabel Component="PaymentType_FK" style="width: 100%" Text="Tbl Gn Payment Type">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -115,17 +115,17 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Buyer_FK" style="width: 100%" Text="Nhân viên đặt mua">
+                <RadzenLabel Component="Buyer_FK" style="width: 100%" Text="Tbl Gn Address Book">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="FirstName" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" ValueProperty="AddressBook_SEQ" Name="Buyer_FK">
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" ValueProperty="AddressBook_SEQ" Name="Buyer_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="TaxYN" style="width: 100%" Text="Có thuế?">
+                <RadzenLabel Component="TaxYN" style="width: 100%" Text="Tax Yn">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -145,7 +145,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Department_FK" style="width: 100%" Text="Bộ phận đặt">
+                <RadzenLabel Component="Department_FK" style="width: 100%" Text="Department Fk">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -155,7 +155,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="PO_Amount" style="width: 100%" Text="Thành tiền PO">
+                <RadzenLabel Component="PO_Amount" style="width: 100%" Text="Po Amount">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">

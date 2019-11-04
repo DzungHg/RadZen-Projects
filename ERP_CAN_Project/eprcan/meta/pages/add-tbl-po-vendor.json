@@ -20,7 +20,7 @@
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Danh bạ khách hàng",
+                              "text": "Nhà cung cấp",
                               "type": "label"
                             }
                           ],
@@ -48,21 +48,20 @@
                                       "$ref": "#/definitions/Void",
                                       "dotnetType": "System.Void"
                                     },
-                                    "then": [],
                                     "type": "invoke-method"
                                   }
                                 ]
                               },
                               "name": "VendorAddressBook_FK",
-                              "placeholder": "Choose VendorAddress",
+                              "placeholder": "Choose TblGnAddressBook",
                               "style": {
                                 "width": "100%"
                               },
-                              "template": "",
-                              "textProperty": "OrganizationName",
+                              "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpovendor.VendorAddressBook_FK}",
-                              "valueProperty": "AddressBook_SEQ"
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
                             }
                           ],
                           "name": "col1",
@@ -86,7 +85,7 @@
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Mã nhà cung cấp",
+                              "text": "Vendor Id",
                               "type": "label"
                             }
                           ],
@@ -98,12 +97,14 @@
                             {
                               "maxLength": 10,
                               "name": "Vendor_ID",
+                              "readOnly": false,
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.Vendor_ID}"
+                              "value": "${tblpovendor.Vendor_ID}",
+                              "valueType": "string"
                             },
                             {
                               "component": "Vendor_ID",
@@ -146,12 +147,12 @@
                             {
                               "maxLength": 50,
                               "name": "LastName",
-                              "placeholder": "",
                               "style": {
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.LastName}"
+                              "value": "${tblpovendor.LastName}",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -185,12 +186,12 @@
                             {
                               "maxLength": 50,
                               "name": "FirstName",
-                              "placeholder": "",
                               "style": {
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.FirstName}"
+                              "value": "${tblpovendor.FirstName}",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -212,7 +213,7 @@
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Đánh giá thành tích",
+                              "text": "Performing Rating",
                               "type": "label"
                             }
                           ],
@@ -228,7 +229,46 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.Performing_Rating}"
+                              "value": "${tblpovendor.Performing_Rating}",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "AP_Balance",
+                              "name": "AP_BalanceLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Ap Balance",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "AP_Balance",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${tblpovendor.AP_Balance}",
+                              "valueType": "decimal?"
                             }
                           ],
                           "type": "col"
@@ -250,7 +290,7 @@
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Ghi chú",
+                              "text": "Notes",
                               "type": "label"
                             }
                           ],
@@ -261,9 +301,8 @@
                           "components": [
                             {
                               "name": "textarea0",
-                              "placeholder": "Ghi chú",
                               "style": {
-                                "width": "435px"
+                                "width": "100%"
                               },
                               "type": "textarea",
                               "value": "${tblpovendor.Notes}"
@@ -272,43 +311,6 @@
                           "type": "col"
                         }
                       ],
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "components": [
-                        {
-                          "class": "col-md-3",
-                          "components": [
-                            {
-                              "component": "Notes",
-                              "name": "label0",
-                              "style": {
-                                "width": "100%"
-                              },
-                              "text": "Không còn dùng",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col2",
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-md-4",
-                          "components": [
-                            {
-                              "name": "checkbox0",
-                              "type": "checkbox",
-                              "value": "${tblpovendor.Inactive}"
-                            }
-                          ],
-                          "name": "col3",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row1",
                       "style": {
                         "marginBottom": "1rem"
                       },
@@ -400,7 +402,7 @@
             "name": "getVwVendorsResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor>"
+            "valueType": "IEnumerable<VwVendor>"
           }
         ],
         "type": "invoke"

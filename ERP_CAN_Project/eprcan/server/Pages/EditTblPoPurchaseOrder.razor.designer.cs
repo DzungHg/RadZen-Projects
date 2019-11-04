@@ -95,8 +95,8 @@ namespace ErpCan.Pages
             }
         }
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> _getTblPoVendorsResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> getTblPoVendorsResult
+        IEnumerable<VwVendor> _getTblPoVendorsResult;
+        protected IEnumerable<VwVendor> getTblPoVendorsResult
         {
             get
             {
@@ -107,6 +107,23 @@ namespace ErpCan.Pages
                 if(_getTblPoVendorsResult != value)
                 {
                     _getTblPoVendorsResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> _getTblGnIncotermsResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> getTblGnIncotermsResult
+        {
+            get
+            {
+                return _getTblGnIncotermsResult;
+            }
+            set
+            {
+                if(_getTblGnIncotermsResult != value)
+                {
+                    _getTblGnIncotermsResult = value;
                     InvokeAsync(() => { StateHasChanged(); });
                 }
             }
@@ -141,23 +158,6 @@ namespace ErpCan.Pages
                 if(_getTblGnPaymentTermsResult != value)
                 {
                     _getTblGnPaymentTermsResult = value;
-                    InvokeAsync(() => { StateHasChanged(); });
-                }
-            }
-        }
-
-        IEnumerable<TblGnIncoterm> _getTblGNIncotermsResult;
-        protected IEnumerable<TblGnIncoterm> getTblGNIncotermsResult
-        {
-            get
-            {
-                return _getTblGNIncotermsResult;
-            }
-            set
-            {
-                if(_getTblGNIncotermsResult != value)
-                {
-                    _getTblGNIncotermsResult = value;
                     InvokeAsync(() => { StateHasChanged(); });
                 }
             }
@@ -198,17 +198,17 @@ namespace ErpCan.Pages
             var canErpDbAt132GetTblPoOrderStatusesResult = await CanErpDbAt132.GetTblPoOrderStatuses();
             getTblPoOrderStatusesResult = canErpDbAt132GetTblPoOrderStatusesResult;
 
-            var canErpDbAt132GetTblPoVendorsResult = await CanErpDbAt132.GetTblPoVendors();
-            getTblPoVendorsResult = canErpDbAt132GetTblPoVendorsResult;
+            var canErpDbAt132GetVwVendorsResult = await CanErpDbAt132.GetVwVendors();
+            getTblPoVendorsResult = canErpDbAt132GetVwVendorsResult;
+
+            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
+            getTblGnIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             var canErpDbAt132GetTblGnShipViaResult = await CanErpDbAt132.GetTblGnShipVia();
             getTblGnShipViaResult = canErpDbAt132GetTblGnShipViaResult;
 
             var canErpDbAt132GetTblGnPaymentTermsResult = await CanErpDbAt132.GetTblGnPaymentTerms();
             getTblGnPaymentTermsResult = canErpDbAt132GetTblGnPaymentTermsResult;
-
-            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
-            getTblGNIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             var canErpDbAt132GetTblGnPaymentTypesResult = await CanErpDbAt132.GetTblGnPaymentTypes();
             getTblGnPaymentTypesResult = canErpDbAt132GetTblGnPaymentTypesResult;

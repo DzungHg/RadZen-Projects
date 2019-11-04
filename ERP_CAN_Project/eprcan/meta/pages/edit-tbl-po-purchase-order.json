@@ -64,6 +64,7 @@
                           "components": [
                             {
                               "component": "PO_ID",
+                              "name": "PO_IDLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -84,7 +85,8 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpopurchaseorder.PO_ID}"
+                              "value": "${tblpopurchaseorder.PO_ID}",
+                              "valueType": "string"
                             },
                             {
                               "component": "PO_ID",
@@ -111,6 +113,7 @@
                           "components": [
                             {
                               "component": "PODate",
+                              "name": "PODateLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -130,7 +133,8 @@
                                 "width": "100%"
                               },
                               "type": "datepicker",
-                              "value": "${tblpopurchaseorder.PODate}"
+                              "value": "${tblpopurchaseorder.PODate}",
+                              "valueType": "DateTime?"
                             }
                           ],
                           "type": "col"
@@ -148,6 +152,7 @@
                           "components": [
                             {
                               "component": "CreatedBy_FK",
+                              "name": "CreatedBy_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -170,7 +175,8 @@
                               "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.CreatedBy_FK}",
-                              "valueProperty": "AddressBook_SEQ"
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
                             }
                           ],
                           "type": "col"
@@ -188,6 +194,7 @@
                           "components": [
                             {
                               "component": "POStatus_FK",
+                              "name": "POStatus_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -210,7 +217,8 @@
                               "textProperty": "POStatusText",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.POStatus_FK}",
-                              "valueProperty": "POStatus_ID"
+                              "valueProperty": "POStatus_ID",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -228,6 +236,7 @@
                           "components": [
                             {
                               "component": "Vendor_FK",
+                              "name": "Vendor_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -250,7 +259,8 @@
                               "textProperty": "LastName",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Vendor_FK}",
-                              "valueProperty": "Vendor_ID"
+                              "valueProperty": "Vendor_ID",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -268,6 +278,7 @@
                           "components": [
                             {
                               "component": "Description",
+                              "name": "DescriptionLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -287,7 +298,8 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpopurchaseorder.Description}"
+                              "value": "${tblpopurchaseorder.Description}",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -304,11 +316,12 @@
                           "class": "col-md-3",
                           "components": [
                             {
-                              "component": "Incoterm_ID",
+                              "component": "Incoterm_FK",
+                              "name": "Incoterm_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Incoterm Id",
+                              "text": "Tbl Gn Incoterm",
                               "type": "label"
                             }
                           ],
@@ -316,7 +329,21 @@
                         },
                         {
                           "class": "col-md-9",
-                          "components": [],
+                          "components": [
+                            {
+                              "data": "${getTblGnIncotermsResult}",
+                              "name": "Incoterm_FK",
+                              "placeholder": "Choose TblGnIncoterm",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "textProperty": "Incoterm_Name",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.Incoterm_FK}",
+                              "valueProperty": "Incoterm_ID",
+                              "valueType": "string"
+                            }
+                          ],
                           "type": "col"
                         }
                       ],
@@ -332,6 +359,7 @@
                           "components": [
                             {
                               "component": "ShipVia_FK",
+                              "name": "ShipVia_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -354,7 +382,8 @@
                               "textProperty": "ShipVia_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.ShipVia_FK}",
-                              "valueProperty": "ShipVia_SEQ"
+                              "valueProperty": "ShipVia_SEQ",
+                              "valueType": "int?"
                             }
                           ],
                           "type": "col"
@@ -372,6 +401,7 @@
                           "components": [
                             {
                               "component": "PaymentTerm_FK",
+                              "name": "PaymentTerm_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -394,7 +424,8 @@
                               "textProperty": "PaymentTerm_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.PaymentTerm_FK}",
-                              "valueProperty": "PaymentTerm_SEQ"
+                              "valueProperty": "PaymentTerm_SEQ",
+                              "valueType": "int?"
                             }
                           ],
                           "type": "col"
@@ -412,6 +443,7 @@
                           "components": [
                             {
                               "component": "PaymentType_FK",
+                              "name": "PaymentType_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -434,7 +466,8 @@
                               "textProperty": "PaymentType_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.PaymentType_FK}",
-                              "valueProperty": "PaymentType_SEQ"
+                              "valueProperty": "PaymentType_SEQ",
+                              "valueType": "int?"
                             }
                           ],
                           "type": "col"
@@ -452,10 +485,11 @@
                           "components": [
                             {
                               "component": "Buyer_FK",
+                              "name": "Buyer_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
-                              "text": "Buyer Fk",
+                              "text": "Tbl Gn Address Book",
                               "type": "label"
                             }
                           ],
@@ -465,12 +499,17 @@
                           "class": "col-md-9",
                           "components": [
                             {
+                              "data": "${getTblGnAddressBooksResult}",
                               "name": "Buyer_FK",
+                              "placeholder": "Choose TblGnAddressBook",
                               "style": {
                                 "width": "100%"
                               },
-                              "type": "numeric",
-                              "value": "${tblpopurchaseorder.Buyer_FK}"
+                              "textProperty": "AddressBook_ID",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.Buyer_FK}",
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
                             }
                           ],
                           "type": "col"
@@ -488,6 +527,7 @@
                           "components": [
                             {
                               "component": "TaxYN",
+                              "name": "TaxYNLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -504,7 +544,8 @@
                               "name": "TaxYN",
                               "triState": true,
                               "type": "checkbox",
-                              "value": "${tblpopurchaseorder.TaxYN}"
+                              "value": "${tblpopurchaseorder.TaxYN}",
+                              "valueType": "bool?"
                             }
                           ],
                           "type": "col"
@@ -522,6 +563,7 @@
                           "components": [
                             {
                               "component": "TaxtRate",
+                              "name": "TaxtRateLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -540,7 +582,8 @@
                                 "width": "100%"
                               },
                               "type": "numeric",
-                              "value": "${tblpopurchaseorder.TaxtRate}"
+                              "value": "${tblpopurchaseorder.TaxtRate}",
+                              "valueType": "double?"
                             }
                           ],
                           "type": "col"
@@ -558,6 +601,7 @@
                           "components": [
                             {
                               "component": "Department_FK",
+                              "name": "Department_FKLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -577,7 +621,8 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpopurchaseorder.Department_FK}"
+                              "value": "${tblpopurchaseorder.Department_FK}",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
@@ -595,6 +640,7 @@
                           "components": [
                             {
                               "component": "PO_Amount",
+                              "name": "PO_AmountLabel",
                               "style": {
                                 "width": "100%"
                               },
@@ -613,7 +659,8 @@
                                 "width": "100%"
                               },
                               "type": "numeric",
-                              "value": "${tblpopurchaseorder.PO_Amount}"
+                              "value": "${tblpopurchaseorder.PO_Amount}",
+                              "valueType": "decimal?"
                             }
                           ],
                           "type": "col"
@@ -659,7 +706,6 @@
                   "events": {
                     "submit": [
                       {
-                        "argType": "ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder",
                         "error": [
                           {
                             "detail": "Unable to update TblPoPurchaseOrder",
@@ -759,14 +805,27 @@
         "type": "invoke"
       },
       {
-        "name": "CanERP_DB_AT132.getTblPoVendors",
+        "name": "CanERP_DB_AT132.getVwVendors",
         "parameters": [],
         "then": [
           {
             "name": "getTblPoVendorsResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor>"
+            "valueType": "IEnumerable<VwVendor>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "CanERP_DB_AT132.getTblGnIncoterms",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTblGnIncotermsResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm>"
           }
         ],
         "type": "invoke"
@@ -793,18 +852,6 @@
             "type": "set",
             "value": "${result}",
             "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnPaymentTerm>"
-          }
-        ],
-        "type": "invoke"
-      },
-      {
-        "name": "CanERP_DB_AT132.getTblGnIncoterms",
-        "then": [
-          {
-            "name": "getTblGNIncotermsResult",
-            "type": "set",
-            "value": "${result}",
-            "valueType": "IEnumerable<TblGnIncoterm>"
           }
         ],
         "type": "invoke"

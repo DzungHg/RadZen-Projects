@@ -13,21 +13,21 @@
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="VendorAddressBook_FK" style="width: 100%" Text="Danh bạ khách hàng">
+                <RadzenLabel Component="VendorAddressBook_FK" style="width: 100%" Text="Nhà cung cấp">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getVwVendorsResult)" Placeholder="Choose VendorAddress" style="width: 100%" TextProperty="OrganizationName" @bind-Value="@((tblpovendor.VendorAddressBook_FK))" ValueProperty="AddressBook_SEQ" Name="VendorAddressBook_FK" Change="@VendorAddressBookFkChange">
+                <RadzenDropDown Data="@(getVwVendorsResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpovendor.VendorAddressBook_FK))" ValueProperty="AddressBook_SEQ" Name="VendorAddressBook_FK" Change="@VendorAddressBookFkChange">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Vendor_ID" style="width: 100%" Text="Mã nhà cung cấp">
+                <RadzenLabel Component="Vendor_ID" style="width: 100%" Text="Vendor Id">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="10" style="display: block; width: 100%" @bind-Value="@((tblpovendor.Vendor_ID))" Name="Vendor_ID">
+                <RadzenTextBox MaxLength="10" ReadOnly="false" style="display: block; width: 100%" @bind-Value="@((tblpovendor.Vendor_ID))" Name="Vendor_ID">
                 </RadzenTextBox>
                 <RadzenRequiredValidator Component="Vendor_ID" style="position: absolute" Text="Vendor_ID is required">
                 </RadzenRequiredValidator>
@@ -55,7 +55,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Performing_Rating" style="width: 100%" Text="Đánh giá thành tích">
+                <RadzenLabel Component="Performing_Rating" style="width: 100%" Text="Performing Rating">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -65,22 +65,22 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Notes" style="width: 100%" Text="Ghi chú">
+                <RadzenLabel Component="AP_Balance" style="width: 100%" Text="Ap Balance">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextArea Placeholder="Ghi chú" style="width: 435px" @bind-Value="@((tblpovendor.Notes))" Name="Textarea0">
-                </RadzenTextArea>
+                <RadzenNumeric style="width: 100%" @bind-Value="@((tblpovendor.AP_Balance))" Name="AP_Balance">
+                </RadzenNumeric>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Notes" style="width: 100%" Text="Không còn dùng">
+                <RadzenLabel Component="Notes" style="width: 100%" Text="Notes">
                 </RadzenLabel>
               </div>
-              <div class="col-md-4">
-                <RadzenCheckBox @bind-Value="@((tblpovendor.Inactive))" Name="Checkbox0">
-                </RadzenCheckBox>
+              <div class="col-md-9">
+                <RadzenTextArea style="width: 100%" @bind-Value="@((tblpovendor.Notes))" Name="Textarea0">
+                </RadzenTextArea>
               </div>
             </div>
             <div class="row">

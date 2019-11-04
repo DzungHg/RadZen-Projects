@@ -85,10 +85,12 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Incoterm_ID" style="width: 100%" Text="Incoterm Id">
+                <RadzenLabel Component="Incoterm_FK" style="width: 100%" Text="Tbl Gn Incoterm">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
+                <RadzenDropDown Data="@(getTblGnIncotermsResult)" Placeholder="Choose TblGnIncoterm" style="width: 100%" TextProperty="Incoterm_Name" @bind-Value="@((tblpopurchaseorder.Incoterm_FK))" ValueProperty="Incoterm_ID" Name="Incoterm_FK">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
@@ -123,12 +125,12 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Buyer_FK" style="width: 100%" Text="Buyer Fk">
+                <RadzenLabel Component="Buyer_FK" style="width: 100%" Text="Tbl Gn Address Book">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenNumeric style="width: 100%" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" Name="Buyer_FK">
-                </RadzenNumeric>
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" ValueProperty="AddressBook_SEQ" Name="Buyer_FK">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">

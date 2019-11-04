@@ -2,7 +2,7 @@
   "components": [
     {
       "type": "content",
-      "container": "main",
+      "container": "contentContainer0",
       "components": [
         {
           "type": "heading",
@@ -30,75 +30,60 @@
                   "columns": [
                     {
                       "property": "AddressBook_SEQ",
-                      "title": "Address Book SEQ",
-                      "type": "integer"
+                      "title": "Address Book SEQ"
                     },
                     {
                       "property": "AddressBook_ID",
-                      "title": "Address Book ID",
-                      "type": "string"
+                      "title": "Address Book ID"
                     },
                     {
                       "property": "AddressBookType_FK",
-                      "title": "Address Book Type FK",
-                      "type": "integer"
+                      "title": "Address Book Type FK"
                     },
                     {
                       "property": "LastName",
-                      "title": "Last Name",
-                      "type": "string"
+                      "title": "Last Name"
                     },
                     {
                       "property": "FirstName",
-                      "title": "First Name",
-                      "type": "string"
+                      "title": "First Name"
                     },
                     {
                       "property": "Gender_FK",
-                      "title": "Gender FK",
-                      "type": "integer"
+                      "title": "Gender FK"
                     },
                     {
-                      "format": "date-time",
                       "property": "DOB",
-                      "formatString": "{0:ddMM/yyyy}",
-                      "title": "DOB",
-                      "type": "string"
+                      "formatString": "{0:MM/dd/yyyy}",
+                      "title": "DOB"
                     },
                     {
                       "property": "Origin",
-                      "title": "Origin",
-                      "type": "string"
+                      "title": "Origin"
                     },
                     {
                       "property": "IDNumber",
-                      "title": "ID Number",
-                      "type": "string"
+                      "title": "ID Number"
                     },
                     {
                       "property": "TaxIDNumber",
-                      "title": "Tax ID Number",
-                      "type": "string"
+                      "title": "Tax ID Number"
                     },
                     {
                       "property": "OrganizationName",
-                      "title": "Organization Name",
-                      "type": "string"
+                      "title": "Organization Name"
                     },
                     {
                       "property": "JobPosition",
-                      "title": "Job Position",
-                      "type": "string"
+                      "title": "Job Position"
                     },
                     {
                       "property": "Address",
-                      "title": "Address",
-                      "type": "string"
+                      "title": "Address"
                     },
                     {
                       "property": "City_FK",
-                      "title": "City FK",
-                      "type": "integer"
+                      "title": "City FK"
                     }
                   ],
                   "type": "grid",
@@ -129,6 +114,5 @@
     ]
   },
   "name": "Vw Employees",
-  "layout": "Main",
-  "access": []
+  "layout": "Main"
 }
