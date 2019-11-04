@@ -414,7 +414,8 @@
           "length": 15
         },
         "Description": {
-          "type": "string"
+          "type": "string",
+          "length": 250
         },
         "TblPoPurchaseOrders": {
           "type": "array",
@@ -1775,7 +1776,7 @@
           "type": "object",
           "$ref": "#/definitions/TblGnIncoterm"
         },
-        "Incoterm_ID": {
+        "Incoterm_FK": {
           "type": "string",
           "length": 3,
           "x-foreignKey": {

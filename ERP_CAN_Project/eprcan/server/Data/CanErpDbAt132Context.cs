@@ -151,7 +151,7 @@ namespace ErpCan.Data
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder>()
               .HasOne(i => i.TblGnIncoterm)
               .WithMany(i => i.TblPoPurchaseOrders)
-              .HasForeignKey(i => i.Incoterm_ID)
+              .HasForeignKey(i => i.Incoterm_FK)
               .HasPrincipalKey(i => i.Incoterm_ID);
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder>()
               .HasOne(i => i.TblGnShipVium)

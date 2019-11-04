@@ -79,7 +79,7 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblIncotermsResult)" TItem="ErpCan.Models.CanErpDbAt132.TblGnIncoterm" style="width: 100%" TextProperty="Incoterm_Name" @bind-Value="@((tblpopurchaseorder.Incoterm_ID))" ValueProperty="Incoterm_ID" Name="Dropdown0">
+                <RadzenDropDown Data="@(getTblIncotermsResult)" TItem="ErpCan.Models.CanErpDbAt132.TblGnIncoterm" Placeholder="Choose TblPoOrderStatus" style="width: 100%" TextProperty="POStatusText" @bind-Value="@((tblpopurchaseorder.POStatus_FK))" ValueProperty="POStatus_ID" Name="Incoterm_FK">
                 </RadzenDropDown>
               </div>
             </div>

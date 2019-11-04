@@ -45,7 +45,7 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-    public string Incoterm_ID
+    public string Incoterm_FK
     {
       get;
       set;

@@ -155,6 +155,11 @@
                   "icon": "",
                   "path": "tbl-gn-ship-via",
                   "text": "Ship Via"
+                },
+                {
+                  "icon": "",
+                  "path": "tbl-po-order-statuses",
+                  "text": "PO Status"
                 }
               ],
               "text": "Cài đặt"

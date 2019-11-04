@@ -146,6 +146,23 @@ namespace ErpCan.Pages
             }
         }
 
+        IEnumerable<TblGnIncoterm> _getTblGNIncotermsResult;
+        protected IEnumerable<TblGnIncoterm> getTblGNIncotermsResult
+        {
+            get
+            {
+                return _getTblGNIncotermsResult;
+            }
+            set
+            {
+                if(_getTblGNIncotermsResult != value)
+                {
+                    _getTblGNIncotermsResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnPaymentType> _getTblGnPaymentTypesResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnPaymentType> getTblGnPaymentTypesResult
         {
@@ -189,6 +206,9 @@ namespace ErpCan.Pages
 
             var canErpDbAt132GetTblGnPaymentTermsResult = await CanErpDbAt132.GetTblGnPaymentTerms();
             getTblGnPaymentTermsResult = canErpDbAt132GetTblGnPaymentTermsResult;
+
+            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
+            getTblGNIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             var canErpDbAt132GetTblGnPaymentTypesResult = await CanErpDbAt132.GetTblGnPaymentTypes();
             getTblGnPaymentTypesResult = canErpDbAt132GetTblGnPaymentTypesResult;

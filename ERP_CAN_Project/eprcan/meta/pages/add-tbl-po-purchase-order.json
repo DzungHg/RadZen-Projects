@@ -273,15 +273,16 @@
                             {
                               "data": "${getTblIncotermsResult}",
                               "itemType": "ErpCan.Models.CanErpDbAt132.TblGnIncoterm",
-                              "name": "dropdown0",
+                              "name": "Incoterm_FK",
+                              "placeholder": "Choose TblPoOrderStatus",
                               "style": {
                                 "width": "100%"
                               },
                               "template": "",
-                              "textProperty": "Incoterm_Name",
+                              "textProperty": "POStatusText",
                               "type": "dropdown",
-                              "value": "${tblpopurchaseorder.Incoterm_ID}",
-                              "valueProperty": "Incoterm_ID"
+                              "value": "${tblpopurchaseorder.POStatus_FK}",
+                              "valueProperty": "POStatus_ID"
                             }
                           ],
                           "type": "col"
