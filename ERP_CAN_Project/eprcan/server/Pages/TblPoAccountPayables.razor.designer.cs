@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblPoAccountPayable args)
         {
-            var result = await DialogService.OpenAsync<EditTblPoAccountPayable>("Edit Tbl Po Account Payable", new Dictionary<string, object>() { {"AP_No", $"{args.AP_No}"} });
+            var result = await DialogService.OpenAsync<EditTblPoAccountPayable>("Edit Tbl Po Account Payable", new Dictionary<string, object>() { {"AP_No", args.AP_No} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

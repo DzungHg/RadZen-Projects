@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string PaymentTerm_SEQ { get; set; }
+        public dynamic PaymentTerm_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +70,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnPaymentTermByPaymentTermSeqResult = await CanErpDbAt132.GetTblGnPaymentTermByPaymentTermSeq(int.Parse(PaymentTerm_SEQ));
+            var canErpDbAt132GetTblGnPaymentTermByPaymentTermSeqResult = await CanErpDbAt132.GetTblGnPaymentTermByPaymentTermSeq(int.Parse($"{PaymentTerm_SEQ}"));
             tblgnpaymentterm = canErpDbAt132GetTblGnPaymentTermByPaymentTermSeqResult;
         }
 
@@ -83,7 +83,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnPaymentTermResult = await CanErpDbAt132.UpdateTblGnPaymentTerm(int.Parse(PaymentTerm_SEQ), tblgnpaymentterm);
+                var canErpDbAt132UpdateTblGnPaymentTermResult = await CanErpDbAt132.UpdateTblGnPaymentTerm(int.Parse($"{PaymentTerm_SEQ}"), tblgnpaymentterm);
                 DialogService.Close(tblgnpaymentterm);
             }
             catch (Exception canErpDbAt132UpdateTblGnPaymentTermException)

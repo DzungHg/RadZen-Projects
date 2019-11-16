@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblPoCashDisbursement args)
         {
-            var result = await DialogService.OpenAsync<EditTblPoCashDisbursement>("Edit Tbl Po Cash Disbursement", new Dictionary<string, object>() { {"PO_CashDisb_No", $"{args.PO_CashDisb_No}"} });
+            var result = await DialogService.OpenAsync<EditTblPoCashDisbursement>("Edit Tbl Po Cash Disbursement", new Dictionary<string, object>() { {"PO_CashDisb_No", args.PO_CashDisb_No} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

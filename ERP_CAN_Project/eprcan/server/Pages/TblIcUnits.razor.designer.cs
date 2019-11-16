@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblIcUnit args)
         {
-            var result = await DialogService.OpenAsync<EditTblIcUnit>("Edit Tbl Ic Unit", new Dictionary<string, object>() { {"Unit_SEQ", $"{args.Unit_SEQ}"} });
+            var result = await DialogService.OpenAsync<EditTblIcUnit>("Edit Tbl Ic Unit", new Dictionary<string, object>() { {"Unit_SEQ", args.Unit_SEQ} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

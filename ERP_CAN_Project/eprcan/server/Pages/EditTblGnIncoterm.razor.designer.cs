@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Incoterm_ID { get; set; }
+        public dynamic Incoterm_ID { get; set; }
 
         bool _canEdit;
         protected bool canEdit

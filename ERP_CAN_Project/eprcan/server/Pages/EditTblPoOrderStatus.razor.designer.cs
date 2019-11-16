@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string POStatus_ID { get; set; }
+        public dynamic POStatus_ID { get; set; }
 
         bool _canEdit;
         protected bool canEdit

@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Warehouse_ID { get; set; }
+        public dynamic Warehouse_ID { get; set; }
 
         bool _canEdit;
         protected bool canEdit

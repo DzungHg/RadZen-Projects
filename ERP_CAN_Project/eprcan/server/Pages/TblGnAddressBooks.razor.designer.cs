@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblGnAddressBook args)
         {
-            var result = await DialogService.OpenAsync<EditTblGnAddressBook>("Edit Tbl Gn Address Book", new Dictionary<string, object>() { {"AddressBook_SEQ", $"{args.AddressBook_SEQ}"} });
+            var result = await DialogService.OpenAsync<EditTblGnAddressBook>("Edit Tbl Gn Address Book", new Dictionary<string, object>() { {"AddressBook_SEQ", args.AddressBook_SEQ} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

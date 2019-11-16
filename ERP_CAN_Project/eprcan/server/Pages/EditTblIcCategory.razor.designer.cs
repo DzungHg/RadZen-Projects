@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Category_ID { get; set; }
+        public dynamic Category_ID { get; set; }
 
         bool _canEdit;
         protected bool canEdit

@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Transaction_ID { get; set; }
+        public dynamic Transaction_ID { get; set; }
 
         bool _canEdit;
         protected bool canEdit

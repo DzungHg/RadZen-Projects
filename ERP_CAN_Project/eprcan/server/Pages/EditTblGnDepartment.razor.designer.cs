@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Department_ID { get; set; }
+        public dynamic Department_ID { get; set; }
 
         bool _canEdit;
         protected bool canEdit

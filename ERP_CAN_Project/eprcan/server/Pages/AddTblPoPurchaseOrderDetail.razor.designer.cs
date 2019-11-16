@@ -24,6 +24,9 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
+        [Parameter]
+        public dynamic PO_FK { get; set; }
+
         IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder> _getTblPoPurchaseOrdersResult;
         protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder> getTblPoPurchaseOrdersResult
         {

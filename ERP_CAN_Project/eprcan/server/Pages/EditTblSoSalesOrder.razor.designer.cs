@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string SO_SEQ { get; set; }
+        public dynamic SO_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -155,7 +155,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblSoSalesOrderBySoSeqResult = await CanErpDbAt132.GetTblSoSalesOrderBySoSeq(int.Parse(SO_SEQ));
+            var canErpDbAt132GetTblSoSalesOrderBySoSeqResult = await CanErpDbAt132.GetTblSoSalesOrderBySoSeq(int.Parse($"{SO_SEQ}"));
             tblsosalesorder = canErpDbAt132GetTblSoSalesOrderBySoSeqResult;
 
             var canErpDbAt132GetTblSoOrderStatusesResult = await CanErpDbAt132.GetTblSoOrderStatuses();
@@ -183,7 +183,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblSoSalesOrderResult = await CanErpDbAt132.UpdateTblSoSalesOrder(int.Parse(SO_SEQ), tblsosalesorder);
+                var canErpDbAt132UpdateTblSoSalesOrderResult = await CanErpDbAt132.UpdateTblSoSalesOrder(int.Parse($"{SO_SEQ}"), tblsosalesorder);
                 DialogService.Close(tblsosalesorder);
             }
             catch (Exception canErpDbAt132UpdateTblSoSalesOrderException)

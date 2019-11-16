@@ -25,10 +25,10 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Vendor_ID { get; set; }
+        public dynamic Vendor_ID { get; set; }
 
         [Parameter]
-        public string Invoice_No { get; set; }
+        public dynamic Invoice_No { get; set; }
 
         bool _canEdit;
         protected bool canEdit

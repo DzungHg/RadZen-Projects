@@ -24,8 +24,8 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.VwEmployee> _getTblGnAddressBooksResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.VwEmployee> getTblGnAddressBooksResult
+        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> _getTblGnAddressBooksResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> getTblGnAddressBooksResult
         {
             get
             {
@@ -70,6 +70,23 @@ namespace ErpCan.Pages
                 if(_getTblPoVendorsResult != value)
                 {
                     _getTblPoVendorsResult = value;
+                    InvokeAsync(() => { StateHasChanged(); });
+                }
+            }
+        }
+
+        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> _getTblGnIncotermsResult;
+        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> getTblGnIncotermsResult
+        {
+            get
+            {
+                return _getTblGnIncotermsResult;
+            }
+            set
+            {
+                if(_getTblGnIncotermsResult != value)
+                {
+                    _getTblGnIncotermsResult = value;
                     InvokeAsync(() => { StateHasChanged(); });
                 }
             }
@@ -126,23 +143,6 @@ namespace ErpCan.Pages
             }
         }
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> _getTblIncotermsResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblGnIncoterm> getTblIncotermsResult
-        {
-            get
-            {
-                return _getTblIncotermsResult;
-            }
-            set
-            {
-                if(_getTblIncotermsResult != value)
-                {
-                    _getTblIncotermsResult = value;
-                    InvokeAsync(() => { StateHasChanged(); });
-                }
-            }
-        }
-
         ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder _tblpopurchaseorder;
         protected ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder tblpopurchaseorder
         {
@@ -167,14 +167,17 @@ namespace ErpCan.Pages
 
         protected async void Load()
         {
-            var canErpDbAt132GetVwEmployeesResult = await CanErpDbAt132.GetVwEmployees();
-            getTblGnAddressBooksResult = canErpDbAt132GetVwEmployeesResult;
+            var canErpDbAt132GetTblGnAddressBooksResult = await CanErpDbAt132.GetTblGnAddressBooks();
+            getTblGnAddressBooksResult = canErpDbAt132GetTblGnAddressBooksResult;
 
             var canErpDbAt132GetTblPoOrderStatusesResult = await CanErpDbAt132.GetTblPoOrderStatuses();
             getTblPoOrderStatusesResult = canErpDbAt132GetTblPoOrderStatusesResult;
 
             var canErpDbAt132GetTblPoVendorsResult = await CanErpDbAt132.GetTblPoVendors();
             getTblPoVendorsResult = canErpDbAt132GetTblPoVendorsResult;
+
+            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
+            getTblGnIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             var canErpDbAt132GetTblGnShipViaResult = await CanErpDbAt132.GetTblGnShipVia();
             getTblGnShipViaResult = canErpDbAt132GetTblGnShipViaResult;
@@ -184,9 +187,6 @@ namespace ErpCan.Pages
 
             var canErpDbAt132GetTblGnPaymentTypesResult = await CanErpDbAt132.GetTblGnPaymentTypes();
             getTblGnPaymentTypesResult = canErpDbAt132GetTblGnPaymentTypesResult;
-
-            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
-            getTblIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             tblpopurchaseorder = new ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder();
         }

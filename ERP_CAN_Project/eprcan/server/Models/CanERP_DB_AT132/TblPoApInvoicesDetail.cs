@@ -14,6 +14,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     public TblPoVendor TblPoVendor { get; set; }
+    [Key]
     public string Invoice_No
     {
       get;

@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Gender_SEQ { get; set; }
+        public dynamic Gender_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +70,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnGenderByGenderSeqResult = await CanErpDbAt132.GetTblGnGenderByGenderSeq(int.Parse(Gender_SEQ));
+            var canErpDbAt132GetTblGnGenderByGenderSeqResult = await CanErpDbAt132.GetTblGnGenderByGenderSeq(int.Parse($"{Gender_SEQ}"));
             tblgngender = canErpDbAt132GetTblGnGenderByGenderSeqResult;
         }
 
@@ -83,7 +83,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnGenderResult = await CanErpDbAt132.UpdateTblGnGender(int.Parse(Gender_SEQ), tblgngender);
+                var canErpDbAt132UpdateTblGnGenderResult = await CanErpDbAt132.UpdateTblGnGender(int.Parse($"{Gender_SEQ}"), tblgngender);
                 DialogService.Close(tblgngender);
             }
             catch (Exception canErpDbAt132UpdateTblGnGenderException)

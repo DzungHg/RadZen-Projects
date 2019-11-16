@@ -542,3 +542,11 @@ C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netc
 C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\System.IO.Packaging.dll
 F:\GitHub02\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\DocumentFormat.OpenXml.dll
 F:\GitHub02\RadZen-Projects\ERP_CAN_Project\eprcan\server\bin\Debug\netcoreapp3.0\System.IO.Packaging.dll
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\TblPoPurchaseOrder.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\Razor\Pages\TblPoPurchaseOrder.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\AddTblPoList.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\EditTblPoList.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\TblPoList.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\Razor\Pages\AddTblPoList.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\Razor\Pages\EditTblPoList.razor.g.cs
+C:\ZDung HDD\GitHub\RadZen-Projects\ERP_CAN_Project\eprcan\server\obj\Debug\netcoreapp3.0\Razor\Pages\TblPoList.razor.g.cs

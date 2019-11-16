@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string PO_CashDisb_No { get; set; }
+        public dynamic PO_CashDisb_No { get; set; }
 
         bool _canEdit;
         protected bool canEdit

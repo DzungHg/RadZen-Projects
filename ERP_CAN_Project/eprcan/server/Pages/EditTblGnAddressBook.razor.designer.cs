@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string AddressBook_SEQ { get; set; }
+        public dynamic AddressBook_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -121,7 +121,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnAddressBookByAddressBookSeqResult = await CanErpDbAt132.GetTblGnAddressBookByAddressBookSeq(int.Parse(AddressBook_SEQ));
+            var canErpDbAt132GetTblGnAddressBookByAddressBookSeqResult = await CanErpDbAt132.GetTblGnAddressBookByAddressBookSeq(int.Parse($"{AddressBook_SEQ}"));
             tblgnaddressbook = canErpDbAt132GetTblGnAddressBookByAddressBookSeqResult;
 
             var canErpDbAt132GetTblGnAddressBookTypesResult = await CanErpDbAt132.GetTblGnAddressBookTypes();
@@ -143,7 +143,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnAddressBookResult = await CanErpDbAt132.UpdateTblGnAddressBook(int.Parse(AddressBook_SEQ), tblgnaddressbook);
+                var canErpDbAt132UpdateTblGnAddressBookResult = await CanErpDbAt132.UpdateTblGnAddressBook(int.Parse($"{AddressBook_SEQ}"), tblgnaddressbook);
                 DialogService.Close(tblgnaddressbook);
             }
             catch (Exception canErpDbAt132UpdateTblGnAddressBookException)

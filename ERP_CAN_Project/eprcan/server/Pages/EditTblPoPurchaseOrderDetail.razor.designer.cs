@@ -25,10 +25,10 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string PO_FK { get; set; }
+        public dynamic PO_FK { get; set; }
 
         [Parameter]
-        public string Inventory_FK { get; set; }
+        public dynamic Inventory_FK { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -107,7 +107,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblPoPurchaseOrderDetailByPoFkAndInventoryFkResult = await CanErpDbAt132.GetTblPoPurchaseOrderDetailByPoFkAndInventoryFk($"{PO_FK}", int.Parse(Inventory_FK));
+            var canErpDbAt132GetTblPoPurchaseOrderDetailByPoFkAndInventoryFkResult = await CanErpDbAt132.GetTblPoPurchaseOrderDetailByPoFkAndInventoryFk($"{PO_FK}", int.Parse($"{Inventory_FK}"));
             tblpopurchaseorderdetail = canErpDbAt132GetTblPoPurchaseOrderDetailByPoFkAndInventoryFkResult;
 
             var canErpDbAt132GetTblPoPurchaseOrdersResult = await CanErpDbAt132.GetTblPoPurchaseOrders();
@@ -126,7 +126,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblPoPurchaseOrderDetailResult = await CanErpDbAt132.UpdateTblPoPurchaseOrderDetail($"{PO_FK}", int.Parse(Inventory_FK), tblpopurchaseorderdetail);
+                var canErpDbAt132UpdateTblPoPurchaseOrderDetailResult = await CanErpDbAt132.UpdateTblPoPurchaseOrderDetail($"{PO_FK}", int.Parse($"{Inventory_FK}"), tblpopurchaseorderdetail);
                 DialogService.Close(tblpopurchaseorderdetail);
             }
             catch (Exception canErpDbAt132UpdateTblPoPurchaseOrderDetailException)

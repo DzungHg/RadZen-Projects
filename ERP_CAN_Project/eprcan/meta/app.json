@@ -50,7 +50,9 @@
     "Vw Emp And Vends",
     "Vw Employees",
     "Vw Vendors",
-    "Tbl Ic Classifications"
+    "Tbl Ic Classifications",
+    "Tbl Po Purchase Order",
+    "Tbl PO List"
   ],
   "pages": [
     "Tbl Gn Address Books",
@@ -123,7 +125,6 @@
     "Add Tbl Po Order Status",
     "Edit Tbl Po Order Status",
     "Tbl Po Purchase Orders",
-    "Add Tbl Po Purchase Order",
     "Edit Tbl Po Purchase Order",
     "Tbl Po Purchase Order Details",
     "Add Tbl Po Purchase Order Detail",
@@ -155,7 +156,12 @@
     "Vw Customers",
     "Vw Emp And Vends",
     "Vw Employees",
-    "Vw Vendors"
+    "Vw Vendors",
+    "Add Tbl Po Purchase Order",
+    "Tbl Po Purchase Order",
+    "Tbl PO List",
+    "Add Tbl PO List",
+    "Edit Tbl PO List"
   ],
   "port": 8000,
   "serverLang": "cs",

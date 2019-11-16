@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string ShipVia_SEQ { get; set; }
+        public dynamic ShipVia_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +70,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnShipViumByShipViaSeqResult = await CanErpDbAt132.GetTblGnShipViumByShipViaSeq(int.Parse(ShipVia_SEQ));
+            var canErpDbAt132GetTblGnShipViumByShipViaSeqResult = await CanErpDbAt132.GetTblGnShipViumByShipViaSeq(int.Parse($"{ShipVia_SEQ}"));
             tblgnshipvium = canErpDbAt132GetTblGnShipViumByShipViaSeqResult;
         }
 
@@ -83,7 +83,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnShipViumResult = await CanErpDbAt132.UpdateTblGnShipVium(int.Parse(ShipVia_SEQ), tblgnshipvium);
+                var canErpDbAt132UpdateTblGnShipViumResult = await CanErpDbAt132.UpdateTblGnShipVium(int.Parse($"{ShipVia_SEQ}"), tblgnshipvium);
                 DialogService.Close(tblgnshipvium);
             }
             catch (Exception canErpDbAt132UpdateTblGnShipViumException)

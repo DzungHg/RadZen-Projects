@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Voucher_No { get; set; }
+        public dynamic Voucher_No { get; set; }
 
         bool _canEdit;
         protected bool canEdit

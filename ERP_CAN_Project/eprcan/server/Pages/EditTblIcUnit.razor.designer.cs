@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Unit_SEQ { get; set; }
+        public dynamic Unit_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +70,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblIcUnitByUnitSeqResult = await CanErpDbAt132.GetTblIcUnitByUnitSeq(int.Parse(Unit_SEQ));
+            var canErpDbAt132GetTblIcUnitByUnitSeqResult = await CanErpDbAt132.GetTblIcUnitByUnitSeq(int.Parse($"{Unit_SEQ}"));
             tblicunit = canErpDbAt132GetTblIcUnitByUnitSeqResult;
         }
 
@@ -83,7 +83,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblIcUnitResult = await CanErpDbAt132.UpdateTblIcUnit(int.Parse(Unit_SEQ), tblicunit);
+                var canErpDbAt132UpdateTblIcUnitResult = await CanErpDbAt132.UpdateTblIcUnit(int.Parse($"{Unit_SEQ}"), tblicunit);
                 DialogService.Close(tblicunit);
             }
             catch (Exception canErpDbAt132UpdateTblIcUnitException)

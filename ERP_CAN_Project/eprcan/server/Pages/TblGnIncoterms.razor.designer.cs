@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblGnIncoterm args)
         {
-            var result = await DialogService.OpenAsync<EditTblGnIncoterm>("Edit Tbl Gn Incoterm", new Dictionary<string, object>() { {"Incoterm_ID", $"{args.Incoterm_ID}"} });
+            var result = await DialogService.OpenAsync<EditTblGnIncoterm>("Edit Tbl Gn Incoterm", new Dictionary<string, object>() { {"Incoterm_ID", args.Incoterm_ID} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

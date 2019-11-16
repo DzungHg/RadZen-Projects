@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string City_SEQ { get; set; }
+        public dynamic City_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +70,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnCityByCitySeqResult = await CanErpDbAt132.GetTblGnCityByCitySeq(int.Parse(City_SEQ));
+            var canErpDbAt132GetTblGnCityByCitySeqResult = await CanErpDbAt132.GetTblGnCityByCitySeq(int.Parse($"{City_SEQ}"));
             tblgncity = canErpDbAt132GetTblGnCityByCitySeqResult;
         }
 
@@ -83,7 +83,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnCityResult = await CanErpDbAt132.UpdateTblGnCity(int.Parse(City_SEQ), tblgncity);
+                var canErpDbAt132UpdateTblGnCityResult = await CanErpDbAt132.UpdateTblGnCity(int.Parse($"{City_SEQ}"), tblgncity);
                 DialogService.Close(tblgncity);
             }
             catch (Exception canErpDbAt132UpdateTblGnCityException)

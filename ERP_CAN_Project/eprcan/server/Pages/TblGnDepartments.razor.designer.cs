@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblGnDepartment args)
         {
-            var result = await DialogService.OpenAsync<EditTblGnDepartment>("Edit Tbl Gn Department", new Dictionary<string, object>() { {"Department_ID", $"{args.Department_ID}"} });
+            var result = await DialogService.OpenAsync<EditTblGnDepartment>("Edit Tbl Gn Department", new Dictionary<string, object>() { {"Department_ID", args.Department_ID} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

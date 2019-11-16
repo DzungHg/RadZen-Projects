@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string AP_No { get; set; }
+        public dynamic AP_No { get; set; }
 
         bool _canEdit;
         protected bool canEdit

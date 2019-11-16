@@ -25,7 +25,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Inventory_SEQ { get; set; }
+        public dynamic Inventory_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -155,7 +155,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblIcInventoryByInventorySeqResult = await CanErpDbAt132.GetTblIcInventoryByInventorySeq(int.Parse(Inventory_SEQ));
+            var canErpDbAt132GetTblIcInventoryByInventorySeqResult = await CanErpDbAt132.GetTblIcInventoryByInventorySeq(int.Parse($"{Inventory_SEQ}"));
             tblicinventory = canErpDbAt132GetTblIcInventoryByInventorySeqResult;
 
             var canErpDbAt132GetTblIcWarehousesResult = await CanErpDbAt132.GetTblIcWarehouses();
@@ -183,7 +183,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblIcInventoryResult = await CanErpDbAt132.UpdateTblIcInventory(int.Parse(Inventory_SEQ), tblicinventory);
+                var canErpDbAt132UpdateTblIcInventoryResult = await CanErpDbAt132.UpdateTblIcInventory(int.Parse($"{Inventory_SEQ}"), tblicinventory);
                 DialogService.Close(tblicinventory);
             }
             catch (Exception canErpDbAt132UpdateTblIcInventoryException)

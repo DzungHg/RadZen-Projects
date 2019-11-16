@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblGnPaymentTerm args)
         {
-            var result = await DialogService.OpenAsync<EditTblGnPaymentTerm>("Edit Tbl Gn Payment Term", new Dictionary<string, object>() { {"PaymentTerm_SEQ", $"{args.PaymentTerm_SEQ}"} });
+            var result = await DialogService.OpenAsync<EditTblGnPaymentTerm>("Edit Tbl Gn Payment Term", new Dictionary<string, object>() { {"PaymentTerm_SEQ", args.PaymentTerm_SEQ} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

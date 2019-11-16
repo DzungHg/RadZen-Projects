@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblIcTransactionType args)
         {
-            var result = await DialogService.OpenAsync<EditTblIcTransactionType>("Edit Tbl Ic Transaction Type", new Dictionary<string, object>() { {"Transaction_ID", $"{args.Transaction_ID}"} });
+            var result = await DialogService.OpenAsync<EditTblIcTransactionType>("Edit Tbl Ic Transaction Type", new Dictionary<string, object>() { {"Transaction_ID", args.Transaction_ID} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

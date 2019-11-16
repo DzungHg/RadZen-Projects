@@ -64,7 +64,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblIcClassification args)
         {
-            var result = await DialogService.OpenAsync<EditTblIcClassification>("Edit Tbl Ic Classification", new Dictionary<string, object>() { {"Classifi_ID", $"{args.Classifi_ID}"} });
+            var result = await DialogService.OpenAsync<EditTblIcClassification>("Edit Tbl Ic Classification", new Dictionary<string, object>() { {"Classifi_ID", args.Classifi_ID} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 
