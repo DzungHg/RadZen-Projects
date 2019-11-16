@@ -85,11 +85,19 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
+<<<<<<< HEAD
                 <RadzenLabel Text="Tbl Gn Incoterm" Component="Incoterm_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenDropDown Data="@(getTblGnIncotermsResult)" TextProperty="Incoterm_Name" ValueProperty="Incoterm_ID" Placeholder="Choose TblGnIncoterm" style="width: 100%" @bind-Value="@((tblpopurchaseorder.Incoterm_FK))" Name="Incoterm_FK">
+=======
+                <RadzenLabel Component="Incoterm_FK" style="width: 100%" Text="Tbl Gn Incoterm">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@(getTblGnIncotermsResult)" Placeholder="Choose TblGnIncoterm" style="width: 100%" TextProperty="Incoterm_Name" @bind-Value="@((tblpopurchaseorder.Incoterm_FK))" ValueProperty="Incoterm_ID" Name="Incoterm_FK">
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                 </RadzenDropDown>
               </div>
             </div>
@@ -125,11 +133,19 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
+<<<<<<< HEAD
                 <RadzenLabel Text="Tbl Gn Address Book" Component="Buyer_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
                 <RadzenDropDown Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" Name="Buyer_FK">
+=======
+                <RadzenLabel Component="Buyer_FK" style="width: 100%" Text="Tbl Gn Address Book">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpopurchaseorder.Buyer_FK))" ValueProperty="AddressBook_SEQ" Name="Buyer_FK">
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                 </RadzenDropDown>
               </div>
             </div>

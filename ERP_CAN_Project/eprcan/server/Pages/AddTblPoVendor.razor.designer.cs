@@ -24,8 +24,8 @@ namespace ErpCan.Pages
         protected CanErpDbAt132Service CanErpDbAt132 { get; set; }
 
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor> _getVwVendorsResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.VwVendor> getVwVendorsResult
+        IEnumerable<VwVendor> _getVwVendorsResult;
+        protected IEnumerable<VwVendor> getVwVendorsResult
         {
             get
             {

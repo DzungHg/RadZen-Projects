@@ -95,8 +95,8 @@ namespace ErpCan.Pages
             }
         }
 
-        IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> _getTblPoVendorsResult;
-        protected IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor> getTblPoVendorsResult
+        IEnumerable<VwVendor> _getTblPoVendorsResult;
+        protected IEnumerable<VwVendor> getTblPoVendorsResult
         {
             get
             {
@@ -198,8 +198,11 @@ namespace ErpCan.Pages
             var canErpDbAt132GetTblPoOrderStatusesResult = await CanErpDbAt132.GetTblPoOrderStatuses();
             getTblPoOrderStatusesResult = canErpDbAt132GetTblPoOrderStatusesResult;
 
-            var canErpDbAt132GetTblPoVendorsResult = await CanErpDbAt132.GetTblPoVendors();
-            getTblPoVendorsResult = canErpDbAt132GetTblPoVendorsResult;
+            var canErpDbAt132GetVwVendorsResult = await CanErpDbAt132.GetVwVendors();
+            getTblPoVendorsResult = canErpDbAt132GetVwVendorsResult;
+
+            var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
+            getTblGnIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;
 
             var canErpDbAt132GetTblGnIncotermsResult = await CanErpDbAt132.GetTblGnIncoterms();
             getTblGnIncotermsResult = canErpDbAt132GetTblGnIncotermsResult;

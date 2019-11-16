@@ -25,22 +25,7 @@ namespace ErpCan
             this.navigationManager = navigationManager;
         }
 
-        
-      public async Task<IQueryable<Models.CanErpDbAt132.SpGetAddressBookByContactSeq>> GetSpGetAddressBookByContactSeqs(int? ContactSEQ)
-      {
-          OnSpGetAddressBookByContactSeqsDefaultParams(ref ContactSEQ);
-
-          var items = context.SpGetAddressBookByContactSeqs.FromSqlRaw("EXEC [dbo].[sp_GetAddressBookByContactSEQ] @ContactSEQ={0}", ContactSEQ);
-
-          OnSpGetAddressBookByContactSeqsInvoke(ref items);
-
-          return await Task.FromResult(items);
-      }
-
-      partial void OnSpGetAddressBookByContactSeqsDefaultParams(ref int? ContactSEQ);
-
-      partial void OnSpGetAddressBookByContactSeqsInvoke(ref IQueryable<Models.CanErpDbAt132.SpGetAddressBookByContactSeq> items);
-            public async Task ExportTblGnAddressBooksToExcel(Query query = null)
+                public async Task ExportTblGnAddressBooksToExcel(Query query = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl("/export/canerpdbat132/tblgnaddressbooks/excel") : "/export/canerpdbat132/tblgnaddressbooks/excel", true);
         }

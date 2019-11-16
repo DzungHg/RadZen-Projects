@@ -26,7 +26,6 @@ namespace ErpCan.Data
     {
         base.OnModelCreating(builder);
 
-        builder.Entity<ErpCan.Models.CanErpDbAt132.SpGetAddressBookByContactSeq>().HasNoKey();
         builder.Entity<ErpCan.Models.CanErpDbAt132.VwCustomer>().HasNoKey();
         builder.Entity<ErpCan.Models.CanErpDbAt132.VwEmpAndVend>().HasNoKey();
         builder.Entity<ErpCan.Models.CanErpDbAt132.VwEmployee>().HasNoKey();
@@ -269,10 +268,6 @@ namespace ErpCan.Data
               .HasDefaultValueSql("((0))");
 
 
-        builder.Entity<ErpCan.Models.CanErpDbAt132.SpGetAddressBookByContactSeq>()
-              .Property(p => p.DOB)
-              .HasColumnType("date");
-
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblGnAddressBook>()
               .Property(p => p.DOB)
               .HasColumnType("date");
@@ -416,12 +411,6 @@ namespace ErpCan.Data
         this.OnModelBuilding(builder);
     }
 
-
-    public DbSet<ErpCan.Models.CanErpDbAt132.SpGetAddressBookByContactSeq> SpGetAddressBookByContactSeqs
-    {
-      get;
-      set;
-    }
 
     public DbSet<ErpCan.Models.CanErpDbAt132.TblGnAddressBook> TblGnAddressBooks
     {

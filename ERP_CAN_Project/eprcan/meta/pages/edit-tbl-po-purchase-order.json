@@ -96,7 +96,13 @@
                                 "display": "block",
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PO_ID}"
+=======
+                              "type": "textbox",
+                              "value": "${tblpopurchaseorder.PO_ID}",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             },
                             {
                               "type": "required-validator",
@@ -142,7 +148,13 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PODate}"
+=======
+                              "type": "datepicker",
+                              "value": "${tblpopurchaseorder.PODate}",
+                              "valueType": "DateTime?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -183,7 +195,15 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.CreatedBy_FK}"
+=======
+                              "textProperty": "AddressBook_ID",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.CreatedBy_FK}",
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -224,7 +244,15 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.POStatus_FK}"
+=======
+                              "textProperty": "POStatusText",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.POStatus_FK}",
+                              "valueProperty": "POStatus_ID",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -265,7 +293,15 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.Vendor_FK}"
+=======
+                              "textProperty": "LastName",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.Vendor_FK}",
+                              "valueProperty": "Vendor_ID",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -303,7 +339,13 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.Description}"
+=======
+                              "type": "textbox",
+                              "value": "${tblpopurchaseorder.Description}",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -320,13 +362,22 @@
                           "class": "col-md-3",
                           "components": [
                             {
+<<<<<<< HEAD
                               "type": "label",
                               "text": "Tbl Gn Incoterm",
+=======
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                               "component": "Incoterm_FK",
                               "name": "Incoterm_FKLabel",
                               "style": {
                                 "width": "100%"
+<<<<<<< HEAD
                               }
+=======
+                              },
+                              "text": "Tbl Gn Incoterm",
+                              "type": "label"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         },
@@ -336,6 +387,7 @@
                           "components": [
                             {
                               "data": "${getTblGnIncotermsResult}",
+<<<<<<< HEAD
                               "textProperty": "Incoterm_Name",
                               "valueProperty": "Incoterm_ID",
                               "placeholder": "Choose TblGnIncoterm",
@@ -347,6 +399,21 @@
                               "value": "${tblpopurchaseorder.Incoterm_FK}"
                             }
                           ]
+=======
+                              "name": "Incoterm_FK",
+                              "placeholder": "Choose TblGnIncoterm",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "textProperty": "Incoterm_Name",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.Incoterm_FK}",
+                              "valueProperty": "Incoterm_ID",
+                              "valueType": "string"
+                            }
+                          ],
+                          "type": "col"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                         }
                       ]
                     },
@@ -385,7 +452,15 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.ShipVia_FK}"
+=======
+                              "textProperty": "ShipVia_ID",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.ShipVia_FK}",
+                              "valueProperty": "ShipVia_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -426,7 +501,15 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PaymentTerm_FK}"
+=======
+                              "textProperty": "PaymentTerm_ID",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.PaymentTerm_FK}",
+                              "valueProperty": "PaymentTerm_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -467,7 +550,15 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PaymentType_FK}"
+=======
+                              "textProperty": "PaymentType_ID",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.PaymentType_FK}",
+                              "valueProperty": "PaymentType_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -490,7 +581,13 @@
                               "name": "Buyer_FKLabel",
                               "style": {
                                 "width": "100%"
+<<<<<<< HEAD
                               }
+=======
+                              },
+                              "text": "Tbl Gn Address Book",
+                              "type": "label"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         },
@@ -500,15 +597,27 @@
                           "components": [
                             {
                               "data": "${getTblGnAddressBooksResult}",
+<<<<<<< HEAD
                               "textProperty": "AddressBook_ID",
                               "valueProperty": "AddressBook_SEQ",
                               "placeholder": "Choose TblGnAddressBook",
                               "type": "dropdown",
+=======
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                               "name": "Buyer_FK",
+                              "placeholder": "Choose TblGnAddressBook",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.Buyer_FK}"
+=======
+                              "textProperty": "AddressBook_ID",
+                              "type": "dropdown",
+                              "value": "${tblpopurchaseorder.Buyer_FK}",
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -543,7 +652,13 @@
                               "type": "checkbox",
                               "name": "TaxYN",
                               "triState": true,
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.TaxYN}"
+=======
+                              "type": "checkbox",
+                              "value": "${tblpopurchaseorder.TaxYN}",
+                              "valueType": "bool?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -580,7 +695,13 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.TaxtRate}"
+=======
+                              "type": "numeric",
+                              "value": "${tblpopurchaseorder.TaxtRate}",
+                              "valueType": "double?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -618,7 +739,13 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.Department_FK}"
+=======
+                              "type": "textbox",
+                              "value": "${tblpopurchaseorder.Department_FK}",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -655,7 +782,13 @@
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PO_Amount}"
+=======
+                              "type": "numeric",
+                              "value": "${tblpopurchaseorder.PO_Amount}",
+                              "valueType": "decimal?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
                           ]
                         }
@@ -789,14 +922,14 @@
         "type": "invoke"
       },
       {
-        "name": "CanERP_DB_AT132.getTblPoVendors",
+        "name": "CanERP_DB_AT132.getVwVendors",
         "parameters": [],
         "then": [
           {
             "name": "getTblPoVendorsResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<ErpCan.Models.CanErpDbAt132.TblPoVendor>"
+            "valueType": "IEnumerable<VwVendor>"
           }
         ],
         "type": "invoke"

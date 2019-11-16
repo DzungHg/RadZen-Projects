@@ -17,6 +17,7 @@ namespace ErpCan.Pages
             //SelectedVendorID = 
             tblpovendor.FirstName = getVwVendorsResult.Where(x => x.AddressBook_SEQ == addressBookFK).FirstOrDefault().FirstName;
             tblpovendor.LastName = getVwVendorsResult.Where(x => x.AddressBook_SEQ == addressBookFK).FirstOrDefault().LastName;
+            tblpovendor.Inactive = false;
         }
     }
 }

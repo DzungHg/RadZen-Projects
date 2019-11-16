@@ -19,23 +19,23 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm Data="@(tblpovendor)" TItem="ErpCan.Models.CanErpDbAt132.TblPoVendor" Visible="@(tblpovendor != null && canEdit)" Submit="@Form0Submit">
+        <RadzenTemplateForm TItem="ErpCan.Models.CanErpDbAt132.TblPoVendor" Data="@(tblpovendor)" Visible="@(tblpovendor != null && canEdit)" Submit="@Form0Submit">
           <ChildContent>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Vendor_ID" style="width: 100%" Text="Vendor Id">
+                <RadzenLabel Text="Vendor Id" Component="Vendor_ID" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="10" ReadOnly="true" style="display: block; width: 100%" @bind-Value="@((tblpovendor.Vendor_ID))" Name="Vendor_ID">
+                <RadzenTextBox MaxLength="10" style="display: block; width: 100%" @bind-Value="@((tblpovendor.Vendor_ID))" Name="Vendor_ID">
                 </RadzenTextBox>
-                <RadzenRequiredValidator Component="Vendor_ID" style="position: absolute" Text="Vendor_ID is required">
+                <RadzenRequiredValidator Component="Vendor_ID" Text="Vendor_ID is required" style="position: absolute">
                 </RadzenRequiredValidator>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="LastName" style="width: 100%" Text="Last Name">
+                <RadzenLabel Text="Last Name" Component="LastName" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -45,7 +45,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="FirstName" style="width: 100%" Text="First Name">
+                <RadzenLabel Text="First Name" Component="FirstName" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -55,17 +55,17 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="VendorAddressBook_FK" style="width: 100%" Text="Tbl Gn Address Book">
+                <RadzenLabel Text="Tbl Gn Address Book" Component="VendorAddressBook_FK" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="AddressBook_ID" @bind-Value="@((tblpovendor.VendorAddressBook_FK))" ValueProperty="AddressBook_SEQ" Name="VendorAddressBook_FK">
+                <RadzenDropDown Data="@(getTblGnAddressBooksResult)" TextProperty="AddressBook_ID" ValueProperty="AddressBook_SEQ" Placeholder="Choose TblGnAddressBook" style="width: 100%" @bind-Value="@((tblpovendor.VendorAddressBook_FK))" Name="VendorAddressBook_FK">
                 </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Performing_Rating" style="width: 100%" Text="Performing Rating">
+                <RadzenLabel Text="Performing Rating" Component="Performing_Rating" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -75,7 +75,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="AP_Balance" style="width: 100%" Text="Ap Balance">
+                <RadzenLabel Text="Ap Balance" Component="AP_Balance" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -85,7 +85,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Outstand_Inv_Amt" style="width: 100%" Text="Outstand Inv Amt">
+                <RadzenLabel Text="Outstand Inv Amt" Component="Outstand_Inv_Amt" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -95,7 +95,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Outstand_Credit" style="width: 100%" Text="Outstand Credit">
+                <RadzenLabel Text="Outstand Credit" Component="Outstand_Credit" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -105,7 +105,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Last_Purchase_Date" style="width: 100%" Text="Last Purchase Date">
+                <RadzenLabel Text="Last Purchase Date" Component="Last_Purchase_Date" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -115,7 +115,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Last_Payment_Date" style="width: 100%" Text="Last Payment Date">
+                <RadzenLabel Text="Last Payment Date" Component="Last_Payment_Date" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -125,7 +125,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="MTD_Purchase" style="width: 100%" Text="Mtd Purchase">
+                <RadzenLabel Text="Mtd Purchase" Component="MTD_Purchase" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -135,7 +135,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="YTD_Purchase" style="width: 100%" Text="Ytd Purchase">
+                <RadzenLabel Text="Ytd Purchase" Component="YTD_Purchase" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -145,7 +145,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="LYR_Purchase" style="width: 100%" Text="Lyr Purchase">
+                <RadzenLabel Text="Lyr Purchase" Component="LYR_Purchase" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -155,7 +155,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Notes" style="width: 100%" Text="Notes">
+                <RadzenLabel Text="Notes" Component="Notes" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -165,7 +165,7 @@
             </div>
             <div style="margin-bottom: 1rem" class="row">
               <div class="col-md-3">
-                <RadzenLabel Component="Inactive" style="width: 100%" Text="Inactive">
+                <RadzenLabel Text="Inactive" Component="Inactive" style="width: 100%">
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
@@ -175,7 +175,7 @@
             </div>
             <div class="row">
               <div class="col offset-sm-3">
-                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                <RadzenButton ButtonType="ButtonType.Submit" Icon="save" Text="Save" ButtonStyle="ButtonStyle.Primary">
                 </RadzenButton>
                 <RadzenButton ButtonStyle="ButtonStyle.Light" Text="Cancel" Click="@Button3Click">
                 </RadzenButton>
