@@ -262,6 +262,11 @@
               "inversePropertyName": "TblGnDepartment",
               "name": "TblPoAccountPayables",
               "type": "TblPoAccountPayable"
+            },
+            {
+              "inversePropertyName": "TblGnDepartment",
+              "name": "TblPoPurchaseOrders",
+              "type": "TblPoPurchaseOrder"
             }
           ]
         },
@@ -277,6 +282,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/TblPoAccountPayable"
+          }
+        },
+        "TblPoPurchaseOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TblPoPurchaseOrder"
           }
         }
       }
@@ -1786,9 +1797,22 @@
           "type": "number",
           "format": "double"
         },
+        "TblGnDepartment": {
+          "type": "object",
+          "$ref": "#/definitions/TblGnDepartment"
+        },
         "Department_FK": {
           "type": "string",
-          "length": 5
+          "length": 5,
+          "x-foreignKey": {
+            "parentTable": "tblGN_Department",
+            "parentEntityType": "TblGnDepartment",
+            "type": "TblGnDepartment",
+            "principalKey": "Department_ID",
+            "name": "TblGnDepartment",
+            "textProperty": "Deparment_Name",
+            "navigationProperty": "TblPoPurchaseOrders"
+          }
         },
         "PO_Amount": {
           "type": "number",

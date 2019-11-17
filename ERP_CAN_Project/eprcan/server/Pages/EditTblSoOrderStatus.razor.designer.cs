@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblSoOrderStatusComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,7 +32,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string SOStatus_SEQ { get; set; }
+        public dynamic SOStatus_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +77,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblSoOrderStatusBySoStatusSeqResult = await CanErpDbAt132.GetTblSoOrderStatusBySoStatusSeq(int.Parse(SOStatus_SEQ));
+            var canErpDbAt132GetTblSoOrderStatusBySoStatusSeqResult = await CanErpDbAt132.GetTblSoOrderStatusBySoStatusSeq(int.Parse($"{SOStatus_SEQ}"));
             tblsoorderstatus = canErpDbAt132GetTblSoOrderStatusBySoStatusSeqResult;
         }
 
@@ -83,7 +90,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblSoOrderStatusResult = await CanErpDbAt132.UpdateTblSoOrderStatus(int.Parse(SOStatus_SEQ), tblsoorderstatus);
+                var canErpDbAt132UpdateTblSoOrderStatusResult = await CanErpDbAt132.UpdateTblSoOrderStatus(int.Parse($"{SOStatus_SEQ}"), tblsoorderstatus);
                 DialogService.Close(tblsoorderstatus);
             }
             catch (Exception canErpDbAt132UpdateTblSoOrderStatusException)

@@ -149,8 +149,8 @@
                 </RadzenLabel>
               </div>
               <div class="col-md-9">
-                <RadzenTextBox MaxLength="5" style="width: 100%" @bind-Value="@((tblpopurchaseorder.Department_FK))" Name="Department_FK">
-                </RadzenTextBox>
+                <RadzenDropDown Data="@(getTblGnDepartmentsResult)" Placeholder="Choose TblGnAddressBook" style="width: 100%" TextProperty="Deparment_Name" @bind-Value="@((tblpopurchaseorder.Department_FK))" ValueProperty="Department_ID" Name="Department_FK">
+                </RadzenDropDown>
               </div>
             </div>
             <div style="margin-bottom: 1rem" class="row">

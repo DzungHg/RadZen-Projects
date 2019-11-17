@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class TblIcClassificationsComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -64,7 +71,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblIcClassification args)
         {
-            var result = await DialogService.OpenAsync<EditTblIcClassification>("Edit Tbl Ic Classification", new Dictionary<string, object>() { {"Classifi_ID", $"{args.Classifi_ID}"} });
+            var result = await DialogService.OpenAsync<EditTblIcClassification>("Edit Tbl Ic Classification", new Dictionary<string, object>() { {"Classifi_ID", args.Classifi_ID} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

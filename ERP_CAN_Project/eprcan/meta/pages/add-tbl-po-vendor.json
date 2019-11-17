@@ -60,8 +60,7 @@
                               "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpovendor.VendorAddressBook_FK}",
-                              "valueProperty": "AddressBook_SEQ",
-                              "valueType": "int?"
+                              "valueProperty": "AddressBook_SEQ"
                             }
                           ],
                           "name": "col1",
@@ -103,8 +102,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.Vendor_ID}",
-                              "valueType": "string"
+                              "value": "${tblpovendor.Vendor_ID}"
                             },
                             {
                               "component": "Vendor_ID",
@@ -151,8 +149,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.LastName}",
-                              "valueType": "string"
+                              "value": "${tblpovendor.LastName}"
                             }
                           ],
                           "type": "col"
@@ -190,8 +187,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.FirstName}",
-                              "valueType": "string"
+                              "value": "${tblpovendor.FirstName}"
                             }
                           ],
                           "type": "col"
@@ -229,8 +225,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpovendor.Performing_Rating}",
-                              "valueType": "string"
+                              "value": "${tblpovendor.Performing_Rating}"
                             }
                           ],
                           "type": "col"
@@ -267,8 +262,7 @@
                                 "width": "100%"
                               },
                               "type": "numeric",
-                              "value": "${tblpovendor.AP_Balance}",
-                              "valueType": "decimal?"
+                              "value": "${tblpovendor.AP_Balance}"
                             }
                           ],
                           "type": "col"

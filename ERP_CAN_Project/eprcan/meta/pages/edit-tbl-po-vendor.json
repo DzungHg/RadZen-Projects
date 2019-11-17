@@ -89,7 +89,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Vendor_ID",
@@ -138,7 +137,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "LastName",
@@ -177,7 +175,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 50,
                               "type": "textbox",
                               "name": "FirstName",
@@ -220,7 +217,6 @@
                               "textProperty": "AddressBook_ID",
                               "valueProperty": "AddressBook_SEQ",
                               "placeholder": "Choose TblGnAddressBook",
-                              "valueType": "int?",
                               "type": "dropdown",
                               "name": "VendorAddressBook_FK",
                               "style": {
@@ -258,7 +254,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "maxLength": 10,
                               "type": "textbox",
                               "name": "Performing_Rating",
@@ -297,7 +292,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "AP_Balance",
                               "style": {
@@ -335,7 +329,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Outstand_Inv_Amt",
                               "style": {
@@ -373,7 +366,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "Outstand_Credit",
                               "style": {
@@ -411,7 +403,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Last_Purchase_Date",
@@ -450,7 +441,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "DateTime?",
                               "dateFormat": "MM/dd/yyyy",
                               "type": "datepicker",
                               "name": "Last_Payment_Date",
@@ -489,7 +479,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "MTD_Purchase",
                               "style": {
@@ -527,7 +516,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "YTD_Purchase",
                               "style": {
@@ -565,7 +553,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "decimal?",
                               "type": "numeric",
                               "name": "LYR_Purchase",
                               "style": {
@@ -603,7 +590,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "string",
                               "type": "textbox",
                               "name": "Notes",
                               "style": {
@@ -641,7 +627,6 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "valueType": "bool?",
                               "type": "checkbox",
                               "name": "Inactive",
                               "triState": true,

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class TblPoCashDisbursementsComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -64,7 +71,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblPoCashDisbursement args)
         {
-            var result = await DialogService.OpenAsync<EditTblPoCashDisbursement>("Edit Tbl Po Cash Disbursement", new Dictionary<string, object>() { {"PO_CashDisb_No", $"{args.PO_CashDisb_No}"} });
+            var result = await DialogService.OpenAsync<EditTblPoCashDisbursement>("Edit Tbl Po Cash Disbursement", new Dictionary<string, object>() { {"PO_CashDisb_No", args.PO_CashDisb_No} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

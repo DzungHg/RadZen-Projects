@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblGnPaymentTypeComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,7 +32,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string PaymentType_SEQ { get; set; }
+        public dynamic PaymentType_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +77,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnPaymentTypeByPaymentTypeSeqResult = await CanErpDbAt132.GetTblGnPaymentTypeByPaymentTypeSeq(int.Parse(PaymentType_SEQ));
+            var canErpDbAt132GetTblGnPaymentTypeByPaymentTypeSeqResult = await CanErpDbAt132.GetTblGnPaymentTypeByPaymentTypeSeq(int.Parse($"{PaymentType_SEQ}"));
             tblgnpaymenttype = canErpDbAt132GetTblGnPaymentTypeByPaymentTypeSeqResult;
         }
 
@@ -83,7 +90,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnPaymentTypeResult = await CanErpDbAt132.UpdateTblGnPaymentType(int.Parse(PaymentType_SEQ), tblgnpaymenttype);
+                var canErpDbAt132UpdateTblGnPaymentTypeResult = await CanErpDbAt132.UpdateTblGnPaymentType(int.Parse($"{PaymentType_SEQ}"), tblgnpaymenttype);
                 DialogService.Close(tblgnpaymenttype);
             }
             catch (Exception canErpDbAt132UpdateTblGnPaymentTypeException)

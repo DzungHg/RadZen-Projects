@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblPoRrOrderDetailComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,10 +32,10 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string RR_FK { get; set; }
+        public dynamic RR_FK { get; set; }
 
         [Parameter]
-        public string Inventory_FK { get; set; }
+        public dynamic Inventory_FK { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -107,7 +114,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblPoRrOrderDetailByRrFkAndInventoryFkResult = await CanErpDbAt132.GetTblPoRrOrderDetailByRrFkAndInventoryFk($"{RR_FK}", int.Parse(Inventory_FK));
+            var canErpDbAt132GetTblPoRrOrderDetailByRrFkAndInventoryFkResult = await CanErpDbAt132.GetTblPoRrOrderDetailByRrFkAndInventoryFk($"{RR_FK}", int.Parse($"{Inventory_FK}"));
             tblporrorderdetail = canErpDbAt132GetTblPoRrOrderDetailByRrFkAndInventoryFkResult;
 
             var canErpDbAt132GetTblPoRecReportsResult = await CanErpDbAt132.GetTblPoRecReports();
@@ -126,7 +133,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblPoRrOrderDetailResult = await CanErpDbAt132.UpdateTblPoRrOrderDetail($"{RR_FK}", int.Parse(Inventory_FK), tblporrorderdetail);
+                var canErpDbAt132UpdateTblPoRrOrderDetailResult = await CanErpDbAt132.UpdateTblPoRrOrderDetail($"{RR_FK}", int.Parse($"{Inventory_FK}"), tblporrorderdetail);
                 DialogService.Close(tblporrorderdetail);
             }
             catch (Exception canErpDbAt132UpdateTblPoRrOrderDetailException)

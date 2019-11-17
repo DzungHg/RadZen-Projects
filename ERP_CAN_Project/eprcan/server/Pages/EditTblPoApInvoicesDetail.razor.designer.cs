@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblPoApInvoicesDetailComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,10 +32,10 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Vendor_ID { get; set; }
+        public dynamic Vendor_ID { get; set; }
 
         [Parameter]
-        public string Invoice_No { get; set; }
+        public dynamic Invoice_No { get; set; }
 
         bool _canEdit;
         protected bool canEdit

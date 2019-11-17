@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblGnAddressBookComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,7 +32,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string AddressBook_SEQ { get; set; }
+        public dynamic AddressBook_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -121,7 +128,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnAddressBookByAddressBookSeqResult = await CanErpDbAt132.GetTblGnAddressBookByAddressBookSeq(int.Parse(AddressBook_SEQ));
+            var canErpDbAt132GetTblGnAddressBookByAddressBookSeqResult = await CanErpDbAt132.GetTblGnAddressBookByAddressBookSeq(int.Parse($"{AddressBook_SEQ}"));
             tblgnaddressbook = canErpDbAt132GetTblGnAddressBookByAddressBookSeqResult;
 
             var canErpDbAt132GetTblGnAddressBookTypesResult = await CanErpDbAt132.GetTblGnAddressBookTypes();
@@ -143,7 +150,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnAddressBookResult = await CanErpDbAt132.UpdateTblGnAddressBook(int.Parse(AddressBook_SEQ), tblgnaddressbook);
+                var canErpDbAt132UpdateTblGnAddressBookResult = await CanErpDbAt132.UpdateTblGnAddressBook(int.Parse($"{AddressBook_SEQ}"), tblgnaddressbook);
                 DialogService.Close(tblgnaddressbook);
             }
             catch (Exception canErpDbAt132UpdateTblGnAddressBookException)

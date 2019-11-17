@@ -14,6 +14,7 @@ namespace ErpCan.Models.CanErpDbAt132
       set;
     }
     public TblPoPurchaseOrder TblPoPurchaseOrder { get; set; }
+    [Key]
     public int Inventory_FK
     {
       get;

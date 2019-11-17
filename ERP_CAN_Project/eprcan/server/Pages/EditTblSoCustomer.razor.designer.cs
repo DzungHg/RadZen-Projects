@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblSoCustomerComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,7 +32,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Customer_SEQ { get; set; }
+        public dynamic Customer_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -121,7 +128,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblSoCustomerByCustomerSeqResult = await CanErpDbAt132.GetTblSoCustomerByCustomerSeq(int.Parse(Customer_SEQ));
+            var canErpDbAt132GetTblSoCustomerByCustomerSeqResult = await CanErpDbAt132.GetTblSoCustomerByCustomerSeq(int.Parse($"{Customer_SEQ}"));
             tblsocustomer = canErpDbAt132GetTblSoCustomerByCustomerSeqResult;
 
             var canErpDbAt132GetTblGnAddressBooksResult = await CanErpDbAt132.GetTblGnAddressBooks();
@@ -143,7 +150,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblSoCustomerResult = await CanErpDbAt132.UpdateTblSoCustomer(int.Parse(Customer_SEQ), tblsocustomer);
+                var canErpDbAt132UpdateTblSoCustomerResult = await CanErpDbAt132.UpdateTblSoCustomer(int.Parse($"{Customer_SEQ}"), tblsocustomer);
                 DialogService.Close(tblsocustomer);
             }
             catch (Exception canErpDbAt132UpdateTblSoCustomerException)

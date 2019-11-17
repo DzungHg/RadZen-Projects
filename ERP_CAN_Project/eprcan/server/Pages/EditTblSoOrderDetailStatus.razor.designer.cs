@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblSoOrderDetailStatusComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,7 +32,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string SODetailStatus_SEQ { get; set; }
+        public dynamic SODetailStatus_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +77,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblSoOrderDetailStatusBySoDetailStatusSeqResult = await CanErpDbAt132.GetTblSoOrderDetailStatusBySoDetailStatusSeq(int.Parse(SODetailStatus_SEQ));
+            var canErpDbAt132GetTblSoOrderDetailStatusBySoDetailStatusSeqResult = await CanErpDbAt132.GetTblSoOrderDetailStatusBySoDetailStatusSeq(int.Parse($"{SODetailStatus_SEQ}"));
             tblsoorderdetailstatus = canErpDbAt132GetTblSoOrderDetailStatusBySoDetailStatusSeqResult;
         }
 
@@ -83,7 +90,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblSoOrderDetailStatusResult = await CanErpDbAt132.UpdateTblSoOrderDetailStatus(int.Parse(SODetailStatus_SEQ), tblsoorderdetailstatus);
+                var canErpDbAt132UpdateTblSoOrderDetailStatusResult = await CanErpDbAt132.UpdateTblSoOrderDetailStatus(int.Parse($"{SODetailStatus_SEQ}"), tblsoorderdetailstatus);
                 DialogService.Close(tblsoorderdetailstatus);
             }
             catch (Exception canErpDbAt132UpdateTblSoOrderDetailStatusException)

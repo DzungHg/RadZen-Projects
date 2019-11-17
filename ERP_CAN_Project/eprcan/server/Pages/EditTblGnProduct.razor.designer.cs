@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class EditTblGnProductComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -25,7 +32,7 @@ namespace ErpCan.Pages
 
 
         [Parameter]
-        public string Product_SEQ { get; set; }
+        public dynamic Product_SEQ { get; set; }
 
         bool _canEdit;
         protected bool canEdit
@@ -70,7 +77,7 @@ namespace ErpCan.Pages
         {
             canEdit = true;
 
-            var canErpDbAt132GetTblGnProductByProductSeqResult = await CanErpDbAt132.GetTblGnProductByProductSeq(int.Parse(Product_SEQ));
+            var canErpDbAt132GetTblGnProductByProductSeqResult = await CanErpDbAt132.GetTblGnProductByProductSeq(int.Parse($"{Product_SEQ}"));
             tblgnproduct = canErpDbAt132GetTblGnProductByProductSeqResult;
         }
 
@@ -83,7 +90,7 @@ namespace ErpCan.Pages
         {
             try
             {
-                var canErpDbAt132UpdateTblGnProductResult = await CanErpDbAt132.UpdateTblGnProduct(int.Parse(Product_SEQ), tblgnproduct);
+                var canErpDbAt132UpdateTblGnProductResult = await CanErpDbAt132.UpdateTblGnProduct(int.Parse($"{Product_SEQ}"), tblgnproduct);
                 DialogService.Close(tblgnproduct);
             }
             catch (Exception canErpDbAt132UpdateTblGnProductException)

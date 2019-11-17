@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class TblPoApInvoicesDetailsComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -64,7 +71,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblPoApInvoicesDetail args)
         {
-            var result = await DialogService.OpenAsync<EditTblPoApInvoicesDetail>("Edit Tbl Po Ap Invoices Detail", new Dictionary<string, object>() { {"Vendor_ID", $"{args.Vendor_ID}"}, {"Invoice_No", $"{args.Invoice_No}"} });
+            var result = await DialogService.OpenAsync<EditTblPoApInvoicesDetail>("Edit Tbl Po Ap Invoices Detail", new Dictionary<string, object>() { {"Vendor_ID", args.Vendor_ID}, {"Invoice_No", args.Invoice_No} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

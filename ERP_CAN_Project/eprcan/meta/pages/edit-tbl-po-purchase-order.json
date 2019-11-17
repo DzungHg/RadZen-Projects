@@ -85,8 +85,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpopurchaseorder.PO_ID}",
-                              "valueType": "string"
+                              "value": "${tblpopurchaseorder.PO_ID}"
                             },
                             {
                               "component": "PO_ID",
@@ -133,8 +132,7 @@
                                 "width": "100%"
                               },
                               "type": "datepicker",
-                              "value": "${tblpopurchaseorder.PODate}",
-                              "valueType": "DateTime?"
+                              "value": "${tblpopurchaseorder.PODate}"
                             }
                           ],
                           "type": "col"
@@ -175,8 +173,7 @@
                               "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.CreatedBy_FK}",
-                              "valueProperty": "AddressBook_SEQ",
-                              "valueType": "int?"
+                              "valueProperty": "AddressBook_SEQ"
                             }
                           ],
                           "type": "col"
@@ -217,8 +214,7 @@
                               "textProperty": "POStatusText",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.POStatus_FK}",
-                              "valueProperty": "POStatus_ID",
-                              "valueType": "string"
+                              "valueProperty": "POStatus_ID"
                             }
                           ],
                           "type": "col"
@@ -259,8 +255,7 @@
                               "textProperty": "LastName",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Vendor_FK}",
-                              "valueProperty": "Vendor_ID",
-                              "valueType": "string"
+                              "valueProperty": "Vendor_ID"
                             }
                           ],
                           "type": "col"
@@ -298,8 +293,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpopurchaseorder.Description}",
-                              "valueType": "string"
+                              "value": "${tblpopurchaseorder.Description}"
                             }
                           ],
                           "type": "col"
@@ -340,8 +334,7 @@
                               "textProperty": "Incoterm_Name",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Incoterm_FK}",
-                              "valueProperty": "Incoterm_ID",
-                              "valueType": "string"
+                              "valueProperty": "Incoterm_ID"
                             }
                           ],
                           "type": "col"
@@ -382,8 +375,7 @@
                               "textProperty": "ShipVia_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.ShipVia_FK}",
-                              "valueProperty": "ShipVia_SEQ",
-                              "valueType": "int?"
+                              "valueProperty": "ShipVia_SEQ"
                             }
                           ],
                           "type": "col"
@@ -424,8 +416,7 @@
                               "textProperty": "PaymentTerm_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.PaymentTerm_FK}",
-                              "valueProperty": "PaymentTerm_SEQ",
-                              "valueType": "int?"
+                              "valueProperty": "PaymentTerm_SEQ"
                             }
                           ],
                           "type": "col"
@@ -466,8 +457,7 @@
                               "textProperty": "PaymentType_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.PaymentType_FK}",
-                              "valueProperty": "PaymentType_SEQ",
-                              "valueType": "int?"
+                              "valueProperty": "PaymentType_SEQ"
                             }
                           ],
                           "type": "col"
@@ -508,8 +498,7 @@
                               "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Buyer_FK}",
-                              "valueProperty": "AddressBook_SEQ",
-                              "valueType": "int?"
+                              "valueProperty": "AddressBook_SEQ"
                             }
                           ],
                           "type": "col"
@@ -544,8 +533,7 @@
                               "name": "TaxYN",
                               "triState": true,
                               "type": "checkbox",
-                              "value": "${tblpopurchaseorder.TaxYN}",
-                              "valueType": "bool?"
+                              "value": "${tblpopurchaseorder.TaxYN}"
                             }
                           ],
                           "type": "col"
@@ -582,8 +570,7 @@
                                 "width": "100%"
                               },
                               "type": "numeric",
-                              "value": "${tblpopurchaseorder.TaxtRate}",
-                              "valueType": "double?"
+                              "value": "${tblpopurchaseorder.TaxtRate}"
                             }
                           ],
                           "type": "col"
@@ -621,8 +608,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${tblpopurchaseorder.Department_FK}",
-                              "valueType": "string"
+                              "value": "${tblpopurchaseorder.Department_FK}"
                             }
                           ],
                           "type": "col"
@@ -659,8 +645,7 @@
                                 "width": "100%"
                               },
                               "type": "numeric",
-                              "value": "${tblpopurchaseorder.PO_Amount}",
-                              "valueType": "decimal?"
+                              "value": "${tblpopurchaseorder.PO_Amount}"
                             }
                           ],
                           "type": "col"

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
@@ -12,6 +13,12 @@ namespace ErpCan.Pages
 {
     public partial class TblGnAddressBookTypesComponent : ComponentBase
     {
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, dynamic> Attributes { get; set; }
+
+        [Inject]
+        protected IJSRuntime JSRuntime { get; set; }
+
         [Inject]
         protected NavigationManager UriHelper { get; set; }
 
@@ -64,7 +71,7 @@ namespace ErpCan.Pages
 
         protected async void Grid0RowSelect(ErpCan.Models.CanErpDbAt132.TblGnAddressBookType args)
         {
-            var result = await DialogService.OpenAsync<EditTblGnAddressBookType>("Edit Tbl Gn Address Book Type", new Dictionary<string, object>() { {"AddressBookType_SEQ", $"{args.AddressBookType_SEQ}"} });
+            var result = await DialogService.OpenAsync<EditTblGnAddressBookType>("Edit Tbl Gn Address Book Type", new Dictionary<string, object>() { {"AddressBookType_SEQ", args.AddressBookType_SEQ} });
               await InvokeAsync(() => { StateHasChanged(); });
         }
 

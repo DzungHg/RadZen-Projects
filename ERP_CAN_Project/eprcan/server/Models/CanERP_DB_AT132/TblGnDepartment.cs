@@ -17,6 +17,8 @@ namespace ErpCan.Models.CanErpDbAt132
 
 
     public ICollection<TblPoAccountPayable> TblPoAccountPayables { get; set; }
+
+    public ICollection<TblPoPurchaseOrder> TblPoPurchaseOrders { get; set; }
     public string Deparment_Name
     {
       get;
