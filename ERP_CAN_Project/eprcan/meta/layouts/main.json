@@ -75,6 +75,11 @@
                 {
                   "path": "tbl-po-vendors",
                   "text": "Vendor"
+                },
+                {
+                  "icon": "",
+                  "path": "tbl-po-list",
+                  "text": "PO List"
                 }
               ],
               "text": "Thu Mua"
@@ -160,6 +165,10 @@
                   "icon": "",
                   "path": "tbl-po-order-statuses",
                   "text": "PO Status"
+                },
+                {
+                  "path": "tbl-gn-departments",
+                  "text": "Phòng Ban"
                 }
               ],
               "text": "Cài đặt"

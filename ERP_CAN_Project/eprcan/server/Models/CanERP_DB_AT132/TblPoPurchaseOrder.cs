@@ -90,7 +90,6 @@ namespace ErpCan.Models.CanErpDbAt132
       get;
       set;
     }
-    public TblGnDepartment TblGnDepartment { get; set; }
     public decimal? PO_Amount
     {
       get;

@@ -172,11 +172,6 @@ namespace ErpCan.Data
               .WithMany(i => i.TblPoPurchaseOrders1)
               .HasForeignKey(i => i.Buyer_FK)
               .HasPrincipalKey(i => i.AddressBook_SEQ);
-        builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder>()
-              .HasOne(i => i.TblGnDepartment)
-              .WithMany(i => i.TblPoPurchaseOrders)
-              .HasForeignKey(i => i.Department_FK)
-              .HasPrincipalKey(i => i.Department_ID);
         builder.Entity<ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrderDetail>()
               .HasOne(i => i.TblPoPurchaseOrder)
               .WithMany(i => i.TblPoPurchaseOrderDetails)

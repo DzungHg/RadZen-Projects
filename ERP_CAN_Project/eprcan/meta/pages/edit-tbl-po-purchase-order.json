@@ -1,6 +1,8 @@
 {
   "components": [
     {
+      "type": "content",
+      "container": "contentContainer0",
       "components": [
         {
           "components": [
@@ -51,281 +53,353 @@
           "type": "row"
         },
         {
+          "type": "row",
           "components": [
             {
+              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
+                  "type": "template-form",
+                  "name": "form0",
                   "components": [
                     {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Po Id",
                               "component": "PO_ID",
                               "name": "PO_IDLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Po Id",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "maxLength": 15,
+                              "type": "textbox",
                               "name": "PO_ID",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "type": "textbox",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PO_ID}"
+=======
+                              "type": "textbox",
+                              "value": "${tblpopurchaseorder.PO_ID}",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             },
                             {
-                              "component": "PO_ID",
+                              "type": "required-validator",
                               "name": "PO_IDRequiredValidator",
+                              "component": "PO_ID",
+                              "text": "PO_ID is required",
                               "style": {
                                 "position": "absolute"
-                              },
-                              "text": "PO_ID is required",
-                              "type": "required-validator"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Po Date",
                               "component": "PODate",
                               "name": "PODateLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Po Date",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
-                              "dateFormat": "MM/dd/yyyy",
+                              "type": "datepicker",
                               "name": "PODate",
                               "style": {
                                 "width": "100%"
                               },
-                              "type": "datepicker",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PODate}"
+=======
+                              "type": "datepicker",
+                              "value": "${tblpopurchaseorder.PODate}",
+                              "valueType": "DateTime?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Gn Address Book",
                               "component": "CreatedBy_FK",
                               "name": "CreatedBy_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tbl Gn Address Book",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnAddressBooksResult}",
-                              "name": "CreatedBy_FK",
+                              "textProperty": "AddressBook_ID",
+                              "valueProperty": "AddressBook_SEQ",
                               "placeholder": "Choose TblGnAddressBook",
+                              "type": "dropdown",
+                              "name": "CreatedBy_FK",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.CreatedBy_FK}"
+=======
                               "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.CreatedBy_FK}",
-                              "valueProperty": "AddressBook_SEQ"
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Po Order Status",
                               "component": "POStatus_FK",
                               "name": "POStatus_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tbl Po Order Status",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblPoOrderStatusesResult}",
-                              "name": "POStatus_FK",
+                              "textProperty": "POStatusText",
+                              "valueProperty": "POStatus_ID",
                               "placeholder": "Choose TblPoOrderStatus",
+                              "type": "dropdown",
+                              "name": "POStatus_FK",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.POStatus_FK}"
+=======
                               "textProperty": "POStatusText",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.POStatus_FK}",
-                              "valueProperty": "POStatus_ID"
+                              "valueProperty": "POStatus_ID",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Po Vendor",
                               "component": "Vendor_FK",
                               "name": "Vendor_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tbl Po Vendor",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblPoVendorsResult}",
-                              "name": "Vendor_FK",
+                              "textProperty": "LastName",
+                              "valueProperty": "Vendor_ID",
                               "placeholder": "Choose TblPoVendor",
+                              "type": "dropdown",
+                              "name": "Vendor_FK",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.Vendor_FK}"
+=======
                               "textProperty": "LastName",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Vendor_FK}",
-                              "valueProperty": "Vendor_ID"
+                              "valueProperty": "Vendor_ID",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Description",
                               "component": "Description",
                               "name": "DescriptionLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Description",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "maxLength": 150,
+                              "type": "textbox",
                               "name": "Description",
                               "style": {
                                 "width": "100%"
                               },
-                              "type": "textbox",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.Description}"
+=======
+                              "type": "textbox",
+                              "value": "${tblpopurchaseorder.Description}",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+<<<<<<< HEAD
+                              "type": "label",
+                              "text": "Tbl Gn Incoterm",
+=======
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                               "component": "Incoterm_FK",
                               "name": "Incoterm_FKLabel",
                               "style": {
                                 "width": "100%"
+<<<<<<< HEAD
+                              }
+=======
                               },
                               "text": "Tbl Gn Incoterm",
                               "type": "label"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnIncotermsResult}",
+<<<<<<< HEAD
+                              "textProperty": "Incoterm_Name",
+                              "valueProperty": "Incoterm_ID",
+                              "placeholder": "Choose TblGnIncoterm",
+                              "type": "dropdown",
+                              "name": "Incoterm_FK",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${tblpopurchaseorder.Incoterm_FK}"
+                            }
+                          ]
+=======
                               "name": "Incoterm_FK",
                               "placeholder": "Choose TblGnIncoterm",
                               "style": {
@@ -334,360 +408,423 @@
                               "textProperty": "Incoterm_Name",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Incoterm_FK}",
-                              "valueProperty": "Incoterm_ID"
+                              "valueProperty": "Incoterm_ID",
+                              "valueType": "string"
                             }
                           ],
                           "type": "col"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Gn Ship Vium",
                               "component": "ShipVia_FK",
                               "name": "ShipVia_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tbl Gn Ship Vium",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnShipViaResult}",
-                              "name": "ShipVia_FK",
+                              "textProperty": "ShipVia_ID",
+                              "valueProperty": "ShipVia_SEQ",
                               "placeholder": "Choose TblGnShipVium",
+                              "type": "dropdown",
+                              "name": "ShipVia_FK",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.ShipVia_FK}"
+=======
                               "textProperty": "ShipVia_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.ShipVia_FK}",
-                              "valueProperty": "ShipVia_SEQ"
+                              "valueProperty": "ShipVia_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Gn Payment Term",
                               "component": "PaymentTerm_FK",
                               "name": "PaymentTerm_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tbl Gn Payment Term",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnPaymentTermsResult}",
-                              "name": "PaymentTerm_FK",
+                              "textProperty": "PaymentTerm_ID",
+                              "valueProperty": "PaymentTerm_SEQ",
                               "placeholder": "Choose TblGnPaymentTerm",
+                              "type": "dropdown",
+                              "name": "PaymentTerm_FK",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.PaymentTerm_FK}"
+=======
                               "textProperty": "PaymentTerm_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.PaymentTerm_FK}",
-                              "valueProperty": "PaymentTerm_SEQ"
+                              "valueProperty": "PaymentTerm_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Gn Payment Type",
                               "component": "PaymentType_FK",
                               "name": "PaymentType_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tbl Gn Payment Type",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnPaymentTypesResult}",
-                              "name": "PaymentType_FK",
+                              "textProperty": "PaymentType_ID",
+                              "valueProperty": "PaymentType_SEQ",
                               "placeholder": "Choose TblGnPaymentType",
+                              "type": "dropdown",
+                              "name": "PaymentType_FK",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.PaymentType_FK}"
+=======
                               "textProperty": "PaymentType_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.PaymentType_FK}",
-                              "valueProperty": "PaymentType_SEQ"
+                              "valueProperty": "PaymentType_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tbl Gn Address Book",
                               "component": "Buyer_FK",
                               "name": "Buyer_FKLabel",
                               "style": {
                                 "width": "100%"
+<<<<<<< HEAD
+                              }
+=======
                               },
                               "text": "Tbl Gn Address Book",
                               "type": "label"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "data": "${getTblGnAddressBooksResult}",
+<<<<<<< HEAD
+                              "textProperty": "AddressBook_ID",
+                              "valueProperty": "AddressBook_SEQ",
+                              "placeholder": "Choose TblGnAddressBook",
+                              "type": "dropdown",
+=======
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                               "name": "Buyer_FK",
                               "placeholder": "Choose TblGnAddressBook",
                               "style": {
                                 "width": "100%"
                               },
+<<<<<<< HEAD
+                              "value": "${tblpopurchaseorder.Buyer_FK}"
+=======
                               "textProperty": "AddressBook_ID",
                               "type": "dropdown",
                               "value": "${tblpopurchaseorder.Buyer_FK}",
-                              "valueProperty": "AddressBook_SEQ"
+                              "valueProperty": "AddressBook_SEQ",
+                              "valueType": "int?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Tax Yn",
                               "component": "TaxYN",
                               "name": "TaxYNLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Tax Yn",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
+                              "type": "checkbox",
                               "name": "TaxYN",
                               "triState": true,
-                              "type": "checkbox",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.TaxYN}"
+=======
+                              "type": "checkbox",
+                              "value": "${tblpopurchaseorder.TaxYN}",
+                              "valueType": "bool?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Taxt Rate",
                               "component": "TaxtRate",
                               "name": "TaxtRateLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Taxt Rate",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
+                              "type": "numeric",
                               "name": "TaxtRate",
                               "style": {
                                 "width": "100%"
                               },
-                              "type": "numeric",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.TaxtRate}"
+=======
+                              "type": "numeric",
+                              "value": "${tblpopurchaseorder.TaxtRate}",
+                              "valueType": "double?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Department Fk",
                               "component": "Department_FK",
                               "name": "Department_FKLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Department Fk",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
                               "maxLength": 5,
+                              "type": "textbox",
                               "name": "Department_FK",
                               "style": {
                                 "width": "100%"
                               },
-                              "type": "textbox",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.Department_FK}"
+=======
+                              "type": "textbox",
+                              "value": "${tblpopurchaseorder.Department_FK}",
+                              "valueType": "string"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
+                      ]
+                    },
+                    {
+                      "type": "row",
                       "style": {
                         "marginBottom": "1rem"
                       },
-                      "type": "row"
-                    },
-                    {
                       "components": [
                         {
+                          "type": "col",
                           "class": "col-md-3",
                           "components": [
                             {
+                              "type": "label",
+                              "text": "Po Amount",
                               "component": "PO_Amount",
                               "name": "PO_AmountLabel",
                               "style": {
                                 "width": "100%"
-                              },
-                              "text": "Po Amount",
-                              "type": "label"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         },
                         {
+                          "type": "col",
                           "class": "col-md-9",
                           "components": [
                             {
+                              "type": "numeric",
                               "name": "PO_Amount",
                               "style": {
                                 "width": "100%"
                               },
-                              "type": "numeric",
+<<<<<<< HEAD
                               "value": "${tblpopurchaseorder.PO_Amount}"
+=======
+                              "type": "numeric",
+                              "value": "${tblpopurchaseorder.PO_Amount}",
+                              "valueType": "decimal?"
+>>>>>>> e0ebc8a4fafe3ad90dbbfb88183002422aa310c9
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
-                      "style": {
-                        "marginBottom": "1rem"
-                      },
-                      "type": "row"
+                      ]
                     },
                     {
+                      "type": "row",
                       "components": [
                         {
+                          "type": "col",
                           "class": "col offset-sm-3",
                           "components": [
                             {
-                              "buttonStyle": "primary",
+                              "type": "button",
                               "buttonType": "submit",
                               "icon": "save",
                               "text": "Save",
-                              "type": "button"
+                              "buttonStyle": "primary"
                             },
                             {
+                              "type": "button",
                               "buttonStyle": "light",
+                              "text": "Cancel",
                               "events": {
                                 "click": [
                                   {
                                     "type": "close-popup"
                                   }
                                 ]
-                              },
-                              "text": "Cancel",
-                              "type": "button"
+                              }
                             }
-                          ],
-                          "type": "col"
+                          ]
                         }
-                      ],
-                      "type": "row"
+                      ]
                     }
                   ],
-                  "data": "${tblpopurchaseorder}",
                   "events": {
                     "submit": [
                       {
@@ -712,8 +849,8 @@
                         ],
                         "then": [
                           {
-                            "result": "${tblpopurchaseorder}",
-                            "type": "close-popup"
+                            "type": "close-popup",
+                            "result": "${tblpopurchaseorder}"
                           }
                         ],
                         "type": "invoke"
@@ -721,19 +858,14 @@
                     ]
                   },
                   "itemType": "ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder",
-                  "name": "form0",
-                  "type": "template-form",
+                  "data": "${tblpopurchaseorder}",
                   "visible": "${tblpopurchaseorder != null && canEdit}"
                 }
-              ],
-              "type": "col"
+              ]
             }
-          ],
-          "type": "row"
+          ]
         }
-      ],
-      "container": "contentContainer0",
-      "type": "content"
+      ]
     }
   ],
   "events": {
@@ -745,7 +877,6 @@
         "valueType": "bool"
       },
       {
-        "error": [],
         "name": "CanERP_DB_AT132.getTblPoPurchaseOrderByPO_ID",
         "parameters": [
           {
@@ -761,6 +892,7 @@
             "valueType": "ErpCan.Models.CanErpDbAt132.TblPoPurchaseOrder"
           }
         ],
+        "error": [],
         "type": "invoke"
       },
       {
@@ -856,6 +988,6 @@
       }
     ]
   },
-  "layout": "Main",
-  "name": "Edit Tbl Po Purchase Order"
+  "name": "Edit Tbl Po Purchase Order",
+  "layout": "Main"
 }

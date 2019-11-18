@@ -1565,8 +1565,6 @@ namespace ErpCan
 
             items = items.Include(i => i.TblGnAddressBook1);
 
-            items = items.Include(i => i.TblGnDepartment);
-
             if (query != null)
             {
                 if (!string.IsNullOrEmpty(query.Filter))
@@ -2623,7 +2621,6 @@ namespace ErpCan
             var item = context.TblGnDepartments
                               .Where(i => i.Department_ID == departmentId)
                               .Include(i => i.TblPoAccountPayables)
-                              .Include(i => i.TblPoPurchaseOrders)
                               .FirstOrDefault();
 
             OnTblGnDepartmentDeleted(item);
