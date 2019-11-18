@@ -7,7 +7,7 @@
 @using ErpCan.Models.CanErpDbAt132
 <RadzenContent Container="contentContainer0">
   <ChildContent>
-    <RadzenHeading Size="H1" Text="Tbl So Customers">
+    <RadzenHeading Size="H1" Text="DS Khách Hàng">
     </RadzenHeading>
     <div class="row">
       <div class="col-md-12">
@@ -23,21 +23,21 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="FirstName" Title="First Name" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="CustomerAdressBook_FK" SortProperty="TblGnAddressBook.AddressBook_ID" FilterProperty="TblGnAddressBook.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" FilterProperty="TblGnAddressBook.AddressBook_ID" Property="CustomerAdressBook_FK" SortProperty="TblGnAddressBook.AddressBook_ID" Title="Tbl Gn Address Book" Type="string">
               <Template Context="data">
               @data.TblGnAddressBook?.AddressBook_ID
               </Template>
             </RadzenGridColumn>
             <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Format="decimal" Property="CreditLimit" Title="Credit Limit" Type="number">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Format="date-time" Property="LastRevisedCreditLimitDate" FormatString="{0:MM/dd/yyyy}" Title="Last Revised Credit Limit Date" Type="string">
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Format="date-time" FormatString="{0:MM/dd/yyyy}" Property="LastRevisedCreditLimitDate" Title="Last Revised Credit Limit Date" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="PaymentTerm_FK" SortProperty="TblGnPaymentTerm.PaymentTerm_ID" FilterProperty="TblGnPaymentTerm.PaymentTerm_ID" Title="Tbl Gn Payment Term" Type="string">
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" FilterProperty="TblGnPaymentTerm.PaymentTerm_ID" Property="PaymentTerm_FK" SortProperty="TblGnPaymentTerm.PaymentTerm_ID" Title="Tbl Gn Payment Term" Type="string">
               <Template Context="data">
               @data.TblGnPaymentTerm?.PaymentTerm_ID
               </Template>
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="PaymentType_FK" SortProperty="TblGnPaymentType.PaymentType_ID" FilterProperty="TblGnPaymentType.PaymentType_ID" Title="Tbl Gn Payment Type" Type="string">
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" FilterProperty="TblGnPaymentType.PaymentType_ID" Property="PaymentType_FK" SortProperty="TblGnPaymentType.PaymentType_ID" Title="Tbl Gn Payment Type" Type="string">
               <Template Context="data">
               @data.TblGnPaymentType?.PaymentType_ID
               </Template>
@@ -80,13 +80,13 @@
             </RadzenGridColumn>
             <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="Notes" Title="Notes" Type="string">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Format="date-time" Property="LastUpdatedDate" FormatString="{0:MM/dd/yyyy}" Title="Last Updated Date" Type="string">
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Format="date-time" FormatString="{0:MM/dd/yyyy}" Property="LastUpdatedDate" Title="Last Updated Date" Type="string">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="LastUdpatedBy" Title="Last Udpated By" Type="integer">
             </RadzenGridColumn>
             <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Property="Inactive" Title="Inactive" Type="boolean">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Filterable="false" Sortable="false" Bubble="false" Width="70px" TextAlign="TextAlign.Center">
+            <RadzenGridColumn TItem="ErpCan.Models.CanErpDbAt132.TblSoCustomer" Context="erpCanModelsCanErpDbAt132TblSoCustomer" Bubble="false" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
               <Template Context="erpCanModelsCanErpDbAt132TblSoCustomer">
                 <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, erpCanModelsCanErpDbAt132TblSoCustomer))">
                 </RadzenButton>

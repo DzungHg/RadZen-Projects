@@ -1,35 +1,23 @@
 {
   "components": [
     {
-      "type": "content",
-      "container": "contentContainer0",
       "components": [
         {
-          "type": "heading",
           "name": "pageTitle",
           "size": "H1",
-          "text": "Tbl So Customers"
+          "text": "DS Khách Hàng",
+          "type": "heading"
         },
         {
-          "type": "row",
           "components": [
             {
-              "type": "col",
               "class": "col-md-12",
               "components": [
                 {
-                  "icon": "add_circle_outline",
-                  "name": "button0",
-                  "style": {
-                    "marginBottom": "10px"
-                  },
-                  "text": "Add",
-                  "type": "button",
                   "events": {
                     "click": [
                       {
                         "path": "add-tbl-so-customer",
-                        "type": "popup",
                         "then": [
                           {
                             "code": "grid0.Reload();",
@@ -39,40 +27,23 @@
                             "code": "await InvokeAsync(() => { StateHasChanged(); });",
                             "type": "execute"
                           }
-                        ]
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "grid0",
-                  "allowFiltering": true,
-                  "allowPaging": true,
-                  "allowSorting": true,
-                  "data": "${getTblSoCustomersResult}",
-                  "events": {
-                    "loadData": [],
-                    "rowSelect": [
-                      {
-                        "parameters": [
-                          {
-                            "name": "Customer_SEQ",
-                            "value": "${event.Customer_SEQ}"
-                          }
                         ],
-                        "path": "edit-tbl-so-customer",
-                        "type": "popup",
-                        "argType": "ErpCan.Models.CanErpDbAt132.TblSoCustomer",
-                        "then": [
-                          {
-                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
-                            "type": "execute"
-                          }
-                        ]
+                        "type": "popup"
                       }
                     ]
                   },
-                  "title": "",
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button"
+                },
+                {
+                  "allowFiltering": true,
+                  "allowPaging": true,
+                  "allowSorting": true,
                   "columns": [
                     {
                       "property": "Customer_SEQ",
@@ -95,9 +66,9 @@
                       "type": "string"
                     },
                     {
+                      "filterProperty": "TblGnAddressBook.AddressBook_ID",
                       "property": "CustomerAdressBook_FK",
                       "sortProperty": "TblGnAddressBook.AddressBook_ID",
-                      "filterProperty": "TblGnAddressBook.AddressBook_ID",
                       "template": "${data.TblGnAddressBook?.AddressBook_ID}",
                       "title": "Tbl Gn Address Book",
                       "type": "string"
@@ -110,23 +81,23 @@
                     },
                     {
                       "format": "date-time",
-                      "property": "LastRevisedCreditLimitDate",
                       "formatString": "{0:MM/dd/yyyy}",
+                      "property": "LastRevisedCreditLimitDate",
                       "title": "Last Revised Credit Limit Date",
                       "type": "string"
                     },
                     {
+                      "filterProperty": "TblGnPaymentTerm.PaymentTerm_ID",
                       "property": "PaymentTerm_FK",
                       "sortProperty": "TblGnPaymentTerm.PaymentTerm_ID",
-                      "filterProperty": "TblGnPaymentTerm.PaymentTerm_ID",
                       "template": "${data.TblGnPaymentTerm?.PaymentTerm_ID}",
                       "title": "Tbl Gn Payment Term",
                       "type": "string"
                     },
                     {
+                      "filterProperty": "TblGnPaymentType.PaymentType_ID",
                       "property": "PaymentType_FK",
                       "sortProperty": "TblGnPaymentType.PaymentType_ID",
-                      "filterProperty": "TblGnPaymentType.PaymentType_ID",
                       "template": "${data.TblGnPaymentType?.PaymentType_ID}",
                       "title": "Tbl Gn Payment Type",
                       "type": "string"
@@ -242,8 +213,8 @@
                     },
                     {
                       "format": "date-time",
-                      "property": "LastUpdatedDate",
                       "formatString": "{0:MM/dd/yyyy}",
+                      "property": "LastUpdatedDate",
                       "title": "Last Updated Date",
                       "type": "string"
                     },
@@ -258,22 +229,16 @@
                       "type": "boolean"
                     },
                     {
+                      "bubble": false,
                       "filterable": false,
                       "sortable": false,
-                      "bubble": false,
-                      "width": "70px",
-                      "textAlign": "center",
                       "template": [
                         {
                           "buttonStyle": "danger",
-                          "icon": "close",
-                          "name": "gridDeleteButton",
-                          "text": "",
-                          "size": "sm",
-                          "type": "button",
                           "events": {
                             "click": [
                               {
+                                "argType": "ErpCan.Models.CanErpDbAt132.TblSoCustomer",
                                 "error": [
                                   {
                                     "detail": "Unable to delete TblSoCustomer",
@@ -296,23 +261,58 @@
                                     "type": "execute"
                                   }
                                 ],
-                                "type": "invoke",
-                                "argType": "ErpCan.Models.CanErpDbAt132.TblSoCustomer"
+                                "type": "invoke"
                               }
                             ]
-                          }
+                          },
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "size": "sm",
+                          "text": "",
+                          "type": "button"
                         }
-                      ]
+                      ],
+                      "textAlign": "center",
+                      "width": "70px"
                     }
                   ],
-                  "type": "grid",
-                  "itemType": "ErpCan.Models.CanErpDbAt132.TblSoCustomer"
+                  "data": "${getTblSoCustomersResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowSelect": [
+                      {
+                        "argType": "ErpCan.Models.CanErpDbAt132.TblSoCustomer",
+                        "parameters": [
+                          {
+                            "name": "Customer_SEQ",
+                            "value": "${event.Customer_SEQ}"
+                          }
+                        ],
+                        "path": "edit-tbl-so-customer",
+                        "then": [
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ],
+                        "type": "popup"
+                      }
+                    ]
+                  },
+                  "itemType": "ErpCan.Models.CanErpDbAt132.TblSoCustomer",
+                  "name": "grid0",
+                  "title": "",
+                  "type": "grid"
                 }
-              ]
+              ],
+              "type": "col"
             }
-          ]
+          ],
+          "type": "row"
         }
-      ]
+      ],
+      "container": "contentContainer0",
+      "type": "content"
     }
   ],
   "events": {
@@ -332,6 +332,6 @@
       }
     ]
   },
-  "name": "Tbl So Customers",
-  "layout": "Main"
+  "layout": "Main",
+  "name": "Tbl So Customers"
 }
